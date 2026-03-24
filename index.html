@@ -1,140 +1,47 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>This Is Your Song — Home</title>
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brownsville Kuk Sool Won Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dragon.css">
 </head>
-<body class="catalog-page">
+<body>
   <div class="wrapper">
+    <nav class="card">
+      <div class="button-row">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
 
-    <!-- *<header class="card">* is the HOMEPAGE HEADER SECTION. <header> contains <h1> and <h2> for accessibility and semantic structure. The .card class applies the site’s framed card style to visually separate this section from the main content and footer.  
-  
-    - *<h1>*: Defines the primary heading of the page ("This Is Your Song"), critical for screen readers and SEO.
-    - *<h2>*: Provides a supporting subtitle that gives more context to the site purpose.
-
-    Placing them at the top establishes the visual and structural hierarchy immediately when the page loads.
--->
     <header class="card">
-        <h1>This Is Your Song.</h1>
-        <h2>We turn your story into a custom song. Best of all,
-            its completly free.</h2>
+      <h1>Brownsville Kuk Sool Won</h1>
+      <h2>Student Progress Dashboard</h2>
+      <p>Welcome. This site helps students track rank requirements and prepare for upcoming testing dates.</p>
+      <div class="button-row">
+        <a class="btn" href="dashboard.html">Enter Dashboard</a>
+      </div>
     </header>
 
-    <!-- *<main class="card">*: "<main>"" is the HTML5 element for the primary content of the page. It signals to browsers, search engines, and assistive technologies which part of the page is the main content.
-
-    The *.card* class applies the site’s framed card style to visually separate this section from the header and footer.
-  
-    Placed here (immediately after <header>) so the user and screen readers encounter the core content first,   following a logical top-down structure.
--->
     <main class="card">
-
-        <!-- *<div class="inner-box">* is a CONTENT WRAPPER FOR HOMEPAGE TEXT. It Groups all paragraph elements into a vertical column inside the <main> card.
-  
-    The .inner-box class adds padding and spacing to improve readability. This separation allows the written content to be styled independently from other elements like the audio player. 
-
-    It is used here to logically segment the introduction from the demo player that follows. This grouping improves readability and visual structure by creating a distinct section for the introductory text.
--->
-        <div class="inner-box">
-
-            <p>Welcome, and thank you for visiting my site. This is a new adventure for me as a budding musician. My
-                passion is creating customized songs drawn from the stories of my clients—songs that capture who you
-                are, what you feel, and the people you love. These songs are more than music; they can become your
-                legacy.</p>
-
-            <p>Whether you want to commemorate a daughter’s quinceañera or wedding, celebrate a child’s graduation,
-                honor someone you love, or simply share a message from the heart, I take your story and turn it into a
-                song. You can give me only a few details, or write your own lyrics, and I’ll shape them into music that
-                is enjoyable, melodic, and meaningful. You can ask for happy, sad, funny, or even angry—whatever fits
-                the moment. I’ll provide you with a few options to choose from, so the result feels right for you.</p>
-
-            <p>
-                Start out by listening to a short demo by clicking the Demo Button Below.</p>
-
-            <p>When you’re ready, click below to visit my catalog and listen to sample songs in different styles.
-                They’ll help inspire ideas for your own custom song.</p>
-        </div>
-
-        <!-- *<div class="jingle-box">* is the jingle demo AUDIO DEMO CONTAINER. It uses an embedded audio player so visitors can play the jingle without leaving the page. 
-    
-This <div> visually isolates the player from the surrounding text using a black background and gold border for emphasis.
-
-The .jingle-box class applies custom styling (background, border, padding) to make the section stand out and signal interactivity to the user.
-
-Placed directly after the introductory text to allow users to hear a sample before exploring further. While this could technically appear elsewhere on the page, placing it here follows a logical content-first, example-second flow that enhances usability and storytelling.
--->
-        <div class="jingle-box">
-            <h3>Play Jingle Demo</h3>
-
-            <!-- *<audio controls>*: is an HTML5 AUDIO PLAYER ELEMENT. It allows users to play, pause, and control playback of an embedded audio file directly within the page using their browser's built-in media controls.
-
-The controls attribute adds a visible interface (play/pause, timeline, volume) without requiring custom JavaScript. This ensures consistent cross-browser functionality and accessibility. 
-
-Using the native <audio> tag avoids external plugins and provides a lightweight way to deliver audio content.
-
-Placed inside the .jingle-box container to keep the player visually isolated and stylistically distinct from the surrounding content. If moved outside this context, it would lose its design framing and potentially confuse the visual flow of the page.
--->
-            <audio controls>
-
-
-                <!-- *<source src="assets/jingle.mp3" type="audio/mpeg">*: is the AUDIO SOURCE FILE for the embedded player above. It tells the <audio> element where to find the media file and what format it’s in, enabling the browser to decode and play it.
-
-The src attribute points to a local MP3 file inside the assets directory. The type attribute explicitly declares it as audio/mpeg, which helps browsers determine compatibility and preload decisions.
-
-Placed directly inside the <audio> element to link the playback controls with the actual media content. If omitted, the player would still render but would be non-functional.
--->
-                <source src="assets/audio/jingle.mp3" type="audio/mpeg">
-
-                <!-- *Your browser does not support the audio element.*: is the AUDIO FALLBACK MESSAGE. It displays a plain text notice to users whose browsers do not support the HTML5 <audio> element.
-
-This ensures graceful degradation: even if the player cannot render, users receive feedback rather than seeing a blank space. While this situation is rare in modern browsers, the fallback maintains accessibility and communicates intent clearly.
-
-Placed as the inner content of the <audio> element, so it is only shown when necessary — i.e., if the audio cannot load or play. Removing it would result in a silent failure on unsupported browsers.
--->
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <!-- Centered Cohort Challenge Button -->
-   
-<div class="cohort-center">
-  <a class="btn catalog-btn" href="contents/cohort-todo.html">Cohorts Click Here!</a>
-  <p class="dare-tagline">If you dare!</p>
-</div>
-
-
-        </div>
-
-
+      <h3>App Purpose</h3>
+      <p>
+        The dashboard is a simple student tool for selecting rank, setting the next testing date, and viewing required
+        material by category.
+      </p>
+      <p>
+        Students can update their requirement status and keep progress saved locally in the browser between sessions.
+      </p>
+      <p>
+        When ready, students can request an audit from the instructor through the dashboard.
+      </p>
     </main>
 
-    <!-- *<footer class="card">* is the FOOTER NAVIGATION CONTAINER. It wraps the site’s closing section and contains a call-to-action button linking to the catalog.
-
-The *.card* class is reused here, as it is in the <header> and <main>, to apply consistent visual styling (rounded corners, padding, border, color). However, because this card is inside a <footer> tag, it effectively behaves like a specialized “footer card” — even though no unique class name is applied. 
-
-The semantic context (being inside <footer>) gives it meaning and may influence its styling or placement via layout rules (like grid or flex). Placed as the final layout element to follow natural document flow. This helps with accessibility, page hierarchy, and keeps the visual rhythm consistent across all sections.
--->
     <footer class="card">
-
-        <!-- *<div class="button-row">* is a BUTTON CONTAINER. It groups the call-to-action button inside the footer, allowing for easier styling and layout control. The .button-row class can apply flexbox or grid styles to center the button, add spacing, or manage responsiveness.       
--->
-        <div class="button-row">
-
-            <!-- *<a class="btn catalog-btn" href="catalog.html">Take Me to the Catalog</a>* is a PRIMARY NAVIGATION BUTTON LINK. It acts as a call-to-action that takes users from the homepage to the catalog of song samples.
-
-The *.btn* class gives it visual button styling — height, border, color, alignment — to make it look like a clickable UI element, even though it’s an <a> (anchor) tag. This keeps the semantic behavior of navigation (link to another page) while benefiting from button-like visuals. 
-
-The *.catalog-btn* class is a custom modifier that can apply unique styling or targeting specific to this button (if defined in CSS).
-
-Placed inside the <footer> so it visually anchors the bottom of the page and gives users a clear next step after reading the homepage. It's the only nav button here, so this placement is intentional for both visual balance and user flow.
--->
-            <a class="btn catalog-btn" href="contents/catalog.html">Take Me to the Catalog</a>
-        
-        </div>
+      <p>Brownsville Kuk Sool Won &mdash; Focused training, clear progress, consistent preparation.</p>
     </footer>
   </div>
 </body>
-
 </html>

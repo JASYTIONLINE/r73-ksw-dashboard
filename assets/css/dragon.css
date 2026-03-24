@@ -1,0 +1,99 @@
+/* ================================================
+   DRAGONEYE THEME — Gold, orange, red over black
+   This file defines all color and visual styles
+   for the Dragoneye version of the site
+   ================================================ */
+
+/* Base colors for background and text */
+body {
+  background-color: #000000;        /* Deep black background */
+  color: #ffcc00;                   /* Gold text as the default */
+}
+
+/* Headings — vivid themed hierarchy */
+h1 { color: #ff0000; }              /* Bright red title */
+h2 { color: #ffa500; }              /* Orange subtitle */
+h3 { color: #ffcc00; }              /* Gold section headers */
+h4 { color: #e6e6e6; }
+h5 { color: #cccccc; }
+h6 { color: #999999; }
+
+/* Usage box — themed to match subtitle (h2) */
+.usage-box {
+  color: #ffa500;                   /* Orange like h2 */
+  border: 1px solid #ffa500;        /* Matching border for theme unity */
+}
+
+/* Links and interactivity */
+a {
+  color: #cccccc;                   /* Light grey links */
+}
+a:hover {
+  color: #ff0000;                   /* Red hover state */
+}
+
+/* Containers: card and box backgrounds + borders */
+.card {
+  background-color: #220000;        /* Very dark red */
+  border: 1px solid #ff0000;        /* Bright red border */
+}
+
+.box {
+  background-color: #330000;        /* Slightly lighter red background */
+  border: 1px solid #ffcc00;        /* Gold border */
+}
+
+/* Table styling */
+th, td {
+  border: 1px solid #ffcc00;
+}
+th {
+  background-color: #220000;
+  color: #ffcc00;
+}
+
+/* Forms and field colors */
+input, select, textarea {
+  border-color: #ffcc00;            /* Gold border */
+  background-color: #000000;        /* Black fill */
+  color: #ffcc00;                   /* Gold text */
+}
+
+/* Focus ring effect */
+input:focus, select:focus, textarea:focus {
+  border-color: #ff0000;            /* Red highlight on focus */
+}
+
+/* Buttons — red/gold theme */
+.btn {
+  background-color: #ffcc00;        /* Gold fill */
+  color: #000000;                   /* Black text */
+  border-color: #ffa500;            /* Orange border */
+}
+
+.btn:hover {
+  background-color: #ff0000;        /* Red fill on hover */
+  color: #000000;
+}
+
+/* Visual separator */
+hr {
+  background-color: #ffcc00;
+}
+
+/* Blockquote styling */
+blockquote {
+  border-color: #ffcc00;
+  background-color: #110000;        /* Deep red-black background */
+  color: #ffcc00;
+}
+
+/* Code blocks */
+code, pre {
+  background-color: #110000;
+  color: #ffcc00;
+}
+
+code a {
+  color: #ff0000;
+}

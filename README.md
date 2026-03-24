@@ -3,7 +3,7 @@
 This project is a student-facing progress dashboard for Brownsville Kuk Sool Won (KSW).  
 Its purpose is to help students track rank requirements, monitor progress toward their next test date, and request an instructor audit.
 
-## Project Scope (Week 02 MVP)
+## Project Scope
 
 The MVP focuses on a simple, buildable dashboard:
 
