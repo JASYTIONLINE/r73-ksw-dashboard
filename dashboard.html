@@ -8,68 +8,72 @@
   <link rel="stylesheet" href="assets/css/dragon.css">
 </head>
 <body>
-  <div class="wrapper">
-    <section class="card">
-      <h2>Placeholder Notice</h2>
-      <p><strong>This page is a placeholder in design stage and is non-functional.</strong></p>
-    </section>
-
-    <nav class="card">
-      <div class="button-row">
+  <div class="wrapper page-layout">
+    <aside class="sidebar card">
+      <nav class="sidebar-nav" aria-label="Primary navigation">
         <a class="btn" href="index.html">Home</a>
         <a class="btn" href="dashboard.html">Dashboard</a>
-      </div>
-    </nav>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </aside>
 
-    <header class="card">
-      <h1>Student Dashboard</h1>
-      <h3>Brownsville Kuk Sool Won</h3>
-      <p>Use this page to view rank requirements, track progress, and request an audit.</p>
-    </header>
+    <div class="page-content">
+      <section class="card">
+        <h2>Placeholder Notice</h2>
+        <p><strong>This page is a placeholder in design stage and is non-functional.</strong></p>
+      </section>
 
-    <main class="card">
-      <h3>Student Setup</h3>
-      <p><label for="rank">Current Rank</label></p>
-      <select id="rank" name="rank">
-        <option>White Belt</option>
-        <option>Yellow Belt</option>
-        <option>Blue Belt</option>
-        <option>Red Belt</option>
-        <option>Black Belt</option>
-      </select>
+      <header class="card">
+        <h1>Student Dashboard</h1>
+        <h3>Brownsville Kuk Sool Won</h3>
+        <p>Use this page to view rank requirements, track progress, and request an audit.</p>
+      </header>
 
-      <p><label for="test-date">Next Testing Date</label></p>
-      <input id="test-date" name="test-date" type="date">
-    </main>
+      <main class="card">
+        <h3>Student Setup</h3>
+        <p><label for="rank">Current Rank</label></p>
+        <select id="rank" name="rank">
+          <option>White Belt</option>
+          <option>Yellow Belt</option>
+          <option>Blue Belt</option>
+          <option>Red Belt</option>
+          <option>Black Belt</option>
+        </select>
 
-    <section class="card">
-      <h3>Requirements (Preview Only)</h3>
-      <ul>
-        <li>Techniques - status: Untrained / Exposed / Trained / Proficient</li>
-        <li>Forms - status: Untrained / Exposed / Trained / Proficient</li>
-        <li>Punches - status: Untrained / Exposed / Trained / Proficient</li>
-        <li>Kicks - status: Untrained / Exposed / Trained / Proficient</li>
-        <li>Etiquette - status: Untrained / Exposed / Trained / Proficient</li>
-      </ul>
-    </section>
+        <p><label for="test-date">Next Testing Date</label></p>
+        <input id="test-date" name="test-date" type="date">
+      </main>
 
-    <section class="card">
-      <h3>Progress Summary (Preview Only)</h3>
-      <p>Completed requirements: --</p>
-      <p>Estimated readiness: --</p>
-      <p>Days until test date: --</p>
-    </section>
+      <section class="card">
+        <h3>Requirements (Preview Only)</h3>
+        <ul>
+          <li>Techniques - status: Untrained / Exposed / Trained / Proficient</li>
+          <li>Forms - status: Untrained / Exposed / Trained / Proficient</li>
+          <li>Punches - status: Untrained / Exposed / Trained / Proficient</li>
+          <li>Kicks - status: Untrained / Exposed / Trained / Proficient</li>
+          <li>Etiquette - status: Untrained / Exposed / Trained / Proficient</li>
+        </ul>
+      </section>
 
-    <section class="card">
-      <h3>Instructor Audit Request</h3>
-      <p>
-        <a href="mailto:instructor@example.com?subject=KSW%20Audit%20Request">Request Audit by Email</a>
-      </p>
-    </section>
+      <section class="card">
+        <h3>Progress Summary (Preview Only)</h3>
+        <p>Completed requirements: --</p>
+        <p>Estimated readiness: --</p>
+        <p>Days until test date: --</p>
+      </section>
 
-    <footer class="card">
-      <p>Design mock only. No data is saved on this placeholder page.</p>
-    </footer>
+      <section class="card">
+        <h3>Instructor Audit Request</h3>
+        <p>
+          <a class="btn" href="mailto:instructor@example.com?subject=KSW%20Audit%20Request">Request Audit by Email</a>
+        </p>
+      </section>
+
+      <footer class="card">
+        <p>Design mock only. No data is saved on this placeholder page.</p>
+      </footer>
+    </div>
   </div>
 </body>
 </html>
