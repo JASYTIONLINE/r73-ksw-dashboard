@@ -283,3 +283,33 @@ pre {
   overflow-x: auto;
   padding: 1em;
 }
+
+/* ================================================
+   LEFT SIDEBAR NAVIGATION LAYOUT
+   Used to keep navigation consistent across pages.
+   ================================================ */
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sidebar {
+  min-width: 220px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-nav .btn {
+  width: 100% !important;
+  margin-bottom: 0;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
