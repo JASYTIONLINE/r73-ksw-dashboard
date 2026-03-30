@@ -312,4 +312,113 @@ pre {
 .page-content {
   flex: 1;
   width: 100%;
+  min-width: 0;
+}
+
+/* Mobile top nav only (hidden on desktop); bottom nav not used */
+.site-nav--mobile-top,
+.site-nav--mobile-bottom {
+  display: none;
+}
+
+.site-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.site-nav-row .btn {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 8rem;
+  width: auto !important;
+  margin-bottom: 0;
+}
+
+/* ================================================
+   RESPONSIVE: Mobile + Large Screens
+   ================================================ */
+
+/* Phones / small tablets: sticky top nav only, hide sidebar */
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  /* Sidebar is desktop-only */
+  .sidebar {
+    display: none !important;
+  }
+
+  .page-content {
+    width: 100%;
+  }
+
+  .wrapper {
+    padding: 0 0.75rem;
+  }
+
+  .site-nav--mobile-top {
+    display: block;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding-top: max(0.45rem, env(safe-area-inset-top, 0px));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Tighter horizontal padding so four buttons fit (iPhone 12 ~390px) */
+  .site-nav--mobile-top.card {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    padding-bottom: 0.45rem;
+  }
+
+  /* Four small buttons in one row */
+  .site-nav-row {
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    justify-content: stretch;
+  }
+
+  .site-nav-row .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto !important;
+    height: auto;
+    min-height: 2.1rem;
+    padding: 0.3rem 0.12rem;
+    font-size: clamp(0.62rem, 2.9vw, 0.78rem);
+    font-weight: 600;
+    line-height: 1.1;
+    border-width: 1px;
+    white-space: normal;
+    text-align: center;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  /* Any horizontal button row should become full-width on mobile */
+  .button-row .btn {
+    width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Very small phones: scale down headings slightly */
+@media (max-width: 420px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+/* Large screens: allow a bit more width (optional) */
+@media (min-width: 1920px) {
+  .wrapper {
+    max-width: 1800px;
+  }
 }
