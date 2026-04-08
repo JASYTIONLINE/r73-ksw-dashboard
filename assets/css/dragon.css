@@ -38,6 +38,12 @@ a:hover {
   border: 1px solid #ff0000;        /* Bright red border */
 }
 
+/* Dashboard: title + personal fields — single panel (not .card; avoids double chrome) */
+.dashboard-page .dashboard-header-personal {
+  background-color: #220000;
+  border: 1px solid #ff0000;
+}
+
 .box {
   background-color: #330000;        /* Slightly lighter red background */
   border: 1px solid #ffcc00;        /* Gold border */

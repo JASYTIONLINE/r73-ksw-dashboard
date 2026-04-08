@@ -48,14 +48,14 @@
           </section>
         </section>
 
-        <header class="card">
-          <h1>Student Information</h1>
-          <h4>Use this page to view rank requirements, track progress, and request an audit.</h4>
-        </header>
+        <section class="dashboard-header-personal" aria-labelledby="dashboard-page-title">
+          <div class="dashboard-page-header-panel" role="group" aria-labelledby="dashboard-page-title">
+            <h1 id="dashboard-page-title">Student Dashboard</h1>
+            <h4>Use this page to view rank requirements, track progress, and request an audit.</h4>
+          </div>
 
-        <main class="card">
-          <h3>Personal Information</h3>
-          <div class="dashboard-personal-grid">
+          <div class="dashboard-personal-main" role="region" aria-label="Personal information">
+            <div class="dashboard-personal-grid">
             <div class="dashboard-field">
               <p><label for="student-id-number">Student Id Number</label></p>
               <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Student ID">
@@ -130,7 +130,8 @@
               <input id="renewal-date" name="renewal-date" type="date" autocomplete="off">
             </div>
           </div>
-        </main>
+          </div>
+        </section>
 
         <section class="card">
           <h3>Requirements (Preview Only)</h3>
