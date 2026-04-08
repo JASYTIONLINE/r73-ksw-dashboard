@@ -65,6 +65,21 @@ input, select, textarea {
   color: #ffcc00;                   /* Gold text */
 }
 
+.dashboard-page .dashboard-reset-button {
+  background-color: #ffcc00;
+  color: #000000;
+  border-color: #ffa500;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-page .dashboard-reset-button:hover,
+.dashboard-page .dashboard-reset-button:focus {
+  background-color: #b30000;
+  color: #ffffff;
+  border-color: #ffcc00;
+}
+
 /* Focus ring effect */
 input:focus, select:focus, textarea:focus {
   border-color: #ff0000;            /* Red highlight on focus */
@@ -75,6 +90,12 @@ input:focus, select:focus, textarea:focus {
   background-color: #ffcc00;        /* Gold fill */
   color: #000000;                   /* Black text */
   border-color: #ffa500;            /* Orange border */
+}
+
+.dashboard-page .sidebar-backtotop-btn {
+  background-color: #ffcc00;
+  color: #000000;
+  border-color: #ffa500;
 }
 
 .btn:hover {
@@ -150,11 +171,58 @@ code a:hover {
   opacity: 0.95;
 }
 
+.dashboard-page .requirements-section-divider {
+  border-top-color: rgba(255, 204, 0, 0.35);
+}
+
+.dashboard-page .requirement-section-heading {
+  color: #ffcc00;
+}
+
 .dashboard-page .requirement-rank-heading {
   color: #ffcc00;
+}
+
+.dashboard-page .requirement-type-heading {
+  color: #ffcc00;
+}
+
+.dashboard-page .requirement-section-empty {
+  color: #cccccc;
+}
+
+.dashboard-page .requirement-table td {
+  color: #ffffff;
 }
 
 .dashboard-page .requirement-key {
   color: #aaaaaa;
   font-weight: 500;
+}
+
+.dashboard-page .dashboard-modal {
+  background-color: #220000;
+  border: 1px solid #ff0000;
+}
+
+.dashboard-page .dashboard-modal-title {
+  color: #ffcc00;
+}
+
+.dashboard-page .dashboard-modal-body {
+  color: #ffffff;
+}
+
+.dashboard-page .scroll-controls-btn {
+  background-color: #ffcc00;
+  color: #000000;
+  border-color: #ffa500;
+}
+
+.dashboard-page .scroll-controls-btn:hover,
+.dashboard-page .scroll-controls-btn:focus,
+.dashboard-page .scroll-controls-btn:active {
+  background-color: #00aa00;
+  color: #ffffff;
+  border-color: #ffffff;
 }

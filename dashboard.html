@@ -11,6 +11,11 @@
 </head>
 
 <body class="dashboard-page">
+  <a id="top"></a>
+  <div class="scroll-controls" aria-label="Scroll controls">
+    <button type="button" class="scroll-controls-btn" id="scroll-up-btn" aria-label="Scroll up">▲</button>
+    <button type="button" class="scroll-controls-btn" id="scroll-down-btn" aria-label="Scroll down">▼</button>
+  </div>
   <div class="wrapper">
     <nav class="card site-nav site-nav--mobile-top" aria-label="Mobile navigation top">
       <div class="site-nav-row">
@@ -29,6 +34,9 @@
           <a class="btn" href="contact.html">Contact</a>
           <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
         </nav>
+        <div class="sidebar-backtotop">
+          <button type="button" class="btn sidebar-backtotop-btn" id="sidebar-backtotop-btn">Back to top</button>
+        </div>
       </aside>
 
       <div class="page-content">
@@ -129,23 +137,34 @@
               <p><label for="renewal-date">Renewal Date</label></p>
               <input id="renewal-date" name="renewal-date" type="date" autocomplete="off">
             </div>
+            <div class="dashboard-field">
+              <p><label for="reset-dashboard-data">Reset all saved data</label></p>
+              <button id="reset-dashboard-data" type="button" class="dashboard-reset-button">Clear data</button>
+            </div>
           </div>
           </div>
         </section>
-
-        <section class="card">
-          <h3>Testing requirements (by current rank)</h3>
-          <p class="requirements-hint">Cumulative list: all syllabus items with curriculum rank ≤ your belt step. Change <strong>Current Rank</strong> above to refresh.</p>
-          <div id="requirements-status" class="requirements-status" role="status"></div>
-          <div id="requirements-by-rank" class="requirements-by-rank" aria-live="polite"></div>
-        </section>
-
         <section class="card">
           <h3>Progress Summary (Preview Only)</h3>
           <p>Completed requirements: --</p>
           <p>Estimated readiness: --</p>
           <p>Days until test date: --</p>
         </section>
+        <section class="card">
+          <h3>Skills Requirements (by current rank)</h3>
+          <p class="requirements-hint">Lists split by your belt step: <strong>To learn</strong> is what you are working on now (rank equals your step). <strong>Maintain</strong> is everything from lower ranks (rank &lt; your step). Change <strong>Current Rank</strong> above to refresh.</p>
+          <div class="requirements-actions">
+            <button id="export-syllabus-json" class="btn" type="button">Export updated JSON</button>
+            <label id="import-syllabus-json-button" class="btn import-button-label">
+              Import local JSON
+              <input id="import-syllabus-json-input" type="file" accept="application/json" style="display:none">
+            </label>
+          </div>
+          <div id="requirements-status" class="requirements-status" role="status"></div>
+          <div id="requirements-by-rank" class="requirements-by-rank" aria-live="polite"></div>
+        </section>
+
+
 
         <section class="card">
           <h3>Contact Instructor</h3>
@@ -169,10 +188,132 @@
       </div>
     </div>
   </div>
+
+  <div class="dashboard-modal-backdrop" id="requirements-modal-backdrop" aria-hidden="true">
+    <div class="dashboard-modal" role="dialog" aria-modal="true" aria-labelledby="requirements-modal-title">
+      <div class="dashboard-modal-header">
+        <h3 id="requirements-modal-title" class="dashboard-modal-title"></h3>
+      </div>
+      <div class="dashboard-modal-body" id="requirements-modal-body"></div>
+      <div class="dashboard-modal-footer">
+        <button type="button" class="btn dashboard-modal-cancel" id="requirements-modal-cancel">Cancel</button>
+        <button type="button" class="btn dashboard-modal-proceed" id="requirements-modal-proceed">Proceed</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
       var SYLLABUS_URL = 'assets/data/ksw-syllabus.json';
       var syllabusPayload = null;
+      var STATUS_OPTIONS = ['Untrained', 'In Progress', 'Trained', 'Proficient'];
+      var STATUS_STORAGE_KEY = 'kswSyllabusStatusByKey.v1';
+      var USER_STORAGE_KEY = 'kswDashboardUser.v1';
+      var statusByKey = null;
+
+      var modalBackdrop = document.getElementById('requirements-modal-backdrop');
+      var modalTitleEl = document.getElementById('requirements-modal-title');
+      var modalBodyEl = document.getElementById('requirements-modal-body');
+      var modalCancelBtn = document.getElementById('requirements-modal-cancel');
+      var modalProceedBtn = document.getElementById('requirements-modal-proceed');
+
+      var currentModalOnProceed = null;
+      var currentModalOnCancel = null;
+
+      function closeModal() {
+        if (!modalBackdrop) return;
+        modalBackdrop.classList.remove('is-open');
+        modalBackdrop.setAttribute('aria-hidden', 'true');
+        currentModalOnProceed = null;
+        currentModalOnCancel = null;
+      }
+
+      function openModal(options) {
+        if (!modalBackdrop || !modalTitleEl || !modalBodyEl || !modalCancelBtn || !modalProceedBtn) return;
+        var title = options && options.title ? options.title : '';
+        var body = options && options.body ? options.body : '';
+        var proceedLabel = (options && options.proceedLabel) || 'Proceed';
+        var cancelLabel = (options && options.cancelLabel) || 'Cancel';
+
+        modalTitleEl.textContent = title;
+        if (typeof body === 'string') {
+          modalBodyEl.innerHTML = '';
+          var p = document.createElement('p');
+          p.textContent = body;
+          modalBodyEl.appendChild(p);
+        } else {
+          modalBodyEl.innerHTML = '';
+          modalBodyEl.appendChild(body);
+        }
+
+        modalProceedBtn.textContent = proceedLabel;
+        modalCancelBtn.textContent = cancelLabel;
+
+        currentModalOnProceed = typeof options.onProceed === 'function' ? options.onProceed : null;
+        currentModalOnCancel = typeof options.onCancel === 'function' ? options.onCancel : null;
+
+        modalBackdrop.classList.add('is-open');
+        modalBackdrop.setAttribute('aria-hidden', 'false');
+        modalProceedBtn.focus();
+      }
+
+      function normalizeStatus(status) {
+        if (!status) return status;
+        if (status === 'Retrain') return 'In Progress';
+        return status;
+      }
+
+      function safeJsonParse(str, fallback) {
+        try {
+          return JSON.parse(str);
+        } catch (e) {
+          return fallback;
+        }
+      }
+
+      function loadStatusOverrides() {
+        if (statusByKey) return statusByKey;
+        var raw = null;
+        try {
+          raw = localStorage.getItem(STATUS_STORAGE_KEY);
+        } catch (e) {
+          raw = null;
+        }
+        statusByKey = raw ? safeJsonParse(raw, {}) : {};
+        if (!statusByKey || typeof statusByKey !== 'object') statusByKey = {};
+
+        // Migrate legacy value(s) to the current allowed set.
+        var changed = false;
+        Object.keys(statusByKey).forEach(function (k) {
+          var next = normalizeStatus(statusByKey[k]);
+          if (next !== statusByKey[k]) {
+            statusByKey[k] = next;
+            changed = true;
+          }
+        });
+        if (changed) saveStatusOverrides();
+
+        return statusByKey;
+      }
+
+      function saveStatusOverrides() {
+        try {
+          localStorage.setItem(STATUS_STORAGE_KEY, JSON.stringify(statusByKey || {}));
+        } catch (e) {
+          // ignore (private mode / quota)
+        }
+      }
+
+      function applyStatusOverridesToPayload() {
+        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
+        var map = loadStatusOverrides();
+        syllabusPayload.items.forEach(function (it) {
+          if (!it || !it.key) return;
+          if (Object.prototype.hasOwnProperty.call(map, it.key)) {
+            it.status = normalizeStatus(map[it.key]);
+          }
+        });
+      }
 
       function syncRankTitle() {
         var rankSel = document.getElementById('rank');
@@ -180,6 +321,209 @@
         if (!rankSel || !titleOut) return;
         var opt = rankSel.options[rankSel.selectedIndex];
         titleOut.value = opt ? (opt.getAttribute('data-rank-name') || '') : '';
+      }
+
+      function groupItemsByRank(items) {
+        var byRank = {};
+        items.forEach(function (it) {
+          if (!byRank[it.rank]) byRank[it.rank] = [];
+          byRank[it.rank].push(it);
+        });
+        return byRank;
+      }
+
+      function groupItemsByType(items) {
+        var byType = {};
+        items.forEach(function (it) {
+          var t = it.type || 'Unspecified';
+          if (!byType[t]) byType[t] = [];
+          byType[t].push(it);
+        });
+        return byType;
+      }
+
+      function readUserFromForm() {
+        var get = function (id) {
+          var el = document.getElementById(id);
+          return el ? el.value : '';
+        };
+        return {
+          studentIdNumber: get('student-id-number'),
+          studentName: get('student-name'),
+          studentAge: get('student-age'),
+          schoolLocation: get('school-location'),
+          rank: get('rank'),
+          rankTitle: get('rank-title'),
+          eligibleForTesting: get('eligible-for-testing'),
+          testDate: get('test-date'),
+          memberLevel: get('member-level'),
+          memberSince: get('member-since'),
+          renewalDate: get('renewal-date')
+        };
+      }
+
+      function loadUserFromStorage() {
+        var raw = null;
+        try {
+          raw = localStorage.getItem(USER_STORAGE_KEY);
+        } catch (e) {
+          raw = null;
+        }
+        if (!raw) return null;
+        var user = safeJsonParse(raw, null);
+        if (!user || typeof user !== 'object') return null;
+        return user;
+      }
+
+      function saveUserToStorage() {
+        try {
+          localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(readUserFromForm()));
+        } catch (e) {
+          // ignore (private mode / quota)
+        }
+      }
+
+      function writeUserToForm(user) {
+        if (!user || typeof user !== 'object') return;
+        var set = function (id, value) {
+          var el = document.getElementById(id);
+          if (!el || value == null) return;
+          el.value = value;
+        };
+
+        set('student-id-number', user.studentIdNumber);
+        set('student-name', user.studentName);
+        set('student-age', user.studentAge);
+        set('school-location', user.schoolLocation);
+        set('rank', user.rank);
+        set('rank-title', user.rankTitle);
+        set('eligible-for-testing', user.eligibleForTesting);
+        set('test-date', user.testDate);
+        set('member-level', user.memberLevel);
+        set('member-since', user.memberSince);
+        set('renewal-date', user.renewalDate);
+
+        syncRankTitle();
+      }
+
+      function appendRankGroups(parent, items, labels) {
+        if (!items.length) return;
+        var byRank = groupItemsByRank(items);
+        var ranks = Object.keys(byRank)
+          .map(function (x) {
+            return parseInt(x, 10);
+          })
+          .sort(function (a, b) {
+            return a - b;
+          });
+
+        ranks.forEach(function (tier) {
+          var group = byRank[tier];
+          group.sort(function (a, b) {
+            var ac = a.count != null ? a.count : 0;
+            var bc = b.count != null ? b.count : 0;
+            return ac - bc;
+          });
+
+          var wrap = document.createElement('div');
+          wrap.className = 'requirement-rank-group';
+
+          var h = document.createElement('h4');
+          h.className = 'requirement-rank-heading';
+          var belt = labels[String(tier)] || 'Tier ' + tier;
+          h.textContent = 'Curriculum rank ' + tier + ' — ' + belt;
+          wrap.appendChild(h);
+
+          var byType = groupItemsByType(group);
+          var types = Object.keys(byType).sort(function (a, b) {
+            return a.localeCompare(b);
+          });
+
+          types.forEach(function (typeName) {
+            var typeHeading = document.createElement('h5');
+            typeHeading.className = 'requirement-type-heading';
+            typeHeading.textContent = typeName;
+            wrap.appendChild(typeHeading);
+
+            var tableWrap = document.createElement('div');
+            tableWrap.className = 'requirement-table-wrap';
+
+            var table = document.createElement('table');
+            table.className = 'requirement-table';
+
+            var thead = document.createElement('thead');
+            var headRow = document.createElement('tr');
+            ['Description', 'Learning Objective', 'Status'].forEach(function (label) {
+              var th = document.createElement('th');
+              th.textContent = label;
+              headRow.appendChild(th);
+            });
+            thead.appendChild(headRow);
+            table.appendChild(thead);
+
+            var tbody = document.createElement('tbody');
+            byType[typeName].forEach(function (it) {
+              var tr = document.createElement('tr');
+              var descriptionTd = document.createElement('td');
+              descriptionTd.textContent = it.description || '';
+              tr.appendChild(descriptionTd);
+
+              var objectiveTd = document.createElement('td');
+              objectiveTd.textContent = it.name || '';
+              tr.appendChild(objectiveTd);
+
+              var statusTd = document.createElement('td');
+              var statusSel = document.createElement('select');
+              statusSel.className = 'requirement-status-select';
+              if (it.key) statusSel.setAttribute('data-item-key', it.key);
+              var currentStatus = normalizeStatus(it.status) || 'Untrained';
+              STATUS_OPTIONS.forEach(function (statusValue) {
+                var opt = document.createElement('option');
+                opt.value = statusValue;
+                opt.textContent = statusValue;
+                if (statusValue === currentStatus) opt.selected = true;
+                statusSel.appendChild(opt);
+              });
+              if (STATUS_OPTIONS.indexOf(currentStatus) === -1) {
+                var fallbackOpt = document.createElement('option');
+                fallbackOpt.value = currentStatus;
+                fallbackOpt.textContent = currentStatus;
+                fallbackOpt.selected = true;
+                statusSel.appendChild(fallbackOpt);
+              }
+              statusTd.appendChild(statusSel);
+              tr.appendChild(statusTd);
+
+              tbody.appendChild(tr);
+            });
+            table.appendChild(tbody);
+            tableWrap.appendChild(table);
+            wrap.appendChild(tableWrap);
+          });
+
+          parent.appendChild(wrap);
+        });
+      }
+
+      function appendMajorSection(container, headingText, items, labels, emptyMessage) {
+        var section = document.createElement('div');
+        section.className = 'requirement-major-section';
+        var h = document.createElement('h3');
+        h.className = 'requirement-section-heading';
+        h.textContent = headingText;
+        section.appendChild(h);
+        if (!items.length) {
+          var p = document.createElement('p');
+          p.className = 'requirement-section-empty';
+          p.textContent = emptyMessage;
+          section.appendChild(p);
+        } else {
+          var groupsWrap = document.createElement('div');
+          groupsWrap.className = 'requirement-groups';
+          appendRankGroups(groupsWrap, items, labels);
+          section.appendChild(groupsWrap);
+        }
+        container.appendChild(section);
       }
 
       function renderRequirements() {
@@ -202,63 +546,39 @@
         }
 
         var labels = syllabusPayload.beltStepLabels || {};
-        var items = syllabusPayload.items.filter(function (it) {
-          return it.rank <= R;
+        var maintainItems = syllabusPayload.items.filter(function (it) {
+          return it.rank < R;
         });
-
-        var byRank = {};
-        items.forEach(function (it) {
-          if (!byRank[it.rank]) byRank[it.rank] = [];
-          byRank[it.rank].push(it);
+        var learnItems = syllabusPayload.items.filter(function (it) {
+          return it.rank === R;
         });
-
-        var ranks = Object.keys(byRank)
-          .map(function (x) {
-            return parseInt(x, 10);
-          })
-          .sort(function (a, b) {
-            return a - b;
-          });
 
         container.innerHTML = '';
 
-        ranks.forEach(function (tier) {
-          var group = byRank[tier];
-          group.sort(function (a, b) {
-            var ac = a.count != null ? a.count : 0;
-            var bc = b.count != null ? b.count : 0;
-            return ac - bc;
-          });
+        appendMajorSection(
+          container,
+          'Rank ' + R + ' — to learn',
+          learnItems,
+          labels,
+          'No syllabus items found for your current step.'
+        );
 
-          var wrap = document.createElement('div');
-          wrap.className = 'requirement-rank-group';
+        var sectionDivider = document.createElement('hr');
+        sectionDivider.className = 'requirements-section-divider';
+        sectionDivider.setAttribute('aria-hidden', 'true');
+        container.appendChild(sectionDivider);
 
-          var h = document.createElement('h4');
-          h.className = 'requirement-rank-heading';
-          var belt = labels[String(tier)] || 'Tier ' + tier;
-          h.textContent = 'Curriculum rank ' + tier + ' — ' + belt;
-          wrap.appendChild(h);
+        appendMajorSection(
+          container,
+          'Rank < ' + R + ' — maintain',
+          maintainItems,
+          labels,
+          R <= 1
+            ? 'You are on the first belt step; there is nothing below your rank to list here.'
+            : 'No syllabus items found for ranks below your step.'
+        );
 
-          var ul = document.createElement('ul');
-          ul.className = 'requirement-list';
-          group.forEach(function (it) {
-            var li = document.createElement('li');
-            li.className = 'requirement-item';
-            li.appendChild(document.createTextNode(it.name || it.key));
-            if (it.key && it.name) {
-              li.appendChild(document.createTextNode(' '));
-              var k = document.createElement('span');
-              k.className = 'requirement-key';
-              k.textContent = '(' + it.key + ')';
-              li.appendChild(k);
-            }
-            ul.appendChild(li);
-          });
-          wrap.appendChild(ul);
-          container.appendChild(wrap);
-        });
-
-        if (statusEl && items.length === 0) {
+        if (statusEl && maintainItems.length === 0 && learnItems.length === 0) {
           statusEl.textContent = 'No syllabus items for this selection.';
         }
       }
@@ -275,6 +595,10 @@
           })
           .then(function (data) {
             syllabusPayload = data;
+            applyStatusOverridesToPayload();
+            if (data && data.user) {
+              writeUserToForm(data.user);
+            }
             done(null);
           })
           .catch(function () {
@@ -282,13 +606,191 @@
           });
       }
 
+      function exportUpdatedJson() {
+        if (!syllabusPayload) return;
+        saveUserToStorage();
+        var payloadToSave = {};
+        Object.keys(syllabusPayload).forEach(function (k) {
+          if (k === 'user') return;
+          payloadToSave[k] = syllabusPayload[k];
+        });
+        payloadToSave.user = readUserFromForm();
+
+        var jsonText = JSON.stringify(payloadToSave, null, 2);
+        var blob = new Blob([jsonText], { type: 'application/json' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'ksw-syllabus.json';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function () {
+          URL.revokeObjectURL(url);
+        }, 1000);
+      }
+
       var rankSel = document.getElementById('rank');
       if (rankSel) {
         rankSel.addEventListener('change', function () {
           syncRankTitle();
           renderRequirements();
+          saveUserToStorage();
         });
         syncRankTitle();
+      }
+
+      // Restore any saved personal info immediately (before/independent of syllabus fetch).
+      var savedUser = loadUserFromStorage();
+      if (savedUser) {
+        writeUserToForm(savedUser);
+      }
+
+      [
+        'student-id-number',
+        'student-name',
+        'student-age',
+        'school-location',
+        'eligible-for-testing',
+        'test-date',
+        'member-level',
+        'member-since',
+        'renewal-date'
+      ].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var evtName = el.tagName === 'INPUT' ? 'input' : 'change';
+        el.addEventListener(evtName, function () {
+          saveUserToStorage();
+        });
+        // Also capture changes for inputs that don’t fire input reliably (dates)
+        el.addEventListener('change', function () {
+          saveUserToStorage();
+        });
+      });
+
+      var exportBtn = document.getElementById('export-syllabus-json');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', function () {
+          openModal({
+            title: 'Export updated JSON',
+            body: 'Exporting saves your curriculum data and personal info to a JSON file on this device. Recommended: create a \"KSW-Dashboard\" folder in your Documents and save the file there as \"ksw-syllabus.json\".',
+            proceedLabel: 'Proceed to export',
+            cancelLabel: 'Cancel',
+            onProceed: function () {
+              exportUpdatedJson();
+              closeModal();
+              var statusEl = document.getElementById('requirements-status');
+              if (statusEl) statusEl.textContent = 'Exported updated JSON. Save it somewhere safe (for example, Documents/KSW-Dashboard).';
+            },
+            onCancel: function () {
+              closeModal();
+            }
+          });
+        });
+      }
+
+      var importLabel = document.getElementById('import-syllabus-json-button');
+      var importInput = document.getElementById('import-syllabus-json-input');
+      var pendingImportedData = null;
+
+      if (importLabel && importInput) {
+        importLabel.addEventListener('click', function (evt) {
+          evt.preventDefault();
+          openModal({
+            title: 'Import local JSON',
+            body: 'Import is only needed if you cleared your browser cache or site data and lost your saved progress. Use this if you previously exported a \"ksw-syllabus.json\" backup (for example, from Documents/KSW-Dashboard).',
+            proceedLabel: 'Choose file to import',
+            cancelLabel: 'Cancel',
+            onProceed: function () {
+              closeModal();
+              importInput.click();
+            },
+            onCancel: function () {
+              closeModal();
+            }
+          });
+        });
+
+        importInput.addEventListener('change', function () {
+          var file = importInput.files && importInput.files[0];
+          if (!file) return;
+
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            try {
+              var text = e.target.result;
+              var data = JSON.parse(text);
+              if (!data || typeof data !== 'object' || !Array.isArray(data.items)) {
+                openModal({
+                  title: 'Import error',
+                  body: 'The selected file does not look like a KSW syllabus JSON export. Please choose a file that was exported from this dashboard.',
+                  proceedLabel: 'Close',
+                  cancelLabel: 'Cancel',
+                  onProceed: function () {
+                    closeModal();
+                  },
+                  onCancel: function () {
+                    closeModal();
+                  }
+                });
+                return;
+              }
+              pendingImportedData = data;
+              openModal({
+                title: 'Confirm import',
+                body: 'This will overwrite the current in-browser data and restore your curriculum, personal info, and saved progress from the selected JSON file. Continue?',
+                proceedLabel: 'Proceed with import',
+                cancelLabel: 'Cancel',
+                onProceed: function () {
+                  closeModal();
+                  if (!pendingImportedData) return;
+                  syllabusPayload = pendingImportedData;
+                  applyStatusOverridesToPayload();
+                  if (pendingImportedData.user) {
+                    writeUserToForm(pendingImportedData.user);
+                    saveUserToStorage();
+                  }
+                  // Rebuild localStorage map from imported statuses
+                  statusByKey = {};
+                  if (Array.isArray(syllabusPayload.items)) {
+                    syllabusPayload.items.forEach(function (it) {
+                      if (!it || !it.key) return;
+                      if (it.status) {
+                        statusByKey[it.key] = normalizeStatus(it.status);
+                      }
+                    });
+                    saveStatusOverrides();
+                  }
+                  renderRequirements();
+                  var statusEl = document.getElementById('requirements-status');
+                  if (statusEl) statusEl.textContent = 'Imported data from local JSON.';
+                  pendingImportedData = null;
+                },
+                onCancel: function () {
+                  closeModal();
+                  pendingImportedData = null;
+                }
+              });
+            } catch (err) {
+              openModal({
+                title: 'Import error',
+                body: 'Could not read JSON file: ' + err.message,
+                proceedLabel: 'Close',
+                cancelLabel: 'Cancel',
+                onProceed: function () {
+                  closeModal();
+                },
+                onCancel: function () {
+                  closeModal();
+                }
+              });
+            } finally {
+              importInput.value = '';
+            }
+          };
+          reader.readAsText(file);
+        });
       }
 
       loadSyllabus(function (err) {
@@ -302,6 +804,203 @@
         if (statusEl) statusEl.textContent = '';
         renderRequirements();
       });
+
+      if (modalCancelBtn && modalProceedBtn && modalBackdrop) {
+        modalCancelBtn.addEventListener('click', function () {
+          if (currentModalOnCancel) currentModalOnCancel();
+          else closeModal();
+        });
+        modalProceedBtn.addEventListener('click', function () {
+          if (currentModalOnProceed) currentModalOnProceed();
+          else closeModal();
+        });
+        modalBackdrop.addEventListener('click', function (evt) {
+          if (evt.target === modalBackdrop) {
+            if (currentModalOnCancel) currentModalOnCancel();
+            else closeModal();
+          }
+        });
+        document.addEventListener('keydown', function (evt) {
+          if (evt.key === 'Escape' && modalBackdrop.classList.contains('is-open')) {
+            if (currentModalOnCancel) currentModalOnCancel();
+            else closeModal();
+          }
+        });
+      }
+
+      var resetBtn = document.getElementById('reset-dashboard-data');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          openModal({
+            title: 'Reset all saved data',
+            body: 'Are you sure you want to reset all data fields? This will clear your saved personal info and progress on this device, and reload the original dashboard data.',
+            proceedLabel: 'Yes, reset',
+            cancelLabel: 'Cancel',
+            onProceed: function () {
+              closeModal();
+              try {
+                localStorage.removeItem(STATUS_STORAGE_KEY);
+                localStorage.removeItem(USER_STORAGE_KEY);
+              } catch (e) {}
+
+              statusByKey = null;
+              syllabusPayload = null;
+
+              var statusEl = document.getElementById('requirements-status');
+              if (statusEl) statusEl.textContent = 'Resetting…';
+
+              // Reset form fields back to their initial defaults.
+              var formIds = [
+                'student-id-number',
+                'student-name',
+                'student-age',
+                'school-location',
+                'rank',
+                'rank-title',
+                'eligible-for-testing',
+                'test-date',
+                'member-level',
+                'member-since',
+                'renewal-date'
+              ];
+              formIds.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                if (el.tagName === 'SELECT') {
+                  el.selectedIndex = 0;
+                } else {
+                  el.value = '';
+                }
+              });
+              syncRankTitle();
+
+              // Reload original JSON from GitHub (cache-bust).
+              var originalUrl = SYLLABUS_URL + '?t=' + Date.now();
+              fetch(originalUrl)
+                .then(function (res) {
+                  if (!res.ok) throw new Error('HTTP ' + res.status);
+                  return res.json();
+                })
+                .then(function (data) {
+                  syllabusPayload = data;
+                  applyStatusOverridesToPayload();
+                  if (data && data.user) {
+                    writeUserToForm(data.user);
+                  }
+                  renderRequirements();
+                  if (statusEl) statusEl.textContent = 'All saved data cleared.';
+                })
+                .catch(function () {
+                  if (statusEl) statusEl.textContent = 'Reset completed, but could not reload curriculum data.';
+                  renderRequirements();
+                });
+            },
+            onCancel: function () {
+              closeModal();
+            }
+          });
+        });
+      }
+
+      document.addEventListener('change', function (e) {
+        var t = e.target;
+        if (!t || !t.classList || !t.classList.contains('requirement-status-select')) return;
+        var key = t.getAttribute('data-item-key');
+        if (!key) return;
+        var value = normalizeStatus(t.value);
+
+        loadStatusOverrides();
+        statusByKey[key] = value;
+        saveStatusOverrides();
+        if (syllabusPayload && Array.isArray(syllabusPayload.items)) {
+          syllabusPayload.items.forEach(function (it) {
+            if (it && it.key === key) it.status = value;
+          });
+        }
+
+        var statusEl = document.getElementById('requirements-status');
+        if (statusEl) statusEl.textContent = 'Saved status for ' + key + '.';
+      });
+
+      var backToTopBtn = document.getElementById('sidebar-backtotop-btn');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      function getCategoryTargets() {
+        // Jump across headers on the whole page content column (top to bottom).
+        // Excludes sidebar/footer/nav and excludes the modal, since those are outside .page-content.
+        var root = document.querySelector('.page-content');
+        if (!root) return [];
+        // Also exclude headings inside the dynamic requirements list so arrows can exit that area.
+        return Array.prototype.slice
+          .call(root.querySelectorAll('h1,h2,h3,h4,h5,h6'))
+          .filter(function (h) {
+            return !h.closest('#requirements-by-rank');
+          });
+      }
+
+      function jumpToCategory(direction) {
+        var targets = getCategoryTargets();
+        if (!targets.length) return;
+
+        var threshold = 120; // px from top
+        var currentIndex = 0;
+
+        // Use the last heading above the threshold as the current one.
+        for (var i = 0; i < targets.length; i++) {
+          var top = targets[i].getBoundingClientRect().top;
+          if (top - threshold <= 0) {
+            currentIndex = i;
+          } else {
+            break;
+          }
+        }
+
+        var nextIndex = currentIndex + direction;
+        if (nextIndex < 0) nextIndex = 0;
+        if (nextIndex >= targets.length) nextIndex = targets.length - 1;
+
+        targets[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function bindJump(btn, direction) {
+        if (!btn) return;
+        var lastJumpAt = 0;
+
+        btn.addEventListener('pointerdown', function (evt) {
+          evt.preventDefault();
+          lastJumpAt = Date.now();
+          jumpToCategory(direction);
+        });
+
+        btn.addEventListener('click', function (evt) {
+          // Skip the synthetic click that can fire after pointerdown
+          if (Date.now() - lastJumpAt < 250) {
+            evt.preventDefault();
+            return;
+          }
+          jumpToCategory(direction);
+        });
+      }
+
+      bindJump(document.getElementById('scroll-up-btn'), -1);
+      bindJump(document.getElementById('scroll-down-btn'), 1);
+
+      function positionScrollControls() {
+        var controls = document.querySelector('.scroll-controls');
+        var content = document.querySelector('.page-content');
+        if (!controls || !content) return;
+        var rect = content.getBoundingClientRect();
+        // Position 24px to the right of the content section
+        controls.style.left = (rect.right + 24) + 'px';
+      }
+
+      window.addEventListener('resize', positionScrollControls);
+      window.addEventListener('load', positionScrollControls);
+      positionScrollControls();
 
       ['member-since', 'renewal-date', 'test-date'].forEach(function (id) {
         var el = document.getElementById(id);
