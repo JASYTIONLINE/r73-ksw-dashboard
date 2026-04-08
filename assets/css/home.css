@@ -1,0 +1,482 @@
+/* Homepage — gold field + maroon panels */
+:root {
+  --home-gold-field: #e1ad21;
+  --home-maroon: #4d1414;
+  --home-text-on-dark: #ffffff;
+}
+
+.home-page {
+  margin: 0;
+  min-height: 100vh;
+  /* Gold lives on .wrapper only so it stops at the site max-width */
+  background-color: #000000;
+  color: var(--home-text-on-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.home-page .wrapper {
+  background-color: var(--home-gold-field);
+  min-height: 100vh;
+}
+
+.home-page .sidebar.card {
+  border-color: #000000;
+}
+
+.home-page * {
+  box-sizing: border-box;
+}
+
+/* Flex child for shared layout */
+.home-shell {
+  min-width: 0;
+}
+
+/*
+ * PC (≥1024px): lock document to one viewport height — no window scroll;
+ * content scrolls inside .home-main only. Fits typical 1080p-class screens.
+ */
+@media (min-width: 1024px) {
+  html:has(.home-page) {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body:has(.home-page) {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .home-page {
+    min-height: 0;
+    height: 100%;
+    max-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .home-page .wrapper {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .home-page .page-layout {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: stretch;
+  }
+
+  .home-page .home-shell {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .home-page .home-header {
+    flex-shrink: 0;
+    position: relative;
+    top: auto;
+  }
+
+  .home-page .home-main {
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tighter vertical rhythm on shorter desktop viewports (e.g. 1080p height) */
+@media (min-width: 1024px) and (max-height: 1080px) {
+  .home-page .home-main {
+    padding: 0.65rem 0;
+  }
+
+  .home-page .home-row {
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .home-page .home-flag-cell img {
+    max-width: min(240px, 22vh);
+  }
+
+  .home-page .home-profile img {
+    max-width: min(200px, 28vh);
+  }
+
+  .home-page .home-logo {
+    max-width: min(160px, 18vh);
+  }
+}
+
+/* Sticky club header (desktop: below sticky mobile bar is hidden; mobile: avoid stacking under site nav) */
+.home-header {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.425rem 0.5rem;
+  background-color: var(--home-maroon);
+  border: 2px solid #2a0a0a;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.home-header-title {
+  flex: 1;
+  margin: 0;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--home-text-on-dark);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.home-header-wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+}
+
+@media (max-width: 600px) {
+  .home-header-title {
+    padding: 0 0.25rem;
+  }
+}
+
+/* Shared mobile top nav stays on top; club bar scrolls with content */
+@media (max-width: 768px) {
+  .home-page .home-header {
+    position: relative;
+    top: auto;
+    z-index: 1;
+  }
+}
+
+/* CTA: same maroon panel + border as .home-panel; flex column for copy + bottom-left .btn */
+.home-page .home-panel.calltoaction {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: auto;
+  text-align: left;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+.home-page .home-panel.calltoaction h2 {
+  margin-top: 0;
+  margin-bottom: 0.65em;
+  text-align: center;
+  line-height: 1.3;
+  color: var(--home-text-on-dark);
+}
+
+.home-page .home-panel.calltoaction p {
+  line-height: 1.55;
+}
+
+.home-page .home-panel.calltoaction p:last-of-type {
+  margin-bottom: 0;
+}
+
+.calltoaction-footer {
+  margin-top: 1.25rem;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Match site .btn colors/border (dragon theme); full-width in CTA card */
+.home-page .calltoaction-btn {
+  height: auto;
+  min-height: 2.75rem;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.55rem 1.15rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.25;
+}
+
+.home-page .calltoaction-btn-primary {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  font-weight: 800;
+}
+
+.home-page .calltoaction-btn-sub {
+  font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.home-page .calltoaction-btn:hover .calltoaction-btn-sub {
+  opacity: 1;
+}
+
+@keyframes calltoaction-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.home-page .calltoaction-btn.is-pulsing {
+  transform-origin: center center;
+  animation: calltoaction-pulse 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .calltoaction-btn.is-pulsing {
+    animation: none;
+  }
+}
+
+.home-main {
+  width: 100%;
+  margin: 0;
+  /* 1rem top/bottom to match .home-row gap (was 1.25rem, read as ~2× neighbors) */
+  padding: 1rem 0;
+}
+
+/* Row grids */
+.home-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .home-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Leadership row: logo + club message before portraits when stacked */
+  .home-main > section.home-row:nth-child(2) .home-center-col {
+    order: -1;
+  }
+}
+
+.home-flag-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.home-flag-cell img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 2px solid var(--home-maroon);
+}
+
+.home-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.home-profile img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid var(--home-maroon);
+  object-fit: cover;
+}
+
+.home-profile figcaption {
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.home-center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.home-logo {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid var(--home-maroon);
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+.home-panel {
+  background-color: var(--home-maroon);
+  color: var(--home-text-on-dark);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #2a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100px;
+}
+
+.home-quote {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.45;
+  font-weight: 600;
+  width: 100%;
+  min-height: auto;
+  padding: 1.25rem 1rem;
+}
+
+/* Mind / Body / Soul */
+.home-philosophy .home-panel {
+  min-height: 48px;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.home-footer-contact {
+  text-align: center;
+  padding: 1rem;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Phones & small tablets: spacing, safe areas, readable type */
+@media (max-width: 768px) {
+  .home-page .wrapper {
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-main {
+    padding: 1rem max(0.5rem, env(safe-area-inset-left, 0px))
+      calc(1rem + env(safe-area-inset-bottom, 0px))
+      max(0.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-header {
+    padding: 0.325rem max(0.25rem, env(safe-area-inset-left, 0px)) 0.325rem
+      max(0.25rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-header-title {
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    font-size: clamp(1.05rem, 4.2vw, 1.85rem);
+  }
+
+  .home-row {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Flags: KSW only (hide US and Korea) */
+  .home-main > section.home-row:first-child .home-flag-cell:nth-child(1),
+  .home-main > section.home-row:first-child .home-flag-cell:nth-child(3) {
+    display: none;
+  }
+
+  .home-flag-cell {
+    padding: 0.35rem;
+  }
+
+  .home-flag-cell img {
+    max-width: min(260px, 100%);
+  }
+
+  .home-main > section.home-row:first-child .home-flag-cell:nth-child(2) img {
+    max-width: min(300px, 92vw);
+  }
+
+  .home-profile img {
+    max-width: min(200px, 76vw);
+  }
+
+  .home-logo {
+    display: none;
+  }
+
+  .home-panel {
+    min-height: 88px;
+    padding: 0.875rem;
+  }
+
+  .home-page .home-panel.calltoaction {
+    min-height: auto;
+  }
+
+  .home-quote {
+    min-height: auto;
+    font-size: clamp(0.9375rem, 3.6vw, 1rem);
+    line-height: 1.5;
+    padding: 1rem 0.875rem;
+    max-width: none;
+  }
+
+  .home-philosophy .home-panel {
+    min-height: 32px;
+    font-size: clamp(1.25rem, 6.5vw, 1.85rem);
+    letter-spacing: 0.1em;
+  }
+
+  .home-profile figcaption {
+    font-size: 0.9375rem;
+  }
+
+  .home-footer-contact {
+    font-size: clamp(0.875rem, 3.2vw, 1rem);
+    line-height: 1.45;
+    padding: 1rem max(0.5rem, env(safe-area-inset-left, 0px)) 1.25rem
+      max(0.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (max-width: 380px) {
+  .home-header-title {
+    letter-spacing: 0.02em;
+  }
+}

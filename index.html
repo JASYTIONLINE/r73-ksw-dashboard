@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brownsville Kuk Sool Won Dashboard</title>
+  <title>Brownsville Kuk Sool Won</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dragon.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
+
+<body class="home-page">
   <div class="wrapper">
     <nav class="card site-nav site-nav--mobile-top" aria-label="Mobile navigation top">
       <div class="site-nav-row">
@@ -19,44 +22,112 @@
     </nav>
 
     <div class="page-layout">
-    <aside class="sidebar card">
-      <nav class="sidebar-nav" aria-label="Primary navigation">
-        <a class="btn" href="index.html">Home</a>
-        <a class="btn" href="dashboard.html">Dashboard</a>
-        <a class="btn" href="about.html">About</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </nav>
-    </aside>
+      <aside class="sidebar card">
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="dashboard.html">Dashboard</a>
+          <a class="btn" href="about.html">About</a>
+          <a class="btn" href="contact.html">Contact</a>
+        </nav>
+      </aside>
 
-    <div class="page-content">
-      <header class="card">
-        <h1>Brownsville Kuk Sool Won</h1>
-        <h2>Student Progress Dashboard</h2>
-        <p>Welcome. This site helps students track rank requirements and prepare for upcoming testing dates.</p>
-        <div class="button-row">
-          <a class="btn" href="dashboard.html">Enter Dashboard</a>
-        </div>
-      </header>
+      <div class="page-content home-shell">
+        <header class="home-header">
+          <div class="home-header-wrap">
+            <h1 class="home-header-title">Brownsville Kuk Sool Won</h1>
+          </div>
+        </header>
 
-      <main class="card">
-        <h3>App Purpose</h3>
-        <p>
-          The dashboard is a simple student tool for selecting rank, setting the next testing date, and viewing required
-          material by category.
-        </p>
-        <p>
-          Students can update their requirement status and keep progress saved locally in the browser between sessions.
-        </p>
-        <p>
-          When ready, students can request an audit from the instructor through the dashboard.
-        </p>
-      </main>
+        <main class="home-main">
+          <!-- Row 1: Flags -->
+          <section class="home-row" aria-label="Association flags">
+            <div class="home-flag-cell">
+              <img src="assets/images/usa-flag.png" alt="United States flag" width="280" height="160">
+            </div>
+            <div class="home-flag-cell">
+              <img src="assets/images/ksw-flag.png" alt="World Kuk Sool Association flag" width="280" height="160">
+            </div>
+            <div class="home-flag-cell">
+              <img src="assets/images/korea-flag.png" alt="South Korea flag" width="280" height="160">
+            </div>
+          </section>
 
-      <footer class="card">
-        <p>Brownsville Kuk Sool Won — Focused training, clear progress, consistent preparation.</p>
-      </footer>
-    </div>
+          <!-- Row 2: Profiles and center content -->
+          <section class="home-row" aria-label="Leadership and club message">
+            <figure class="home-profile">
+              <img src="assets/images/ksn-profile.png" alt="Grandmaster portrait" width="220" height="280">
+              <figcaption>Grandmaster</figcaption>
+            </figure>
+
+            <div class="home-center-col">
+              <img class="home-logo" src="assets/images/ksw-logo-black%20on%20gold.bmp" alt="Kuk Sool Won logo"
+                width="180" height="180">
+              <div class="home-panel home-quote">
+                A Black Belt is a White Belt Who Never Gave Up — We are a Black Belt Club
+              </div>
+            </div>
+
+            <figure class="home-profile">
+              <img src="assets/images/jkjn-sosa-headshot.png" alt="JKJN Raul Sosa" width="220" height="280">
+              <figcaption>JKJN Raul Sosa</figcaption>
+            </figure>
+          </section>
+
+          <section class="home-panel calltoaction" aria-labelledby="calltoaction-heading">
+            <h2 id="calltoaction-heading">Learn From the top Martial Arts experts in the Brownsville area!</h2>
+            <p>Raul Sosa's lifelong dream has become a reality with our school in Brownsville, Texas, where we've
+              cultivated an engaging atmosphere for students to enhance their fitness and bolster their confidence,
+              ready to tackle life's challenges head-on.</p>
+            <p>Our programs prioritize both the physical and mental growth of our students. Our dedicated instructors
+              provide individualized guidance, enabling students to excel in essential life skills like discipline,
+              resilience, teamwork, and self-confidence, all while achieving a fit and toned physique.</p>
+            <p>Don't miss out on our fantastic web specials. Join us now as we empower ourselves and our community
+              through the transformative power of martial arts!</p>
+            <div class="calltoaction-footer">
+              <a class="btn calltoaction-btn"
+                href="mailto:johnbarkle@msn.com?subject=Free%20introductory%20session%20request&body=Hello%2C%0A%0APlease%20contact%20me%20to%20arrange%20a%20free%20introductory%20session%20at%20Brownsville%20Kuk%20Sool%20Won.%0A%0AI%20can%20be%20reached%20at%20this%20email%20address%20%E2%80%94%20feel%20free%20to%20call%20or%20reply%20with%20times%20that%20work.%0A%0AThank%20you."
+                aria-label="Email the instructor to request a free introductory session">
+                <span class="calltoaction-btn-primary">Secure Your First Class</span>
+                <span class="calltoaction-btn-sub">Beginner classes enrolling right now!</span>
+              </a>
+            </div>
+          </section>
+
+          <!-- Row 3: Philosophy -->
+          <section class="home-row home-philosophy" aria-label="Mind Body Soul">
+            <div class="home-panel">Mind</div>
+            <div class="home-panel">Body</div>
+            <div class="home-panel">Soul</div>
+          </section>
+
+          <p class="home-footer-contact">
+            Brownsville Kuk Sool Won<br>
+            1601 E Alton Gloor Blvd #110<br>
+            Brownsville, TX 78526<br>
+            956-371-8431
+          </p>
+        </main>
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.calltoaction-btn');
+      if (!btn) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      function cycle() {
+        setTimeout(function () {
+          btn.classList.add('is-pulsing');
+          setTimeout(function () {
+            btn.classList.remove('is-pulsing');
+            setTimeout(cycle, 10000);
+          }, 2000);
+        }, 15000);
+      }
+      cycle();
+    })();
+  </script>
 </body>
+
 </html>

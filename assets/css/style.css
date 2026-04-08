@@ -298,6 +298,11 @@ pre {
   min-width: 220px;
 }
 
+/* Tighter chrome than generic .card (1.5rem) */
+.sidebar.card {
+  padding: 0.75rem;
+}
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -307,6 +312,9 @@ pre {
 .sidebar-nav .btn {
   width: 100% !important;
   margin-bottom: 0;
+  height: auto;
+  padding: 8px;
+  min-height: 0;
 }
 
 .page-content {
@@ -365,7 +373,6 @@ pre {
     top: 0;
     z-index: 20;
     padding-top: max(0.45rem, env(safe-area-inset-top, 0px));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 
   /* Tighter horizontal padding so four buttons fit (iPhone 12 ~390px) */
@@ -392,7 +399,7 @@ pre {
     font-size: clamp(0.62rem, 2.9vw, 0.78rem);
     font-weight: 600;
     line-height: 1.1;
-    border-width: 1px;
+    border-width: 2px;
     white-space: normal;
     text-align: center;
     hyphens: auto;
@@ -420,5 +427,24 @@ pre {
 @media (min-width: 1920px) {
   .wrapper {
     max-width: 1800px;
+  }
+}
+
+/* Desktop (PC): no horizontal page scroll; avoid 100vw + scrollbar overflow */
+@media (min-width: 1024px) {
+  html {
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
 }

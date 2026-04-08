@@ -29,7 +29,7 @@ a {
   color: #cccccc;                   /* Light grey links */
 }
 a:hover {
-  color: #ff0000;                   /* Red hover state */
+  color: #ffffff;                   /* Light hover on dark theme; pairs with WKSA blue accents */
 }
 
 /* Containers: card and box backgrounds + borders */
@@ -72,8 +72,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .btn:hover {
-  background-color: #ff0000;        /* Red fill on hover */
-  color: #000000;
+  background-color: #001489;        /* WKSA flag field blue */
+  color: #ffffff;
+  border-color: #000f6a;
 }
 
 /* Visual separator */
@@ -96,4 +97,16 @@ code, pre {
 
 code a {
   color: #ff0000;
+}
+
+code a:hover {
+  color: #ffffff;
+}
+
+/* Mobile top nav: same red outline + radius as other .card blocks */
+@media (max-width: 768px) {
+  .site-nav--mobile-top.card {
+    border: 1px solid #ff0000;
+    border-radius: 6px;
+  }
 }
