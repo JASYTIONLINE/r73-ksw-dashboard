@@ -29,6 +29,30 @@
   box-sizing: border-box;
 }
 
+.home-page .sidebar.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gold address card inside sidebar, visually aligned near CTA section */
+.sidebar-address-card {
+  margin-top: clamp(1.5rem, 12vh, 6rem);
+  margin-bottom: 0;
+  padding: 0.75rem;
+  background: #ffcc00;
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  color: #000000;
+  text-align: center;
+}
+
+.sidebar-address-card p {
+  margin: 0;
+  line-height: 1.35;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
 /* Flex child for shared layout */
 .home-shell {
   min-width: 0;
@@ -81,22 +105,20 @@
     min-height: 0;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-  }
-
-  .home-page .home-header {
-    flex-shrink: 0;
-    position: relative;
-    top: auto;
-  }
-
-  .home-page .home-main {
-    flex: 1;
-    min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .home-page .home-header {
+    flex-shrink: 0;
+  }
+
+  .home-page .home-main {
+    flex: 0 0 auto;
+    min-height: auto;
+    overflow: visible;
   }
 }
 
@@ -126,9 +148,8 @@
 
 /* Sticky club header (desktop: below sticky mobile bar is hidden; mobile: avoid stacking under site nav) */
 .home-header {
-  position: sticky;
-  top: 0;
-  z-index: 15;
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,15 +191,6 @@
   }
 }
 
-/* Shared mobile top nav stays on top; club bar scrolls with content */
-@media (max-width: 768px) {
-  .home-page .home-header {
-    position: relative;
-    top: auto;
-    z-index: 1;
-  }
-}
-
 /* CTA: same maroon panel + border as .home-panel; flex column for copy + bottom-left .btn */
 .home-page .home-panel.calltoaction {
   display: flex;
@@ -187,7 +199,7 @@
   width: 100%;
   min-height: auto;
   text-align: left;
-  margin-bottom: 1.25rem;
+  margin-bottom: 8px;
   box-sizing: border-box;
 }
 
@@ -279,6 +291,11 @@
   margin-bottom: 1.25rem;
 }
 
+/* Tighten only the gap between flags row and instructor row */
+.home-main > .home-row:first-child {
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 900px) {
   .home-row {
     grid-template-columns: 1fr;
@@ -366,12 +383,13 @@
   font-weight: 600;
   width: 100%;
   min-height: auto;
-  padding: 1.25rem 1rem;
+  padding: 8px;
 }
 
 /* Mind / Body / Soul */
 .home-philosophy .home-panel {
-  min-height: 48px;
+  min-height: 24px;
+  padding: 0.35rem 0.75rem;
   font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: 800;
   letter-spacing: 0.15em;
@@ -414,6 +432,10 @@
     margin-bottom: 1rem;
   }
 
+  .home-main > .home-row:first-child {
+    margin-bottom: 0.4rem;
+  }
+
   /* Flags: KSW only (hide US and Korea) */
   .home-main > section.home-row:first-child .home-flag-cell:nth-child(1),
   .home-main > section.home-row:first-child .home-flag-cell:nth-child(3) {
@@ -453,12 +475,13 @@
     min-height: auto;
     font-size: clamp(0.9375rem, 3.6vw, 1rem);
     line-height: 1.5;
-    padding: 1rem 0.875rem;
+    padding: 8px;
     max-width: none;
   }
 
   .home-philosophy .home-panel {
-    min-height: 32px;
+    min-height: 16px;
+    padding: 0.25rem 0.5rem;
     font-size: clamp(1.25rem, 6.5vw, 1.85rem);
     letter-spacing: 0.1em;
   }
@@ -478,5 +501,51 @@
 @media (max-width: 380px) {
   .home-header-title {
     letter-spacing: 0.02em;
+  }
+}
+
+/* Height-based typography normalization for 1080p-class windows */
+@media (max-height: 1200px) and (max-width: 1920px) {
+  .home-page {
+    font-size: 16px;
+  }
+
+  .home-page .home-header-title {
+    font-size: 1.45rem !important;
+    letter-spacing: 0.03em;
+  }
+
+  .home-page h2 {
+    font-size: 1.2rem;
+  }
+
+  .home-page h3 {
+    font-size: 1rem;
+  }
+
+  .home-page p,
+  .home-page .home-quote,
+  .home-page .home-footer-contact,
+  .home-page .home-profile figcaption {
+    font-size: 0.9rem !important;
+    line-height: 1.35;
+  }
+
+  .home-page .home-philosophy .home-panel {
+    font-size: 1.15rem !important;
+  }
+
+  .home-page .calltoaction-btn-primary {
+    font-size: 0.9rem !important;
+  }
+
+  .home-page .calltoaction-btn-sub {
+    font-size: 0.72rem !important;
+  }
+
+  .home-page .site-nav-row .btn,
+  .home-page .sidebar-nav .btn {
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 }
