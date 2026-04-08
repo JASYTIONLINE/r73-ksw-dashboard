@@ -410,6 +410,15 @@
     padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
   }
 
+  .home-page .site-nav--mobile-top.card {
+    border: 2px solid #2a0a0a;
+    border-radius: 8px;
+  }
+
+  .home-page .site-nav-row .btn {
+    border-color: #2a0a0a;
+  }
+
   .home-main {
     padding: 1rem max(0.5rem, env(safe-area-inset-left, 0px))
       calc(1rem + env(safe-area-inset-bottom, 0px))
