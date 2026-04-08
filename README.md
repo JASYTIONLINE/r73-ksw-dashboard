@@ -1,50 +1,128 @@
 # Brownsville Kuk Sool Won Dashboard
 
 This project is a student-facing progress dashboard for Brownsville Kuk Sool Won (KSW).  
-Its purpose is to help students track rank requirements, monitor progress toward their next test date, and request an instructor audit.
+It helps students track rank requirements, maintain training progress over time, and recover their data after browser cache loss by exporting/importing local JSON.
 
-## Project Scope
+## Tech Stack
 
-The MVP focuses on a simple, buildable dashboard:
+- HTML, CSS, JavaScript (static site)
+- Curriculum data from `assets/data/ksw-syllabus.json`
+- Source-of-truth CSV at `private/ksw-roadmap-db.csv`
+- `localStorage` for per-user progress and personal profile persistence
+- GitHub repository + GitHub Pages deployment
 
-- Student selects current rank from a dropdown
-- Student selects next testing date from a calendar input
-- Dashboard displays required material for the selected rank
-- Student tracks each requirement using a 4-level proficiency state:
-  - Untrained
-  - Exposed
-  - Trained
-  - Proficient
-- Student progress is saved locally in the browser
-- Student can contact the instructor through a simple audit request email link
+## Features by Page
 
-## Out of Scope for MVP
+### `index.html` (Home)
 
-To keep this project realistic for the course timeline, the following are intentionally excluded:
+- Responsive top and sidebar navigation to all pages
+- CTA mailto button for introductory session requests
+- JavaScript pulse animation loop for CTA button (respects `prefers-reduced-motion`)
 
-- Training video/media portal
-- Instructor dashboard
-- Authentication/login system
-- Internal messaging platform
-- Full LMS/Canvas-style system
+### `about.html` (About)
 
-## Tech Approach
+- Purpose, usage, and proficiency guidance content
+- Static instructional page with shared site navigation
+- No page-specific JavaScript logic (content-focused page)
 
-- HTML, CSS, JavaScript
-- One local JSON data source for curriculum requirements (`assets/data/ksw-syllabus.json`)
-- `localStorage` for persisted student progress state
-- GitHub repository and GitHub Pages deployment
+### `contact.html` (Contact)
 
-### Regenerate syllabus JSON from CSV
+- Instructor audit request quick action via mailto button
+- Shared site navigation and contact context
+- No page-specific JavaScript logic (action-link page)
 
-When [`private/ksw-roadmap-db.csv`](private/ksw-roadmap-db.csv) changes, rebuild the public JSON (requires Node.js):
+### `dashboard.html` (Student Dashboard)
+
+- Personal info form (11 fields) including rank, testing dates, membership, and renewal
+- Dynamic rank title synchronization from selected rank option
+- Requirements split into:
+  - `Rank R — to learn`
+  - `Rank < R — maintain`
+- Requirements rendered as rank-grouped tables with columns:
+  - `Description`
+  - `Learning Objective`
+  - `Status` (dropdown)
+- Status options: `Untrained`, `In Progress`, `Trained`, `Proficient`
+- Type/category subheadings rendered within each rank section
+- Type/category ordering by `categoryPriority` (low to high), with stable fallback alphabetical ordering
+- Sticky/pinned navigation behavior and sidebar back-to-top button
+- Right-side up/down jump controls that move header-to-header (`h1`-`h6`) through `.page-content`
+- Mobile behavior: scroll jump controls hidden on smaller screens
+- Blocking modal system for guided confirmation flows (`Proceed` / `Cancel`)
+- Export flow: user guidance modal, then download of updated JSON snapshot
+- Import flow: guidance + confirmation modal, then local JSON load and apply
+- Clear data flow: confirmation modal, clears local data, restores original server JSON state
+- Live status messaging area for load/import/export/reset outcomes
+- Contact action buttons for session scheduling and assessment requests
+
+## JavaScript Features by Page
+
+### `index.html`
+
+- CTA pulse scheduler with periodic class toggling
+- Accessibility-aware motion handling via `matchMedia('(prefers-reduced-motion: reduce)')`
+
+### `about.html`
+
+- No JavaScript features currently implemented
+
+### `contact.html`
+
+- No JavaScript features currently implemented
+
+### `dashboard.html`
+
+- JSON load from `assets/data/ksw-syllabus.json`
+- Local state hydration/merge:
+  - status overrides by item key
+  - user profile values (11 fields)
+- Status normalization (`Retrain` -> `In Progress`) for compatibility
+- Requirements filtering by selected current rank
+- Grouping logic by curriculum rank, then by skill type/category
+- Type/category sorting with `categoryPriority`
+- Dynamic table generation with per-row status select controls
+- Change handlers to persist status and profile updates to `localStorage`
+- Export serializer that includes:
+  - curriculum items (with current status values)
+  - user profile object
+  - supporting metadata from loaded payload
+- Import parser/validator with friendly error handling
+- Modal controller utilities:
+  - open/close lifecycle
+  - keyboard support (`Escape`)
+  - backdrop click handling
+  - configurable proceed/cancel callbacks
+- Reset routine that clears local keys and reloads baseline data from server (cache-busted)
+- Scroll navigation utilities:
+  - dynamic anchor collection from page headers
+  - jump up/down navigation
+  - responsive control positioning relative to `.page-content`
+
+## Data Pipeline
+
+### CSV -> JSON generator
+
+Run:
 
 ```bash
 node scripts/csv-to-syllabus-json.mjs
 ```
 
-Commit the updated [`assets/data/ksw-syllabus.json`](assets/data/ksw-syllabus.json) so GitHub Pages serves it.
+The generator now:
 
-## Current Goal
+- Parses the full CSV (including repeated section headers)
+- Preserves existing dashboard-compatible fields:
+  - `items`
+  - `beltStepLabels`
+- Adds a generic `objects` map containing all object groups found in CSV
+- Builds `categoryPriority` from `Priority` rows for dashboard sort order
 
-Build a clean landing page and student dashboard that are easy to use, easy to maintain, and aligned with KSW rank progression and testing preparation.
+Commit the updated `assets/data/ksw-syllabus.json` so GitHub Pages serves the latest data.
+
+## Out of Scope (Current)
+
+- Authentication/login system
+- Instructor admin dashboard
+- Cloud database-backed user accounts
+- Internal messaging platform
+- Full LMS/media portal
