@@ -687,6 +687,15 @@ pre {
   .dashboard-page .scroll-controls {
     display: none;
   }
+
+  /* Mobile dashboard table: show only Learning Objective + Status */
+  .dashboard-page .requirement-table .description-col {
+    display: none;
+  }
+
+  .dashboard-page .requirement-table {
+    min-width: 0;
+  }
 }
 
 .dashboard-page .dashboard-modal {
@@ -822,4 +831,49 @@ pre {
   width: 100%;
   min-width: 9rem;
   margin: 0;
+}
+
+/* Final mobile override: force-hide Description column */
+@media (max-width: 768px) {
+  .dashboard-page .requirement-table th.description-col,
+  .dashboard-page .requirement-table td.description-col,
+  .dashboard-page .requirement-table th:first-child,
+  .dashboard-page .requirement-table td:first-child {
+    display: none !important;
+  }
+
+  .dashboard-page .requirement-table-wrap {
+    overflow-x: hidden;
+  }
+
+  .dashboard-page .requirement-table {
+    width: 100%;
+    min-width: 0 !important;
+    table-layout: fixed;
+  }
+
+  /* Visible mobile columns: Learning Objective + Status */
+  .dashboard-page .requirement-table th:nth-child(2),
+  .dashboard-page .requirement-table td:nth-child(2) {
+    width: 20ch;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dashboard-page .requirement-table th:nth-child(3),
+  .dashboard-page .requirement-table td:nth-child(3) {
+    width: 10ch;
+    max-width: 10ch;
+  }
+
+  .dashboard-page .requirement-status-select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.85rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
 }

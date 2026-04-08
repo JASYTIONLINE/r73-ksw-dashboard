@@ -477,8 +477,9 @@
 
             var thead = document.createElement('thead');
             var headRow = document.createElement('tr');
-            ['Description', 'Learning Objective', 'Status'].forEach(function (label) {
+            ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
               var th = document.createElement('th');
+              if (idx === 0) th.className = 'description-col';
               th.textContent = label;
               headRow.appendChild(th);
             });
@@ -489,6 +490,7 @@
             byType[typeName].forEach(function (it) {
               var tr = document.createElement('tr');
               var descriptionTd = document.createElement('td');
+              descriptionTd.className = 'description-col';
               descriptionTd.textContent = it.description || '';
               tr.appendChild(descriptionTd);
 
