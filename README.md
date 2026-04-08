@@ -1,128 +1,178 @@
 # Brownsville Kuk Sool Won Dashboard
 
-This project is a student-facing progress dashboard for Brownsville Kuk Sool Won (KSW).  
-It helps students track rank requirements, maintain training progress over time, and recover their data after browser cache loss by exporting/importing local JSON.
+Brownsville Kuk Sool Won Dashboard is both:
 
-## Tech Stack
+- an academic software engineering project (planning, requirements traceability, and iterative delivery), and
+- a live student-facing web tool currently used for real curriculum tracking.
 
-- HTML, CSS, JavaScript (static site)
-- Curriculum data from `assets/data/ksw-syllabus.json`
-- Source-of-truth CSV at `private/ksw-roadmap-db.csv`
-- `localStorage` for per-user progress and personal profile persistence
-- GitHub repository + GitHub Pages deployment
+The application helps students track belt-rank requirements, update training status by skill, and preserve progress/profile data locally with export/import backup support.
 
-## Features by Page
+## Project Context
+
+### Academic context
+
+- Developed as a structured course project with milestone-based scope.
+- Emphasis on requirements implementation, user-centered iteration, and maintainable code.
+- Instructor review focus areas:
+  - functional completeness against requirements,
+  - quality of documentation and traceability,
+  - operational correctness for real-world usage.
+
+### Live deployment context
+
+- This project is deployed as a static site and actively used in a real dojo workflow.
+- Curriculum source data is maintained in CSV and converted to JSON for browser delivery.
+- Design decisions prioritize reliability, clarity for students, and low-maintenance operations.
+
+## Architecture Overview
+
+- Frontend: static HTML/CSS/vanilla JavaScript
+- Data source:
+  - authoring source: `private/ksw-roadmap-db.csv`
+  - runtime source: `assets/data/ksw-syllabus.json`
+- Persistence: browser `localStorage` (per user/browser)
+- Deployment: GitHub repository and GitHub Pages hosting
+
+## Repository Structure
+
+- `index.html`: public landing page
+- `about.html`: project/tool purpose and user guidance
+- `contact.html`: instructor contact workflow
+- `dashboard.html`: primary student workflow and all interactive dashboard logic
+- `assets/css/`: shared and theme styling
+- `assets/data/ksw-syllabus.json`: generated curriculum payload used by the app
+- `private/ksw-roadmap-db.csv`: editable source-of-truth data
+- `scripts/csv-to-syllabus-json.mjs`: CSV-to-JSON build script
+
+## Current Feature Set by Page
 
 ### `index.html` (Home)
 
-- Responsive top and sidebar navigation to all pages
-- CTA mailto button for introductory session requests
-- JavaScript pulse animation loop for CTA button (respects `prefers-reduced-motion`)
+- Responsive desktop/mobile navigation.
+- Introductory call-to-action with prefilled email intent.
+- Motion-enhanced CTA pulse behavior that respects reduced-motion preferences.
 
 ### `about.html` (About)
 
-- Purpose, usage, and proficiency guidance content
-- Static instructional page with shared site navigation
-- No page-specific JavaScript logic (content-focused page)
+- Describes purpose, intended users, and practical usage flow.
+- Defines proficiency interpretation for student self-tracking.
+- Serves as user-facing documentation page in the live product.
 
 ### `contact.html` (Contact)
 
-- Instructor audit request quick action via mailto button
-- Shared site navigation and contact context
-- No page-specific JavaScript logic (action-link page)
+- Fast action path for instructor communication and audit requests.
+- Maintains simple, low-friction email workflow appropriate for static hosting.
 
 ### `dashboard.html` (Student Dashboard)
 
-- Personal info form (11 fields) including rank, testing dates, membership, and renewal
-- Dynamic rank title synchronization from selected rank option
-- Requirements split into:
-  - `Rank R — to learn`
-  - `Rank < R — maintain`
-- Requirements rendered as rank-grouped tables with columns:
+- Personal profile form (11 student fields) with automatic persistence.
+- Rank selection with synchronized rank title behavior.
+- Curriculum rendering by selected rank, split into:
+  - `to learn` (`rank === selected rank`)
+  - `maintain` (`rank < selected rank`)
+- Requirements rendered in grouped tables with:
   - `Description`
   - `Learning Objective`
   - `Status` (dropdown)
-- Status options: `Untrained`, `In Progress`, `Trained`, `Proficient`
-- Type/category subheadings rendered within each rank section
-- Type/category ordering by `categoryPriority` (low to high), with stable fallback alphabetical ordering
-- Sticky/pinned navigation behavior and sidebar back-to-top button
-- Right-side up/down jump controls that move header-to-header (`h1`-`h6`) through `.page-content`
-- Mobile behavior: scroll jump controls hidden on smaller screens
-- Blocking modal system for guided confirmation flows (`Proceed` / `Cancel`)
-- Export flow: user guidance modal, then download of updated JSON snapshot
-- Import flow: guidance + confirmation modal, then local JSON load and apply
-- Clear data flow: confirmation modal, clears local data, restores original server JSON state
-- Live status messaging area for load/import/export/reset outcomes
-- Contact action buttons for session scheduling and assessment requests
+- Status lifecycle options:
+  - `Untrained`
+  - `In Progress`
+  - `Trained`
+  - `Proficient`
+- Type/category grouping under each rank section.
+- Category display ordering based on priority list from JSON (`categoryPriority` / `Priority` object rows).
+- Import/export JSON workflow for recovery and device/browser continuity.
+- Blocking confirmation/instruction modals for export, import, and clear-data flows.
+- Clear-data control to reset user-local state and restore baseline server data.
+- Sticky sidebar helpers:
+  - back-to-top button,
+  - right-side up/down jump controls (header-to-header navigation),
+  - responsive behavior (controls hidden on smaller screens).
 
-## JavaScript Features by Page
+## JavaScript Feature Inventory by Page
 
 ### `index.html`
 
-- CTA pulse scheduler with periodic class toggling
-- Accessibility-aware motion handling via `matchMedia('(prefers-reduced-motion: reduce)')`
+- Timed CTA animation scheduler.
+- `prefers-reduced-motion` safeguard for accessibility.
 
 ### `about.html`
 
-- No JavaScript features currently implemented
+- No page-specific JavaScript behavior.
 
 ### `contact.html`
 
-- No JavaScript features currently implemented
+- No page-specific JavaScript behavior.
 
 ### `dashboard.html`
 
-- JSON load from `assets/data/ksw-syllabus.json`
-- Local state hydration/merge:
-  - status overrides by item key
-  - user profile values (11 fields)
-- Status normalization (`Retrain` -> `In Progress`) for compatibility
-- Requirements filtering by selected current rank
-- Grouping logic by curriculum rank, then by skill type/category
-- Type/category sorting with `categoryPriority`
-- Dynamic table generation with per-row status select controls
-- Change handlers to persist status and profile updates to `localStorage`
-- Export serializer that includes:
-  - curriculum items (with current status values)
-  - user profile object
-  - supporting metadata from loaded payload
-- Import parser/validator with friendly error handling
-- Modal controller utilities:
-  - open/close lifecycle
-  - keyboard support (`Escape`)
-  - backdrop click handling
-  - configurable proceed/cancel callbacks
-- Reset routine that clears local keys and reloads baseline data from server (cache-busted)
-- Scroll navigation utilities:
-  - dynamic anchor collection from page headers
-  - jump up/down navigation
-  - responsive control positioning relative to `.page-content`
+- Fetch and hydrate syllabus payload from JSON.
+- Defensive parsing and normalization of persisted status values.
+- Local status map keyed by skill key.
+- Local persistence for all personal profile fields.
+- Dynamic filtering by selected rank.
+- Grouping pipeline:
+  - by curriculum rank,
+  - then by category/type,
+  - then ordered by category priority.
+- Dynamic DOM/table generation for requirement rows.
+- Status dropdown change handling with immediate persistence.
+- Export serializer includes:
+  - curriculum payload with live status state,
+  - user profile object.
+- Import validator and payload apply flow.
+- Modal controller with proceed/cancel callbacks, backdrop handling, and keyboard close behavior.
+- Cache-busted baseline reload path for full reset.
+- Scroll/jump navigation helpers tied to page headings.
 
-## Data Pipeline
+## Data Model and Pipeline
 
-### CSV -> JSON generator
+### Source of truth
 
-Run:
+- Curriculum content, glossary labels, and category priority are maintained in:
+  - `private/ksw-roadmap-db.csv`
+
+### Build step
+
+Run from repository root:
 
 ```bash
 node scripts/csv-to-syllabus-json.mjs
 ```
 
-The generator now:
+### Generated JSON behavior
 
-- Parses the full CSV (including repeated section headers)
-- Preserves existing dashboard-compatible fields:
+`scripts/csv-to-syllabus-json.mjs` currently:
+
+- parses the full CSV, including repeated section headers,
+- preserves dashboard-compatible typed outputs:
   - `items`
   - `beltStepLabels`
-- Adds a generic `objects` map containing all object groups found in CSV
-- Builds `categoryPriority` from `Priority` rows for dashboard sort order
+- emits a generic `objects` map to support future object types without parser rewrites,
+- derives `categoryPriority` from `Priority` rows to drive category display order.
 
-Commit the updated `assets/data/ksw-syllabus.json` so GitHub Pages serves the latest data.
+After running the generator, commit `assets/data/ksw-syllabus.json` so production serves updated curriculum data.
 
-## Out of Scope (Current)
+## Persistence, Recovery, and Operational Notes
 
-- Authentication/login system
-- Instructor admin dashboard
-- Cloud database-backed user accounts
-- Internal messaging platform
-- Full LMS/media portal
+- Student progress/profile persistence is browser-local (`localStorage`).
+- Clearing browser cache/storage removes local state unless backup JSON is imported.
+- Export/import exists specifically to support recovery after cache loss and continuity across sessions.
+- This design intentionally avoids server-side accounts/databases for simplicity and operational cost.
+
+## Quality and Review Notes (Instructor-Facing)
+
+- Requirements have been implemented through iterative enhancement with backward-compatible updates.
+- Data and UI responsibilities are separated:
+  - CSV/JSON pipeline in script,
+  - runtime rendering/persistence in dashboard JS.
+- Feature additions prioritize user clarity and recoverability over framework complexity.
+- Documentation now reflects both the academic rationale and live operational usage.
+
+## Out of Scope (Current Phase)
+
+- Authentication and role-based access control.
+- Instructor/admin backend dashboard.
+- Centralized cloud database for user profiles.
+- Real-time messaging platform.
+- Full LMS/media delivery subsystem.
