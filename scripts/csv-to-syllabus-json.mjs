@@ -61,10 +61,43 @@ if (rows.length < 2) throw new Error('CSV empty or invalid');
 
 const beltStepLabels = {};
 const items = [];
+const objects = {};
+let currentHeader = null;
+
+function normalizeHeaderName(name, idx) {
+  const base = String(name || '').trim();
+  return base || 'col' + (idx + 1);
+}
+
+function mapRowByHeader(header, cells) {
+  const out = {};
+  const width = Math.max(header ? header.length : 0, cells.length);
+  for (let i = 0; i < width; i++) {
+    const key = normalizeHeaderName(header && header[i], i);
+    out[key] = String(cells[i] || '').trim();
+  }
+  return out;
+}
+
+function toInt(value) {
+  const n = parseInt(String(value || '').trim(), 10);
+  return Number.isNaN(n) ? null : n;
+}
 
 for (const cells of rows) {
   const object = String(cells[0] || '').trim();
   if (!object) continue;
+
+  if (object.toLowerCase() === 'object') {
+    currentHeader = cells.map(function (cell, idx) {
+      return normalizeHeaderName(cell, idx);
+    });
+    continue;
+  }
+
+  const mapped = mapRowByHeader(currentHeader, cells);
+  if (!objects[object]) objects[object] = [];
+  objects[object].push(mapped);
 
   if (object === 'Syllibus') {
     const count = parseInt(String(cells[1] || '').trim(), 10);
@@ -97,11 +130,22 @@ for (const cells of rows) {
 
 if (!beltStepLabels['16']) beltStepLabels['16'] = 'Jyo Kyo Nim';
 
+const categoryPriority = {};
+const priorityRows = objects.Priority || [];
+priorityRows.forEach(function (row) {
+  const typeName = String((row && row.Type) || '').trim();
+  const priority = toInt(row && row.Rank);
+  if (!typeName || priority == null) return;
+  categoryPriority[typeName] = priority;
+});
+
 const payload = {
   version: 1,
   source: 'private/ksw-roadmap-db.csv',
   beltStepLabels,
-  items
+  items,
+  categoryPriority,
+  objects
 };
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });

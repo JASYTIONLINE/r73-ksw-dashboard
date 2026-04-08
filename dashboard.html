@@ -342,6 +342,25 @@
         return byType;
       }
 
+      function getCategoryPriority(typeName) {
+        var normalizedType = String(typeName || '').trim();
+        var value = null;
+        if (syllabusPayload && syllabusPayload.categoryPriority) {
+          value = syllabusPayload.categoryPriority[normalizedType];
+        }
+        if (value == null && syllabusPayload && syllabusPayload.objects && Array.isArray(syllabusPayload.objects.Priority)) {
+          syllabusPayload.objects.Priority.some(function (row) {
+            if (!row) return false;
+            var rowType = String(row.Type || '').trim();
+            if (rowType !== normalizedType) return false;
+            value = row.Rank;
+            return true;
+          });
+        }
+        var n = parseInt(String(value), 10);
+        return Number.isNaN(n) ? null : n;
+      }
+
       function readUserFromForm() {
         var get = function (id) {
           var el = document.getElementById(id);
@@ -436,6 +455,11 @@
 
           var byType = groupItemsByType(group);
           var types = Object.keys(byType).sort(function (a, b) {
+            var pa = getCategoryPriority(a);
+            var pb = getCategoryPriority(b);
+            if (pa != null && pb != null && pa !== pb) return pa - pb;
+            if (pa != null && pb == null) return -1;
+            if (pa == null && pb != null) return 1;
             return a.localeCompare(b);
           });
 
