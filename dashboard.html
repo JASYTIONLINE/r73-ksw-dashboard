@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,8 @@
   <link rel="stylesheet" href="assets/css/dragon.css">
   <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
+
+<body class="dashboard-page">
   <div class="wrapper">
     <nav class="card site-nav site-nav--mobile-top" aria-label="Mobile navigation top">
       <div class="site-nav-row">
@@ -20,83 +22,182 @@
     </nav>
 
     <div class="page-layout">
-    <aside class="sidebar card">
-      <nav class="sidebar-nav" aria-label="Primary navigation">
-        <a class="btn" href="index.html">Home</a>
-        <a class="btn" href="about.html">About</a>
-        <a class="btn" href="contact.html">Contact</a>
-        <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
-      </nav>
-    </aside>
+      <aside class="sidebar card">
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="about.html">About</a>
+          <a class="btn" href="contact.html">Contact</a>
+          <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
+        </nav>
+      </aside>
 
-    <div class="page-content">
-      <section class="card dashboard-hero" aria-labelledby="dashboard-hero-heading">
-        <h2 id="dashboard-hero-heading">Brownsville Kuk Sool Won</br>
-          
-        <section class="home-row dashboard-hero-flags" aria-label="Association flags">
-          <div class="home-flag-cell">
-            <img src="assets/images/usa-flag.png" alt="United States flag" width="280" height="160">
+      <div class="page-content">
+        <section class="card dashboard-hero" aria-labelledby="dashboard-hero-heading">
+          <h2 id="dashboard-hero-heading">Brownsville Kuk Sool Won</h2>
+
+          <section class="home-row dashboard-hero-flags" aria-label="Association flags">
+            <div class="home-flag-cell">
+              <img src="assets/images/usa-flag.png" alt="United States flag" width="280" height="160">
+            </div>
+            <div class="home-flag-cell">
+              <img src="assets/images/ksw-flag.png" alt="World Kuk Sool Association flag" width="280" height="160">
+            </div>
+            <div class="home-flag-cell">
+              <img src="assets/images/korea-flag.png" alt="South Korea flag" width="280" height="160">
+            </div>
+          </section>
+        </section>
+
+        <header class="card">
+          <h1>Student Information</h1>
+          <h4>Use this page to view rank requirements, track progress, and request an audit.</h4>
+        </header>
+
+        <main class="card">
+          <h3>Personal Information</h3>
+          <div class="dashboard-personal-grid">
+            <div class="dashboard-field">
+              <p><label for="student-id-number">Student Id Number</label></p>
+              <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Student ID">
+            </div>
+            <div class="dashboard-field">
+              <p><label for="student-name">Student Name</label></p>
+              <input id="student-name" name="student-name" type="text" autocomplete="name" placeholder="Full name">
+            </div>
+            <div class="dashboard-field">
+              <p><label for="student-age">Age</label></p>
+              <select id="student-age" name="student-age">
+                <option value="under-18">Under 18</option>
+                <option value="over-18">Over 18</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
+              <p><label for="school-location">School Location</label></p>
+              <select id="school-location" name="school-location">
+                <option value="brownsville">Brownsville: 1601 E Alton Gloor Bvd.</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
+              <p><label for="rank">Current Rank</label></p>
+              <select id="rank" name="rank">
+                <option value="1" data-rank-name="Huin ddi">White Belt</option>
+                <option value="2" data-rank-name="Huin ddi">Yellow Stripe</option>
+                <option value="3" data-rank-name="Norang ddi">Yellow Belt</option>
+                <option value="4" data-rank-name="Norang ddi">Blue Stripe</option>
+                <option value="5" data-rank-name="Cheong ddi">Blue Belt</option>
+                <option value="6" data-rank-name="Cheong ddi">Red Stripe</option>
+                <option value="7" data-rank-name="Hong ddi">Red Belt</option>
+                <option value="8" data-rank-name="Hong ddi">Brown Stripe</option>
+                <option value="9" data-rank-name="Ja ddi">Brown Belt</option>
+                <option value="10" data-rank-name="Ja ddi">1 Black Stripe</option>
+                <option value="11" data-rank-name="Dahnbo Nim">2 Black Stripes</option>
+                <option value="12" data-rank-name="Dahnbo Nim">3 Black Stripes</option>
+                <option value="13" data-rank-name="Dahnbo Nim">4 Black Stripes</option>
+                <option value="14" data-rank-name="Dahnbo Nim">5 Black Stripes</option>
+                <option value="15" data-rank-name="Dahnbo Nim">6 Black Stripes</option>
+                <option value="16" data-rank-name="Jyo Kyo Nim">Jyo Kyo Nim</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
+              <p><label for="rank-title">Title</label></p>
+              <input id="rank-title" name="rank-title" type="text" readonly tabindex="-1" aria-live="polite">
+            </div>
+            <div class="dashboard-field">
+              <p><label for="eligible-for-testing">Eligible for testing?</label></p>
+              <select id="eligible-for-testing" name="eligible-for-testing">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
+              <p><label for="test-date">Next Testing Date</label></p>
+              <input id="test-date" name="test-date" type="date">
+            </div>
+            <div class="dashboard-field">
+              <p><label for="member-level">Member Level</label></p>
+              <select id="member-level" name="member-level">
+                <option value="standard">Standard</option>
+                <option value="black-belt-club">Black Belt Club</option>
+                <option value="masters-club">Masters Club</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
+              <p><label for="member-since">Member Since</label></p>
+              <input id="member-since" name="member-since" type="date" autocomplete="off">
+            </div>
+            <div class="dashboard-field">
+              <p><label for="renewal-date">Renewal Date</label></p>
+              <input id="renewal-date" name="renewal-date" type="date" autocomplete="off">
+            </div>
           </div>
-          <div class="home-flag-cell">
-            <img src="assets/images/ksw-flag.png" alt="World Kuk Sool Association flag" width="280" height="160">
-          </div>
-          <div class="home-flag-cell">
-            <img src="assets/images/korea-flag.png" alt="South Korea flag" width="280" height="160">
+        </main>
+
+        <section class="card">
+          <h3>Requirements (Preview Only)</h3>
+          <ul>
+            <li>Techniques - status: Untrained / Exposed / Trained / Proficient</li>
+            <li>Forms - status: Untrained / Exposed / Trained / Proficient</li>
+            <li>Punches - status: Untrained / Exposed / Trained / Proficient</li>
+            <li>Kicks - status: Untrained / Exposed / Trained / Proficient</li>
+            <li>Etiquette - status: Untrained / Exposed / Trained / Proficient</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h3>Progress Summary (Preview Only)</h3>
+          <p>Completed requirements: --</p>
+          <p>Estimated readiness: --</p>
+          <p>Days until test date: --</p>
+        </section>
+
+        <section class="card">
+          <h3>Contact Instructor</h3>
+          <div class="dashboard-contact-actions">
+            <a class="btn" href="mailto:instructor@example.com?subject=Schedule%20Private%20Session">Schedule Private Session</a>
+            <a class="btn" href="mailto:instructor@example.com?subject=Request%20Assessment">Request Assessment</a>
+            <a class="btn" href="mailto:instructor@example.com?subject=General%20Inquiry">General Inquiry</a>
           </div>
         </section>
-      </section>
 
-      <header class="card">
-        <h1>Student Dashboard</h1>
-        <h3>Brownsville Kuk Sool Won</h3>
-        <p>Use this page to view rank requirements, track progress, and request an audit.</p>
-      </header>
-
-      <main class="card">
-        <h3>Student Setup</h3>
-        <p><label for="rank">Current Rank</label></p>
-        <select id="rank" name="rank">
-          <option>White Belt</option>
-          <option>Yellow Belt</option>
-          <option>Blue Belt</option>
-          <option>Red Belt</option>
-          <option>Black Belt</option>
-        </select>
-
-        <p><label for="test-date">Next Testing Date</label></p>
-        <input id="test-date" name="test-date" type="date">
-      </main>
-
-      <section class="card">
-        <h3>Requirements (Preview Only)</h3>
-        <ul>
-          <li>Techniques - status: Untrained / Exposed / Trained / Proficient</li>
-          <li>Forms - status: Untrained / Exposed / Trained / Proficient</li>
-          <li>Punches - status: Untrained / Exposed / Trained / Proficient</li>
-          <li>Kicks - status: Untrained / Exposed / Trained / Proficient</li>
-          <li>Etiquette - status: Untrained / Exposed / Trained / Proficient</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Progress Summary (Preview Only)</h3>
-        <p>Completed requirements: --</p>
-        <p>Estimated readiness: --</p>
-        <p>Days until test date: --</p>
-      </section>
-
-      <section class="card">
-        <h3>Instructor Audit Request</h3>
-        <p>
-          <a class="btn" href="mailto:instructor@example.com?subject=KSW%20Audit%20Request">Request Audit by Email</a>
-        </p>
-      </section>
-
-      <footer class="card">
-        <p>Design mock only. No data is saved on this placeholder page.</p>
-      </footer>
-    </div>
+        <footer class="card">
+                 <nav class="site-nav dashboard-mobile-footer-nav" aria-label="Footer navigation">
+            <div class="site-nav-row">
+              <a class="btn" href="index.html">Home</a>
+              <a class="btn" href="about.html">About</a>
+              <a class="btn" href="contact.html">Contact</a>
+              <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
+            </div>
+          </nav>
+        </footer>
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      function syncRankTitle() {
+        var rankSel = document.getElementById('rank');
+        var titleOut = document.getElementById('rank-title');
+        if (!rankSel || !titleOut) return;
+        var opt = rankSel.options[rankSel.selectedIndex];
+        titleOut.value = opt ? (opt.getAttribute('data-rank-name') || '') : '';
+      }
+
+      var rankSel = document.getElementById('rank');
+      if (rankSel) {
+        rankSel.addEventListener('change', syncRankTitle);
+        syncRankTitle();
+      }
+
+      ['member-since', 'renewal-date', 'test-date'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el || typeof el.showPicker !== 'function') return;
+        el.addEventListener('click', function () {
+          var p = el.showPicker();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        });
+      });
+    })();
+  </script>
 </body>
+
 </html>

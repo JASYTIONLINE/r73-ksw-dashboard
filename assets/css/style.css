@@ -343,6 +343,59 @@ pre {
   margin-bottom: 0;
 }
 
+/* Dashboard: vertical gaps between sections ≤ 8px */
+.dashboard-page .card {
+  margin-bottom: 8px;
+}
+
+.dashboard-page .page-layout {
+  gap: 8px;
+}
+
+.dashboard-page .sidebar-nav {
+  gap: 8px;
+}
+
+/* Dashboard: site links row inside page footer (not a separate card) */
+.dashboard-page footer.card {
+  padding: 0.5rem 1rem 0.65rem;
+}
+
+.dashboard-page .dashboard-mobile-footer-nav {
+  display: block;
+  margin-top: 0;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-mobile-footer-nav .site-nav-row {
+  flex-wrap: nowrap;
+  gap: 0.2rem;
+  justify-content: stretch;
+}
+
+.dashboard-page .dashboard-mobile-footer-nav .site-nav-row .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto !important;
+  height: auto;
+  min-height: 2.1rem;
+  padding: 0.3rem 0.12rem;
+  font-size: clamp(0.54rem, 2.4vw, 0.72rem);
+  font-weight: 600;
+  line-height: 1.1;
+  border-width: 2px;
+  white-space: nowrap;
+  text-align: center;
+  hyphens: none;
+  overflow-wrap: normal;
+  margin-bottom: 0;
+}
+
+.dashboard-page .dashboard-mobile-footer-nav .site-nav-row .btn[href="dashboard.html"] {
+  font-size: clamp(0.68rem, 3.04vw, 0.91rem);
+}
+
 /* ================================================
    RESPONSIVE: Mobile + Large Screens
    ================================================ */
@@ -419,6 +472,10 @@ pre {
   body {
     overflow-x: hidden;
   }
+
+  .dashboard-page .site-nav--mobile-top {
+    margin-bottom: 8px;
+  }
 }
 
 /* Very small phones: scale down headings slightly */
@@ -452,4 +509,57 @@ pre {
     max-width: 100%;
     height: auto;
   }
+}
+
+/* ================================================
+   DASHBOARD: Personal Information form grid
+   Single column on mobile; three from 769px; four from 1280px (widescreen).
+   Breakpoint aligns with sidebar / page-layout (769px+).
+   ================================================ */
+.dashboard-personal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: start;
+}
+
+.dashboard-field {
+  min-width: 0;
+}
+
+.dashboard-field p {
+  margin-bottom: 0.35em;
+}
+
+.dashboard-field input,
+.dashboard-field select {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 769px) {
+  .dashboard-personal-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Widescreen: four columns (standard tablet/desktop stays three above) */
+@media (min-width: 1280px) {
+  .dashboard-personal-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dashboard-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dashboard-contact-actions .btn {
+  margin-bottom: 0;
+  text-align: center;
 }

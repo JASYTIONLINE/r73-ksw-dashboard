@@ -109,4 +109,37 @@ code a:hover {
     border: 1px solid #ff0000;
     border-radius: 6px;
   }
+
+}
+
+/* Student dashboard: gold headings, white paragraphs and list items */
+.dashboard-page h1,
+.dashboard-page h2,
+.dashboard-page h3,
+.dashboard-page h4,
+.dashboard-page h5,
+.dashboard-page h6 {
+  color: #ffcc00;
+}
+
+.dashboard-page p,
+.dashboard-page li {
+  color: #ffffff;
+}
+
+.dashboard-page h4 {
+  text-align: center;
+}
+
+/* Native date picker: keep calendar icon visible & tappable (WebKit/Blink) */
+.dashboard-page input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  padding: 0.2rem;
+  margin-left: 0.25rem;
+}
+
+.dashboard-page input[readonly] {
+  cursor: default;
+  opacity: 0.95;
 }
