@@ -134,7 +134,7 @@
   }
 
   .home-page .home-flag-cell img {
-    max-width: min(240px, 22vh);
+    max-width: none;
   }
 
   .home-page .home-profile img {
@@ -316,7 +316,7 @@
 
 .home-flag-cell img {
   width: 100%;
-  max-width: 280px;
+  max-width: none;
   height: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -333,7 +333,7 @@
 
 .home-profile img {
   width: 100%;
-  max-width: 220px;
+  max-width: 264px;
   height: auto;
   border-radius: 12px;
   border: 3px solid var(--home-maroon);
@@ -547,5 +547,16 @@
   .home-page .sidebar-nav .btn {
     font-size: 0.9rem;
     line-height: 1.2;
+  }
+
+  .home-page .home-flag-cell img {
+    max-width: none;
+  }
+}
+
+/* Wide only: reduce flag visual size by 20% */
+@media (min-width: 1920px) {
+  .home-flag-cell img {
+    width: 64%;
   }
 }
