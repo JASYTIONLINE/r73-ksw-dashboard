@@ -930,16 +930,10 @@
       }
 
       function getCategoryTargets() {
-        // Jump across headers on the whole page content column (top to bottom).
-        // Excludes sidebar/footer/nav and excludes the modal, since those are outside .page-content.
+        // Jump across all headers in page content, top to bottom.
         var root = document.querySelector('.page-content');
         if (!root) return [];
-        // Also exclude headings inside the dynamic requirements list so arrows can exit that area.
-        return Array.prototype.slice
-          .call(root.querySelectorAll('h1,h2,h3,h4,h5,h6'))
-          .filter(function (h) {
-            return !h.closest('#requirements-by-rank');
-          });
+        return Array.prototype.slice.call(root.querySelectorAll('h1,h2,h3,h4,h5,h6'));
       }
 
       function jumpToCategory(direction) {
