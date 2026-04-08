@@ -31,9 +31,19 @@ To keep this project realistic for the course timeline, the following are intent
 ## Tech Approach
 
 - HTML, CSS, JavaScript
-- One local JSON data source for curriculum requirements
+- One local JSON data source for curriculum requirements (`assets/data/ksw-syllabus.json`)
 - `localStorage` for persisted student progress state
 - GitHub repository and GitHub Pages deployment
+
+### Regenerate syllabus JSON from CSV
+
+When [`private/ksw-roadmap-db.csv`](private/ksw-roadmap-db.csv) changes, rebuild the public JSON (requires Node.js):
+
+```bash
+node scripts/csv-to-syllabus-json.mjs
+```
+
+Commit the updated [`assets/data/ksw-syllabus.json`](assets/data/ksw-syllabus.json) so GitHub Pages serves it.
 
 ## Current Goal
 

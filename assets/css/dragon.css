@@ -149,3 +149,12 @@ code a:hover {
   cursor: default;
   opacity: 0.95;
 }
+
+.dashboard-page .requirement-rank-heading {
+  color: #ffcc00;
+}
+
+.dashboard-page .requirement-key {
+  color: #aaaaaa;
+  font-weight: 500;
+}

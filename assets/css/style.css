@@ -595,3 +595,48 @@ pre {
   margin-bottom: 0;
   text-align: center;
 }
+
+/* Dashboard: syllabus requirements list (grouped by curriculum rank) */
+.dashboard-page .requirements-hint {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-page .requirements-status {
+  min-height: 1.25em;
+  margin-bottom: 0.35rem;
+}
+
+.dashboard-page .requirements-by-rank {
+  margin-top: 0.25rem;
+}
+
+.dashboard-page .requirement-rank-group {
+  margin-top: 1.35rem;
+}
+
+.dashboard-page .requirement-rank-group:first-child {
+  margin-top: 0;
+}
+
+.dashboard-page .requirement-rank-heading {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  text-align: left;
+}
+
+.dashboard-page .requirement-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  list-style-type: disc;
+}
+
+.dashboard-page .requirement-item {
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.dashboard-page .requirement-key {
+  font-size: 0.88em;
+  font-weight: 600;
+}

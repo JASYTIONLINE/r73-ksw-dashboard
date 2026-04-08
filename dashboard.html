@@ -134,14 +134,10 @@
         </section>
 
         <section class="card">
-          <h3>Requirements (Preview Only)</h3>
-          <ul>
-            <li>Techniques - status: Untrained / Exposed / Trained / Proficient</li>
-            <li>Forms - status: Untrained / Exposed / Trained / Proficient</li>
-            <li>Punches - status: Untrained / Exposed / Trained / Proficient</li>
-            <li>Kicks - status: Untrained / Exposed / Trained / Proficient</li>
-            <li>Etiquette - status: Untrained / Exposed / Trained / Proficient</li>
-          </ul>
+          <h3>Testing requirements (by current rank)</h3>
+          <p class="requirements-hint">Cumulative list: all syllabus items with curriculum rank ≤ your belt step. Change <strong>Current Rank</strong> above to refresh.</p>
+          <div id="requirements-status" class="requirements-status" role="status"></div>
+          <div id="requirements-by-rank" class="requirements-by-rank" aria-live="polite"></div>
         </section>
 
         <section class="card">
@@ -175,6 +171,9 @@
   </div>
   <script>
     (function () {
+      var SYLLABUS_URL = 'assets/data/ksw-syllabus.json';
+      var syllabusPayload = null;
+
       function syncRankTitle() {
         var rankSel = document.getElementById('rank');
         var titleOut = document.getElementById('rank-title');
@@ -183,11 +182,126 @@
         titleOut.value = opt ? (opt.getAttribute('data-rank-name') || '') : '';
       }
 
+      function renderRequirements() {
+        var container = document.getElementById('requirements-by-rank');
+        var statusEl = document.getElementById('requirements-status');
+        var rankSel = document.getElementById('rank');
+        if (!container || !rankSel) return;
+
+        if (!syllabusPayload) {
+          if (statusEl) statusEl.textContent = 'Loading curriculum…';
+          return;
+        }
+
+        var R = parseInt(rankSel.value, 10);
+        if (statusEl) statusEl.textContent = '';
+
+        if (Number.isNaN(R) || R < 1) {
+          container.innerHTML = '';
+          return;
+        }
+
+        var labels = syllabusPayload.beltStepLabels || {};
+        var items = syllabusPayload.items.filter(function (it) {
+          return it.rank <= R;
+        });
+
+        var byRank = {};
+        items.forEach(function (it) {
+          if (!byRank[it.rank]) byRank[it.rank] = [];
+          byRank[it.rank].push(it);
+        });
+
+        var ranks = Object.keys(byRank)
+          .map(function (x) {
+            return parseInt(x, 10);
+          })
+          .sort(function (a, b) {
+            return a - b;
+          });
+
+        container.innerHTML = '';
+
+        ranks.forEach(function (tier) {
+          var group = byRank[tier];
+          group.sort(function (a, b) {
+            var ac = a.count != null ? a.count : 0;
+            var bc = b.count != null ? b.count : 0;
+            return ac - bc;
+          });
+
+          var wrap = document.createElement('div');
+          wrap.className = 'requirement-rank-group';
+
+          var h = document.createElement('h4');
+          h.className = 'requirement-rank-heading';
+          var belt = labels[String(tier)] || 'Tier ' + tier;
+          h.textContent = 'Curriculum rank ' + tier + ' — ' + belt;
+          wrap.appendChild(h);
+
+          var ul = document.createElement('ul');
+          ul.className = 'requirement-list';
+          group.forEach(function (it) {
+            var li = document.createElement('li');
+            li.className = 'requirement-item';
+            li.appendChild(document.createTextNode(it.name || it.key));
+            if (it.key && it.name) {
+              li.appendChild(document.createTextNode(' '));
+              var k = document.createElement('span');
+              k.className = 'requirement-key';
+              k.textContent = '(' + it.key + ')';
+              li.appendChild(k);
+            }
+            ul.appendChild(li);
+          });
+          wrap.appendChild(ul);
+          container.appendChild(wrap);
+        });
+
+        if (statusEl && items.length === 0) {
+          statusEl.textContent = 'No syllabus items for this selection.';
+        }
+      }
+
+      function loadSyllabus(done) {
+        if (syllabusPayload) {
+          done(null);
+          return;
+        }
+        fetch(SYLLABUS_URL)
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
+          .then(function (data) {
+            syllabusPayload = data;
+            done(null);
+          })
+          .catch(function () {
+            done(new Error('fetch'));
+          });
+      }
+
       var rankSel = document.getElementById('rank');
       if (rankSel) {
-        rankSel.addEventListener('change', syncRankTitle);
+        rankSel.addEventListener('change', function () {
+          syncRankTitle();
+          renderRequirements();
+        });
         syncRankTitle();
       }
+
+      loadSyllabus(function (err) {
+        var statusEl = document.getElementById('requirements-status');
+        if (err) {
+          if (statusEl) {
+            statusEl.textContent = 'Could not load curriculum data. Check that assets/data/ksw-syllabus.json is available.';
+          }
+          return;
+        }
+        if (statusEl) statusEl.textContent = '';
+        renderRequirements();
+      });
 
       ['member-since', 'renewal-date', 'test-date'].forEach(function (id) {
         var el = document.getElementById(id);
