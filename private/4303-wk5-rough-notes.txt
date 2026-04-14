@@ -1,0 +1,274 @@
+Week 05: Overview
+Week 05: Overview
+This is the week you ship. Project 01 is your first major milestone: a deployed, functional web project with documentation that explains what you built and why.
+
+P01 is a checkpoint, which means your full project has not yet been completed. It's a checkpoint. You'll continue building and improving in the coming weeks, and then deliver the final version as Project 02 in Week 08. But this week, your project needs to stand on its own: live, working, and documented.
+
+Learning Objectives
+Upon successful completion of this week, you will be able to:
+
+Develop and deploy a working web project milestone. (SLO-4)
+Produce project documentation explaining purpose, tools, and decisions. (SLO-5)
+Demonstrate the ability to take a concept from idea to deployed site. (SLO-1, SLO-4)
+To Do List
+The list of scheduled coursework for the week:
+
+Review: Week 05 Overview and Content
+Read: Week 05: Shipping Your First Milestone
+Read: Week 05: Writing Your README
+Project 01 Due: Project 01: Deployed Site and README (Due Sunday, April 19)
+
+Week 05: Shipping Your First Milestone
+Shipping Your First Milestone
+Shipping means your project is live, functional, and available for someone to use. Not finished. Shipped. Again, not finished. There is a big difference. Finished implies everything is done, completed, and mostly polished. Shipped means it works, it's accessible, and it represents a meaningful state of your work.
+
+Project 01 asks you to ship a milestone. Here's what that means and how to prepare.
+
+What "Deployed and Functional" Means
+For P01, your project must meet a baseline:
+
+It's deployed. Your project is live at a URL. Someone can visit that URL in a browser and see your project. You worked with this in Week 03, so make sure the URL you use for P01 is working and reflects your current work.
+
+It's functional. The core features work. Links navigate to the right places. Interactive elements respond. Content is in place. If something is supposed to do something, it does it.
+
+It has real content. Placeholder text and stock images should be replaced with your actual content. Lorem ipsum or other placeholder content on a deployed site tells your audience (and your instructor) that the project isn't ready, and isn't really functional.
+
+It works on different devices. Your audience will access your project on different devices. Check that it's usable on a phone-sized screen, tablet-sized screen, etc.; verify navigation works, that content is readable, and that nothing breaks.
+
+A Pre-Submission Checklist
+Before you submit P01, go through each of these:
+
+Visit your deployed URL in an incognito/private browser window. This helps ensure you're seeing what others see, not a cached version.
+Click every link. Internal navigation, external links, any buttons or calls to action. Fix broken links. (Just because it works on your local computer does not mean it works when deployed!)
+Test every interactive feature. If you added specific behavior(s) in Week 04, verify that it still works on the deployed site.
+Check on different devices. Use your phone, tablet, laptop, desktop, etc., or resize your browser window, and use the responsive mode in browser dev tools. Is everything usable?
+Read your content. Read every page as if you're seeing it for the first time. Fix typos, awkward phrasing, and missing information.
+Verify your README. Is your README.md in the root of your GitHub repository? Does it contain all the required sections? Is it spelled correctly (README.md, not READMEmd.md or READDDDMEEE.md)?
+Check your repository. Is your GitHub repo organized? Are files named clearly? Is there anything that shouldn't be there?
+What P01 Is and What P01 Is Not
+P01 is a milestone. It captures your project's current state as of Week 05. It should be solid, not an early rough draft, but not a final product with extreme polish either.
+
+P01 is not the end. You have three more weeks after Week 05 (Weeks 06-08). Features you didn't get to, polish you want to add, problems you want to solve, iterations you want to work through; those are what the second half of the course is for.
+
+P01 will receive feedback. In Week 07, your classmates will review your deployed project (Discussion 03). That feedback will help inform some of the improvements you might make for P02.
+
+Ship what you have. Make sure it works. Document it well.
+
+Key Takeaways
+Shipping means live, functional, and documented.
+Replace all placeholder content with real content before submitting.
+Test everything: links, features, devices, content accuracy, etc.
+P01 is a checkpoint. You have several more weeks to continue building toward P02.
+
+Week 05: Writing Your README
+Writing Your README
+Documentation is part of delivery. Your README.md is the first thing someone sees (or should see) when they visit your GitHub repository. For P01, it is the written companion to your deployed project.
+
+What Your README Should Include
+Project 01 requires a README.md in the root of your GitHub repository with four sections:
+
+1. What Is This?
+Write one paragraph describing your project.
+
+What does it do?
+What type of project is it?
+Someone reading this section should understand what they're looking at in 30 seconds.
+
+Keep it direct. No marketing pitches or towering essays with hundreds of emojis. A description. "This is a portfolio site showcasing my graphic design projects, art installations, and creative technology work, built for potential employers and clients who want to see my work." is clear and sufficient.
+
+2. Why Does It Exist?
+Explain the purpose and audience.
+
+Why did you build this?
+Who is it for?
+What need does it serve?
+This section connects your project to a real-world purpose beyond "it's a class assignment."
+
+If your project solves a specific problem ("Citizens in my town don't have an easy way to find information about the town policies, election information, candidates, and other critical municipal authority communications."), say that. If it serves a personal goal ("I need an online presence to apply for careers involving the web and creative technology"), say that. Be direct and honest about the motivation.
+
+3. What Tools Did I Use?
+List the tools and technologies you used and briefly explain why you chose them.
+
+Include your code editor(s)
+Include any frameworks or libraries
+Include your hosting platform(s)
+Include any AI assistants/agents you used
+For each, one sentence explaining the choice is sufficient. This demonstrates intentionality. You (hopefully) didn't just grab whatever was closest/easiest. You thought deeply. You made deliberate choices.
+
+4. How to Visit Your Project 
+Provide the live URL for your deployed project. This is an obvious one: your README.md needs to offer a working link (or links) to what you are building. This should be a direct link that anyone can click/tap to visit your project.
+
+Writing Well Without Overthinking It
+Your README doesn't need to be long. Each section can be a few sentences to a short paragraph. Clarity and accuracy are most important.
+
+Write for someone who has never seen your project.
+
+They don't know what it does
+They don't know why you built it
+They don't know about the tools you used
+Your README is a straightforward way to provide people, particularly those new to your work, with all the information necessary to fill in those gaps.
+
+Be specific. "I used modern web technologies," says almost nothing. However, "I used Astro for static site generation, Tailwind CSS for styling, and deployed my project using Netlify" is direct, specific, succinct, yet information-dense, and explains the most critical bits.
+
+Be honest. If you chose a tool because it was the one you were most comfortable and proficient with, that's valid. If you chose a framework because your AI assistant recommended it and the recommendation made sense, say that. Be honest about the decisions you made.
+
+README Format
+Your README.md should be written in Markdown. If you need a refresher on Markdown syntax, search for something like "Markdown guide", ask your AI assistant/agent, or refer to previous resources at your disposal; the basics (headings, paragraphs, lists, links) of Markdown take less than five minutes to learn.
+
+Here is a basic and clean structure you could start with:
+
+# Project Title
+
+One paragraph describing what the project is and does.
+
+Possibly, another brief paragraph that offers a bit more information you want to include.
+
+## Purpose
+
+Why this project exists and who it's for.
+
+## Tools and Technologies
+
+- **Tool 01 name** - Why I chose it
+- **Tool 02 name** - Why I chose it
+
+## Live Project
+
+[View the project](https://your-deployed-url.some-hosting-provider-website.com)
+Key Takeaways
+Documentation is part of project delivery
+Cover four things: what it is, why it exists, what tools you used, and where to find it
+Write for someone who has never seen your project
+Be specific, be honest, keep it concise
+
+Project 01: Ship Your First Milestone
+Due: Sun Apr 19, 2026 11:59pmDue: Sun Apr 19, 2026 11:59pm
+Ungraded, 100 Possible Points
+100 Points Possible
+Attempt
+Attempt 1
+
+In Progress
+NEXT UP: Submit Assignment
+
+Unlimited Attempts Allowed
+Project 01: Ship Your First Milestone
+Overview
+Project 01 is your first major deliverable in this course. You will ship a working version of your web project: deployed, functional, and viewable by anyone with the URL. This is the milestone at which point your project moves from local development to a live site.
+
+This is a milestone. Your web project does not need to be complete or polished. But it does need to work. The goal is to demonstrate that you can build something real, deploy it, document what you built and why, and share that for others to access and review.
+
+Points: 100
+
+Due: Sunday, April 19 by 11:59 PM CT
+
+Deliverables
+1. Deployed Web Project
+Working functionality. Core features operate as intended. Links navigate correctly, pages load, and interactive elements respond.
+Real content. No lorem ipsum or placeholder text. The site contains meaningful content that reflects the purpose of your project.
+Visual coherence. The design is intentional and consistent; colors, typography, and layout feel like they belong together.
+Multiple device usability. The site is usable on a phone, tablet, laptop, etc. It may not be perfect on every device, but it should not break on a smaller screen, for instance.
+2. README.md
+Your GitHub repository must include a README.md file with the following four sections:
+
+What is this? A brief description of your project and what it does.
+Why does it exist? The purpose behind the project: what problem it solves or what goal it serves.
+What tools did I use? The technologies, frameworks, platforms, software, and/or AI tools you used, and why you chose them.
+How to visit it. A working link to the deployed project.
+Submission
+Submit the following two items:
+
+Your deployed site URL
+Your GitHub repository URL
+Grading
+This project is worth 100 points and will be graded using the rubric below.
+
+Project 01 Rubric Summary
+Criterion	Points
+Deployment and Functionality	35
+Content and Design	25
+Interactivity and Features	15
+README Documentation	25
+Total	100
+Project 01: Ship Your First Milestone — Grading Rubric
+Project 01: Ship Your First Milestone — Grading Rubric
+Criteria	Ratings	Points
+Deployment and Functionality (35 points)
+
+Exemplary
+Site is deployed and loads without errors. All core features are functional. Links navigate correctly, and interactive elements respond as intended.
+35 to >28 pts
+
+Proficient
+Site is deployed. Most core features are functional, with minor issues that do not prevent use.
+28 to >18 pts
+
+Developing
+Site is deployed but has significant issues. Multiple features are broken or non-functional.
+18 to >0 pts
+
+Incomplete
+0 pts
+/35 pts
+Content and Design (25 points)
+
+Exemplary
+Site contains real, meaningful content with no placeholders. Design is visually coherent — colors, typography, and layout are intentional and consistent. Site works on mobile.
+25 to >20 pts
+
+Proficient
+Site contains mostly real content. Design is generally consistent, with minor inconsistencies.
+20 to >13 pts
+
+Developing
+Site relies heavily on placeholder content. Significant design issues — inconsistent styling, broken layouts, or poor mobile experience.
+13 to >0 pts
+
+Incomplete
+0 pts
+/25 pts
+Interactivity and Features (15 points)
+
+Exemplary
+Site includes at least one interactive feature that serves a clear purpose. The feature works reliably and functions on mobile.
+15 to >12 pts
+
+Proficient
+Interactive feature generally works and adds value to the site.
+12 to >8 pts
+
+Developing
+Interactive feature is unreliable, purely decorative, or poorly integrated into the site.
+8 to >0 pts
+
+Incomplete
+0 pts
+/15 pts
+README Documentation (25 points)
+
+Exemplary
+README includes all four required sections. Writing is clear, specific, and honest. Tool choices include justifications for why they were selected. Deployed URL works.
+25 to >20 pts
+
+Proficient
+README includes all sections. Content is accurate but less specific in places.
+20 to >13 pts
+
+Developing
+README is missing sections, vague, or inaccurate.
+13 to >0 pts
+
+Incomplete
+0 pts
+/25 pts
+Week 05: Wrap Up
+Week 05: Wrap-Up
+You shipped. Your project is deployed, functional, and documented. Whether you're thrilled with it or already thinking about what you will change, your P01 milestone is meaningful progress. You took a concept from idea to shipped and online in five weeks.
+
+Looking Ahead to Week 06
+The second half of the course is about continuing to build and improve your project to better meet your goals. Week 06 focuses on evolution:
+
+Analyze. You'll analyze your own work and identify what to improve. What works? What doesn't? What's missing?
+Implement enhancements. You'll add at least one meaningful improvement to your project based on your analysis.
+Write an iteration plan. Assignment 02 asks you to document what you're changing, adding, and refining for P02, and why.
+P01 was a starting place for the second phase of your project work. Time to keep building.
