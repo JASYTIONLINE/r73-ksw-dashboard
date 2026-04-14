@@ -27,23 +27,26 @@
   box-sizing: border-box;
 }
 
-.home-page .sidebar.card {
+/* Sidebar column: nav + address panel, then Contact Instructor; 16px gap between */
+.home-page .sidebar.sidebar-stack {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
-/* 769px+: sidebar visible — column matches main height; maroon matches Mind/Body/Soul panels */
+/* 769px+: sidebar visible — column matches main height; maroon frame around stacked panels */
 @media (min-width: 769px) {
   .home-page .page-layout {
     align-items: flex-start;
   }
 
-  .home-page .sidebar.card {
+  .home-page .sidebar.sidebar-stack {
     align-self: stretch;
     background-color: var(--home-maroon);
     border: 2px solid #2a0a0a;
     border-radius: 8px;
     color: var(--home-text-on-dark);
+    padding: 0.75rem;
   }
 
   .home-page .home-shell {

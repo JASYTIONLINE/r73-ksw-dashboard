@@ -28,21 +28,31 @@
     </nav>
 
     <div class="page-layout">
-      <aside class="sidebar card">
-        <nav class="sidebar-nav" aria-label="Primary navigation">
-          <a class="btn" href="index.html">Home</a>
-          <a class="btn" href="about.html">About</a>
-          <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
-        </nav>
-        <a class="box sidebar-address-card" href="mailto:johnbarkle@msn.com?subject=General%20Inquiry%20about%20your%20school&amp;body=Feel%20free%20to%20ask%20us%20about%20anything%E2%80%94class%20schedules%2C%20programs%2C%20getting%20started%2C%20or%20whatever%20is%20on%20your%20mind.%20We%20are%20here%20to%20help." aria-label="Contact Brownsville Kuk Sool Won by email">
-          <p>
-            <strong>Contact US</strong><br>
-            Brownsville Kuk Sool Won<br>
-            1601 E Alton Gloor Blvd #110<br>
-            Brownsville, TX 78526<br>
-            956-371-8431
-          </p>
-        </a>
+      <aside class="sidebar sidebar-stack">
+        <div class="card sidebar-primary-panel">
+          <nav class="sidebar-nav" aria-label="Primary navigation">
+            <a class="btn" href="index.html">Home</a>
+            <a class="btn" href="about.html">About</a>
+            <a class="btn" href="dashboard.html">Student<br>Dashboard</a>
+          </nav>
+          <a class="box sidebar-address-card" href="mailto:johnbarkle@msn.com?subject=General%20Inquiry%20about%20your%20school&amp;body=Feel%20free%20to%20ask%20us%20about%20anything%E2%80%94class%20schedules%2C%20programs%2C%20getting%20started%2C%20or%20whatever%20is%20on%20your%20mind.%20We%20are%20here%20to%20help." aria-label="Contact Brownsville Kuk Sool Won by email">
+            <p>
+              <strong>Contact US</strong><br>
+              Brownsville Kuk Sool Won<br>
+              1601 E Alton Gloor Blvd #110<br>
+              Brownsville, TX 78526<br>
+              956-371-8431
+            </p>
+          </a>
+        </div>
+        <section class="card sidebar-contact-instructor" aria-labelledby="sidebar-contact-instructor-heading">
+          <h3 id="sidebar-contact-instructor-heading">Contact Instructor</h3>
+          <div class="dashboard-contact-actions">
+            <a class="btn" href="mailto:johnbarkle@msn.com?subject=Schedule%20Private%20Session">Schedule Private Session</a>
+            <a class="btn" href="mailto:johnbarkle@msn.com?subject=Request%20Assessment">Request Assessment</a>
+            <a class="btn" href="mailto:johnbarkle@msn.com?subject=General%20Inquiry%20about%20your%20school&amp;body=Feel%20free%20to%20ask%20us%20about%20anything%E2%80%94class%20schedules%2C%20programs%2C%20getting%20started%2C%20or%20whatever%20is%20on%20your%20mind.%20We%20are%20here%20to%20help.">General Inquiry</a>
+          </div>
+        </section>
       </aside>
 
       <div class="page-content">
@@ -160,9 +170,9 @@
           <h3>Skills Requirements (by current rank)</h3>
           <p class="requirements-hint">Lists split by your belt step: <strong>To learn</strong> is what you are working on now (rank equals your step). <strong>Maintain</strong> is everything from lower ranks (rank &lt; your step). Change <strong>Current Rank</strong> above to refresh.</p>
           <div class="requirements-actions">
-            <button id="export-syllabus-json" class="btn" type="button">Export updated JSON</button>
+            <button id="export-syllabus-json" class="btn" type="button">Save your progress</button>
             <label id="import-syllabus-json-button" class="btn import-button-label">
-              Import local JSON
+              Load saved progress
               <input id="import-syllabus-json-input" type="file" accept="application/json" style="display:none">
             </label>
           </div>
@@ -171,15 +181,6 @@
         </section>
 
 
-
-        <section class="card">
-          <h3>Contact Instructor</h3>
-          <div class="dashboard-contact-actions">
-            <a class="btn" href="mailto:johnbarkle@msn.com?subject=Schedule%20Private%20Session">Schedule Private Session</a>
-            <a class="btn" href="mailto:johnbarkle@msn.com?subject=Request%20Assessment">Request Assessment</a>
-            <a class="btn" href="mailto:johnbarkle@msn.com?subject=General%20Inquiry%20about%20your%20school&amp;body=Feel%20free%20to%20ask%20us%20about%20anything%E2%80%94class%20schedules%2C%20programs%2C%20getting%20started%2C%20or%20whatever%20is%20on%20your%20mind.%20We%20are%20here%20to%20help.">General Inquiry</a>
-          </div>
-        </section>
 
         <footer class="card dashboard-page-footer">
           <nav class="site-nav dashboard-mobile-footer-nav" aria-label="Footer navigation">
@@ -707,15 +708,15 @@
       if (exportBtn) {
         exportBtn.addEventListener('click', function () {
           openModal({
-            title: 'Export updated JSON',
-            body: 'Exporting saves your curriculum data and personal info to a JSON file on this device. Recommended: create a \"KSW-Dashboard\" folder in your Documents and save the file there as \"ksw-syllabus.json\".',
-            proceedLabel: 'Proceed to export',
+            title: 'Save your progress',
+            body: 'Saving writes your curriculum data and personal info to a JSON file on this device. Recommended: create a \"KSW-Dashboard\" folder in your Documents and save the file there as \"ksw-syllabus.json\".',
+            proceedLabel: 'Proceed to save',
             cancelLabel: 'Cancel',
             onProceed: function () {
               exportUpdatedJson();
               closeModal();
               var statusEl = document.getElementById('requirements-status');
-              if (statusEl) statusEl.textContent = 'Exported updated JSON. Save it somewhere safe (for example, Documents/KSW-Dashboard).';
+              if (statusEl) statusEl.textContent = 'Progress saved. Keep your file somewhere safe (for example, Documents/KSW-Dashboard).';
             },
             onCancel: function () {
               closeModal();
@@ -732,9 +733,9 @@
         importLabel.addEventListener('click', function (evt) {
           evt.preventDefault();
           openModal({
-            title: 'Import local JSON',
-            body: 'Import is only needed if you cleared your browser cache or site data and lost your saved progress. Use this if you previously exported a \"ksw-syllabus.json\" backup (for example, from Documents/KSW-Dashboard).',
-            proceedLabel: 'Choose file to import',
+            title: 'Load saved progress',
+            body: 'Loading is for when you cleared your browser cache or site data and need to restore from a backup. Choose a \"ksw-syllabus.json\" file you saved earlier (for example, from Documents/KSW-Dashboard).',
+            proceedLabel: 'Choose file',
             cancelLabel: 'Cancel',
             onProceed: function () {
               closeModal();
@@ -798,7 +799,7 @@
                   }
                   renderRequirements();
                   var statusEl = document.getElementById('requirements-status');
-                  if (statusEl) statusEl.textContent = 'Imported data from local JSON.';
+                  if (statusEl) statusEl.textContent = 'Saved progress loaded from file.';
                   pendingImportedData = null;
                 },
                 onCancel: function () {
