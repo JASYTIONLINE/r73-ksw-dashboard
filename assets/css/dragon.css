@@ -124,13 +124,50 @@ code a:hover {
   color: #ffffff;
 }
 
-/* Mobile top nav: same red outline + radius as other .card blocks */
+/* Mobile top nav: no outer border (buttons keep their own outlines) */
 @media (max-width: 768px) {
   .site-nav--mobile-top.card {
-    border: 1px solid #ff0000;
+    border: none;
     border-radius: 6px;
   }
 
+  body.about-page .site-nav--mobile-top.card {
+    background-color: #220000;
+    border: none;
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+/* About page: footer Contact US — gold fill; border matches .card / top nav (1px #ff0000, same as header & main) */
+body.about-page .about-contact-address.card,
+body.about-page .about-contact-address.card:visited {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #ffcc00;
+  border: 1px solid #ff0000;
+  color: #000000;
+}
+
+body.about-page .about-contact-address.card p {
+  margin: 0;
+  line-height: 1.35;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+body.about-page .about-contact-address.card strong {
+  color: #000000;
+}
+
+body.about-page .about-contact-address.card:hover,
+body.about-page .about-contact-address.card:focus-visible {
+  background-color: #ffd54a;
+  border-color: #ff0000;
 }
 
 /* Student dashboard: gold headings, white paragraphs and list items */

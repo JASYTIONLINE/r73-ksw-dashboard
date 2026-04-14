@@ -462,7 +462,7 @@ a.sidebar-address-card:visited {
 
   .home-page .site-nav--mobile-top.card {
     background-color: var(--home-maroon);
-    border: 2px solid #2a0a0a;
+    border: none;
     border-radius: 8px;
   }
 
