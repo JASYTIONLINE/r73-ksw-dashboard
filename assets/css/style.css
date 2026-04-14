@@ -516,7 +516,7 @@ pre {
    RESPONSIVE: Mobile + Large Screens
    ================================================ */
 
-/* Phones / small tablets: sticky top nav only, hide sidebar */
+/* Phones / small tablets: fixed top nav only, hide sidebar */
 @media (max-width: 768px) {
   .page-layout {
     flex-direction: column;
@@ -535,13 +535,33 @@ pre {
     padding: 0 0.75rem;
   }
 
+  /* Fixed (not sticky): sticky breaks when an ancestor uses overflow:hidden — e.g. .home-page .wrapper */
   .site-nav--mobile-top {
     display: block;
-    margin-bottom: 1rem;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 20;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
     padding-top: max(0.45rem, env(safe-area-inset-top, 0px));
+  }
+
+  /* Reserve space: fixed nav is out of flow; match prior nav block + margin (1rem; dashboard uses 8px) */
+  .wrapper > .page-layout {
+    padding-top: calc(max(0.45rem, env(safe-area-inset-top, 0px)) + 3.25rem + 1rem);
+  }
+
+  .dashboard-page .wrapper > .page-layout {
+    padding-top: calc(max(0.45rem, env(safe-area-inset-top, 0px)) + 3.25rem + 8px);
+  }
+
+  html {
+    scroll-padding-top: calc(max(0.45rem, env(safe-area-inset-top, 0px)) + 3.35rem);
   }
 
   /* Tighter horizontal padding so four buttons fit (iPhone 12 ~390px) */
@@ -589,9 +609,6 @@ pre {
     overflow-x: hidden;
   }
 
-  .dashboard-page .site-nav--mobile-top {
-    margin-bottom: 8px;
-  }
 }
 
 /* Very small phones: scale down headings slightly */

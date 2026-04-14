@@ -441,6 +441,11 @@ a.sidebar-address-card:visited {
   margin-bottom: 16px;
 }
 
+/* Duplicate of sidebar address: shown only ≤768px (sidebar is hidden on phones) */
+.home-page .home-mobile-contact-address {
+  display: none;
+}
+
 .home-footer-contact {
   text-align: center;
   padding: 1rem;
@@ -456,6 +461,7 @@ a.sidebar-address-card:visited {
   }
 
   .home-page .site-nav--mobile-top.card {
+    background-color: var(--home-maroon);
     border: 2px solid #2a0a0a;
     border-radius: 8px;
   }
@@ -549,6 +555,18 @@ a.sidebar-address-card:visited {
     line-height: 1.45;
     padding: 1rem max(0.5rem, env(safe-area-inset-left, 0px)) 1.25rem
       max(0.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-page .home-mobile-contact-address {
+    display: block;
+    margin-top: 0;
+    margin-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
+      max(0.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-page .home-mobile-contact-address .sidebar-address-card {
+    margin-top: 0;
   }
 }
 
