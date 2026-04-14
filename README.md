@@ -93,18 +93,27 @@ Commit updated `assets/data/ksw-syllabus.json` when you want production to match
 
 ### Feature summary by page
 
-**`index.html`** — Navigation, CTA mailto, optional CTA animation (respects `prefers-reduced-motion`).
+**`index.html`** — Navigation, CTA mailto, optional CTA animation (respects `prefers-reduced-motion`). On **phones and small tablets** (≤768px), the sidebar is hidden in favor of a **fixed top navigation bar**; the same **Contact US** address block used in the desktop sidebar is **duplicated at the bottom** of the home column so contact info stays visible without the sidebar.
 
-**`about.html`** — Static content: purpose, audience, proficiency guidance.
+**`about.html`** — Static content: purpose, audience, proficiency guidance. The **page footer** is a single **Contact US** mailto card (gold “button” styling aligned with the theme), not the full dashboard-style footer (site link row + address tagline). The body uses an `about-page` class for that layout.
 
 **`contact.html`** — The standalone contact page is **disabled in the UI as redundant**: instructor contact is covered by the shared **Contact Instructor** mailto bar (same actions) on Dashboard, About, and related pages, so the site no longer links to `contact.html`. The file remains in the repo for reference and direct URL access; see the HTML comment at the top of that file.
 
-**`dashboard.html`** — Profile fields (persisted), rank selection and syllabus filtering (“to learn” vs “maintain”), tables (description / learning objective / status), category order from `categoryPriority`, export/import JSON with modals, clear-data reset, sidebar navigation helpers and scroll jump controls (responsive).
+**`dashboard.html`** — Profile fields (persisted), rank selection and syllabus filtering (“to learn” vs “maintain”), tables (description / learning objective / status), category order from `categoryPriority`, export/import JSON with modals, clear-data reset, sidebar navigation helpers and scroll jump controls (scroll controls are hidden on small screens where they would crowd the layout).
+
+- **Progress Summary** — Live **totals** and **per-status counts** for **Untrained**, **In Progress**, **Trained**, and **Proficient**, calculated from syllabus items. Counts are **split into two panels**: **To learn** (current rank only) and **Maintain** (all lower ranks). The section updates when the user changes **Current Rank**, changes any requirement status, loads or imports data, or when curriculum load fails. On wide viewports the two panels sit **side by side** with spacing and bordered panels; on narrow screens they **stack**.
+
+### Stylesheets (quick map)
+
+- **`assets/css/style.css`** — Shared layout, dashboard tables, mobile fixed nav offset, progress summary grid, requirement tables.
+- **`assets/css/dragon.css`** — Dragoneye theme (colors, cards, buttons, About-specific footer chrome where applicable).
+- **`assets/css/home.css`** — Home page gold/maroon layout, home-only mobile nav tweaks.
 
 ### JavaScript behavior (high level)
 
 - Loads syllabus JSON; merges saved status and profile from `localStorage`.
 - Renders requirements by rank and category; status dropdowns persist per skill key.
+- **Progress Summary** recomputes from the same in-memory syllabus items and saved statuses (see `updateProgressSummary()` in `dashboard.html`).
 - Export includes curriculum snapshot plus user object; import validates and applies.
 - Modal flows for export, import, and reset; header-based scroll jumps within `.page-content`.
 
