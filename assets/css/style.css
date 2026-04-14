@@ -445,6 +445,44 @@ pre {
   font-size: clamp(0.68rem, 3.04vw, 0.91rem);
 }
 
+.dashboard-page .dashboard-footer-tagline {
+  margin: 0.6rem 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.dashboard-page .dashboard-footer-tagline__school,
+.dashboard-page .dashboard-footer-tagline__street,
+.dashboard-page .dashboard-footer-tagline__locality,
+.dashboard-page .dashboard-footer-tagline__phone {
+  display: inline;
+}
+
+/* Mobile: stacked “mailing block” address; desktop stays one line (min-width matches sidebar breakpoint) */
+@media (max-width: 768px) {
+  .dashboard-page .dashboard-footer-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2em;
+    line-height: 1.35;
+  }
+
+  .dashboard-page .dashboard-footer-tagline__dash,
+  .dashboard-page .dashboard-footer-tagline__sep {
+    display: none;
+  }
+
+  .dashboard-page .dashboard-footer-tagline__school,
+  .dashboard-page .dashboard-footer-tagline__street,
+  .dashboard-page .dashboard-footer-tagline__locality,
+  .dashboard-page .dashboard-footer-tagline__phone {
+    display: block;
+  }
+}
+
 /* ================================================
    RESPONSIVE: Mobile + Large Screens
    ================================================ */
