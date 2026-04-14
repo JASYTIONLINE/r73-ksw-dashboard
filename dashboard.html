@@ -160,11 +160,24 @@
           </div>
           </div>
         </section>
-        <section class="card">
-          <h3>Progress Summary (Preview Only)</h3>
-          <p>Completed requirements: --</p>
-          <p>Estimated readiness: --</p>
-          <p>Days until test date: --</p>
+        <section class="card dashboard-progress-summary" aria-labelledby="progress-summary-heading">
+          <h3 id="progress-summary-heading">Progress Summary</h3>
+          <div class="progress-summary-split">
+            <section class="progress-summary-column" aria-labelledby="progress-summary-learn-title">
+              <h4 id="progress-summary-learn-title" class="progress-summary-subheading">To learn</h4>
+              <p class="progress-summary-intro">
+                Requirements: <strong id="progress-summary-learn-count">0</strong>
+              </p>
+              <div id="progress-summary-learn-by-status" class="progress-summary-by-status" role="group" aria-label="To learn: count by proficiency"></div>
+            </section>
+            <section class="progress-summary-column" aria-labelledby="progress-summary-maintain-title">
+              <h4 id="progress-summary-maintain-title" class="progress-summary-subheading">Maintain</h4>
+              <p class="progress-summary-intro">
+                Requirements: <strong id="progress-summary-maintain-count">0</strong>
+              </p>
+              <div id="progress-summary-maintain-by-status" class="progress-summary-by-status" role="group" aria-label="Maintain: count by proficiency"></div>
+            </section>
+          </div>
         </section>
         <section class="card">
           <h3>Skills Requirements (by current rank)</h3>
@@ -540,6 +553,96 @@
         });
       }
 
+      function progressSummaryZeroCounts() {
+        var counts = {};
+        STATUS_OPTIONS.forEach(function (s) {
+          counts[s] = 0;
+        });
+        return counts;
+      }
+
+      function progressSummaryAddStatus(counts, it) {
+        var s = normalizeStatus(it.status) || 'Untrained';
+        if (Object.prototype.hasOwnProperty.call(counts, s)) {
+          counts[s]++;
+        } else {
+          counts['Untrained']++;
+        }
+      }
+
+      function progressSummaryFillRows(container, counts) {
+        container.innerHTML = '';
+        STATUS_OPTIONS.forEach(function (label) {
+          var row = document.createElement('div');
+          row.className = 'progress-summary-row';
+          var lab = document.createElement('span');
+          lab.className = 'progress-summary-label';
+          lab.textContent = label;
+          var num = document.createElement('span');
+          num.className = 'progress-summary-num';
+          num.textContent = String(counts[label]);
+          row.appendChild(lab);
+          row.appendChild(num);
+          container.appendChild(row);
+        });
+      }
+
+      function updateProgressSummary() {
+        var learnCountEl = document.getElementById('progress-summary-learn-count');
+        var learnContainer = document.getElementById('progress-summary-learn-by-status');
+        var maintainCountEl = document.getElementById('progress-summary-maintain-count');
+        var maintainContainer = document.getElementById('progress-summary-maintain-by-status');
+        var learnTitle = document.getElementById('progress-summary-learn-title');
+        var maintainTitle = document.getElementById('progress-summary-maintain-title');
+        if (!learnCountEl || !learnContainer || !maintainCountEl || !maintainContainer) return;
+
+        function clearBoth() {
+          learnCountEl.textContent = '0';
+          maintainCountEl.textContent = '0';
+          learnContainer.innerHTML = '';
+          maintainContainer.innerHTML = '';
+          if (learnTitle) learnTitle.textContent = 'To learn';
+          if (maintainTitle) maintainTitle.textContent = 'Maintain';
+        }
+
+        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) {
+          clearBoth();
+          return;
+        }
+
+        var rankSel = document.getElementById('rank');
+        var R = rankSel ? parseInt(rankSel.value, 10) : NaN;
+        if (Number.isNaN(R) || R < 1) {
+          clearBoth();
+          return;
+        }
+
+        if (learnTitle) learnTitle.textContent = 'Rank ' + R + ' — to learn';
+        if (maintainTitle) maintainTitle.textContent = 'Rank < ' + R + ' — maintain';
+
+        var learnCounts = progressSummaryZeroCounts();
+        var maintainCounts = progressSummaryZeroCounts();
+        var learnTotal = 0;
+        var maintainTotal = 0;
+
+        syllabusPayload.items.forEach(function (it) {
+          if (!it || it.rank == null) return;
+          if (it.rank > R) return;
+          if (it.rank === R) {
+            learnTotal++;
+            progressSummaryAddStatus(learnCounts, it);
+          } else if (it.rank < R) {
+            maintainTotal++;
+            progressSummaryAddStatus(maintainCounts, it);
+          }
+        });
+
+        learnCountEl.textContent = String(learnTotal);
+        maintainCountEl.textContent = String(maintainTotal);
+        progressSummaryFillRows(learnContainer, learnCounts);
+        progressSummaryFillRows(maintainContainer, maintainCounts);
+      }
+
       function appendMajorSection(container, headingText, items, labels, emptyMessage) {
         var section = document.createElement('div');
         section.className = 'requirement-major-section';
@@ -569,6 +672,7 @@
 
         if (!syllabusPayload) {
           if (statusEl) statusEl.textContent = 'Loading curriculum…';
+          updateProgressSummary();
           return;
         }
 
@@ -577,6 +681,7 @@
 
         if (Number.isNaN(R) || R < 1) {
           container.innerHTML = '';
+          updateProgressSummary();
           return;
         }
 
@@ -616,6 +721,8 @@
         if (statusEl && maintainItems.length === 0 && learnItems.length === 0) {
           statusEl.textContent = 'No syllabus items for this selection.';
         }
+
+        updateProgressSummary();
       }
 
       function loadSyllabus(done) {
@@ -834,6 +941,7 @@
           if (statusEl) {
             statusEl.textContent = 'Could not load curriculum data. Check that assets/data/ksw-syllabus.json is available.';
           }
+          updateProgressSummary();
           return;
         }
         if (statusEl) statusEl.textContent = '';
@@ -955,6 +1063,7 @@
 
         var statusEl = document.getElementById('requirements-status');
         if (statusEl) statusEl.textContent = 'Saved status for ' + key + '.';
+        updateProgressSummary();
       });
 
       function getCategoryTargets() {
