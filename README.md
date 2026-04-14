@@ -1,4 +1,4 @@
-# Brownsville Kuk Sool Won Dashboard
+# Brownsville Kuk Sool Won Student Dashboard
 
 Brownsville Kuk Sool Won Dashboard is both:
 
