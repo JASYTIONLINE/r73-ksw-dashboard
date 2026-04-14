@@ -71,6 +71,24 @@
   font-weight: 700;
 }
 
+/* Whole gold card is one mailto control */
+a.sidebar-address-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+a.sidebar-address-card:hover,
+a.sidebar-address-card:focus-visible {
+  background: #ffd54a;
+  border-color: #9a7209;
+}
+
+a.sidebar-address-card:visited {
+  color: #000000;
+}
+
 /* Flex child for shared layout */
 .home-shell {
   min-width: 0;

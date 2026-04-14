@@ -324,14 +324,15 @@ pre {
   min-height: 0;
 }
 
-.dashboard-page .sidebar-backtotop {
-  margin-top: 8px;
-  padding-top: 0;
-  border-top: none;
+/* Gold mailto address card in sidebar: black text (overrides .dashboard-page p white from theme) */
+.dashboard-page a.sidebar-address-card,
+.dashboard-page a.sidebar-address-card p,
+.dashboard-page a.sidebar-address-card strong {
+  color: #000000;
 }
 
-.dashboard-page .sidebar-backtotop-btn {
-  width: 100% !important;
+.dashboard-page a.sidebar-address-card:visited {
+  color: #000000;
 }
 
 .page-content {

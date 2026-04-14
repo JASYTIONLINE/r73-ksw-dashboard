@@ -92,12 +92,6 @@ input:focus, select:focus, textarea:focus {
   border-color: #ffa500;            /* Orange border */
 }
 
-.dashboard-page .sidebar-backtotop-btn {
-  background-color: #ffcc00;
-  color: #000000;
-  border-color: #ffa500;
-}
-
 .btn:hover {
   background-color: #001489;        /* WKSA flag field blue */
   color: #ffffff;
