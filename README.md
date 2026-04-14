@@ -84,7 +84,7 @@ Commit updated `assets/data/ksw-syllabus.json` when you want production to match
 
 - `index.html` — landing page  
 - `about.html` — purpose and usage guidance  
-- `contact.html` — instructor contact  
+- `contact.html` — legacy file only (not linked in navigation; see note below)  
 - `dashboard.html` — dashboard UI and client-side logic  
 - `assets/css/` — layout and theme styles  
 - `assets/data/ksw-syllabus.json` — generated curriculum payload  
@@ -97,7 +97,7 @@ Commit updated `assets/data/ksw-syllabus.json` when you want production to match
 
 **`about.html`** — Static content: purpose, audience, proficiency guidance.
 
-**`contact.html`** — Mailto-based instructor / audit contact.
+**`contact.html`** — The standalone contact page is **disabled in the UI as redundant**: instructor contact is covered by the shared **Contact Instructor** mailto bar (same actions) on Dashboard, About, and related pages, so the site no longer links to `contact.html`. The file remains in the repo for reference and direct URL access; see the HTML comment at the top of that file.
 
 **`dashboard.html`** — Profile fields (persisted), rank selection and syllabus filtering (“to learn” vs “maintain”), tables (description / learning objective / status), category order from `categoryPriority`, export/import JSON with modals, clear-data reset, sidebar navigation helpers and scroll jump controls (responsive).
 
