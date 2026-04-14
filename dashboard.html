@@ -13,8 +13,10 @@
 <body class="dashboard-page">
   <a id="top"></a>
   <div class="scroll-controls" aria-label="Scroll controls">
-    <button type="button" class="scroll-controls-btn" id="scroll-up-btn" aria-label="Scroll up">▲</button>
-    <button type="button" class="scroll-controls-btn" id="scroll-down-btn" aria-label="Scroll down">▼</button>
+    <button type="button" class="scroll-controls-btn scroll-controls-btn--jump" id="scroll-top-btn" aria-label="Scroll to top of page">⇑</button>
+    <button type="button" class="scroll-controls-btn" id="scroll-up-btn" aria-label="Previous section">▲</button>
+    <button type="button" class="scroll-controls-btn" id="scroll-down-btn" aria-label="Next section">▼</button>
+    <button type="button" class="scroll-controls-btn scroll-controls-btn--jump" id="scroll-end-btn" aria-label="Scroll to end of page">⇓</button>
   </div>
   <div class="wrapper">
     <nav class="card site-nav site-nav--mobile-top" aria-label="Mobile navigation top">
@@ -1007,6 +1009,30 @@
 
       bindJump(document.getElementById('scroll-up-btn'), -1);
       bindJump(document.getElementById('scroll-down-btn'), 1);
+
+      (function bindScrollTopEnd() {
+        var topBtn = document.getElementById('scroll-top-btn');
+        if (topBtn) {
+          topBtn.addEventListener('click', function () {
+            var anchor = document.getElementById('top');
+            if (anchor) {
+              anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          });
+        }
+        var endBtn = document.getElementById('scroll-end-btn');
+        if (endBtn) {
+          endBtn.addEventListener('click', function () {
+            var h = Math.max(
+              document.documentElement.scrollHeight,
+              document.body.scrollHeight
+            );
+            window.scrollTo({ top: h, behavior: 'smooth' });
+          });
+        }
+      })();
 
       function positionScrollControls() {
         var controls = document.querySelector('.scroll-controls');

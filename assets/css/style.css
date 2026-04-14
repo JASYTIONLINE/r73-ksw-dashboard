@@ -722,6 +722,12 @@ pre {
   user-select: none;
 }
 
+/* Double-arrow jump controls (top / end of page) */
+.dashboard-page .scroll-controls-btn--jump {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .dashboard-page .scroll-controls {
     display: none;
