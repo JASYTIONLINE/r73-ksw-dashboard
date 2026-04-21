@@ -1,6 +1,10 @@
 /**
  * Reads private/ksw-roadmap-db.csv and writes assets/data/ksw-syllabus.json
  * Run from repo root: node scripts/csv-to-syllabus-json.mjs
+ *
+ * Emits a master skill list (`items`) and `requirementsByAgeBand` mapping
+ * (age band + belt rank → ordered skill keys). Under-18 and over-18 start
+ * identical until separate CSV sources feed different mappings.
  */
 import fs from 'fs';
 import path from 'path';
@@ -60,7 +64,7 @@ const rows = parseCsv(text);
 if (rows.length < 2) throw new Error('CSV empty or invalid');
 
 const beltStepLabels = {};
-const items = [];
+const rawSyllabusRows = [];
 const objects = {};
 let currentHeader = null;
 
@@ -105,7 +109,7 @@ for (const cells of rows) {
     const rank = parseInt(String(cells[3] || '').trim(), 10);
     if (Number.isNaN(rank) || rank < 1 || !key) continue;
 
-    items.push({
+    rawSyllabusRows.push({
       count: Number.isNaN(count) ? null : count,
       key,
       rank,
@@ -143,27 +147,61 @@ function deepClone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
-const syllabusByAgeGroup = {
-  'under-18': {
-    source: 'private/ksw-roadmap-under18.csv',
-    items: deepClone(items)
-  },
-  'over-18': {
-    source: 'private/ksw-roadmap-over18.csv',
-    items: deepClone(items)
+/** One row per unique skill key (first CSV occurrence wins). */
+const seenKeys = new Set();
+const items = [];
+for (const it of rawSyllabusRows) {
+  if (!it.key) continue;
+  if (seenKeys.has(it.key)) {
+    console.warn('Duplicate syllabus key skipped:', it.key);
+    continue;
   }
+  seenKeys.add(it.key);
+  items.push(it);
+}
+
+/** Rank → ordered keys for requirement sets (belt step). */
+const rankToKeys = {};
+for (let r = 1; r <= 16; r++) rankToKeys[String(r)] = [];
+items.forEach(function (it) {
+  const rank = it.rank;
+  if (rank == null || rank < 1) return;
+  const rk = String(rank);
+  if (!rankToKeys[rk]) rankToKeys[rk] = [];
+  rankToKeys[rk].push(it.key);
+});
+
+const keySet = new Set(items.map((it) => it.key));
+Object.keys(rankToKeys).forEach(function (rk) {
+  rankToKeys[rk].forEach(function (k) {
+    if (!keySet.has(k)) throw new Error('Referential integrity: missing key ' + k);
+  });
+});
+
+const requirementsByAgeBand = {
+  'under-18': deepClone(rankToKeys),
+  'over-18': deepClone(rankToKeys)
 };
 
+const categoryDisplayNames = {};
+const learningObjectiveDisplayNames = {};
+
 const payload = {
-  version: 2,
+  version: 3,
   source: 'private/ksw-roadmap-db.csv',
   beltStepLabels,
-  items: deepClone(items),
-  syllabusByAgeGroup,
+  items,
+  requirementsByAgeBand,
+  syllabusByAgeGroup: {
+    'under-18': { source: 'private/ksw-roadmap-under18.csv' },
+    'over-18': { source: 'private/ksw-roadmap-over18.csv' }
+  },
+  categoryDisplayNames,
+  learningObjectiveDisplayNames,
   categoryPriority,
   objects
 };
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, JSON.stringify(payload, null, 0), 'utf8');
-console.log('Wrote', items.length, 'syllabus items to', path.relative(root, outPath));
+console.log('Wrote', items.length, 'unique syllabus items; requirement ranks 1–16 to', path.relative(root, outPath));
