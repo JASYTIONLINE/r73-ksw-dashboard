@@ -326,14 +326,54 @@
         }
       }
 
+      function forEachSyllabusItemsArray(payload, fn) {
+        if (!payload || typeof fn !== 'function') return;
+        if (Array.isArray(payload.items)) fn(payload.items);
+        var g = payload.syllabusByAgeGroup;
+        if (!g || typeof g !== 'object') return;
+        Object.keys(g).forEach(function (band) {
+          if (g[band] && Array.isArray(g[band].items)) fn(g[band].items);
+        });
+      }
+
+      function getStudentAgeBandKey() {
+        var el = document.getElementById('student-age');
+        var v = el ? el.value : '';
+        if (v === 'over-18') return 'over-18';
+        return 'under-18';
+      }
+
+      function getActiveSyllabusItems() {
+        if (!syllabusPayload) return [];
+        var band = getStudentAgeBandKey();
+        var g = syllabusPayload.syllabusByAgeGroup;
+        if (g && g[band] && Array.isArray(g[band].items)) return g[band].items;
+        if (Array.isArray(syllabusPayload.items)) return syllabusPayload.items;
+        return [];
+      }
+
+      function syllabusPayloadLooksValid(data) {
+        if (!data || typeof data !== 'object') return false;
+        if (Array.isArray(data.items)) return true;
+        var g = data.syllabusByAgeGroup;
+        if (!g || typeof g !== 'object') return false;
+        var bands = Object.keys(g);
+        for (var i = 0; i < bands.length; i++) {
+          if (g[bands[i]] && Array.isArray(g[bands[i]].items)) return true;
+        }
+        return false;
+      }
+
       function applyStatusOverridesToPayload() {
-        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
+        if (!syllabusPayload) return;
         var map = loadStatusOverrides();
-        syllabusPayload.items.forEach(function (it) {
-          if (!it || !it.key) return;
-          if (Object.prototype.hasOwnProperty.call(map, it.key)) {
-            it.status = normalizeStatus(map[it.key]);
-          }
+        forEachSyllabusItemsArray(syllabusPayload, function (arr) {
+          arr.forEach(function (it) {
+            if (!it || !it.key) return;
+            if (Object.prototype.hasOwnProperty.call(map, it.key)) {
+              it.status = normalizeStatus(map[it.key]);
+            }
+          });
         });
       }
 
@@ -605,7 +645,7 @@
           if (maintainTitle) maintainTitle.textContent = 'Maintain';
         }
 
-        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) {
+        if (!syllabusPayload) {
           clearBoth();
           return;
         }
@@ -625,7 +665,8 @@
         var learnTotal = 0;
         var maintainTotal = 0;
 
-        syllabusPayload.items.forEach(function (it) {
+        var activeItems = getActiveSyllabusItems();
+        activeItems.forEach(function (it) {
           if (!it || it.rank == null) return;
           if (it.rank > R) return;
           if (it.rank === R) {
@@ -686,10 +727,11 @@
         }
 
         var labels = syllabusPayload.beltStepLabels || {};
-        var maintainItems = syllabusPayload.items.filter(function (it) {
+        var activeItems = getActiveSyllabusItems();
+        var maintainItems = activeItems.filter(function (it) {
           return it.rank < R;
         });
-        var learnItems = syllabusPayload.items.filter(function (it) {
+        var learnItems = activeItems.filter(function (it) {
           return it.rank === R;
         });
 
@@ -782,6 +824,14 @@
         syncRankTitle();
       }
 
+      var ageSel = document.getElementById('student-age');
+      if (ageSel) {
+        ageSel.addEventListener('change', function () {
+          renderRequirements();
+          saveUserToStorage();
+        });
+      }
+
       // Restore any saved personal info immediately (before/independent of syllabus fetch).
       var savedUser = loadUserFromStorage();
       if (savedUser) {
@@ -863,7 +913,7 @@
             try {
               var text = e.target.result;
               var data = JSON.parse(text);
-              if (!data || typeof data !== 'object' || !Array.isArray(data.items)) {
+              if (!syllabusPayloadLooksValid(data)) {
                 openModal({
                   title: 'Import error',
                   body: 'The selected file does not look like a KSW syllabus JSON export. Please choose a file that was exported from this dashboard.',
@@ -895,15 +945,15 @@
                   }
                   // Rebuild localStorage map from imported statuses
                   statusByKey = {};
-                  if (Array.isArray(syllabusPayload.items)) {
-                    syllabusPayload.items.forEach(function (it) {
+                  forEachSyllabusItemsArray(syllabusPayload, function (arr) {
+                    arr.forEach(function (it) {
                       if (!it || !it.key) return;
                       if (it.status) {
                         statusByKey[it.key] = normalizeStatus(it.status);
                       }
                     });
-                    saveStatusOverrides();
-                  }
+                  });
+                  saveStatusOverrides();
                   renderRequirements();
                   var statusEl = document.getElementById('requirements-status');
                   if (statusEl) statusEl.textContent = 'Saved progress loaded from file.';
@@ -1055,9 +1105,11 @@
         loadStatusOverrides();
         statusByKey[key] = value;
         saveStatusOverrides();
-        if (syllabusPayload && Array.isArray(syllabusPayload.items)) {
-          syllabusPayload.items.forEach(function (it) {
-            if (it && it.key === key) it.status = value;
+        if (syllabusPayload) {
+          forEachSyllabusItemsArray(syllabusPayload, function (arr) {
+            arr.forEach(function (it) {
+              if (it && it.key === key) it.status = value;
+            });
           });
         }
 
