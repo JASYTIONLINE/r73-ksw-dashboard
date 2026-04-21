@@ -139,11 +139,27 @@ priorityRows.forEach(function (row) {
   categoryPriority[typeName] = priority;
 });
 
+function deepClone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+const syllabusByAgeGroup = {
+  'under-18': {
+    source: 'private/ksw-roadmap-under18.csv',
+    items: deepClone(items)
+  },
+  'over-18': {
+    source: 'private/ksw-roadmap-over18.csv',
+    items: deepClone(items)
+  }
+};
+
 const payload = {
-  version: 1,
+  version: 2,
   source: 'private/ksw-roadmap-db.csv',
   beltStepLabels,
-  items,
+  items: deepClone(items),
+  syllabusByAgeGroup,
   categoryPriority,
   objects
 };
