@@ -181,7 +181,7 @@
         </section>
         <section class="card">
           <h3>Skills Requirements (by current rank)</h3>
-          <p class="requirements-hint">Lists split by your belt step: <strong>To learn</strong> is what you are working on now (rank equals your step). <strong>Maintain</strong> is everything from lower ranks (rank &lt; your step). Change <strong>Current Rank</strong> above to refresh.</p>
+          <p class="requirements-hint">Lists follow your <strong>Age</strong> band and <strong>Current Rank</strong>: <strong>To learn</strong> is the requirement set for your step; <strong>Maintain</strong> is the sets for all lower steps. Open each <strong>category</strong>, then each <strong>technique set</strong>, to see rows. Change Age or Rank above to refresh.</p>
           <div class="requirements-actions">
             <button id="export-syllabus-json" class="btn" type="button">Save your progress</button>
             <label id="import-syllabus-json-button" class="btn import-button-label">
@@ -343,13 +343,85 @@
         return 'under-18';
       }
 
-      function getActiveSyllabusItems() {
+      var itemLookupByKey = {};
+
+      function rebuildItemLookup() {
+        itemLookupByKey = {};
+        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
+        syllabusPayload.items.forEach(function (it) {
+          if (it && it.key) itemLookupByKey[it.key] = it;
+        });
+      }
+
+      function hasRequirementMappings(payload) {
+        return (
+          payload &&
+          payload.requirementsByAgeBand &&
+          payload.requirementsByAgeBand['under-18'] &&
+          payload.requirementsByAgeBand['over-18']
+        );
+      }
+
+      function getRequirementKeysForRank(payload, ageBand, rankNum) {
+        var r = String(rankNum);
+        var band = payload.requirementsByAgeBand[ageBand];
+        if (!band || !Array.isArray(band[r])) return [];
+        return band[r].slice();
+      }
+
+      function mergeMaintainRequirementKeys(payload, ageBand, R) {
+        var keys = [];
+        var seen = new Set();
+        for (var r = 1; r < R; r++) {
+          getRequirementKeysForRank(payload, ageBand, r).forEach(function (k) {
+            if (!k || seen.has(k)) return;
+            seen.add(k);
+            keys.push(k);
+          });
+        }
+        return keys;
+      }
+
+      function resolveItemsFromKeys(keys) {
+        return keys
+          .map(function (k) {
+            return itemLookupByKey[k];
+          })
+          .filter(Boolean);
+      }
+
+      function getLegacyContextItems() {
         if (!syllabusPayload) return [];
         var band = getStudentAgeBandKey();
         var g = syllabusPayload.syllabusByAgeGroup;
         if (g && g[band] && Array.isArray(g[band].items)) return g[band].items;
         if (Array.isArray(syllabusPayload.items)) return syllabusPayload.items;
         return [];
+      }
+
+      function getLearnMaintainBundle(R) {
+        if (!syllabusPayload) {
+          return { learnItems: [], maintainItems: [] };
+        }
+        var band = getStudentAgeBandKey();
+        if (hasRequirementMappings(syllabusPayload)) {
+          rebuildItemLookup();
+          var learnKeys = getRequirementKeysForRank(syllabusPayload, band, R);
+          var maintainKeys = mergeMaintainRequirementKeys(syllabusPayload, band, R);
+          return {
+            learnItems: resolveItemsFromKeys(learnKeys),
+            maintainItems: resolveItemsFromKeys(maintainKeys)
+          };
+        }
+        var active = getLegacyContextItems();
+        return {
+          learnItems: active.filter(function (it) {
+            return it.rank === R;
+          }),
+          maintainItems: active.filter(function (it) {
+            return it.rank < R;
+          })
+        };
       }
 
       function syllabusPayloadLooksValid(data) {
@@ -402,6 +474,30 @@
           byType[t].push(it);
         });
         return byType;
+      }
+
+      function groupItemsByLearningObjective(items) {
+        var byLo = {};
+        items.forEach(function (it) {
+          var lo = String(it.learningObjective || '').trim() || 'Other';
+          if (!byLo[lo]) byLo[lo] = [];
+          byLo[lo].push(it);
+        });
+        return byLo;
+      }
+
+      function getCategoryDisplayLabel(typeName) {
+        var raw = String(typeName || '').trim() || 'Unspecified';
+        var m = syllabusPayload && syllabusPayload.categoryDisplayNames;
+        if (m && m[raw]) return m[raw];
+        return raw;
+      }
+
+      function getLearningObjectiveDisplayLabel(lo) {
+        var raw = String(lo || '').trim() || 'Other';
+        var m = syllabusPayload && syllabusPayload.learningObjectiveDisplayNames;
+        if (m && m[raw]) return m[raw];
+        return raw;
       }
 
       function getCategoryPriority(typeName) {
@@ -526,67 +622,95 @@
           });
 
           types.forEach(function (typeName) {
-            var typeHeading = document.createElement('h5');
-            typeHeading.className = 'requirement-type-heading';
-            typeHeading.textContent = typeName;
-            wrap.appendChild(typeHeading);
+            var typeItems = byType[typeName];
+            var typeDetails = document.createElement('details');
+            typeDetails.className = 'requirement-disclosure requirement-disclosure--type';
 
-            var tableWrap = document.createElement('div');
-            tableWrap.className = 'requirement-table-wrap';
+            var typeSum = document.createElement('summary');
+            typeSum.className = 'requirement-disclosure-summary';
+            typeSum.textContent = getCategoryDisplayLabel(typeName) + ' (' + typeItems.length + ')';
+            typeDetails.appendChild(typeSum);
 
-            var table = document.createElement('table');
-            table.className = 'requirement-table';
-
-            var thead = document.createElement('thead');
-            var headRow = document.createElement('tr');
-            ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
-              var th = document.createElement('th');
-              if (idx === 0) th.className = 'description-col';
-              th.textContent = label;
-              headRow.appendChild(th);
+            var byLo = groupItemsByLearningObjective(typeItems);
+            var loKeys = Object.keys(byLo).sort(function (a, b) {
+              return getLearningObjectiveDisplayLabel(a).localeCompare(getLearningObjectiveDisplayLabel(b));
             });
-            thead.appendChild(headRow);
-            table.appendChild(thead);
 
-            var tbody = document.createElement('tbody');
-            byType[typeName].forEach(function (it) {
-              var tr = document.createElement('tr');
-              var descriptionTd = document.createElement('td');
-              descriptionTd.className = 'description-col';
-              descriptionTd.textContent = it.description || '';
-              tr.appendChild(descriptionTd);
-
-              var objectiveTd = document.createElement('td');
-              objectiveTd.textContent = it.name || '';
-              tr.appendChild(objectiveTd);
-
-              var statusTd = document.createElement('td');
-              var statusSel = document.createElement('select');
-              statusSel.className = 'requirement-status-select';
-              if (it.key) statusSel.setAttribute('data-item-key', it.key);
-              var currentStatus = normalizeStatus(it.status) || 'Untrained';
-              STATUS_OPTIONS.forEach(function (statusValue) {
-                var opt = document.createElement('option');
-                opt.value = statusValue;
-                opt.textContent = statusValue;
-                if (statusValue === currentStatus) opt.selected = true;
-                statusSel.appendChild(opt);
+            loKeys.forEach(function (loKey) {
+              var loItems = byLo[loKey].slice();
+              loItems.sort(function (a, b) {
+                var ac = a.count != null ? a.count : 0;
+                var bc = b.count != null ? b.count : 0;
+                return ac - bc;
               });
-              if (STATUS_OPTIONS.indexOf(currentStatus) === -1) {
-                var fallbackOpt = document.createElement('option');
-                fallbackOpt.value = currentStatus;
-                fallbackOpt.textContent = currentStatus;
-                fallbackOpt.selected = true;
-                statusSel.appendChild(fallbackOpt);
-              }
-              statusTd.appendChild(statusSel);
-              tr.appendChild(statusTd);
 
-              tbody.appendChild(tr);
+              var loDetails = document.createElement('details');
+              loDetails.className = 'requirement-disclosure requirement-disclosure--lo';
+              var loSum = document.createElement('summary');
+              loSum.className = 'requirement-disclosure-summary requirement-disclosure-summary--lo';
+              loSum.textContent = getLearningObjectiveDisplayLabel(loKey) + ' (' + loItems.length + ')';
+              loDetails.appendChild(loSum);
+
+              var tableWrap = document.createElement('div');
+              tableWrap.className = 'requirement-table-wrap';
+
+              var table = document.createElement('table');
+              table.className = 'requirement-table';
+
+              var thead = document.createElement('thead');
+              var headRow = document.createElement('tr');
+              ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
+                var th = document.createElement('th');
+                if (idx === 0) th.className = 'description-col';
+                th.textContent = label;
+                headRow.appendChild(th);
+              });
+              thead.appendChild(headRow);
+              table.appendChild(thead);
+
+              var tbody = document.createElement('tbody');
+              loItems.forEach(function (it) {
+                var tr = document.createElement('tr');
+                var descriptionTd = document.createElement('td');
+                descriptionTd.className = 'description-col';
+                descriptionTd.textContent = it.description || '';
+                tr.appendChild(descriptionTd);
+
+                var objectiveTd = document.createElement('td');
+                objectiveTd.textContent = it.name || '';
+                tr.appendChild(objectiveTd);
+
+                var statusTd = document.createElement('td');
+                var statusSel = document.createElement('select');
+                statusSel.className = 'requirement-status-select';
+                if (it.key) statusSel.setAttribute('data-item-key', it.key);
+                var currentStatus = normalizeStatus(it.status) || 'Untrained';
+                STATUS_OPTIONS.forEach(function (statusValue) {
+                  var opt = document.createElement('option');
+                  opt.value = statusValue;
+                  opt.textContent = statusValue;
+                  if (statusValue === currentStatus) opt.selected = true;
+                  statusSel.appendChild(opt);
+                });
+                if (STATUS_OPTIONS.indexOf(currentStatus) === -1) {
+                  var fallbackOpt = document.createElement('option');
+                  fallbackOpt.value = currentStatus;
+                  fallbackOpt.textContent = currentStatus;
+                  fallbackOpt.selected = true;
+                  statusSel.appendChild(fallbackOpt);
+                }
+                statusTd.appendChild(statusSel);
+                tr.appendChild(statusTd);
+
+                tbody.appendChild(tr);
+              });
+              table.appendChild(tbody);
+              tableWrap.appendChild(table);
+              loDetails.appendChild(tableWrap);
+              typeDetails.appendChild(loDetails);
             });
-            table.appendChild(tbody);
-            tableWrap.appendChild(table);
-            wrap.appendChild(tableWrap);
+
+            wrap.appendChild(typeDetails);
           });
 
           parent.appendChild(wrap);
@@ -665,17 +789,16 @@
         var learnTotal = 0;
         var maintainTotal = 0;
 
-        var activeItems = getActiveSyllabusItems();
-        activeItems.forEach(function (it) {
-          if (!it || it.rank == null) return;
-          if (it.rank > R) return;
-          if (it.rank === R) {
-            learnTotal++;
-            progressSummaryAddStatus(learnCounts, it);
-          } else if (it.rank < R) {
-            maintainTotal++;
-            progressSummaryAddStatus(maintainCounts, it);
-          }
+        var bundle = getLearnMaintainBundle(R);
+        bundle.learnItems.forEach(function (it) {
+          if (!it) return;
+          learnTotal++;
+          progressSummaryAddStatus(learnCounts, it);
+        });
+        bundle.maintainItems.forEach(function (it) {
+          if (!it) return;
+          maintainTotal++;
+          progressSummaryAddStatus(maintainCounts, it);
         });
 
         learnCountEl.textContent = String(learnTotal);
@@ -727,13 +850,9 @@
         }
 
         var labels = syllabusPayload.beltStepLabels || {};
-        var activeItems = getActiveSyllabusItems();
-        var maintainItems = activeItems.filter(function (it) {
-          return it.rank < R;
-        });
-        var learnItems = activeItems.filter(function (it) {
-          return it.rank === R;
-        });
+        var reqBundle = getLearnMaintainBundle(R);
+        var learnItems = reqBundle.learnItems;
+        var maintainItems = reqBundle.maintainItems;
 
         container.innerHTML = '';
 
@@ -780,6 +899,7 @@
           .then(function (data) {
             syllabusPayload = data;
             applyStatusOverridesToPayload();
+            rebuildItemLookup();
             if (data && data.user) {
               writeUserToForm(data.user);
             }
@@ -939,6 +1059,7 @@
                   if (!pendingImportedData) return;
                   syllabusPayload = pendingImportedData;
                   applyStatusOverridesToPayload();
+                  rebuildItemLookup();
                   if (pendingImportedData.user) {
                     writeUserToForm(pendingImportedData.user);
                     saveUserToStorage();
@@ -1077,6 +1198,7 @@
                 .then(function (data) {
                   syllabusPayload = data;
                   applyStatusOverridesToPayload();
+                  rebuildItemLookup();
                   if (data && data.user) {
                     writeUserToForm(data.user);
                   }

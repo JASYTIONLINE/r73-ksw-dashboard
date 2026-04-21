@@ -979,6 +979,30 @@ pre {
   text-align: left;
 }
 
+.dashboard-page .requirement-disclosure {
+  margin: 0.5rem 0 0;
+  border-radius: 4px;
+}
+
+.dashboard-page .requirement-disclosure--lo {
+  margin: 0.35rem 0 0 0.75rem;
+  padding-left: 0.35rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-page .requirement-disclosure-summary {
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.dashboard-page .requirement-disclosure-summary--lo {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 .dashboard-page .requirement-type-heading {
   margin: 0.8rem 0 0.35rem;
   font-size: 0.98rem;
