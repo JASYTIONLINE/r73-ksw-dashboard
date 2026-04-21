@@ -1,6 +1,6 @@
 # Brownsville Kuk Sool Won Student Dashboard
 
-Static student dashboard for belt-rank curriculum tracking: rank-driven requirements, local progress and profile persistence, and CSV-sourced syllabus data.
+Static student dashboard for curriculum tracking: **age band × rank** requirement sets (from data mappings), progressive disclosure by category and technique set, local progress and profile persistence, and CSV-sourced syllabus data.
 
 | | |
 |--|--|
@@ -24,7 +24,7 @@ Technical depth (architecture, file layout, build commands, features) lives unde
 
 ## Project 01 — What is this?
 
-This is a **static website** (HTML, CSS, vanilla JavaScript) that serves as a **student progress dashboard** for Brownsville Kuk Sool Won. Students choose their current rank and see syllabus requirements filtered to that step; they can record a per-skill status, store profile and progress in the browser, and export or import JSON as a backup. Curriculum data is shipped as JSON generated from an internal CSV. The same codebase supports an academic milestone (course project) and a **live** deployment on GitHub Pages.
+This is a **static website** (HTML, CSS, vanilla JavaScript) that serves as a **student progress dashboard** for Brownsville Kuk Sool Won. Students choose **age band** (Under 18 / Over 18) and **current rank**; the dashboard loads the requirement **mapping** for that pair (see [Data pipeline](#data-pipeline)), shows **To learn** vs **Maintain** lists, and nests tables under **category → technique set** to reduce visual overload. They can record a per-skill status, store profile and progress in the browser, and export or import JSON as a backup. Curriculum data is shipped as JSON generated from an internal CSV. The same codebase supports an academic milestone (course project) and a **live** deployment on GitHub Pages.
 
 Because this is a **student-built, course-evaluated** project, the source includes **internal documentation in the form of in-code comments** that go beyond what you would normally expect in a lean production codebase. Comments explain intent, theory where it helps, and how major sections execute so **instructors and peers can review the work**, and so the author can return later and still understand each part. Toward the **final project** submission, that documentation layer is expected to grow—**more extensive than typical**—to match the learning and review goals of the assignment.
 
@@ -99,27 +99,42 @@ Commit updated `assets/data/ksw-syllabus.json` when you want production to match
 
 **`contact.html`** — The standalone contact page is **disabled in the UI as redundant**: instructor contact is covered by the shared **Contact Instructor** mailto bar (same actions) on Dashboard, About, and related pages, so the site no longer links to `contact.html`. The file remains in the repo for reference and direct URL access; see the HTML comment at the top of that file.
 
-**`dashboard.html`** — Profile fields (persisted), rank selection and syllabus filtering (“to learn” vs “maintain”), tables (description / learning objective / status), category order from `categoryPriority`, export/import JSON with modals, clear-data reset, sidebar navigation helpers and scroll jump controls (scroll controls are hidden on small screens where they would crowd the layout).
+**`dashboard.html`** — Profile fields (persisted), **age band** and **rank** selection, syllabus filtering from **`requirementsByAgeBand`** (“to learn” vs “maintain”), **progressive disclosure** (`<details>`: category → learning-objective set → table), columns description / learning objective name / status, category order from `categoryPriority`, optional friendly labels via `categoryDisplayNames` and `learningObjectiveDisplayNames`, export/import JSON with modals, clear-data reset, sidebar navigation helpers and scroll jump controls (scroll controls are hidden on small screens where they would crowd the layout).
 
-- **Progress Summary** — Live **totals** and **per-status counts** for **Untrained**, **In Progress**, **Trained**, and **Proficient**, calculated from syllabus items. Counts are **split into two panels**: **To learn** (current rank only) and **Maintain** (all lower ranks). The section updates when the user changes **Current Rank**, changes any requirement status, loads or imports data, or when curriculum load fails. On wide viewports the two panels sit **side by side** with spacing and bordered panels; on narrow screens they **stack**.
+- **Progress Summary** — Live **totals** and **per-status counts** for **Untrained**, **In Progress**, **Trained**, and **Proficient**, calculated from the **same filtered requirement rows** as the two main sections (not from hidden skills). Counts are **split into two panels**: **To learn** (keys mapped to the current rank for the selected age band) and **Maintain** (keys mapped to any lower rank for that band). The section updates when the user changes **Age**, **Current Rank**, any requirement status, loads or imports data, or when curriculum load fails. On wide viewports the two panels sit **side by side** with spacing and bordered panels; on narrow screens they **stack**.
 
 ### Stylesheets (quick map)
 
-- **`assets/css/style.css`** — Shared layout, dashboard tables, mobile fixed nav offset, progress summary grid, requirement tables.
+- **`assets/css/style.css`** — Shared layout, dashboard tables, mobile fixed nav offset, progress summary grid, requirement tables, progressive-disclosure summaries.
 - **`assets/css/dragon.css`** — Dragoneye theme (colors, cards, buttons, About-specific footer chrome where applicable).
 - **`assets/css/home.css`** — Home page gold/maroon layout, home-only mobile nav tweaks.
 
 ### JavaScript behavior (high level)
 
 - Loads syllabus JSON; merges saved status and profile from `localStorage`.
-- Renders requirements by rank and category; status dropdowns persist per skill key.
-- **Progress Summary** recomputes from the same in-memory syllabus items and saved statuses (see `updateProgressSummary()` in `dashboard.html`).
+- Resolves **To learn** / **Maintain** rows from **`requirementsByAgeBand`** and the master **`items`** list (by skill `key`). Older exports without mappings still load: the client falls back to per-age **`syllabusByAgeGroup[band].items`** and rank filtering when present.
+- Renders requirements with **progressive disclosure**; status dropdowns persist per skill key (`data-item-key`).
+- **Progress Summary** recomputes from the filtered lists and saved statuses (see `getLearnMaintainBundle()` and `updateProgressSummary()` in `dashboard.html`).
 - Export includes curriculum snapshot plus user object; import validates and applies.
 - Modal flows for export, import, and reset; header-based scroll jumps within `.page-content`.
 
 ### Data pipeline
 
-The generator parses the full CSV (including repeated headers), emits `items`, `beltStepLabels`, `categoryPriority`, and a generic `objects` map for forward-compatible object types. See script comments in `scripts/csv-to-syllabus-json.mjs`.
+Run `node scripts/csv-to-syllabus-json.mjs` after editing `private/ksw-roadmap-db.csv`.
+
+The generator parses the full CSV (including repeated headers) and emits JSON with **`version: 3`** (see file for current version):
+
+| Field | Role |
+|--------|------|
+| **`items`** | Master skill catalog: one row per unique `key`, with `rank`, `type`, `learningObjective`, `name`, `description`, etc. |
+| **`requirementsByAgeBand`** | For each of `under-18` and `over-18`, maps belt rank string (`"1"` … `"16"`) to an **ordered list of skill keys** required at that step. Today both bands are built the same way from the CSV; future age-specific CSVs can feed different mappings. |
+| **`syllabusByAgeGroup`** | Metadata only (`source` paths for placeholder CSVs). |
+| **`categoryDisplayNames`**, **`learningObjectiveDisplayNames`** | Optional maps from raw CSV strings to friendlier labels in disclosure headings (empty objects until you add entries). |
+| **`beltStepLabels`**, **`categoryPriority`**, **`objects`** | Same roles as before. |
+
+The build checks **referential integrity**: every key listed under `requirementsByAgeBand` must exist in **`items`**. Duplicate `key` values in the Syllibus section are skipped with a console warning.
+
+**Legacy JSON:** Imports that only have top-level `items` (and optional older `syllabusByAgeGroup` item arrays) still work; status overrides reapply across every item array present in the file.
 
 ### Persistence and operations
 
