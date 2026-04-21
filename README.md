@@ -122,12 +122,12 @@ Commit updated `assets/data/ksw-syllabus.json` when you want production to match
 
 Run `node scripts/csv-to-syllabus-json.mjs` after editing `private/ksw-roadmap-db.csv`.
 
-The generator parses the full CSV (including repeated headers) and emits JSON with **`version: 3`** (see file for current version):
+The generator parses the full CSV (including repeated headers) and emits JSON with **`version: 4`** (see file for current version):
 
 | Field | Role |
 |--------|------|
 | **`items`** | Master skill catalog: one row per unique `key`, with `rank`, `type`, `learningObjective`, `name`, `description`, etc. |
-| **`requirementsByAgeBand`** | For each of `under-18` and `over-18`, maps belt rank string (`"1"` … `"16"`) to an **ordered list of skill keys** required at that step. Today both bands are built the same way from the CSV; future age-specific CSVs can feed different mappings. |
+| **`requirementsByAgeBand`** | For each of `under-18` and `over-18`, maps belt rank string (`"1"` … `"16"`) to an **ordered list of skill keys** required at that step. **Over-18** uses the canonical list per rank from the CSV. **Under-18** at rank *R* uses the same key list as **over-18** at rank *R−1* (rank **1** is the same for both), so switching Age with rank fixed visibly changes the requirement set for *R* &gt; 1. |
 | **`syllabusByAgeGroup`** | Metadata only (`source` paths for placeholder CSVs). |
 | **`categoryDisplayNames`**, **`learningObjectiveDisplayNames`** | Optional maps from raw CSV strings to friendlier labels in disclosure headings (empty objects until you add entries). |
 | **`beltStepLabels`**, **`categoryPriority`**, **`objects`** | Same roles as before. |

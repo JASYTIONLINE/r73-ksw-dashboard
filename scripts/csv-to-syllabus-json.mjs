@@ -178,16 +178,25 @@ Object.keys(rankToKeys).forEach(function (rk) {
   });
 });
 
+/** Over-18: canonical belt rank → keys. Under-18 at rank R uses the same key list as over-18 at rank R−1 (rank 1 matches rank 1). */
 const requirementsByAgeBand = {
-  'under-18': deepClone(rankToKeys),
-  'over-18': deepClone(rankToKeys)
+  'over-18': deepClone(rankToKeys),
+  'under-18': {}
 };
+for (let r = 1; r <= 16; r++) {
+  const rs = String(r);
+  if (r === 1) {
+    requirementsByAgeBand['under-18'][rs] = deepClone(rankToKeys['1'] || []);
+  } else {
+    requirementsByAgeBand['under-18'][rs] = deepClone(rankToKeys[String(r - 1)] || []);
+  }
+}
 
 const categoryDisplayNames = {};
 const learningObjectiveDisplayNames = {};
 
 const payload = {
-  version: 3,
+  version: 4,
   source: 'private/ksw-roadmap-db.csv',
   beltStepLabels,
   items,
