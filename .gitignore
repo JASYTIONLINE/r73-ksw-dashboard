@@ -180,3 +180,6 @@ cython_debug/
 .cursor/
 .cursorignore
 .cursorindexingignore
+
+# Large videos: GitHub blocks blobs over 100 MB; keep MP4s out of this repo (host elsewhere).
+assets/video/**/*.mp4
