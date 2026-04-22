@@ -1,0 +1,160 @@
+{
+  "title": "WKSA Testing Requirement Charts (2014)",
+  "versionNote": "Forms marked WKSA Version 2014",
+  "juniorCutoffAgeYears": 12,
+  "dashboardRankSerialHint": "Maps chart 'Testing for' rows to dashboard rank serial 1–16 where rb002=Yellow Stripe … rb010=1 Black Stripe; Dahn Bo / black-stripe series on chart align with rb011+ in the app.",
+  "adultYouth": {
+    "chartTitle": "ADULT & YOUTH Testing Requirement Chart",
+    "ageBand": "Age 13 and over (Adult & Youth — same column set as printed 'Adult & Youth' chart)",
+    "rows": [
+      {
+        "testingFor": "YELLOW STRIPE BELT",
+        "techniquesSoolGi": "Sohn Ppae Ki 1-5 (Ki Bohn Soo 1-5)",
+        "formsHyung": "Ki Cho Hyung (1-3)"
+      },
+      {
+        "testingFor": "YELLOW BELT",
+        "techniquesSoolGi": "Ki Bohn Soo 1-15",
+        "formsHyung": "Ki Cho Hyung (1-6)"
+      },
+      {
+        "testingFor": "BLUE STRIPE BELT",
+        "techniquesSoolGi": "Sohn Mohk Soo 1-5",
+        "formsHyung": "Cho Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "BLUE BELT",
+        "techniquesSoolGi": "Sohn Mohk Soo 1-11",
+        "formsHyung": "Cho Geup Hyung"
+      },
+      {
+        "testingFor": "RED STRIPE BELT",
+        "techniquesSoolGi": "Eue Bohk Soo 1-6",
+        "formsHyung": "Joong Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "RED BELT",
+        "techniquesSoolGi": "Eue Bohk Soo 1-13",
+        "formsHyung": "Joong Geup Hyung"
+      },
+      {
+        "testingFor": "BROWN STRIPE BELT",
+        "techniquesSoolGi": "Ahn Sohn Mohk Soo 1-6",
+        "formsHyung": "Goh Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "BROWN BELT",
+        "techniquesSoolGi": "Maek Chi Ki 1-15",
+        "formsHyung": "Goh Geup Hyung"
+      },
+      {
+        "testingFor": "BLACK STRIPE BELT",
+        "techniquesSoolGi": "Maek Cha Ki 1-15",
+        "formsHyung": "Dae Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "DAHN BO BELT",
+        "techniquesSoolGi": "Joo Muhk Maga Ki Bon Soo 1-15",
+        "formsHyung": "Dae Geup Hyung"
+      }
+    ],
+    "blackBeltTests": {
+      "techniques": [
+        "Joong Geup Sohn Mohk Soo 1-7",
+        "Ahp Eue Bohk Soo 1-20",
+        "Dee Eue Bohk Soo 1-23",
+        "Kwahn Juhl Ki 1-13",
+        "Too Ki 1-13 (Required for Black Belt Promotion for Adults)",
+        "Mohk Joh Leu Ki 1-5",
+        "Bahng Too Ki 1-10 (Required for Black Belt Promotion for Adults)",
+        "Optional: Yahng Sohn Mohk Soo, Ssahng Soo & Dahn Doh Mahk Ki"
+      ],
+      "forms": ["Guhm Moo Hyung", "Sword Techs 1-5", "Bohng Dol-li-ki 1-15"]
+    }
+  },
+  "juniorAge12AndUnder": {
+    "chartTitle": "Junior (Age 12 & Under) Testing Requirement Chart",
+    "subBands": ["Junior (9-12)", "Age 8 & under"],
+    "rows": [
+      {
+        "testingFor": "YELLOW STRIPE BELT",
+        "techniquesJunior9to12": "Sohn Ppae Ki 1-5 (Ki Bohn Soo 1-5)",
+        "techniquesAge8AndUnder": "Sohn Ppae Ki 1-5",
+        "formsJunior9to12": "Ki Cho Hyung (1-3)",
+        "formsAge8AndUnder": "Ki Cho Hyung (1 & 2)"
+      },
+      {
+        "testingFor": "YELLOW BELT",
+        "techniquesJunior9to12": "Ki Bohn Soo 1-10",
+        "techniquesAge8AndUnder": "Ki Bohn Soo 1-5",
+        "formsJunior9to12": "Ki Cho Hyung (1-6)",
+        "formsAge8AndUnder": "Ki Cho Hyung (1-4)"
+      },
+      {
+        "testingFor": "BLUE STRIPE BELT",
+        "techniquesJunior9to12": "Ki Bohn Soo 1-15",
+        "techniquesAge8AndUnder": "Ki Bohn Soo 1-10",
+        "formsJunior9to12": "Cho Geup Hyung (1/2)",
+        "formsAge8AndUnder": "Ki Cho Hyung (1-6)"
+      },
+      {
+        "testingFor": "BLUE BELT",
+        "techniquesJunior9to12": "Sohn Mohk Soo 1-5",
+        "techniquesAge8AndUnder": "Ki Bohn Soo 1-15",
+        "formsJunior9to12": "Cho Geup Hyung",
+        "formsAge8AndUnder": "Cho Geup Hyung (pt.1)"
+      },
+      {
+        "testingFor": "RED STRIPE BELT",
+        "techniquesJunior9to12": "Sohn Mohk Soo 1-11",
+        "techniquesAge8AndUnder": "Sohn Mohk Soo 1-5",
+        "formsJunior9to12": "Joong Geup Hyung (1/2)",
+        "formsAge8AndUnder": "Cho Geup Hyung (pt.2)"
+      },
+      {
+        "testingFor": "RED BELT",
+        "techniquesJunior9to12": "Eue Bohk Soo 1-6",
+        "techniquesAge8AndUnder": "Sohn Mohk Soo 1-11",
+        "formsJunior9to12": "Joong Geup Hyung",
+        "formsAge8AndUnder": "Cho Geup Hyung (pt.3)"
+      },
+      {
+        "testingFor": "BROWN STRIPE BELT",
+        "techniquesJunior9to12": "Eue Bohk Soo 1-13",
+        "techniquesAge8AndUnder": "Eue Bohk Soo 1-6",
+        "formsJunior9to12": "Goh Geup Hyung (1/2)",
+        "formsAge8AndUnder": "Joong Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "BROWN BELT",
+        "techniquesJunior9to12": "Ahn Sohn Mohk Soo 1-6",
+        "techniquesAge8AndUnder": "Eue Bohk Soo 1-13",
+        "formsJunior9to12": "Goh Geup Hyung",
+        "formsAge8AndUnder": "Joong Geup Hyung"
+      },
+      {
+        "testingFor": "BLACK STRIPE BELT",
+        "techniquesJunior9to12": "Maek Chi Ki 1-7",
+        "techniquesAge8AndUnder": "Ahn Sohn Mohk Soo 1-6",
+        "formsJunior9to12": "Dae Geup Hyung (1/2)",
+        "formsAge8AndUnder": "Goh Geup Hyung (1/2)"
+      },
+      {
+        "testingFor": "DAHN BO BELT",
+        "techniquesJunior9to12": "Maek Chi Ki 1-15",
+        "techniquesAge8AndUnder": "Maek Chi Ki 1-7",
+        "formsJunior9to12": "Dae Geup Hyung",
+        "formsAge8AndUnder": "Goh Geup Hyung"
+      }
+    ],
+    "blackBeltTests": {
+      "techniquesGeneral": ["Maek Chi Ki 1-15", "Maek Cha Ki 1-15"],
+      "techniquesBySubBand": {
+        "age8AndUnderPromotion": ["Joo Muhk Maga Ki Bon Soo 1-15"],
+        "junior9to12Promotion": ["Joong Geup Sohn Mohk Soo 1-7", "Ahp Eue Bohk Soo 1-20"]
+      },
+      "formsGeneral": ["Dae Geup Hyung", "Guhm Moo Hyung", "Sword Techs 1-5", "Bohng Dol-li-ki 1-10"]
+    }
+  },
+  "gradingCategoriesOnForm": ["Yea Eue", "Ki Cho Jah Ki", "Soo Ki", "Johk Sool", "Nahk Bup", "Kyuk Pah"]
+}

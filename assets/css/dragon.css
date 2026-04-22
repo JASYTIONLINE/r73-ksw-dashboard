@@ -210,6 +210,15 @@ body.about-page .about-contact-address.card:focus-visible {
   color: #ffcc00;
 }
 
+.dashboard-page .requirement-section-subtext {
+  color: #e8e0d0;
+}
+
+.dashboard-page .requirement-major-section--by-status {
+  background-color: #220000;
+  border: 1px solid #ff0000;
+}
+
 .dashboard-page .requirement-rank-heading {
   color: #ffcc00;
 }

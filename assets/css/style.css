@@ -426,6 +426,12 @@ pre {
   margin-top: 0;
 }
 
+.dashboard-page .dashboard-student-id-combobox {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .dashboard-page .page-layout {
   gap: 8px;
 }
@@ -711,6 +717,36 @@ pre {
   margin-bottom: 1em;
 }
 
+.dashboard-page .dashboard-membership {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0.15rem 0 0.25rem;
+  padding: 0.55rem 0.75rem 0.65rem;
+  border: 1px solid rgba(255, 204, 0, 0.4);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-membership > legend {
+  padding: 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffcc00;
+}
+
+.dashboard-page .dashboard-membership-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .dashboard-page .dashboard-membership-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (min-width: 769px) {
   .dashboard-personal-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -860,6 +896,45 @@ pre {
   margin-bottom: 0;
 }
 
+.dashboard-page .dashboard-testable h3 {
+  text-align: left;
+}
+
+.dashboard-page .dashboard-testable .testable-intro {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.dashboard-page .testable-rollups {
+  margin-top: 0.25rem;
+}
+
+.dashboard-page .testable-rollup-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.dashboard-page .testable-rollup-line {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 204, 0, 0.18);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.dashboard-page .testable-rollup-line:last-child {
+  border-bottom: none;
+}
+
+.dashboard-page .testable-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: left;
+  opacity: 0.92;
+}
+
 .dashboard-page .dashboard-progress-summary .progress-summary-intro {
   margin-bottom: 0.35rem;
 }
@@ -957,6 +1032,25 @@ pre {
   font-weight: 700;
   margin: 0 0 0.5rem;
   text-align: left;
+}
+
+.dashboard-page .requirement-section-subtext {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin: 0 0 0.75rem;
+  max-width: 52rem;
+  text-align: left;
+  opacity: 0.95;
+}
+
+.dashboard-page .requirement-major-section--by-status {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem 1rem;
+  border-radius: 6px;
+}
+
+.dashboard-page .requirement-major-section--by-status:first-of-type {
+  margin-top: 0;
 }
 
 .dashboard-page .requirement-section-empty {

@@ -80,19 +80,20 @@
 
           <div class="dashboard-personal-main" role="region" aria-label="Personal information">
             <div class="dashboard-personal-grid">
-            <div class="dashboard-field">
-              <p><label for="student-id-number">Student Id Number</label></p>
-              <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Student ID">
+            <div class="dashboard-field dashboard-field--student-id">
+              <p><label for="student-id-number">Student ID</label></p>
+              <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Type or choose student ID" spellcheck="false" list="student-id-datalist" class="dashboard-student-id-combobox" aria-label="Student ID">
+              <datalist id="student-id-datalist"></datalist>
             </div>
             <div class="dashboard-field">
               <p><label for="student-name">Student Name</label></p>
               <input id="student-name" name="student-name" type="text" autocomplete="name" placeholder="Full name">
             </div>
             <div class="dashboard-field">
-              <p><label for="student-age">Age</label></p>
+              <p><label for="student-age">Age (WKSA testing bands)</label></p>
               <select id="student-age" name="student-age">
-                <option value="under-18">Under 18</option>
-                <option value="over-18">Over 18</option>
+                <option value="junior">Age 12 &amp; under (Junior)</option>
+                <option value="adult-youth">Age 13 &amp; over (Adult &amp; Youth)</option>
               </select>
             </div>
             <div class="dashboard-field">
@@ -104,16 +105,16 @@
             <div class="dashboard-field">
               <p><label for="rank">Current Rank</label></p>
               <select id="rank" name="rank">
-                <option value="1" data-rank-name="Huin ddi">White Belt</option>
-                <option value="2" data-rank-name="Huin ddi">Yellow Stripe</option>
-                <option value="3" data-rank-name="Norang ddi">Yellow Belt</option>
-                <option value="4" data-rank-name="Norang ddi">Blue Stripe</option>
-                <option value="5" data-rank-name="Cheong ddi">Blue Belt</option>
-                <option value="6" data-rank-name="Cheong ddi">Red Stripe</option>
-                <option value="7" data-rank-name="Hong ddi">Red Belt</option>
-                <option value="8" data-rank-name="Hong ddi">Brown Stripe</option>
-                <option value="9" data-rank-name="Ja ddi">Brown Belt</option>
-                <option value="10" data-rank-name="Ja ddi">1 Black Stripe</option>
+                <option value="1" data-rank-name="Huin Tti">White Belt</option>
+                <option value="2" data-rank-name="Huin Tti">Yellow Stripe</option>
+                <option value="3" data-rank-name="Norang Tti">Yellow Belt</option>
+                <option value="4" data-rank-name="Norang Tti">Blue Stripe</option>
+                <option value="5" data-rank-name="Cheong Tti">Blue Belt</option>
+                <option value="6" data-rank-name="Cheong Tti">Red Stripe</option>
+                <option value="7" data-rank-name="Hong Tti">Red Belt</option>
+                <option value="8" data-rank-name="Hong Tti">Brown Stripe</option>
+                <option value="9" data-rank-name="Ja Tti">Brown Belt</option>
+                <option value="10" data-rank-name="Ja Tti">1 Black Stripe</option>
                 <option value="11" data-rank-name="Dahnbo Nim">2 Black Stripes</option>
                 <option value="12" data-rank-name="Dahnbo Nim">3 Black Stripes</option>
                 <option value="13" data-rank-name="Dahnbo Nim">4 Black Stripes</option>
@@ -137,28 +138,39 @@
               <p><label for="test-date">Next Testing Date</label></p>
               <input id="test-date" name="test-date" type="date">
             </div>
-            <div class="dashboard-field">
-              <p><label for="member-level">Member Level</label></p>
-              <select id="member-level" name="member-level">
-                <option value="standard">Standard</option>
-                <option value="black-belt-club">Black Belt Club</option>
-                <option value="masters-club">Masters Club</option>
-              </select>
-            </div>
-            <div class="dashboard-field">
-              <p><label for="member-since">Member Since</label></p>
-              <input id="member-since" name="member-since" type="date" autocomplete="off">
-            </div>
-            <div class="dashboard-field">
-              <p><label for="renewal-date">Renewal Date</label></p>
-              <input id="renewal-date" name="renewal-date" type="date" autocomplete="off">
-            </div>
+            <fieldset class="dashboard-membership" aria-labelledby="membership-legend">
+              <legend id="membership-legend">Membership</legend>
+              <div class="dashboard-membership-inner">
+                <div class="dashboard-field">
+                  <p><label for="member-level">Member level</label></p>
+                  <select id="member-level" name="member-level">
+                    <option value="standard">Standard</option>
+                    <option value="black-belt-club">Black Belt Club</option>
+                    <option value="masters-club">Masters Club</option>
+                  </select>
+                </div>
+                <div class="dashboard-field">
+                  <p><label for="member-since">Member since</label></p>
+                  <input id="member-since" name="member-since" type="date" autocomplete="off">
+                </div>
+                <div class="dashboard-field">
+                  <p><label for="renewal-date">Renewal date</label></p>
+                  <input id="renewal-date" name="renewal-date" type="date" autocomplete="off">
+                </div>
+              </div>
+            </fieldset>
             <div class="dashboard-field">
               <p><label for="reset-dashboard-data">Reset all saved data</label></p>
               <button id="reset-dashboard-data" type="button" class="dashboard-reset-button">Clear data</button>
             </div>
           </div>
           </div>
+        </section>
+
+        <section class="card dashboard-testable" aria-labelledby="testable-heading">
+          <h3 id="testable-heading">Testable</h3>
+          <p class="testable-intro">Every skill required at your selected belt and age band is grouped here by technique set; each line shows the set name and serial range (for example, An Sohn Mok Soo 1-6).</p>
+          <div id="testable-rollups" class="testable-rollups" role="region" aria-live="polite" aria-label="Testable technique sets at current rank"></div>
         </section>
         <section class="card dashboard-progress-summary" aria-labelledby="progress-summary-heading">
           <h3 id="progress-summary-heading">Progress Summary</h3>
@@ -180,8 +192,8 @@
           </div>
         </section>
         <section class="card">
-          <h3>Skills Requirements (by current rank)</h3>
-          <p class="requirements-hint">Lists follow your <strong>Age</strong> band and <strong>Current Rank</strong>: <strong>To learn</strong> is the requirement set for your step; <strong>Maintain</strong> is the sets for all lower steps. Open each <strong>category</strong>, then each <strong>technique set</strong>, to see rows. Change Age or Rank above to refresh.</p>
+          <h3>Skills Requirements (by proficiency)</h3>
+          <p class="requirements-hint">Skills shown follow your <strong>Age</strong> band and <strong>Current Rank</strong> (current step plus lower steps). They are grouped by <strong>proficiency</strong> (Untrained through Proficient), then by <strong>category</strong> and <strong>technique set</strong>—not by belt rank inside each group. Change Age, Rank, or Status above to refresh.</p>
           <div class="requirements-actions">
             <button id="export-syllabus-json" class="btn" type="button">Save your progress</button>
             <label id="import-syllabus-json-button" class="btn import-button-label">
@@ -226,9 +238,15 @@
 
   <script>
     (function () {
-      var SYLLABUS_URL = 'assets/data/ksw-syllabus.json';
+      var SYLLABUS_URL = 'assets/data/json/app-syllabus.db.json';
       var syllabusPayload = null;
       var STATUS_OPTIONS = ['Untrained', 'In Progress', 'Trained', 'Proficient'];
+      var STATUS_SECTION_SUBTEXT = {
+        Untrained: 'Need to learn — you have not started these yet.',
+        'In Progress': 'Focus here — build consistency before your test.',
+        Trained: 'Keep sharp — solid, but still needs repetition under pressure.',
+        Proficient: 'Hone your skills; others rely on you to uphold the standard.'
+      };
       var STATUS_STORAGE_KEY = 'kswSyllabusStatusByKey.v1';
       var USER_STORAGE_KEY = 'kswDashboardUser.v1';
       var statusByKey = null;
@@ -285,6 +303,203 @@
         return status;
       }
 
+      /** Stable skill id for keys, localStorage, and DOM `data-item-key`. */
+      function itemKey(it) {
+        return String((it && (it.key != null ? it.key : it.keyId)) || '').trim();
+      }
+
+      /** Map CSV / free-text statuses onto STATUS_OPTIONS for bucketing and UI. */
+      function canonicalRequirementStatus(status) {
+        var s = normalizeStatus(String(status || '').trim());
+        if (!s) return 'Untrained';
+        var compact = s.replace(/\s+/g, '').toLowerCase();
+        if (compact === 'inprogress') return 'In Progress';
+        if (compact === 'untrained') return 'Untrained';
+        if (compact === 'trained') return 'Trained';
+        if (compact === 'proficient') return 'Proficient';
+        if (STATUS_OPTIONS.indexOf(s) >= 0) return s;
+        return 'Untrained';
+      }
+
+      /** Canonical repo JSON: top-level maps (Rank, SKILL, skillStatus, student, …) — no `tables` / `items`. */
+      function isTopLevelMapDbShape(data) {
+        return !!(
+          data &&
+          typeof data === 'object' &&
+          !Array.isArray(data) &&
+          data.SKILL &&
+          typeof data.SKILL === 'object' &&
+          !Array.isArray(data.SKILL) &&
+          !data.tables &&
+          !Array.isArray(data.items)
+        );
+      }
+
+      function mapObjectToTableRows(obj) {
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return [];
+        return Object.keys(obj).map(function (kid) {
+          var row = obj[kid];
+          var out = {};
+          if (row && typeof row === 'object') {
+            Object.keys(row).forEach(function (k) {
+              out[k] = row[k];
+            });
+          }
+          out.keyId = out.keyId || out.keyID || kid;
+          return out;
+        });
+      }
+
+      /** Build dashboard payload (tables + items + beltStepLabels) from top-level map DB JSON. */
+      function normalizeTopLevelMapDbToDashboard(raw) {
+        if (!isTopLevelMapDbShape(raw)) return null;
+
+        var rankMap = raw.Rank && typeof raw.Rank === 'object' ? raw.Rank : {};
+        function rbToStep(rbId) {
+          var r = rankMap[rbId];
+          if (!r || typeof r !== 'object') return null;
+          var n = parseInt(String(r.serialNumber || '').trim(), 10);
+          return Number.isNaN(n) ? null : n;
+        }
+
+        var beltStepLabels = {};
+        Object.keys(rankMap).forEach(function (rid) {
+          var row = rankMap[rid];
+          var step = String(row && row.serialNumber != null ? row.serialNumber : '').trim();
+          var lab = String((row && (row.description || row.name)) || '').trim();
+          if (step && lab) beltStepLabels[step] = lab;
+        });
+
+        var sk = raw.SKILL;
+        var keys = Object.keys(sk).sort(function (a, b) {
+          return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true });
+        });
+
+        var items = keys.map(function (keyId, idx) {
+          var s = sk[keyId];
+          if (!s || typeof s !== 'object') {
+            return {
+              count: idx + 1,
+              key: keyId,
+              keyId: keyId,
+              rank: 1,
+              thirteenPlus: null,
+              twelveDown: null,
+              learningObjective: '',
+              name: '',
+              type: 'SKILL',
+              status: 'Untrained',
+              description: ''
+            };
+          }
+          var upId = s['13up'] != null ? s['13up'] : s.thirteenPlus;
+          var downId = s['12under'] != null ? s['12under'] : s.twelveDown;
+          var tp = typeof upId === 'string' && /^rb\d+/i.test(String(upId)) ? rbToStep(upId) : parseInt(String(upId), 10);
+          var td =
+            typeof downId === 'string' && /^rb\d+/i.test(String(downId))
+              ? rbToStep(downId)
+              : parseInt(String(downId), 10);
+          if (Number.isNaN(tp)) tp = null;
+          if (Number.isNaN(td)) td = null;
+          var sn = parseInt(String(s.serialNumber || ''), 10);
+          var fallbackRank = tp != null && td != null ? Math.max(tp, td) : tp != null ? tp : td != null ? td : 1;
+          return {
+            count: Number.isNaN(sn) ? idx + 1 : sn,
+            key: keyId,
+            keyId: keyId,
+            rank: fallbackRank,
+            thirteenPlus: tp,
+            twelveDown: td,
+            learningObjective: String(s.skillCatagoryId || '').trim(),
+            name: String(s.name || '').trim(),
+            type: 'SKILL',
+            status: String(s.status || 'Untrained').trim() || 'Untrained',
+            description: String(s.description || '').trim()
+          };
+        });
+
+        var skillStatusIdx = {};
+        var ss = raw.skillStatus;
+        if (ss && typeof ss === 'object' && !Array.isArray(ss)) {
+          Object.keys(ss).forEach(function (stKey) {
+            var r = ss[stKey];
+            if (!r || typeof r !== 'object') return;
+            var sid = String(r.studentId || '').trim();
+            var skid = String(r.skillId || '').trim();
+            if (!sid || !skid) return;
+            if (!skillStatusIdx[sid]) skillStatusIdx[sid] = {};
+            skillStatusIdx[sid][skid] = canonicalRequirementStatus(r.status);
+          });
+        }
+
+        var rosterRows = [];
+        var stu = raw.student;
+        if (stu && typeof stu === 'object' && !Array.isArray(stu)) {
+          rosterRows = Object.keys(stu).map(function (kid) {
+            var row = stu[kid];
+            var out = {};
+            if (row && typeof row === 'object') {
+              Object.keys(row).forEach(function (k) {
+                out[k] = row[k];
+              });
+            }
+            out.keyId = out.keyId || out.keyID || kid;
+            return out;
+          });
+        }
+
+        return {
+          version: typeof raw.version === 'number' ? raw.version : 3,
+          source: raw.source || 'assets/data/json/app-syllabus.db.json',
+          tables: {
+            Rank: mapObjectToTableRows(raw.Rank),
+            skillCatagory: mapObjectToTableRows(raw.skillCatagory || raw.skillcategory),
+            SKILL: mapObjectToTableRows(raw.SKILL),
+            student: rosterRows
+          },
+          items: items,
+          beltStepLabels: beltStepLabels,
+          syllabusByAgeGroup: raw.syllabusByAgeGroup || {
+            junior: { source: 'assets/data/csv/ksw-syllabus.csv' },
+            'adult-youth': { source: 'assets/data/csv/ksw-syllabus.csv' }
+          },
+          categoryDisplayNames: raw.categoryDisplayNames || {},
+          learningObjectiveDisplayNames: raw.learningObjectiveDisplayNames || {},
+          categoryPriority: raw.categoryPriority || {},
+          extras: raw.extras || {},
+          _skillStatusByStudent: skillStatusIdx,
+          _fromTopLevelMapDb: true,
+          student: stu
+        };
+      }
+
+      function syncEmbeddedSkillStatusesIntoItems() {
+        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
+        var idx = syllabusPayload._skillStatusByStudent;
+        if (!idx || typeof idx !== 'object') return;
+        var idEl = document.getElementById('student-id-number');
+        var sid = idEl ? String(idEl.value || '').trim() : '';
+        syllabusPayload.items.forEach(function (it) {
+          if (!it) return;
+          var k = itemKey(it);
+          if (!k) return;
+          if (!sid) {
+            it.status = 'Untrained';
+            return;
+          }
+          var map = idx[sid];
+          if (!map || typeof map !== 'object') {
+            it.status = 'Untrained';
+            return;
+          }
+          if (Object.prototype.hasOwnProperty.call(map, k)) {
+            it.status = map[k];
+          } else {
+            it.status = 'Untrained';
+          }
+        });
+      }
+
       function safeJsonParse(str, fallback) {
         try {
           return JSON.parse(str);
@@ -336,11 +551,84 @@
         });
       }
 
+      /** Maps legacy JSON keys under-18 / over-18 to WKSA-aligned junior / adult-youth (age cutoff 12 / 13+). */
+      function normalizeSyllabusAgeBands(payload) {
+        if (!payload || typeof payload !== 'object') return;
+        var rb = payload.requirementsByAgeBand;
+        if (rb && typeof rb === 'object') {
+          if (rb['under-18'] && !rb['junior']) rb['junior'] = rb['under-18'];
+          if (rb['over-18'] && !rb['adult-youth']) rb['adult-youth'] = rb['over-18'];
+        }
+        var sg = payload.syllabusByAgeGroup;
+        if (sg && typeof sg === 'object') {
+          if (sg['under-18'] && !sg['junior']) sg['junior'] = sg['under-18'];
+          if (sg['over-18'] && !sg['adult-youth']) sg['adult-youth'] = sg['over-18'];
+        }
+        normalizeTablesSkillAgeColumns(payload);
+        normalizeItemAgeRankKeys(payload);
+      }
+
+      /** Legacy imports: overEighteen/underEighteen and overTwelve/underThirteen → thirteenPlus/twelveDown. */
+      function normalizeItemAgeRankKeys(payload) {
+        if (!payload || !Array.isArray(payload.items)) return;
+        payload.items.forEach(function (it) {
+          if (!it || typeof it !== 'object') return;
+          if (it.thirteenPlus == null && it.overEighteen != null) {
+            var oe = parseInt(String(it.overEighteen), 10);
+            it.thirteenPlus = Number.isNaN(oe) ? null : oe;
+          }
+          if (it.thirteenPlus == null && it.overTwelve != null) {
+            var ot = parseInt(String(it.overTwelve), 10);
+            it.thirteenPlus = Number.isNaN(ot) ? null : ot;
+          }
+          if (it.twelveDown == null && it.underEighteen != null) {
+            var ue = parseInt(String(it.underEighteen), 10);
+            it.twelveDown = Number.isNaN(ue) ? null : ue;
+          }
+          if (it.twelveDown == null && it.underThirteen != null) {
+            var ut = parseInt(String(it.underThirteen), 10);
+            it.twelveDown = Number.isNaN(ut) ? null : ut;
+          }
+          if (Object.prototype.hasOwnProperty.call(it, 'overEighteen')) delete it.overEighteen;
+          if (Object.prototype.hasOwnProperty.call(it, 'underEighteen')) delete it.underEighteen;
+          if (Object.prototype.hasOwnProperty.call(it, 'overTwelve')) delete it.overTwelve;
+          if (Object.prototype.hasOwnProperty.call(it, 'underThirteen')) delete it.underThirteen;
+        });
+      }
+
+      function normalizeTablesSkillAgeColumns(payload) {
+        var t = payload.tables;
+        if (!t || typeof t !== 'object') return;
+        var skillRows = t.SKILL || t.Skill;
+        if (!Array.isArray(skillRows)) return;
+        skillRows.forEach(function (row) {
+          if (!row || typeof row !== 'object') return;
+          if (row.overTwelve == null && row.overEighteen != null) row.overTwelve = row.overEighteen;
+          if (row.overTwelve == null && row.OverEighteen != null) row.overTwelve = row.OverEighteen;
+          delete row.overEighteen;
+          delete row.OverEighteen;
+          if (row.underThirteen == null && row.underEighteen != null) row.underThirteen = row.underEighteen;
+          if (row.underThirteen == null && row.UnderEighteen != null) row.underThirteen = row.UnderEighteen;
+          delete row.underEighteen;
+          delete row.UnderEighteen;
+        });
+      }
+
       function getStudentAgeBandKey() {
         var el = document.getElementById('student-age');
         var v = el ? el.value : '';
-        if (v === 'over-18') return 'over-18';
-        return 'under-18';
+        if (v === 'adult-youth' || v === 'over-18') return 'adult-youth';
+        if (v === 'junior' || v === 'under-18') return 'junior';
+        return 'junior';
+      }
+
+      function requirementsAgeBandKeyForPayload(payload, ageBandUi) {
+        if (!payload || !payload.requirementsByAgeBand) return ageBandUi;
+        var rb = payload.requirementsByAgeBand;
+        if (rb[ageBandUi]) return ageBandUi;
+        if (ageBandUi === 'junior' && rb['under-18']) return 'under-18';
+        if (ageBandUi === 'adult-youth' && rb['over-18']) return 'over-18';
+        return ageBandUi;
       }
 
       var itemLookupByKey = {};
@@ -349,22 +637,23 @@
         itemLookupByKey = {};
         if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
         syllabusPayload.items.forEach(function (it) {
-          if (it && it.key) itemLookupByKey[it.key] = it;
+          var k = itemKey(it);
+          if (it && k) itemLookupByKey[k] = it;
         });
       }
 
       function hasRequirementMappings(payload) {
-        return (
-          payload &&
-          payload.requirementsByAgeBand &&
-          payload.requirementsByAgeBand['under-18'] &&
-          payload.requirementsByAgeBand['over-18']
-        );
+        if (!payload || !payload.requirementsByAgeBand) return false;
+        var rb = payload.requirementsByAgeBand;
+        var hasJ = rb['junior'] || rb['under-18'];
+        var hasA = rb['adult-youth'] || rb['over-18'];
+        return !!(hasJ && hasA);
       }
 
-      function getRequirementKeysForRank(payload, ageBand, rankNum) {
+      function getRequirementKeysForRank(payload, ageBandUi, rankNum) {
         var r = String(rankNum);
-        var band = payload.requirementsByAgeBand[ageBand];
+        var key = requirementsAgeBandKeyForPayload(payload, ageBandUi);
+        var band = payload.requirementsByAgeBand[key];
         if (!band || !Array.isArray(band[r])) return [];
         return band[r].slice();
       }
@@ -392,11 +681,43 @@
 
       function getLegacyContextItems() {
         if (!syllabusPayload) return [];
-        var band = getStudentAgeBandKey();
+        var bandUi = getStudentAgeBandKey();
+        var bandKey = requirementsAgeBandKeyForPayload(syllabusPayload, bandUi);
         var g = syllabusPayload.syllabusByAgeGroup;
-        if (g && g[band] && Array.isArray(g[band].items)) return g[band].items;
+        if (g && g[bandKey] && Array.isArray(g[bandKey].items)) return g[bandKey].items;
+        if (g && g[bandUi] && Array.isArray(g[bandUi].items)) return g[bandUi].items;
         if (Array.isArray(syllabusPayload.items)) return syllabusPayload.items;
         return [];
+      }
+
+      /** Belt step (1–16) at which this skill applies for the given WKSA age band; falls back to `rank`. */
+      function itemRequirementRankForBand(it, band) {
+        if (!it) return null;
+        if (band === 'adult-youth') {
+          if (it.thirteenPlus != null && !Number.isNaN(it.thirteenPlus)) return it.thirteenPlus;
+        } else {
+          if (it.twelveDown != null && !Number.isNaN(it.twelveDown)) return it.twelveDown;
+        }
+        var r = it.rank;
+        return r != null && !Number.isNaN(r) ? r : null;
+      }
+
+      /**
+       * All syllabus rows required at belt step R for the current age band.
+       * Uses master `items` (not per-band syllabus slices) so the Testable card matches full catalog data.
+       */
+      function getItemsAtCurrentBeltRank(R) {
+        if (!syllabusPayload) return [];
+        var band = getStudentAgeBandKey();
+        if (hasRequirementMappings(syllabusPayload)) {
+          rebuildItemLookup();
+          return resolveItemsFromKeys(getRequirementKeysForRank(syllabusPayload, band, R));
+        }
+        if (!Array.isArray(syllabusPayload.items)) return [];
+        return syllabusPayload.items.filter(function (it) {
+          var rr = itemRequirementRankForBand(it, band);
+          return rr != null && rr === R;
+        });
       }
 
       function getLearnMaintainBundle(R) {
@@ -414,12 +735,18 @@
           };
         }
         var active = getLegacyContextItems();
+        var source =
+          Array.isArray(syllabusPayload.items) && syllabusPayload.items.length
+            ? syllabusPayload.items
+            : active;
         return {
-          learnItems: active.filter(function (it) {
-            return it.rank === R;
+          learnItems: source.filter(function (it) {
+            var rr = itemRequirementRankForBand(it, band);
+            return rr != null && rr === R;
           }),
-          maintainItems: active.filter(function (it) {
-            return it.rank < R;
+          maintainItems: source.filter(function (it) {
+            var rr = itemRequirementRankForBand(it, band);
+            return rr != null && rr < R;
           })
         };
       }
@@ -427,6 +754,7 @@
       function syllabusPayloadLooksValid(data) {
         if (!data || typeof data !== 'object') return false;
         if (Array.isArray(data.items)) return true;
+        if (isTopLevelMapDbShape(data)) return true;
         var g = data.syllabusByAgeGroup;
         if (!g || typeof g !== 'object') return false;
         var bands = Object.keys(g);
@@ -441,9 +769,10 @@
         var map = loadStatusOverrides();
         forEachSyllabusItemsArray(syllabusPayload, function (arr) {
           arr.forEach(function (it) {
-            if (!it || !it.key) return;
-            if (Object.prototype.hasOwnProperty.call(map, it.key)) {
-              it.status = normalizeStatus(map[it.key]);
+            var k = itemKey(it);
+            if (!it || !k) return;
+            if (Object.prototype.hasOwnProperty.call(map, k)) {
+              it.status = normalizeStatus(map[k]);
             }
           });
         });
@@ -455,15 +784,6 @@
         if (!rankSel || !titleOut) return;
         var opt = rankSel.options[rankSel.selectedIndex];
         titleOut.value = opt ? (opt.getAttribute('data-rank-name') || '') : '';
-      }
-
-      function groupItemsByRank(items) {
-        var byRank = {};
-        items.forEach(function (it) {
-          if (!byRank[it.rank]) byRank[it.rank] = [];
-          byRank[it.rank].push(it);
-        });
-        return byRank;
       }
 
       function groupItemsByType(items) {
@@ -486,6 +806,156 @@
         return byLo;
       }
 
+      /** "Technique Name 12" -> { base: "Technique Name", index: 12 } */
+      function parseSeriesBaseIndex(str) {
+        var s = String(str || '').trim();
+        var m = s.match(/^(.+?)\s+(\d+)$/);
+        if (!m) return null;
+        return { base: m[1].trim(), index: parseInt(m[2], 10) };
+      }
+
+      /** e.g. "1-Forward/Back" -> 1 */
+      function parseDescriptionLeadingNumber(desc) {
+        var s = String(desc || '').trim();
+        var m = s.match(/^(\d+)[\-–:]/);
+        if (!m) return null;
+        return parseInt(m[1], 10);
+      }
+
+      /** Maps skillCatagory keyId (sc005 / c005) to short display name from syllabus tables. */
+      function buildSkillCategoryLookup(payload) {
+        var map = {};
+        if (!payload || !payload.tables || typeof payload.tables !== 'object') return map;
+        var rows = payload.tables.skillCatagory || payload.tables.skillcategory || [];
+        if (!Array.isArray(rows)) return map;
+        rows.forEach(function (row) {
+          var kid = String(row.keyId || '').trim();
+          var nm = String(row.name || '').trim();
+          if (!kid || !nm) return;
+          map[kid] = nm;
+          if (kid.indexOf('sc') === 0) {
+            map['c' + kid.slice(2)] = nm;
+          }
+        });
+        return map;
+      }
+
+      /**
+       * One line per technique set at this rank: set label from skill name / description pattern,
+       * range from CSV serial (items[].count) when present. Category is used only for grouping/sort.
+       */
+      function buildTestableRollupLines(learnItems) {
+        var catLookup = buildSkillCategoryLookup(syllabusPayload);
+        var rangeSep = '-';
+        var groups = {};
+
+        learnItems.forEach(function (it) {
+          if (!it) return;
+          var catId = String(it.learningObjective || '').trim() || '_other';
+          var p = parseSeriesBaseIndex(it.name) || parseSeriesBaseIndex(it.description);
+          var family = p
+            ? p.base.trim()
+            : String(it.name || '').trim() || String(it.description || '').trim() || 'Other';
+          var key = catId + '\0' + family;
+          if (!groups[key]) {
+            groups[key] = { catId: catId, family: family, items: [] };
+          }
+          groups[key].items.push(it);
+        });
+
+        var rows = Object.keys(groups).map(function (k) {
+          return groups[k];
+        });
+
+        rows.sort(function (a, b) {
+          var na = catLookup[a.catId] || a.catId || '';
+          var nb = catLookup[b.catId] || b.catId || '';
+          var c = na.localeCompare(nb);
+          if (c !== 0) return c;
+          return (a.family || '').localeCompare(b.family || '');
+        });
+
+        var out = [];
+        rows.forEach(function (g) {
+          var serials = [];
+          g.items.forEach(function (it) {
+            var n = parseInt(String(it.count != null ? it.count : ''), 10);
+            if (!Number.isNaN(n)) serials.push(n);
+          });
+
+          var lo;
+          var hi;
+          var rangePart;
+          if (serials.length) {
+            lo = Math.min.apply(null, serials);
+            hi = Math.max.apply(null, serials);
+            rangePart = lo === hi ? String(lo) : lo + rangeSep + hi;
+          } else {
+            var idxs = [];
+            g.items.forEach(function (it) {
+              var q = parseSeriesBaseIndex(it.name) || parseSeriesBaseIndex(it.description);
+              if (q) idxs.push(q.index);
+            });
+            if (idxs.length) {
+              lo = Math.min.apply(null, idxs);
+              hi = Math.max.apply(null, idxs);
+              rangePart = lo === hi ? String(lo) : lo + rangeSep + hi;
+            } else {
+              var descNums = [];
+              g.items.forEach(function (it) {
+                var d = parseDescriptionLeadingNumber(it && it.description);
+                if (d != null) descNums.push(d);
+              });
+              if (descNums.length >= Math.ceil(g.items.length * 0.5)) {
+                lo = Math.min.apply(null, descNums);
+                hi = Math.max.apply(null, descNums);
+                rangePart = lo === hi ? String(lo) : lo + rangeSep + hi;
+              } else if (g.items.length > 1) {
+                rangePart = '1' + rangeSep + g.items.length;
+              } else {
+                rangePart = '1';
+              }
+            }
+          }
+
+          var fam = String(g.family || '').trim() || 'Other';
+          out.push({ text: fam + ' ' + rangePart });
+        });
+
+        return out;
+      }
+
+      function renderTestableCard() {
+        var container = document.getElementById('testable-rollups');
+        if (!container) return;
+        var rankSel = document.getElementById('rank');
+        var R = rankSel ? parseInt(rankSel.value, 10) : NaN;
+        if (!syllabusPayload || Number.isNaN(R) || R < 1) {
+          container.innerHTML = '';
+          return;
+        }
+        rebuildItemLookup();
+        var testableItems = getItemsAtCurrentBeltRank(R);
+        var lines = buildTestableRollupLines(testableItems);
+        container.innerHTML = '';
+        if (!lines.length) {
+          var p = document.createElement('p');
+          p.className = 'testable-empty';
+          p.textContent = 'No testable skills for this rank.';
+          container.appendChild(p);
+          return;
+        }
+        var ul = document.createElement('ul');
+        ul.className = 'testable-rollup-list';
+        lines.forEach(function (row) {
+          var li = document.createElement('li');
+          li.className = 'testable-rollup-line';
+          li.textContent = row.text;
+          ul.appendChild(li);
+        });
+        container.appendChild(ul);
+      }
+
       function getCategoryDisplayLabel(typeName) {
         var raw = String(typeName || '').trim() || 'Unspecified';
         var m = syllabusPayload && syllabusPayload.categoryDisplayNames;
@@ -498,6 +968,51 @@
         var m = syllabusPayload && syllabusPayload.learningObjectiveDisplayNames;
         if (m && m[raw]) return m[raw];
         return raw;
+      }
+
+      /**
+       * Heading for a learning-objective group: friendly map, category table (c005 ↔ sc005),
+       * or a short label inferred from the skills in the group (e.g. shared `name` for c013 rows).
+       */
+      function resolveLearningObjectiveHeading(loKey, loItems) {
+        var raw = String(loKey || '').trim() || 'Other';
+        var disp = syllabusPayload && syllabusPayload.learningObjectiveDisplayNames;
+        if (disp && disp[raw]) return disp[raw];
+        var catLookup = buildSkillCategoryLookup(syllabusPayload);
+        if (catLookup[raw]) return catLookup[raw];
+        if (/^c\d+$/i.test(raw)) {
+          var scKey = 'sc' + raw.replace(/^c/i, '');
+          if (catLookup[scKey]) return catLookup[scKey];
+        }
+        if (loItems && loItems.length) {
+          var names = loItems.map(function (it) {
+            return String((it && it.name) || '').trim();
+          }).filter(Boolean);
+          if (names.length) {
+            var first = names[0];
+            if (names.every(function (n) {
+              return n === first;
+            })) {
+              return first;
+            }
+            var bases = [];
+            loItems.forEach(function (it) {
+              if (!it) return;
+              var p = parseSeriesBaseIndex(it.name) || parseSeriesBaseIndex(it.description);
+              if (p && p.base) bases.push(String(p.base).trim());
+            });
+            if (
+              bases.length &&
+              bases.every(function (b) {
+                return b === bases[0];
+              })
+            ) {
+              return bases[0];
+            }
+            return first;
+          }
+        }
+        return getLearningObjectiveDisplayLabel(loKey);
       }
 
       function getCategoryPriority(typeName) {
@@ -517,6 +1032,297 @@
         }
         var n = parseInt(String(value), 10);
         return Number.isNaN(n) ? null : n;
+      }
+
+      function getStudentRosterFromPayload(payload) {
+        if (!payload) return [];
+        var t = payload.tables;
+        if (t && Array.isArray(t.student)) return t.student;
+        if (t && Array.isArray(t.STUDENT)) return t.STUDENT;
+        var obj = payload.student;
+        if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
+          return Object.keys(obj).map(function (kid) {
+            var row = obj[kid];
+            if (!row || typeof row !== 'object') return { keyId: kid };
+            var copy = {};
+            Object.keys(row).forEach(function (k) {
+              copy[k] = row[k];
+            });
+            copy.keyId = copy.keyId || copy.keyID || kid;
+            return copy;
+          });
+        }
+        return [];
+      }
+
+      function findStudentRowById(payload, rawId) {
+        var want = String(rawId || '').trim().toLowerCase();
+        if (!want) return null;
+        var rows = getStudentRosterFromPayload(payload);
+        for (var i = 0; i < rows.length; i++) {
+          var kid = String(rows[i].keyId || rows[i].keyID || '').trim();
+          if (kid.toLowerCase() === want) return rows[i];
+        }
+        return null;
+      }
+
+      function ageCsvToAgeBand(ageStr) {
+        var n = parseInt(String(ageStr || '').trim(), 10);
+        if (!Number.isNaN(n)) return n >= 13 ? 'adult-youth' : 'junior';
+        return 'adult-youth';
+      }
+
+      function rankIdToSelectValue(rankId) {
+        var digits = String(rankId || '').replace(/\D/g, '');
+        if (!digits) return '';
+        var n = parseInt(digits, 10);
+        if (Number.isNaN(n) || n < 1 || n > 16) return '';
+        return String(n);
+      }
+
+      function membershipIdToSelectValue(membershipId) {
+        var m = String(membershipId || '').trim().toLowerCase();
+        if (m === 'ms0003') return 'black-belt-club';
+        if (m === 'ms0004') return 'masters-club';
+        if (m === 'ms0001') return 'standard';
+        return 'standard';
+      }
+
+      /** First non-empty roster property (handles CSV / JSON casing). */
+      function rosterStringField(row, keys) {
+        if (!row || typeof row !== 'object') return '';
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          if (!Object.prototype.hasOwnProperty.call(row, k)) continue;
+          var v = row[k];
+          if (v == null) continue;
+          var s = String(v).trim();
+          if (s) return s;
+        }
+        return '';
+      }
+
+      function rosterYearHintFromTestDate(row) {
+        var t = rosterStringField(row, ['testDate', 'TestDate']);
+        var iso = parseFlexibleSlashDate(t);
+        if (iso) {
+          var y = parseInt(iso.slice(0, 4), 10);
+          if (!Number.isNaN(y)) return y;
+        }
+        return new Date().getFullYear();
+      }
+
+      /** Best-effort M/D/YYYY (or D/M/YYYY when day > 12) to YYYY-MM-DD for date inputs. */
+      function parseFlexibleSlashDate(s) {
+        var parts = String(s || '')
+          .trim()
+          .split(/[/.\-]/);
+        if (parts.length !== 3) return '';
+        var a = parseInt(parts[0], 10);
+        var b = parseInt(parts[1], 10);
+        var y = parseInt(parts[2], 10);
+        if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(y)) return '';
+        if (y < 100) y += 2000;
+        var month = a;
+        var day = b;
+        if (a > 12) {
+          day = a;
+          month = b;
+        }
+        if (month < 1 || month > 12 || day < 1 || day > 31) return '';
+        return (
+          y +
+          '-' +
+          (month < 10 ? '0' : '') +
+          month +
+          '-' +
+          (day < 10 ? '0' : '') +
+          day
+        );
+      }
+
+      var STUDENT_CSV_MONTH = {
+        jan: 1,
+        feb: 2,
+        mar: 3,
+        apr: 4,
+        may: 5,
+        jun: 6,
+        jul: 7,
+        aug: 8,
+        sep: 9,
+        oct: 10,
+        nov: 11,
+        dec: 12
+      };
+
+      /**
+       * Student CSV dates: slash form (parseFlexibleSlashDate) or day-MON[-year] e.g. 30-Apr, 22-Aug-2024.
+       * If year is omitted, defaultYear is used (often from next testing date).
+       */
+      function parseStudentCsvDate(s, defaultYear) {
+        var t = String(s || '').trim();
+        if (!t) return '';
+        var fromSlash = parseFlexibleSlashDate(t);
+        if (fromSlash) return fromSlash;
+        var ydef = defaultYear != null && !Number.isNaN(parseInt(String(defaultYear), 10)) ? parseInt(String(defaultYear), 10) : new Date().getFullYear();
+        var m = t.match(/^(\d{1,2})-([A-Za-z]{3,9})(?:-(\d{2,4}))?$/);
+        if (!m) return '';
+        var day = parseInt(m[1], 10);
+        var monKey = String(m[2] || '')
+          .toLowerCase()
+          .slice(0, 3);
+        var mon = STUDENT_CSV_MONTH[monKey];
+        if (!mon || Number.isNaN(day) || day < 1 || day > 31) return '';
+        var y =
+          m[3] != null && String(m[3]).trim() !== ''
+            ? parseInt(m[3], 10)
+            : ydef;
+        if (Number.isNaN(y)) return '';
+        if (y < 100) y += 2000;
+        return (
+          y +
+          '-' +
+          (mon < 10 ? '0' : '') +
+          mon +
+          '-' +
+          (day < 10 ? '0' : '') +
+          day
+        );
+      }
+
+      function applyStudentRosterRowToForm(row) {
+        if (!row || typeof row !== 'object') return false;
+        var set = function (id, value) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          if (value == null || value === '') return;
+          el.value = value;
+        };
+
+        var kid = String(row.keyId || row.keyID || '').trim();
+        set('student-id-number', kid);
+
+        var fn = String(row.firstName || '').trim();
+        var ln = String(row.LastName || row.lastName || '').trim();
+        var full = [fn, ln].filter(Boolean).join(' ').trim();
+        set('student-name', full);
+
+        set('student-age', ageCsvToAgeBand(row.age));
+
+        var rv = rankIdToSelectValue(row.rankId);
+        if (rv) set('rank', rv);
+        syncRankTitle();
+
+        var te = String(row.testEligible || '').trim().toLowerCase();
+        set('eligible-for-testing', te === 'yes' ? 'yes' : 'no');
+
+        var testRaw = rosterStringField(row, ['testDate', 'TestDate']);
+        var iso = parseFlexibleSlashDate(testRaw);
+        if (iso) set('test-date', iso);
+
+        var yearHint = rosterYearHintFromTestDate(row);
+        var mid = rosterStringField(row, ['membershipId', 'MembershipId']);
+        set('member-level', membershipIdToSelectValue(mid));
+
+        var msRaw = rosterStringField(row, ['memberSince', 'MemberSince']);
+        var msLoose = parseStudentCsvDate(msRaw, yearHint);
+        if (msLoose) set('member-since', msLoose);
+
+        var rnRaw = rosterStringField(row, ['renewalDate', 'RenewalDate']);
+        var rnLoose = parseStudentCsvDate(rnRaw, yearHint);
+        if (rnLoose) set('renewal-date', rnLoose);
+
+        set('school-location', 'brownsville');
+
+        saveUserToStorage();
+        renderRequirements();
+        return true;
+      }
+
+      var STUDENT_ID_NEW = '__new__';
+
+      function populateStudentIdDatalist(payload) {
+        var list = document.getElementById('student-id-datalist');
+        if (!list) return;
+        list.innerHTML = '';
+        var optNew = document.createElement('option');
+        optNew.value = STUDENT_ID_NEW;
+        optNew.label = 'Create new student';
+        optNew.textContent = 'Create new student';
+        list.appendChild(optNew);
+        var rows = getStudentRosterFromPayload(payload);
+        var ids = rows
+          .map(function (r) {
+            return String(r.keyId || r.keyID || '').trim();
+          })
+          .filter(Boolean);
+        ids.sort(function (a, b) {
+          return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true });
+        });
+        ids.forEach(function (id) {
+          var dopt = document.createElement('option');
+          dopt.value = id;
+          list.appendChild(dopt);
+        });
+      }
+
+      function commitStudentIdField() {
+        var statusEl = document.getElementById('requirements-status');
+        if (!syllabusPayload) {
+          if (statusEl) {
+            statusEl.textContent =
+              'Load curriculum first (wait for requirements below), then enter your student ID.';
+          }
+          return;
+        }
+        var idEl = document.getElementById('student-id-number');
+        var raw = idEl ? String(idEl.value || '').trim() : '';
+        if (raw === STUDENT_ID_NEW) {
+          clearFormForNewStudent();
+          return;
+        }
+        if (!raw) {
+          saveUserToStorage();
+          if (statusEl) statusEl.textContent = '';
+          return;
+        }
+        var row = findStudentRowById(syllabusPayload, raw);
+        if (!row) {
+          if (statusEl) {
+            statusEl.textContent =
+              'No student with ID "' + raw + '" in the roster. Check spelling or update app-syllabus.db.json.';
+          }
+          return;
+        }
+        applyStudentRosterRowToForm(row);
+        if (statusEl) {
+          statusEl.textContent = 'Loaded roster data for ' + String(row.keyId || row.keyID || raw) + '.';
+        }
+      }
+
+      function clearFormForNewStudent() {
+        var set = function (id, value) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          el.value = value != null ? value : '';
+        };
+        var idInp = document.getElementById('student-id-number');
+        if (idInp) idInp.value = '';
+        set('student-name', '');
+        set('student-age', 'junior');
+        set('rank', '1');
+        syncRankTitle();
+        set('eligible-for-testing', 'no');
+        set('test-date', '');
+        set('member-level', 'standard');
+        set('member-since', '');
+        set('renewal-date', '');
+        set('school-location', 'brownsville');
+        saveUserToStorage();
+        renderRequirements();
+        var statusEl = document.getElementById('requirements-status');
+        if (statusEl) statusEl.textContent = 'New student profile — fill in the fields below.';
       }
 
       function readUserFromForm() {
@@ -570,7 +1376,22 @@
 
         set('student-id-number', user.studentIdNumber);
         set('student-name', user.studentName);
-        set('student-age', user.studentAge);
+        var ageEl = document.getElementById('student-age');
+        if (ageEl && user.studentAge != null && user.studentAge !== '') {
+          var sa = String(user.studentAge).trim();
+          if (sa === 'adult-youth' || sa === 'junior') {
+            ageEl.value = sa;
+          } else if (sa === 'over-18' || sa === 'under-18') {
+            ageEl.value = sa === 'over-18' ? 'adult-youth' : 'junior';
+          } else {
+            var num = parseInt(sa, 10);
+            if (!Number.isNaN(num)) {
+              ageEl.value = num >= 13 ? 'adult-youth' : 'junior';
+            } else {
+              ageEl.value = sa;
+            }
+          }
+        }
         set('school-location', user.schoolLocation);
         set('rank', user.rank);
         set('rank-title', user.rankTitle);
@@ -583,137 +1404,124 @@
         syncRankTitle();
       }
 
-      function appendRankGroups(parent, items, labels) {
+      function sortItemsByRankThenCount(items) {
+        return items.slice().sort(function (a, b) {
+          var ra = a.rank != null ? a.rank : 0;
+          var rb = b.rank != null ? b.rank : 0;
+          if (ra !== rb) return ra - rb;
+          var ac = a.count != null ? a.count : 0;
+          var bc = b.count != null ? b.count : 0;
+          return ac - bc;
+        });
+      }
+
+      /** Category → learning objective → tables; no curriculum-rank sub-headings. */
+      function appendTypeLoDisclosureTables(parent, items) {
         if (!items.length) return;
-        var byRank = groupItemsByRank(items);
-        var ranks = Object.keys(byRank)
-          .map(function (x) {
-            return parseInt(x, 10);
-          })
-          .sort(function (a, b) {
-            return a - b;
+        var group = sortItemsByRankThenCount(items);
+        var byType = groupItemsByType(group);
+        var types = Object.keys(byType).sort(function (a, b) {
+          var pa = getCategoryPriority(a);
+          var pb = getCategoryPriority(b);
+          if (pa != null && pb != null && pa !== pb) return pa - pb;
+          if (pa != null && pb == null) return -1;
+          if (pa == null && pb != null) return 1;
+          return a.localeCompare(b);
+        });
+
+        types.forEach(function (typeName) {
+          var typeItems = byType[typeName];
+          var typeDetails = document.createElement('details');
+          typeDetails.className = 'requirement-disclosure requirement-disclosure--type';
+
+          var typeSum = document.createElement('summary');
+          typeSum.className = 'requirement-disclosure-summary';
+          typeSum.textContent = getCategoryDisplayLabel(typeName) + ' (' + typeItems.length + ')';
+          typeDetails.appendChild(typeSum);
+
+          var byLo = groupItemsByLearningObjective(typeItems);
+          var loKeys = Object.keys(byLo).sort(function (a, b) {
+            return resolveLearningObjectiveHeading(a, byLo[a]).localeCompare(
+              resolveLearningObjectiveHeading(b, byLo[b])
+            );
           });
 
-        ranks.forEach(function (tier) {
-          var group = byRank[tier];
-          group.sort(function (a, b) {
-            var ac = a.count != null ? a.count : 0;
-            var bc = b.count != null ? b.count : 0;
-            return ac - bc;
-          });
-
-          var wrap = document.createElement('div');
-          wrap.className = 'requirement-rank-group';
-
-          var h = document.createElement('h4');
-          h.className = 'requirement-rank-heading';
-          var belt = labels[String(tier)] || 'Tier ' + tier;
-          h.textContent = 'Curriculum rank ' + tier + ' — ' + belt;
-          wrap.appendChild(h);
-
-          var byType = groupItemsByType(group);
-          var types = Object.keys(byType).sort(function (a, b) {
-            var pa = getCategoryPriority(a);
-            var pb = getCategoryPriority(b);
-            if (pa != null && pb != null && pa !== pb) return pa - pb;
-            if (pa != null && pb == null) return -1;
-            if (pa == null && pb != null) return 1;
-            return a.localeCompare(b);
-          });
-
-          types.forEach(function (typeName) {
-            var typeItems = byType[typeName];
-            var typeDetails = document.createElement('details');
-            typeDetails.className = 'requirement-disclosure requirement-disclosure--type';
-
-            var typeSum = document.createElement('summary');
-            typeSum.className = 'requirement-disclosure-summary';
-            typeSum.textContent = getCategoryDisplayLabel(typeName) + ' (' + typeItems.length + ')';
-            typeDetails.appendChild(typeSum);
-
-            var byLo = groupItemsByLearningObjective(typeItems);
-            var loKeys = Object.keys(byLo).sort(function (a, b) {
-              return getLearningObjectiveDisplayLabel(a).localeCompare(getLearningObjectiveDisplayLabel(b));
+          loKeys.forEach(function (loKey) {
+            var loItems = byLo[loKey].slice();
+            loItems.sort(function (a, b) {
+              var ac = a.count != null ? a.count : 0;
+              var bc = b.count != null ? b.count : 0;
+              return ac - bc;
             });
 
-            loKeys.forEach(function (loKey) {
-              var loItems = byLo[loKey].slice();
-              loItems.sort(function (a, b) {
-                var ac = a.count != null ? a.count : 0;
-                var bc = b.count != null ? b.count : 0;
-                return ac - bc;
-              });
+            var loDetails = document.createElement('details');
+            loDetails.className = 'requirement-disclosure requirement-disclosure--lo';
+            var loSum = document.createElement('summary');
+            loSum.className = 'requirement-disclosure-summary requirement-disclosure-summary--lo';
+            loSum.textContent = resolveLearningObjectiveHeading(loKey, loItems) + ' (' + loItems.length + ')';
+            loDetails.appendChild(loSum);
 
-              var loDetails = document.createElement('details');
-              loDetails.className = 'requirement-disclosure requirement-disclosure--lo';
-              var loSum = document.createElement('summary');
-              loSum.className = 'requirement-disclosure-summary requirement-disclosure-summary--lo';
-              loSum.textContent = getLearningObjectiveDisplayLabel(loKey) + ' (' + loItems.length + ')';
-              loDetails.appendChild(loSum);
+            var tableWrap = document.createElement('div');
+            tableWrap.className = 'requirement-table-wrap';
 
-              var tableWrap = document.createElement('div');
-              tableWrap.className = 'requirement-table-wrap';
+            var table = document.createElement('table');
+            table.className = 'requirement-table';
 
-              var table = document.createElement('table');
-              table.className = 'requirement-table';
-
-              var thead = document.createElement('thead');
-              var headRow = document.createElement('tr');
-              ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
-                var th = document.createElement('th');
-                if (idx === 0) th.className = 'description-col';
-                th.textContent = label;
-                headRow.appendChild(th);
-              });
-              thead.appendChild(headRow);
-              table.appendChild(thead);
-
-              var tbody = document.createElement('tbody');
-              loItems.forEach(function (it) {
-                var tr = document.createElement('tr');
-                var descriptionTd = document.createElement('td');
-                descriptionTd.className = 'description-col';
-                descriptionTd.textContent = it.description || '';
-                tr.appendChild(descriptionTd);
-
-                var objectiveTd = document.createElement('td');
-                objectiveTd.textContent = it.name || '';
-                tr.appendChild(objectiveTd);
-
-                var statusTd = document.createElement('td');
-                var statusSel = document.createElement('select');
-                statusSel.className = 'requirement-status-select';
-                if (it.key) statusSel.setAttribute('data-item-key', it.key);
-                var currentStatus = normalizeStatus(it.status) || 'Untrained';
-                STATUS_OPTIONS.forEach(function (statusValue) {
-                  var opt = document.createElement('option');
-                  opt.value = statusValue;
-                  opt.textContent = statusValue;
-                  if (statusValue === currentStatus) opt.selected = true;
-                  statusSel.appendChild(opt);
-                });
-                if (STATUS_OPTIONS.indexOf(currentStatus) === -1) {
-                  var fallbackOpt = document.createElement('option');
-                  fallbackOpt.value = currentStatus;
-                  fallbackOpt.textContent = currentStatus;
-                  fallbackOpt.selected = true;
-                  statusSel.appendChild(fallbackOpt);
-                }
-                statusTd.appendChild(statusSel);
-                tr.appendChild(statusTd);
-
-                tbody.appendChild(tr);
-              });
-              table.appendChild(tbody);
-              tableWrap.appendChild(table);
-              loDetails.appendChild(tableWrap);
-              typeDetails.appendChild(loDetails);
+            var thead = document.createElement('thead');
+            var headRow = document.createElement('tr');
+            ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
+              var th = document.createElement('th');
+              if (idx === 0) th.className = 'description-col';
+              th.textContent = label;
+              headRow.appendChild(th);
             });
+            thead.appendChild(headRow);
+            table.appendChild(thead);
 
-            wrap.appendChild(typeDetails);
+            var tbody = document.createElement('tbody');
+            loItems.forEach(function (it) {
+              var tr = document.createElement('tr');
+              var descriptionTd = document.createElement('td');
+              descriptionTd.className = 'description-col';
+              descriptionTd.textContent = it.description || '';
+              tr.appendChild(descriptionTd);
+
+              var objectiveTd = document.createElement('td');
+              objectiveTd.textContent = it.name || '';
+              tr.appendChild(objectiveTd);
+
+              var statusTd = document.createElement('td');
+              var statusSel = document.createElement('select');
+              statusSel.className = 'requirement-status-select';
+              var rowKey = itemKey(it);
+              if (rowKey) statusSel.setAttribute('data-item-key', rowKey);
+              var currentStatus = canonicalRequirementStatus(it.status);
+              STATUS_OPTIONS.forEach(function (statusValue) {
+                var opt = document.createElement('option');
+                opt.value = statusValue;
+                opt.textContent = statusValue;
+                if (statusValue === currentStatus) opt.selected = true;
+                statusSel.appendChild(opt);
+              });
+              if (STATUS_OPTIONS.indexOf(currentStatus) === -1) {
+                var fallbackOpt = document.createElement('option');
+                fallbackOpt.value = currentStatus;
+                fallbackOpt.textContent = currentStatus;
+                fallbackOpt.selected = true;
+                statusSel.appendChild(fallbackOpt);
+              }
+              statusTd.appendChild(statusSel);
+              tr.appendChild(statusTd);
+
+              tbody.appendChild(tr);
+            });
+            table.appendChild(tbody);
+            tableWrap.appendChild(table);
+            loDetails.appendChild(tableWrap);
+            typeDetails.appendChild(loDetails);
           });
 
-          parent.appendChild(wrap);
+          parent.appendChild(typeDetails);
         });
       }
 
@@ -726,12 +1534,8 @@
       }
 
       function progressSummaryAddStatus(counts, it) {
-        var s = normalizeStatus(it.status) || 'Untrained';
-        if (Object.prototype.hasOwnProperty.call(counts, s)) {
-          counts[s]++;
-        } else {
-          counts['Untrained']++;
-        }
+        var s = canonicalRequirementStatus(it.status);
+        counts[s]++;
       }
 
       function progressSummaryFillRows(container, counts) {
@@ -807,13 +1611,50 @@
         progressSummaryFillRows(maintainContainer, maintainCounts);
       }
 
-      function appendMajorSection(container, headingText, items, labels, emptyMessage) {
+      function mergeCurriculumItemsForDisplay(learnItems, maintainItems) {
+        var seen = Object.create(null);
+        var out = [];
+        function pushUnique(arr) {
+          if (!arr || !arr.length) return;
+          arr.forEach(function (it) {
+            var k = itemKey(it);
+            if (!it || !k) return;
+            if (seen[k]) return;
+            seen[k] = true;
+            out.push(it);
+          });
+        }
+        pushUnique(learnItems);
+        pushUnique(maintainItems);
+        return out;
+      }
+
+      function partitionItemsByStatus(items) {
+        var buckets = {
+          Untrained: [],
+          'In Progress': [],
+          Trained: [],
+          Proficient: []
+        };
+        items.forEach(function (it) {
+          if (!it) return;
+          var s = canonicalRequirementStatus(it.status);
+          buckets[s].push(it);
+        });
+        return buckets;
+      }
+
+      function appendStatusMajorSection(container, statusLabel, items, labels, emptyMessage) {
         var section = document.createElement('div');
-        section.className = 'requirement-major-section';
+        section.className = 'requirement-major-section requirement-major-section--by-status';
         var h = document.createElement('h3');
         h.className = 'requirement-section-heading';
-        h.textContent = headingText;
+        h.textContent = statusLabel;
         section.appendChild(h);
+        var sub = document.createElement('p');
+        sub.className = 'requirement-section-subtext';
+        sub.textContent = STATUS_SECTION_SUBTEXT[statusLabel] || '';
+        section.appendChild(sub);
         if (!items.length) {
           var p = document.createElement('p');
           p.className = 'requirement-section-empty';
@@ -822,7 +1663,7 @@
         } else {
           var groupsWrap = document.createElement('div');
           groupsWrap.className = 'requirement-groups';
-          appendRankGroups(groupsWrap, items, labels);
+          appendTypeLoDisclosureTables(groupsWrap, items);
           section.appendChild(groupsWrap);
         }
         container.appendChild(section);
@@ -837,8 +1678,12 @@
         if (!syllabusPayload) {
           if (statusEl) statusEl.textContent = 'Loading curriculum…';
           updateProgressSummary();
+          renderTestableCard();
           return;
         }
+
+        syncEmbeddedSkillStatusesIntoItems();
+        applyStatusOverridesToPayload();
 
         var R = parseInt(rankSel.value, 10);
         if (statusEl) statusEl.textContent = '';
@@ -851,39 +1696,28 @@
 
         var labels = syllabusPayload.beltStepLabels || {};
         var reqBundle = getLearnMaintainBundle(R);
-        var learnItems = reqBundle.learnItems;
-        var maintainItems = reqBundle.maintainItems;
+        var allItems = mergeCurriculumItemsForDisplay(reqBundle.learnItems, reqBundle.maintainItems);
+        var buckets = partitionItemsByStatus(allItems);
 
         container.innerHTML = '';
 
-        appendMajorSection(
-          container,
-          'Rank ' + R + ' — to learn',
-          learnItems,
-          labels,
-          'No syllabus items found for your current step.'
-        );
+        var emptyBucketMsg = 'No skills in this category for your current selection.';
+        STATUS_OPTIONS.forEach(function (statusLabel) {
+          appendStatusMajorSection(
+            container,
+            statusLabel,
+            buckets[statusLabel],
+            labels,
+            emptyBucketMsg
+          );
+        });
 
-        var sectionDivider = document.createElement('hr');
-        sectionDivider.className = 'requirements-section-divider';
-        sectionDivider.setAttribute('aria-hidden', 'true');
-        container.appendChild(sectionDivider);
-
-        appendMajorSection(
-          container,
-          'Rank < ' + R + ' — maintain',
-          maintainItems,
-          labels,
-          R <= 1
-            ? 'You are on the first belt step; there is nothing below your rank to list here.'
-            : 'No syllabus items found for ranks below your step.'
-        );
-
-        if (statusEl && maintainItems.length === 0 && learnItems.length === 0) {
+        if (statusEl && allItems.length === 0) {
           statusEl.textContent = 'No syllabus items for this selection.';
         }
 
         updateProgressSummary();
+        renderTestableCard();
       }
 
       function loadSyllabus(done) {
@@ -897,12 +1731,21 @@
             return res.json();
           })
           .then(function (data) {
-            syllabusPayload = data;
-            applyStatusOverridesToPayload();
-            rebuildItemLookup();
+            var normalized = normalizeTopLevelMapDbToDashboard(data);
+            syllabusPayload = normalized || data;
+            normalizeSyllabusAgeBands(syllabusPayload);
+            populateStudentIdDatalist(syllabusPayload);
             if (data && data.user) {
               writeUserToForm(data.user);
+            } else {
+              var idField = document.getElementById('student-id-number');
+              if (idField && String(idField.value || '').trim()) {
+                commitStudentIdField();
+              }
             }
+            syncEmbeddedSkillStatusesIntoItems();
+            applyStatusOverridesToPayload();
+            rebuildItemLookup();
             done(null);
           })
           .catch(function () {
@@ -915,7 +1758,7 @@
         saveUserToStorage();
         var payloadToSave = {};
         Object.keys(syllabusPayload).forEach(function (k) {
-          if (k === 'user') return;
+          if (k === 'user' || k.charAt(0) === '_') return;
           payloadToSave[k] = syllabusPayload[k];
         });
         payloadToSave.user = readUserFromForm();
@@ -925,7 +1768,7 @@
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'ksw-syllabus.json';
+        a.download = 'app-syllabus.db.json';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -958,6 +1801,19 @@
         writeUserToForm(savedUser);
       }
 
+      var studentIdInput = document.getElementById('student-id-number');
+      if (studentIdInput) {
+        studentIdInput.addEventListener('change', function () {
+          commitStudentIdField();
+        });
+        studentIdInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            commitStudentIdField();
+          }
+        });
+      }
+
       [
         'student-id-number',
         'student-name',
@@ -986,7 +1842,7 @@
         exportBtn.addEventListener('click', function () {
           openModal({
             title: 'Save your progress',
-            body: 'Saving writes your curriculum data and personal info to a JSON file on this device. Recommended: create a \"KSW-Dashboard\" folder in your Documents and save the file there as \"ksw-syllabus.json\".',
+            body: 'Saving writes your curriculum data and personal info to a JSON file on this device. Recommended: create a \"KSW-Dashboard\" folder in your Documents and save the file there as \"app-syllabus.db.json\".',
             proceedLabel: 'Proceed to save',
             cancelLabel: 'Cancel',
             onProceed: function () {
@@ -1011,7 +1867,7 @@
           evt.preventDefault();
           openModal({
             title: 'Load saved progress',
-            body: 'Loading is for when you cleared your browser cache or site data and need to restore from a backup. Choose a \"ksw-syllabus.json\" file you saved earlier (for example, from Documents/KSW-Dashboard).',
+            body: 'Loading is for when you cleared your browser cache or site data and need to restore from a backup. Choose an \"app-syllabus.db.json\" file you saved earlier (for example, from Documents/KSW-Dashboard).',
             proceedLabel: 'Choose file',
             cancelLabel: 'Cancel',
             onProceed: function () {
@@ -1057,20 +1913,30 @@
                 onProceed: function () {
                   closeModal();
                   if (!pendingImportedData) return;
-                  syllabusPayload = pendingImportedData;
-                  applyStatusOverridesToPayload();
-                  rebuildItemLookup();
+                  var impNorm = normalizeTopLevelMapDbToDashboard(pendingImportedData);
+                  syllabusPayload = impNorm || pendingImportedData;
+                  normalizeSyllabusAgeBands(syllabusPayload);
+                  populateStudentIdDatalist(syllabusPayload);
                   if (pendingImportedData.user) {
                     writeUserToForm(pendingImportedData.user);
                     saveUserToStorage();
+                  } else {
+                    var idImp = document.getElementById('student-id-number');
+                    if (idImp && String(idImp.value || '').trim()) {
+                      commitStudentIdField();
+                    }
                   }
+                  syncEmbeddedSkillStatusesIntoItems();
+                  applyStatusOverridesToPayload();
+                  rebuildItemLookup();
                   // Rebuild localStorage map from imported statuses
                   statusByKey = {};
                   forEachSyllabusItemsArray(syllabusPayload, function (arr) {
                     arr.forEach(function (it) {
-                      if (!it || !it.key) return;
+                      var ik = itemKey(it);
+                      if (!it || !ik) return;
                       if (it.status) {
-                        statusByKey[it.key] = normalizeStatus(it.status);
+                        statusByKey[ik] = canonicalRequirementStatus(it.status);
                       }
                     });
                   });
@@ -1110,9 +1976,10 @@
         var statusEl = document.getElementById('requirements-status');
         if (err) {
           if (statusEl) {
-            statusEl.textContent = 'Could not load curriculum data. Check that assets/data/ksw-syllabus.json is available.';
+            statusEl.textContent = 'Could not load curriculum data. Check that assets/data/json/app-syllabus.db.json is available.';
           }
           updateProgressSummary();
+          renderTestableCard();
           return;
         }
         if (statusEl) statusEl.textContent = '';
@@ -1196,12 +2063,21 @@
                   return res.json();
                 })
                 .then(function (data) {
-                  syllabusPayload = data;
-                  applyStatusOverridesToPayload();
-                  rebuildItemLookup();
+                  var normReset = normalizeTopLevelMapDbToDashboard(data);
+                  syllabusPayload = normReset || data;
+                  normalizeSyllabusAgeBands(syllabusPayload);
+                  populateStudentIdDatalist(syllabusPayload);
                   if (data && data.user) {
                     writeUserToForm(data.user);
+                  } else {
+                    var idReset = document.getElementById('student-id-number');
+                    if (idReset && String(idReset.value || '').trim()) {
+                      commitStudentIdField();
+                    }
                   }
+                  syncEmbeddedSkillStatusesIntoItems();
+                  applyStatusOverridesToPayload();
+                  rebuildItemLookup();
                   renderRequirements();
                   if (statusEl) statusEl.textContent = 'All saved data cleared.';
                 })
@@ -1230,14 +2106,14 @@
         if (syllabusPayload) {
           forEachSyllabusItemsArray(syllabusPayload, function (arr) {
             arr.forEach(function (it) {
-              if (it && it.key === key) it.status = value;
+              if (it && itemKey(it) === key) it.status = value;
             });
           });
         }
 
         var statusEl = document.getElementById('requirements-status');
         if (statusEl) statusEl.textContent = 'Saved status for ' + key + '.';
-        updateProgressSummary();
+        renderRequirements();
       });
 
       function getCategoryTargets() {
