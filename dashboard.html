@@ -97,7 +97,7 @@
               <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Your student ID (type or use name below)" spellcheck="false" class="dashboard-student-id-combobox" aria-label="Student ID">
             </div>
             <div class="dashboard-field">
-              <p><label for="student-age">Age (WKSA testing bands)</label></p>
+              <p><label for="student-age">WKSA Testing Band</label></p>
               <select id="student-age" name="student-age">
                 <option value="junior">Age 12 &amp; under (Junior)</option>
                 <option value="adult-youth">Age 13 &amp; over (Adult &amp; Youth)</option>
@@ -245,6 +245,7 @@
 
   <script>
     (function () {
+      /** Canonical curriculum JSON (repo: assets/data/json/). */
       var SYLLABUS_URL = 'assets/data/json/app-syllabus.db.json';
       var syllabusPayload = null;
       var STATUS_OPTIONS = ['Untrained', 'In Progress', 'Trained', 'Proficient'];
@@ -479,7 +480,7 @@
 
         return {
           version: typeof raw.version === 'number' ? raw.version : 3,
-          source: raw.source || 'assets/data/json/app-syllabus.db.json',
+          source: raw.source || SYLLABUS_URL,
           tables: {
             Rank: mapObjectToTableRows(raw.Rank),
             skillCatagory: mapObjectToTableRows(raw.skillCatagory || raw.skillcategory),
@@ -1066,8 +1067,8 @@
       function getStudentRosterFromPayload(payload) {
         if (!payload) return [];
         var t = payload.tables;
-        if (t && Array.isArray(t.student)) return t.student;
-        if (t && Array.isArray(t.STUDENT)) return t.STUDENT;
+        if (t && Array.isArray(t.student) && t.student.length) return t.student;
+        if (t && Array.isArray(t.STUDENT) && t.STUDENT.length) return t.STUDENT;
         var obj = payload.student;
         if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
           return Object.keys(obj).map(function (kid) {
@@ -2315,7 +2316,8 @@
         var statusEl = document.getElementById('requirements-status');
         if (err) {
           if (statusEl) {
-            statusEl.textContent = 'Could not load curriculum data. Check that assets/data/json/app-syllabus.db.json is available.';
+            statusEl.textContent =
+              'Could not load curriculum data. Check that ' + SYLLABUS_URL + ' is available.';
           }
           updateProgressSummary();
           renderTestableCard();
