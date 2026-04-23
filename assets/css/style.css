@@ -432,6 +432,60 @@ pre {
   box-sizing: border-box;
 }
 
+.dashboard-page .dashboard-field--student-name .dashboard-student-name-stack {
+  margin-bottom: 0;
+}
+
+.dashboard-page .dashboard-student-name-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-page .dashboard-student-name-stack .dashboard-student-name-roster,
+.dashboard-page .dashboard-student-name-stack .dashboard-student-name-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.dashboard-page .dashboard-student-name-stack .is-hidden {
+  display: none !important;
+}
+
+/* Under the student name control: caption first, checkbox immediately after (same row); snug to input. */
+.dashboard-page .dashboard-field--student-name .dashboard-manual-entry-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.dashboard-page .dashboard-field--student-name .dashboard-manual-entry-text {
+  flex: 0 1 auto;
+}
+
+.dashboard-page .dashboard-field--student-name .dashboard-manual-entry-toggle-input {
+  flex-shrink: 0;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
 .dashboard-page .page-layout {
   gap: 8px;
 }

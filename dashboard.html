@@ -80,14 +80,21 @@
 
           <div class="dashboard-personal-main" role="region" aria-label="Personal information">
             <div class="dashboard-personal-grid">
+            <div class="dashboard-field dashboard-field--student-name">
+              <p><label for="student-name">Student Name</label></p>
+              <div class="dashboard-student-name-stack">
+                <select id="student-name-roster" name="student-name-roster" class="dashboard-student-name-roster" aria-label="Choose student from roster"></select>
+                <input id="student-name" name="student-name" type="text" autocomplete="name" placeholder="Type or pick name" list="student-name-datalist" spellcheck="false" class="dashboard-student-name-input is-hidden">
+                <datalist id="student-name-datalist"></datalist>
+              </div>
+              <label class="dashboard-manual-entry-label" for="manual-student-entry-toggle">
+                <span class="dashboard-manual-entry-text">Enter new student information</span>
+                <input type="checkbox" id="manual-student-entry-toggle" name="manual-student-entry-toggle" class="dashboard-manual-entry-toggle-input">
+              </label>
+            </div>
             <div class="dashboard-field dashboard-field--student-id">
               <p><label for="student-id-number">Student ID</label></p>
-              <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Type or choose student ID" spellcheck="false" list="student-id-datalist" class="dashboard-student-id-combobox" aria-label="Student ID">
-              <datalist id="student-id-datalist"></datalist>
-            </div>
-            <div class="dashboard-field">
-              <p><label for="student-name">Student Name</label></p>
-              <input id="student-name" name="student-name" type="text" autocomplete="name" placeholder="Full name">
+              <input id="student-id-number" name="student-id-number" type="text" autocomplete="off" placeholder="Your student ID (type or use name below)" spellcheck="false" class="dashboard-student-id-combobox" aria-label="Student ID">
             </div>
             <div class="dashboard-field">
               <p><label for="student-age">Age (WKSA testing bands)</label></p>
@@ -249,7 +256,29 @@
       };
       var STATUS_STORAGE_KEY = 'kswSyllabusStatusByKey.v1';
       var USER_STORAGE_KEY = 'kswDashboardUser.v1';
+      var MANUAL_STUDENT_ENTRY_STORAGE_KEY = 'kswDashboardManualStudentEntry.v1';
       var statusByKey = null;
+
+      function loadManualStudentEntryPreference() {
+        try {
+          return localStorage.getItem(MANUAL_STUDENT_ENTRY_STORAGE_KEY) === '1';
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function saveManualStudentEntryPreference(on) {
+        try {
+          localStorage.setItem(MANUAL_STUDENT_ENTRY_STORAGE_KEY, on ? '1' : '0');
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      function isManualStudentEntry() {
+        var t = document.getElementById('manual-student-entry-toggle');
+        return !!(t && t.checked);
+      }
 
       var modalBackdrop = document.getElementById('requirements-modal-backdrop');
       var modalTitleEl = document.getElementById('requirements-modal-title');
@@ -1235,64 +1264,331 @@
 
         set('school-location', 'brownsville');
 
+        if (!isManualStudentEntry()) {
+          syncStudentNameRosterSelectByStudentId(kid);
+        }
+
         saveUserToStorage();
         renderRequirements();
         return true;
       }
 
-      var STUDENT_ID_NEW = '__new__';
+      /** Choosing this name from the datalist starts a blank profile (same as former ID flow). */
+      var STUDENT_NAME_NEW = 'Create new student';
 
-      function populateStudentIdDatalist(payload) {
-        var list = document.getElementById('student-id-datalist');
-        if (!list) return;
-        list.innerHTML = '';
-        var optNew = document.createElement('option');
-        optNew.value = STUDENT_ID_NEW;
-        optNew.label = 'Create new student';
-        optNew.textContent = 'Create new student';
-        list.appendChild(optNew);
-        var rows = getStudentRosterFromPayload(payload);
-        var ids = rows
-          .map(function (r) {
-            return String(r.keyId || r.keyID || '').trim();
-          })
-          .filter(Boolean);
-        ids.sort(function (a, b) {
-          return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true });
-        });
-        ids.forEach(function (id) {
-          var dopt = document.createElement('option');
-          dopt.value = id;
-          list.appendChild(dopt);
-        });
+      function studentRowDisplayName(row) {
+        if (!row || typeof row !== 'object') return '';
+        var fn = String(row.firstName || '').trim();
+        var ln = String(row.LastName || row.lastName || '').trim();
+        return [fn, ln].filter(Boolean).join(' ').trim();
       }
 
+      /** Build roster entries: id, display name, datalist label (disambiguate duplicate names). */
+      function buildStudentRosterForUi(payload) {
+        var rows = getStudentRosterFromPayload(payload);
+        var out = [];
+        for (var i = 0; i < rows.length; i++) {
+          var r = rows[i];
+          var id = String(r.keyId || r.keyID || '').trim();
+          if (!id) continue;
+          var display = studentRowDisplayName(r);
+          if (!display) display = id;
+          out.push({ id: id, display: display });
+        }
+        var byDisplay = {};
+        for (var j = 0; j < out.length; j++) {
+          var d = out[j].display;
+          byDisplay[d] = (byDisplay[d] || 0) + 1;
+        }
+        for (var k = 0; k < out.length; k++) {
+          out[k].label = byDisplay[out[k].display] > 1 ? out[k].display + ' (' + out[k].id + ')' : out[k].display;
+        }
+        return out;
+      }
+
+      function getStudentNameValueForStorage() {
+        if (isManualStudentEntry()) {
+          var inp = document.getElementById('student-name');
+          return inp ? String(inp.value || '').trim() : '';
+        }
+        var sel = document.getElementById('student-name-roster');
+        if (!sel || sel.selectedIndex < 0) return '';
+        var opt = sel.options[sel.selectedIndex];
+        if (!opt || !String(opt.value || '').trim()) return '';
+        if (opt.value === STUDENT_NAME_NEW) return '';
+        return String(opt.textContent || '').trim();
+      }
+
+      function syncStudentNameRosterSelectByStudentId(studentId) {
+        var sel = document.getElementById('student-name-roster');
+        if (!sel) return;
+        var want = String(studentId || '').trim();
+        sel.selectedIndex = 0;
+        if (!want) return;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === want) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+
+      function syncStudentNameRosterSelectFromNameText(nameStr) {
+        var sel = document.getElementById('student-name-roster');
+        if (!sel) return;
+        var want = String(nameStr || '').trim();
+        sel.selectedIndex = 0;
+        if (!want) return;
+        var wn = want.toLowerCase();
+        for (var i = 0; i < sel.options.length; i++) {
+          var t = String(sel.options[i].textContent || '').trim();
+          if (t === want || t.toLowerCase() === wn) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+
+      function setPersonalFieldsEditable(isManual) {
+        var lockIds = [
+          'student-id-number',
+          'student-age',
+          'school-location',
+          'rank',
+          'eligible-for-testing',
+          'test-date',
+          'member-level',
+          'member-since',
+          'renewal-date'
+        ];
+        for (var i = 0; i < lockIds.length; i++) {
+          var el = document.getElementById(lockIds[i]);
+          if (!el) continue;
+          if (isManual) {
+            el.removeAttribute('readonly');
+            el.disabled = false;
+          } else {
+            if (el.tagName === 'SELECT') {
+              el.disabled = true;
+            } else {
+              el.readOnly = true;
+              el.disabled = false;
+            }
+          }
+        }
+      }
+
+      function applyStudentEntryModeFromToggle() {
+        var manual = isManualStudentEntry();
+        setPersonalFieldsEditable(manual);
+        var nameInp = document.getElementById('student-name');
+        var nameSel = document.getElementById('student-name-roster');
+        if (!nameInp || !nameSel) return;
+        if (manual) {
+          if (nameSel.value && nameSel.value !== STUDENT_NAME_NEW) {
+            var opt = nameSel.options[nameSel.selectedIndex];
+            if (opt) nameInp.value = String(opt.textContent || '').trim();
+          }
+          nameInp.classList.remove('is-hidden');
+          nameSel.classList.add('is-hidden');
+        } else {
+          syncStudentNameRosterSelectFromNameText(String(nameInp.value || '').trim());
+          nameInp.classList.add('is-hidden');
+          nameSel.classList.remove('is-hidden');
+        }
+      }
+
+      function applyStudentFromRosterSelect() {
+        var sel = document.getElementById('student-name-roster');
+        if (!sel || !syllabusPayload) return;
+        var v = String(sel.value || '').trim();
+        if (!v) return;
+        if (v === STUDENT_NAME_NEW) {
+          clearFormForNewStudent();
+          return;
+        }
+        var row = findStudentRowById(syllabusPayload, v);
+        if (row) applyStudentRosterRowToForm(row);
+      }
+
+      function finishStudentProfileAfterSyllabusWrite() {
+        if (!syllabusPayload) return;
+        var idEl = document.getElementById('student-id-number');
+        var ids = idEl ? String(idEl.value || '').trim() : '';
+        if (isManualStudentEntry()) {
+          if (getStudentNameValueForStorage()) commitStudentFromNameField();
+          else if (ids) commitStudentIdField();
+          return;
+        }
+        if (ids) syncStudentNameRosterSelectByStudentId(ids);
+        else {
+          var ni = document.getElementById('student-name');
+          if (ni) syncStudentNameRosterSelectFromNameText(String(ni.value || '').trim());
+        }
+        applyStudentFromRosterSelect();
+      }
+
+      /** Fill student name datalist and roster select from JSON student map (sorted names). */
+      function populateStudentRosterDatalists(payload) {
+        var nameList = document.getElementById('student-name-datalist');
+        var nameSel = document.getElementById('student-name-roster');
+        if (nameList) {
+          nameList.innerHTML = '';
+          var optNew = document.createElement('option');
+          optNew.value = STUDENT_NAME_NEW;
+          optNew.label = STUDENT_NAME_NEW;
+          nameList.appendChild(optNew);
+        }
+        if (nameSel) {
+          nameSel.innerHTML = '';
+          var ph = document.createElement('option');
+          ph.value = '';
+          ph.textContent = 'Choose a student…';
+          nameSel.appendChild(ph);
+          var oc = document.createElement('option');
+          oc.value = STUDENT_NAME_NEW;
+          oc.textContent = STUDENT_NAME_NEW;
+          nameSel.appendChild(oc);
+        }
+
+        if (!payload) {
+          setPersonalFieldsEditable(isManualStudentEntry());
+          return;
+        }
+
+        var entries = buildStudentRosterForUi(payload);
+        var namesSorted = entries.slice().sort(function (a, b) {
+          return a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
+        });
+
+        namesSorted.forEach(function (e) {
+          if (nameList) {
+            var nd = document.createElement('option');
+            nd.value = e.label;
+            nameList.appendChild(nd);
+          }
+          if (nameSel) {
+            var so = document.createElement('option');
+            so.value = e.id;
+            so.textContent = e.label;
+            nameSel.appendChild(so);
+          }
+        });
+
+        setPersonalFieldsEditable(isManualStudentEntry());
+        if (!isManualStudentEntry()) {
+          var idEl = document.getElementById('student-id-number');
+          var sid = idEl ? String(idEl.value || '').trim() : '';
+          if (sid) syncStudentNameRosterSelectByStudentId(sid);
+          else {
+            var ni = document.getElementById('student-name');
+            if (ni) syncStudentNameRosterSelectFromNameText(String(ni.value || '').trim());
+          }
+        }
+      }
+
+      /** Resolve roster row from the typed / chosen student name and fill ID + profile when it matches one roster row. */
+      function commitStudentFromNameField() {
+        if (!isManualStudentEntry()) return;
+        var statusEl = document.getElementById('requirements-status');
+        var idEl = document.getElementById('student-id-number');
+        var nameEl = document.getElementById('student-name');
+        if (!nameEl) return;
+
+        if (!syllabusPayload) {
+          if (statusEl) {
+            statusEl.textContent =
+              'Load curriculum first (wait for requirements below), then choose or type your student name.';
+          }
+          return;
+        }
+
+        var want = String(nameEl.value || '').trim();
+        if (!want) {
+          saveUserToStorage();
+          if (statusEl) statusEl.textContent = '';
+          renderRequirements();
+          return;
+        }
+
+        if (want === STUDENT_NAME_NEW) {
+          clearFormForNewStudent();
+          return;
+        }
+
+        var entries = buildStudentRosterForUi(syllabusPayload);
+        var wantNorm = want.toLowerCase();
+        var hits = [];
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          if (
+            e.label === want ||
+            e.display === want ||
+            e.label.toLowerCase() === wantNorm ||
+            e.display.toLowerCase() === wantNorm
+          ) {
+            hits.push(e);
+          }
+        }
+
+        if (hits.length === 1) {
+          var row = findStudentRowById(syllabusPayload, hits[0].id);
+          if (row) {
+            applyStudentRosterRowToForm(row);
+            if (statusEl) {
+              statusEl.textContent = 'Loaded roster data for ' + studentRowDisplayName(row) + '.';
+            }
+          }
+          return;
+        }
+
+        if (hits.length > 1) {
+          saveUserToStorage();
+          if (statusEl) {
+            statusEl.textContent =
+              'Multiple roster students match that name — pick the full line with (id) from suggestions.';
+          }
+          renderRequirements();
+          return;
+        }
+
+        saveUserToStorage();
+        if (statusEl) {
+          statusEl.textContent =
+            'No roster student matches that name. Pick from suggestions, or keep your own ID and details below.';
+        }
+        renderRequirements();
+      }
+
+      /** Load profile from student ID when it matches the roster (or save a custom ID for a new user). */
       function commitStudentIdField() {
         var statusEl = document.getElementById('requirements-status');
         if (!syllabusPayload) {
           if (statusEl) {
             statusEl.textContent =
-              'Load curriculum first (wait for requirements below), then enter your student ID.';
+              'Load curriculum first (wait for requirements below). Your ID and other fields are saved locally.';
           }
+          saveUserToStorage();
           return;
         }
         var idEl = document.getElementById('student-id-number');
         var raw = idEl ? String(idEl.value || '').trim() : '';
-        if (raw === STUDENT_ID_NEW) {
-          clearFormForNewStudent();
-          return;
-        }
         if (!raw) {
           saveUserToStorage();
           if (statusEl) statusEl.textContent = '';
+          renderRequirements();
           return;
         }
         var row = findStudentRowById(syllabusPayload, raw);
         if (!row) {
+          saveUserToStorage();
           if (statusEl) {
             statusEl.textContent =
-              'No student with ID "' + raw + '" in the roster. Check spelling or update app-syllabus.db.json.';
+              'ID "' +
+              raw +
+              '" is not in the roster — you can still use it as your own ID; details below are saved locally.';
           }
+          renderRequirements();
           return;
         }
         applyStudentRosterRowToForm(row);
@@ -1310,6 +1606,8 @@
         var idInp = document.getElementById('student-id-number');
         if (idInp) idInp.value = '';
         set('student-name', '');
+        var nameRosterClear = document.getElementById('student-name-roster');
+        if (nameRosterClear) nameRosterClear.selectedIndex = 0;
         set('student-age', 'junior');
         set('rank', '1');
         syncRankTitle();
@@ -1332,7 +1630,7 @@
         };
         return {
           studentIdNumber: get('student-id-number'),
-          studentName: get('student-name'),
+          studentName: getStudentNameValueForStorage(),
           studentAge: get('student-age'),
           schoolLocation: get('school-location'),
           rank: get('rank'),
@@ -1400,6 +1698,13 @@
         set('member-level', user.memberLevel);
         set('member-since', user.memberSince);
         set('renewal-date', user.renewalDate);
+
+        var rosterSelW = document.getElementById('student-name-roster');
+        if (!isManualStudentEntry() && rosterSelW && rosterSelW.options.length > 1) {
+          var sidW = String(user.studentIdNumber || '').trim();
+          if (sidW) syncStudentNameRosterSelectByStudentId(sidW);
+          else if (user.studentName) syncStudentNameRosterSelectFromNameText(String(user.studentName || '').trim());
+        }
 
         syncRankTitle();
       }
@@ -1734,15 +2039,11 @@
             var normalized = normalizeTopLevelMapDbToDashboard(data);
             syllabusPayload = normalized || data;
             normalizeSyllabusAgeBands(syllabusPayload);
-            populateStudentIdDatalist(syllabusPayload);
+            populateStudentRosterDatalists(syllabusPayload);
             if (data && data.user) {
               writeUserToForm(data.user);
-            } else {
-              var idField = document.getElementById('student-id-number');
-              if (idField && String(idField.value || '').trim()) {
-                commitStudentIdField();
-              }
             }
+            finishStudentProfileAfterSyllabusWrite();
             syncEmbeddedSkillStatusesIntoItems();
             applyStatusOverridesToPayload();
             rebuildItemLookup();
@@ -1800,6 +2101,48 @@
       if (savedUser) {
         writeUserToForm(savedUser);
       }
+
+      var studentNameInput = document.getElementById('student-name');
+      if (studentNameInput) {
+        studentNameInput.addEventListener('change', function () {
+          if (!isManualStudentEntry()) return;
+          commitStudentFromNameField();
+        });
+        studentNameInput.addEventListener('input', function () {
+          if (!isManualStudentEntry()) return;
+          var v = String(studentNameInput.value || '').trim();
+          if (v) return;
+          saveUserToStorage();
+          renderRequirements();
+        });
+        studentNameInput.addEventListener('keydown', function (e) {
+          if (!isManualStudentEntry()) return;
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            commitStudentFromNameField();
+          }
+        });
+      }
+
+      var studentNameRosterSel = document.getElementById('student-name-roster');
+      if (studentNameRosterSel) {
+        studentNameRosterSel.addEventListener('change', function () {
+          if (isManualStudentEntry()) return;
+          saveUserToStorage();
+          applyStudentFromRosterSelect();
+        });
+      }
+
+      var manualToggleEl = document.getElementById('manual-student-entry-toggle');
+      if (manualToggleEl) {
+        manualToggleEl.checked = loadManualStudentEntryPreference();
+        manualToggleEl.addEventListener('change', function () {
+          saveManualStudentEntryPreference(manualToggleEl.checked);
+          applyStudentEntryModeFromToggle();
+          saveUserToStorage();
+        });
+      }
+      applyStudentEntryModeFromToggle();
 
       var studentIdInput = document.getElementById('student-id-number');
       if (studentIdInput) {
@@ -1916,16 +2259,12 @@
                   var impNorm = normalizeTopLevelMapDbToDashboard(pendingImportedData);
                   syllabusPayload = impNorm || pendingImportedData;
                   normalizeSyllabusAgeBands(syllabusPayload);
-                  populateStudentIdDatalist(syllabusPayload);
+                  populateStudentRosterDatalists(syllabusPayload);
                   if (pendingImportedData.user) {
                     writeUserToForm(pendingImportedData.user);
                     saveUserToStorage();
-                  } else {
-                    var idImp = document.getElementById('student-id-number');
-                    if (idImp && String(idImp.value || '').trim()) {
-                      commitStudentIdField();
-                    }
                   }
+                  finishStudentProfileAfterSyllabusWrite();
                   syncEmbeddedSkillStatusesIntoItems();
                   applyStatusOverridesToPayload();
                   rebuildItemLookup();
@@ -2022,6 +2361,7 @@
               try {
                 localStorage.removeItem(STATUS_STORAGE_KEY);
                 localStorage.removeItem(USER_STORAGE_KEY);
+                localStorage.removeItem(MANUAL_STUDENT_ENTRY_STORAGE_KEY);
               } catch (e) {}
 
               statusByKey = null;
@@ -2053,6 +2393,13 @@
                   el.value = '';
                 }
               });
+              var nameRosterReset = document.getElementById('student-name-roster');
+              if (nameRosterReset) nameRosterReset.selectedIndex = 0;
+              var manualToggleReset = document.getElementById('manual-student-entry-toggle');
+              if (manualToggleReset) manualToggleReset.checked = false;
+              if (typeof applyStudentEntryModeFromToggle === 'function') {
+                applyStudentEntryModeFromToggle();
+              }
               syncRankTitle();
 
               // Reload original JSON from GitHub (cache-bust).
@@ -2066,15 +2413,11 @@
                   var normReset = normalizeTopLevelMapDbToDashboard(data);
                   syllabusPayload = normReset || data;
                   normalizeSyllabusAgeBands(syllabusPayload);
-                  populateStudentIdDatalist(syllabusPayload);
+                  populateStudentRosterDatalists(syllabusPayload);
                   if (data && data.user) {
                     writeUserToForm(data.user);
-                  } else {
-                    var idReset = document.getElementById('student-id-number');
-                    if (idReset && String(idReset.value || '').trim()) {
-                      commitStudentIdField();
-                    }
                   }
+                  finishStudentProfileAfterSyllabusWrite();
                   syncEmbeddedSkillStatusesIntoItems();
                   applyStatusOverridesToPayload();
                   rebuildItemLookup();
