@@ -111,6 +111,12 @@
               </select>
             </div>
             <div class="dashboard-field">
+              <p><label for="study-resources">Study resources</label></p>
+              <select id="study-resources" name="study-resources" class="dashboard-study-resources" aria-label="Open optional study pages">
+                <option value="">Choose a topic…</option>
+              </select>
+            </div>
+            <div class="dashboard-field">
               <p><label for="rank">Current Rank</label></p>
               <select id="rank" name="rank">
                 <option value="1" data-rank-name="Huin Tti">White Belt</option>
@@ -340,6 +346,15 @@
       }
 
       /** Map CSV / free-text statuses onto STATUS_OPTIONS for bucketing and UI. */
+      /** Allow same-origin paths and http(s) links from curriculum JSON; block obvious script URLs. */
+      function isSafeStudyUrl(u) {
+        var s = String(u || '').trim();
+        if (!s) return false;
+        if (/^javascript:/i.test(s)) return false;
+        if (s.indexOf(':') >= 0 && !/^https?:\/\//i.test(s)) return false;
+        return true;
+      }
+
       function canonicalRequirementStatus(status) {
         var s = normalizeStatus(String(status || '').trim());
         if (!s) return 'Untrained';
@@ -422,7 +437,8 @@
               name: '',
               type: 'SKILL',
               status: 'Untrained',
-              description: ''
+              description: '',
+              studyUrl: ''
             };
           }
           function stepFromRankField(val) {
@@ -461,7 +477,8 @@
             name: String(s.name || '').trim(),
             type: 'SKILL',
             status: String(s.status || 'Untrained').trim() || 'Untrained',
-            description: String(s.description || '').trim()
+            description: String(s.description || '').trim(),
+            studyUrl: String(s.studyUrl != null ? s.studyUrl : '').trim()
           };
         });
 
@@ -690,6 +707,36 @@
         syllabusPayload.items.forEach(function (it) {
           var k = itemKey(it);
           if (it && k) itemLookupByKey[k] = it;
+        });
+      }
+
+      /** Fill Study resources dropdown from unique non-empty `studyUrl` values on syllabus items. */
+      function populateStudyResourcesSelect() {
+        var sel = document.getElementById('study-resources');
+        if (!sel) return;
+        while (sel.options.length > 1) {
+          sel.remove(1);
+        }
+        if (!syllabusPayload || !Array.isArray(syllabusPayload.items)) return;
+        var seen = Object.create(null);
+        var rows = [];
+        syllabusPayload.items.forEach(function (it) {
+          if (!it) return;
+          var u = String(it.studyUrl || '').trim();
+          if (!u || !isSafeStudyUrl(u)) return;
+          if (seen[u]) return;
+          seen[u] = true;
+          var lab = String(it.name || '').trim() || u;
+          rows.push({ url: u, label: lab });
+        });
+        rows.sort(function (a, b) {
+          return a.label.localeCompare(b.label, undefined, { sensitivity: 'base' });
+        });
+        rows.forEach(function (row) {
+          var opt = document.createElement('option');
+          opt.value = row.url;
+          opt.textContent = row.label;
+          sel.appendChild(opt);
         });
       }
 
@@ -1847,9 +1894,10 @@
 
             var thead = document.createElement('thead');
             var headRow = document.createElement('tr');
-            ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
+            ['Description', 'Learning Objective', 'Study', 'Status'].forEach(function (label, idx) {
               var th = document.createElement('th');
               if (idx === 0) th.className = 'description-col';
+              if (idx === 2) th.className = 'requirement-study-col';
               th.textContent = label;
               headRow.appendChild(th);
             });
@@ -1865,8 +1913,28 @@
               tr.appendChild(descriptionTd);
 
               var objectiveTd = document.createElement('td');
-              objectiveTd.textContent = it.name || '';
+              objectiveTd.textContent = String((it && it.name) || '').trim();
               tr.appendChild(objectiveTd);
+
+              var studyUrl = String((it && it.studyUrl) || '').trim();
+              var studyTd = document.createElement('td');
+              studyTd.className = 'requirement-study-col';
+              if (studyUrl && isSafeStudyUrl(studyUrl)) {
+                var studyBtn = document.createElement('a');
+                studyBtn.href = studyUrl;
+                studyBtn.className = 'btn requirement-study-btn';
+                studyBtn.textContent = 'Study';
+                studyBtn.rel = 'noopener';
+                if (/^https?:\/\//i.test(studyUrl)) studyBtn.target = '_blank';
+                studyTd.appendChild(studyBtn);
+              } else {
+                var studyPlaceholder = document.createElement('span');
+                studyPlaceholder.className = 'requirement-study-placeholder';
+                studyPlaceholder.textContent = '—';
+                studyPlaceholder.setAttribute('aria-label', 'No study page for this skill');
+                studyTd.appendChild(studyPlaceholder);
+              }
+              tr.appendChild(studyTd);
 
               var statusTd = document.createElement('td');
               var statusSel = document.createElement('select');
@@ -2057,6 +2125,7 @@
           if (statusEl) statusEl.textContent = 'Loading curriculum…';
           updateProgressSummary();
           renderTestableCard();
+          populateStudyResourcesSelect();
           return;
         }
 
@@ -2070,6 +2139,7 @@
           container.innerHTML = '';
           updateProgressSummary();
           renderTestableCard();
+          populateStudyResourcesSelect();
           return;
         }
 
@@ -2097,6 +2167,7 @@
 
         updateProgressSummary();
         renderTestableCard();
+        populateStudyResourcesSelect();
       }
 
       function loadSyllabus(done) {
@@ -2167,6 +2238,20 @@
         ageSel.addEventListener('change', function () {
           renderRequirements();
           saveUserToStorage();
+        });
+      }
+
+      var studyResourcesSel = document.getElementById('study-resources');
+      if (studyResourcesSel) {
+        studyResourcesSel.addEventListener('change', function () {
+          var u = String(studyResourcesSel.value || '').trim();
+          if (!u || !isSafeStudyUrl(u)) return;
+          if (/^https?:\/\//i.test(u)) {
+            window.open(u, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = u;
+          }
+          studyResourcesSel.selectedIndex = 0;
         });
       }
 
@@ -2394,6 +2479,7 @@
           }
           updateProgressSummary();
           renderTestableCard();
+          populateStudyResourcesSelect();
           return;
         }
         if (statusEl) statusEl.textContent = '';
@@ -2451,6 +2537,7 @@
                 'student-name',
                 'student-age',
                 'school-location',
+                'study-resources',
                 'rank',
                 'rank-title',
                 'eligible-for-testing',

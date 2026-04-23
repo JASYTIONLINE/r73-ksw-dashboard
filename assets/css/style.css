@@ -900,7 +900,7 @@ pre {
     display: none;
   }
 
-  /* Mobile dashboard table: show only Learning Objective + Status */
+  /* Mobile dashboard table: hide Description; show Learning Objective, Study, Status */
   .dashboard-page .requirement-table .description-col {
     display: none;
   }
@@ -1164,7 +1164,7 @@ pre {
 
 .dashboard-page .requirement-table {
   width: 100%;
-  min-width: 640px;
+  min-width: 820px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -1185,6 +1185,41 @@ pre {
   font-size: 0.9rem;
 }
 
+.dashboard-page .requirement-study-col {
+  text-align: center;
+  vertical-align: middle;
+  width: 13rem;
+  min-width: 13rem;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
+/* Global `button, .btn` uses width: 20% and height: 56px — undo that here so the label fits inside the gold box. */
+.dashboard-page .requirement-study-btn {
+  width: auto !important;
+  min-width: fit-content;
+  max-width: 100%;
+  height: auto !important;
+  min-height: 0;
+  margin-bottom: 0 !important;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.35rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.dashboard-page .requirement-study-placeholder {
+  color: #888;
+  font-size: 0.95rem;
+}
+
 .dashboard-page .requirement-status-select {
   width: 100%;
   min-width: 9rem;
@@ -1201,7 +1236,8 @@ pre {
   }
 
   .dashboard-page .requirement-table-wrap {
-    overflow-x: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .dashboard-page .requirement-table {
@@ -1210,11 +1246,11 @@ pre {
     table-layout: fixed;
   }
 
-  /* Visible mobile columns: Learning Objective + Status */
+  /* Visible mobile columns: Learning Objective, Study, Status */
   .dashboard-page .requirement-table th:nth-child(2),
   .dashboard-page .requirement-table td:nth-child(2) {
-    width: 20ch;
-    max-width: 20ch;
+    width: 16ch;
+    max-width: 16ch;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1222,6 +1258,18 @@ pre {
 
   .dashboard-page .requirement-table th:nth-child(3),
   .dashboard-page .requirement-table td:nth-child(3) {
+    width: 13.5rem;
+    min-width: 13.5rem;
+    max-width: 13.5rem;
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .dashboard-page .requirement-table th:nth-child(4),
+  .dashboard-page .requirement-table td:nth-child(4) {
     width: 10ch;
     max-width: 10ch;
   }

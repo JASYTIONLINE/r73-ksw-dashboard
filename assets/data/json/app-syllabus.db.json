@@ -206,6 +206,16 @@
     }
   },
   "SKILL": {
+    "sk0000": {
+      "serialNumber": "0",
+      "name": "Tie Your Belt",
+      "skillCatagoryId": "sc010",
+      "description": "Learn How to Properly Tie Your Belt",
+      "8under": "rb001",
+      "9to12": "rb001",
+      "13up": "rb001",
+      "studyUrl": "contents/foundations/tie-your-belt.html"
+    },
     "sk0001": {
       "serialNumber": "1",
       "name": "Forward/Back Stretch",
@@ -213,7 +223,8 @@
       "description": "Forward/Back Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0002": {
       "serialNumber": "2",
@@ -222,7 +233,8 @@
       "description": "Look Up/Down",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0003": {
       "serialNumber": "3",
@@ -231,7 +243,8 @@
       "description": "Look Side/Side",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0004": {
       "serialNumber": "4",
@@ -240,7 +253,8 @@
       "description": "Rotate Head",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0005": {
       "serialNumber": "5",
@@ -249,7 +263,8 @@
       "description": "Rotate Arms",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0006": {
       "serialNumber": "6",
@@ -258,7 +273,8 @@
       "description": "Rotate Hips",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0007": {
       "serialNumber": "7",
@@ -267,7 +283,8 @@
       "description": "Knee Bends",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0008": {
       "serialNumber": "8",
@@ -276,7 +293,8 @@
       "description": "Rotate Knees",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0009": {
       "serialNumber": "9",
@@ -285,7 +303,8 @@
       "description": "Stretch Over knees",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0010": {
       "serialNumber": "10",
@@ -294,7 +313,8 @@
       "description": "1Long Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0011": {
       "serialNumber": "11",
@@ -303,7 +323,8 @@
       "description": "Grab Toes",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0012": {
       "serialNumber": "12",
@@ -312,7 +333,8 @@
       "description": "Ankle Circles",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0013": {
       "serialNumber": "13",
@@ -321,7 +343,8 @@
       "description": "Knee Extensions",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0014": {
       "serialNumber": "14",
@@ -330,7 +353,8 @@
       "description": "Bent Leg Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0015": {
       "serialNumber": "15",
@@ -339,7 +363,8 @@
       "description": "Bent Leg Long Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0016": {
       "serialNumber": "16",
@@ -348,7 +373,8 @@
       "description": "Straddle Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0017": {
       "serialNumber": "17",
@@ -357,7 +383,8 @@
       "description": "Rowing Motion",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0018": {
       "serialNumber": "18",
@@ -366,7 +393,8 @@
       "description": "Forward Straddle Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0019": {
       "serialNumber": "19",
@@ -375,7 +403,8 @@
       "description": "Butterfly Bounce",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0020": {
       "serialNumber": "20",
@@ -384,7 +413,8 @@
       "description": "Butterfly Knees",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0021": {
       "serialNumber": "21",
@@ -393,7 +423,8 @@
       "description": "Finger Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0022": {
       "serialNumber": "22",
@@ -402,7 +433,8 @@
       "description": "Wrist Twist",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0023": {
       "serialNumber": "23",
@@ -411,7 +443,8 @@
       "description": "Roll Back",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0024": {
       "serialNumber": "24",
@@ -420,7 +453,8 @@
       "description": "Shoulder Stand",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0025": {
       "serialNumber": "25",
@@ -429,7 +463,8 @@
       "description": "Bicycle Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0026": {
       "serialNumber": "26",
@@ -438,7 +473,8 @@
       "description": "Back Arch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0027": {
       "serialNumber": "27",
@@ -447,7 +483,8 @@
       "description": "Hip Raise",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0028": {
       "serialNumber": "28",
@@ -456,7 +493,8 @@
       "description": "2Hip Raise with Support",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0029": {
       "serialNumber": "29",
@@ -465,7 +503,8 @@
       "description": "Full Bridge",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0030": {
       "serialNumber": "30",
@@ -474,7 +513,8 @@
       "description": "Raise Head/Shoulders",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0031": {
       "serialNumber": "31",
@@ -483,7 +523,8 @@
       "description": "Raise Leg/Feet",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0032": {
       "serialNumber": "32",
@@ -492,7 +533,8 @@
       "description": "Raise head and Feet",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0033": {
       "serialNumber": "33",
@@ -501,7 +543,8 @@
       "description": "Grab Ankles",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0034": {
       "serialNumber": "34",
@@ -510,7 +553,8 @@
       "description": "Back Stretch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0035": {
       "serialNumber": "1",
@@ -519,7 +563,8 @@
       "description": "1 Front Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0036": {
       "serialNumber": "2",
@@ -528,7 +573,8 @@
       "description": "2 Back Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0037": {
       "serialNumber": "3",
@@ -537,7 +583,8 @@
       "description": "3 Side Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0038": {
       "serialNumber": "4",
@@ -546,7 +593,8 @@
       "description": "4 Front Side Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0039": {
       "serialNumber": "5",
@@ -555,7 +603,8 @@
       "description": "5 Rolling Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0040": {
       "serialNumber": "6",
@@ -564,7 +613,8 @@
       "description": "6 Cat Roll",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0041": {
       "serialNumber": "7",
@@ -573,7 +623,8 @@
       "description": "7 Cart Wheel",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0042": {
       "serialNumber": "8",
@@ -582,7 +633,8 @@
       "description": "8 One Hand Cart-wheel",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0043": {
       "serialNumber": "9",
@@ -591,7 +643,8 @@
       "description": "9 High Roll Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0044": {
       "serialNumber": "10",
@@ -600,7 +653,8 @@
       "description": "10 High Front Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0045": {
       "serialNumber": "11",
@@ -609,7 +663,8 @@
       "description": "11 Elbow Cart-wheel",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0046": {
       "serialNumber": "12",
@@ -618,7 +673,8 @@
       "description": "12 High Back Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0047": {
       "serialNumber": "13",
@@ -627,7 +683,8 @@
       "description": "13 Aerial (No Hand)",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0048": {
       "serialNumber": "14",
@@ -636,7 +693,8 @@
       "description": "14 High Roll Fall",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0049": {
       "serialNumber": "15",
@@ -645,7 +703,8 @@
       "description": "15 Hand Spring",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0050": {
       "serialNumber": "16",
@@ -654,7 +713,8 @@
       "description": "16 Front Flip",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0051": {
       "serialNumber": "1",
@@ -663,7 +723,8 @@
       "description": "Fundamental Form Part 1",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0052": {
       "serialNumber": "2",
@@ -672,7 +733,8 @@
       "description": "Fundamental Form Part 2",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0053": {
       "serialNumber": "3",
@@ -681,7 +743,8 @@
       "description": "Fundamental Form Part 3",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0054": {
       "serialNumber": "4",
@@ -690,7 +753,8 @@
       "description": "Fundamental Form Part 4",
       "8under": "rb004",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0055": {
       "serialNumber": "5",
@@ -698,7 +762,8 @@
       "skillCatagoryId": "c009",
       "description": "Fundamental Form Part 5",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0056": {
       "serialNumber": "6",
@@ -706,7 +771,8 @@
       "skillCatagoryId": "c009",
       "description": "Fundamental Form Part 6",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0057": {
       "serialNumber": "1",
@@ -715,7 +781,8 @@
       "description": "Elementary Level Form Part 1",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0058": {
       "serialNumber": "2",
@@ -724,7 +791,8 @@
       "description": "Elementary Level Form Part 2",
       "8under": "rb007",
       "9to12": "rb007",
-      "13up": "rb005"
+      "13up": "rb005",
+      "studyUrl": ""
     },
     "sk0059": {
       "serialNumber": "1",
@@ -733,7 +801,8 @@
       "description": "Intermediate Level form part 1",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0060": {
       "serialNumber": "2",
@@ -742,7 +811,8 @@
       "description": "Intermediate Level form part 2",
       "8under": "rb008",
       "9to12": "rb009",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0061": {
       "serialNumber": "1",
@@ -751,7 +821,8 @@
       "description": "Advanced Level form part 1",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0062": {
       "serialNumber": "2",
@@ -760,7 +831,8 @@
       "description": "Advanced Level form part 2",
       "8under": "rb009",
       "9to12": "rb009",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0063": {
       "serialNumber": "1",
@@ -769,7 +841,8 @@
       "description": "Advanced Level form part 1",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0064": {
       "serialNumber": "1",
@@ -777,7 +850,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0065": {
       "serialNumber": "2",
@@ -785,7 +859,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0066": {
       "serialNumber": "3",
@@ -793,7 +868,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0067": {
       "serialNumber": "4",
@@ -801,7 +877,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0068": {
       "serialNumber": "5",
@@ -809,7 +886,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0069": {
       "serialNumber": "6",
@@ -817,7 +895,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0070": {
       "serialNumber": "7",
@@ -825,7 +904,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0071": {
       "serialNumber": "8",
@@ -833,7 +913,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0072": {
       "serialNumber": "9",
@@ -841,7 +922,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0073": {
       "serialNumber": "10",
@@ -849,7 +931,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0074": {
       "serialNumber": "11",
@@ -857,7 +940,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0075": {
       "serialNumber": "12",
@@ -865,7 +949,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0076": {
       "serialNumber": "13",
@@ -873,7 +958,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0077": {
       "serialNumber": "14",
@@ -881,7 +967,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0078": {
       "serialNumber": "15",
@@ -889,7 +976,8 @@
       "skillCatagoryId": "c009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0079": {
       "serialNumber": "1",
@@ -898,7 +986,8 @@
       "description": "Sword Form Part 1",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0080": {
       "serialNumber": "2",
@@ -907,7 +996,8 @@
       "description": "Sword Form Part 2",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0081": {
       "serialNumber": "1",
@@ -916,7 +1006,8 @@
       "description": "Winging out: Technique : Horse Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0082": {
       "serialNumber": "2",
@@ -925,7 +1016,8 @@
       "description": "Winging out: Crossed Arms",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0083": {
       "serialNumber": "3",
@@ -934,7 +1026,8 @@
       "description": "Winging out: iron Cross",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0084": {
       "serialNumber": "4",
@@ -943,7 +1036,8 @@
       "description": "Winging out: Squat",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0085": {
       "serialNumber": "5",
@@ -952,7 +1046,8 @@
       "description": "Winging out: Arm thrust",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0086": {
       "serialNumber": "6",
@@ -961,7 +1056,8 @@
       "description": "Winging out: Side",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0087": {
       "serialNumber": "1",
@@ -970,7 +1066,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0088": {
       "serialNumber": "2",
@@ -979,7 +1076,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0089": {
       "serialNumber": "3",
@@ -988,7 +1086,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0090": {
       "serialNumber": "4",
@@ -997,7 +1096,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0091": {
       "serialNumber": "5",
@@ -1006,7 +1106,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0092": {
       "serialNumber": "6",
@@ -1015,7 +1116,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0093": {
       "serialNumber": "7",
@@ -1024,7 +1126,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0094": {
       "serialNumber": "8",
@@ -1033,7 +1136,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0095": {
       "serialNumber": "9",
@@ -1042,7 +1146,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0096": {
       "serialNumber": "10",
@@ -1051,7 +1156,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0097": {
       "serialNumber": "11",
@@ -1060,7 +1166,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0098": {
       "serialNumber": "12",
@@ -1069,7 +1176,8 @@
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0099": {
       "serialNumber": "1",
@@ -1078,7 +1186,8 @@
       "description": "Attention",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0100": {
       "serialNumber": "2",
@@ -1087,7 +1196,8 @@
       "description": "Left Fighting Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0101": {
       "serialNumber": "3",
@@ -1096,7 +1206,8 @@
       "description": "Right Fighting Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0102": {
       "serialNumber": "4",
@@ -1105,7 +1216,8 @@
       "description": "Horse Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0103": {
       "serialNumber": "5",
@@ -1114,7 +1226,8 @@
       "description": "Front Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0104": {
       "serialNumber": "6",
@@ -1123,7 +1236,8 @@
       "description": "Front Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0105": {
       "serialNumber": "7",
@@ -1132,7 +1246,8 @@
       "description": "Dragon Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0106": {
       "serialNumber": "8",
@@ -1141,7 +1256,8 @@
       "description": "Cat Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0107": {
       "serialNumber": "1",
@@ -1150,7 +1266,8 @@
       "description": "Customs/Courtesies",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0108": {
       "serialNumber": "2",
@@ -1159,7 +1276,8 @@
       "description": "Types/occasions involving bowing",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0109": {
       "serialNumber": "3",
@@ -1168,7 +1286,8 @@
       "description": "Proper way to wear the uniform",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0110": {
       "serialNumber": "4",
@@ -1177,7 +1296,8 @@
       "description": "Code Of Ethics",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0111": {
       "serialNumber": "5",
@@ -1186,7 +1306,8 @@
       "description": "Student Oath",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0112": {
       "serialNumber": "6",
@@ -1195,7 +1316,8 @@
       "description": "Handling Weapons",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0113": {
       "serialNumber": "7",
@@ -1204,7 +1326,8 @@
       "description": "Sparring",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0114": {
       "serialNumber": "8",
@@ -1213,7 +1336,8 @@
       "description": "Foundations of  a Mmatial Arts Stance",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0115": {
       "serialNumber": "9",
@@ -1222,7 +1346,8 @@
       "description": "Teaching Others",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0116": {
       "serialNumber": "1",
@@ -1231,7 +1356,8 @@
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0117": {
       "serialNumber": "2",
@@ -1240,7 +1366,8 @@
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0118": {
       "serialNumber": "3",
@@ -1249,7 +1376,8 @@
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0119": {
       "serialNumber": "4",
@@ -1258,7 +1386,8 @@
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0120": {
       "serialNumber": "5",
@@ -1267,7 +1396,8 @@
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0121": {
       "serialNumber": "1",
@@ -1276,7 +1406,8 @@
       "description": "Straight Leg Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0122": {
       "serialNumber": "2",
@@ -1285,7 +1416,8 @@
       "description": "Front Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0123": {
       "serialNumber": "3",
@@ -1294,7 +1426,8 @@
       "description": "Inside Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0124": {
       "serialNumber": "4",
@@ -1303,7 +1436,8 @@
       "description": "Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0125": {
       "serialNumber": "1",
@@ -1312,7 +1446,8 @@
       "description": "Inside Block",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0126": {
       "serialNumber": "2",
@@ -1321,7 +1456,8 @@
       "description": "High Low Cover",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0127": {
       "serialNumber": "3",
@@ -1330,7 +1466,8 @@
       "description": "High Low Middle Block",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0128": {
       "serialNumber": "4",
@@ -1339,7 +1476,8 @@
       "description": "Up Cover",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0129": {
       "serialNumber": "5",
@@ -1348,7 +1486,8 @@
       "description": "Cross Block (X-Cover)",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0130": {
       "serialNumber": "6",
@@ -1357,7 +1496,8 @@
       "description": "Straight Punch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0131": {
       "serialNumber": "7",
@@ -1366,7 +1506,8 @@
       "description": "Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0132": {
       "serialNumber": "8",
@@ -1375,7 +1516,8 @@
       "description": "Ridge Hand Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0133": {
       "serialNumber": "9",
@@ -1384,7 +1526,8 @@
       "description": "Spear Hand Chop",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0134": {
       "serialNumber": "10",
@@ -1393,7 +1536,8 @@
       "description": "Elbow Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0135": {
       "serialNumber": "11",
@@ -1402,7 +1546,8 @@
       "description": "Circle Knife Hand",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0136": {
       "serialNumber": "1",
@@ -1411,7 +1556,8 @@
       "description": "Thumb Up: Rotate up and out.",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0137": {
       "serialNumber": "2",
@@ -1420,7 +1566,8 @@
       "description": "Thumb Left; Rotate Left Horizontally and out",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0138": {
       "serialNumber": "3",
@@ -1429,7 +1576,8 @@
       "description": "Thumb Down; Rotate forward, down, and out",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0139": {
       "serialNumber": "4",
@@ -1438,7 +1586,8 @@
       "description": "Thumb Right, Palm Up Shoot Out 45 degree",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0140": {
       "serialNumber": "5",
@@ -1447,7 +1596,8 @@
       "description": "Rotate Clockwise, Knife Edge Left",
       "8under": "rb002",
       "9to12": "rb002",
-      "13up": "rb002"
+      "13up": "rb002",
+      "studyUrl": ""
     },
     "sk0141": {
       "serialNumber": "6",
@@ -1455,7 +1605,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0142": {
       "serialNumber": "7",
@@ -1463,7 +1614,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0143": {
       "serialNumber": "8",
@@ -1471,7 +1623,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0144": {
       "serialNumber": "9",
@@ -1479,7 +1632,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0145": {
       "serialNumber": "10",
@@ -1487,7 +1641,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb004",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0146": {
       "serialNumber": "11",
@@ -1495,7 +1650,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb005",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0147": {
       "serialNumber": "12",
@@ -1503,7 +1659,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb005",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0148": {
       "serialNumber": "13",
@@ -1511,7 +1668,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb005",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0149": {
       "serialNumber": "14",
@@ -1519,7 +1677,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb005",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0150": {
       "serialNumber": "15",
@@ -1527,7 +1686,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb005",
-      "13up": "rb003"
+      "13up": "rb003",
+      "studyUrl": ""
     },
     "sk0151": {
       "serialNumber": "5",
@@ -1536,7 +1696,8 @@
       "description": "Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0152": {
       "serialNumber": "6",
@@ -1545,7 +1706,8 @@
       "description": "Knee Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0153": {
       "serialNumber": "7",
@@ -1554,7 +1716,8 @@
       "description": "Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0154": {
       "serialNumber": "8",
@@ -1563,7 +1726,8 @@
       "description": "Outside Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0155": {
       "serialNumber": "12",
@@ -1572,7 +1736,8 @@
       "description": "Four Winds Block",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0156": {
       "serialNumber": "12",
@@ -1581,7 +1746,8 @@
       "description": "Double High Knife Block",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0157": {
       "serialNumber": "12",
@@ -1590,7 +1756,8 @@
       "description": "One Two Punch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0158": {
       "serialNumber": "12",
@@ -1599,7 +1766,8 @@
       "description": "Circle Back Fist",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0159": {
       "serialNumber": "12",
@@ -1608,7 +1776,8 @@
       "description": "Vertical Spear Hand Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0160": {
       "serialNumber": "12",
@@ -1617,7 +1786,8 @@
       "description": "Double Knife Chop",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0161": {
       "serialNumber": "12",
@@ -1626,7 +1796,8 @@
       "description": "Parallel-Double Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0162": {
       "serialNumber": "1",
@@ -1635,7 +1806,8 @@
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0163": {
       "serialNumber": "2",
@@ -1644,7 +1816,8 @@
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0164": {
       "serialNumber": "3",
@@ -1653,7 +1826,8 @@
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0165": {
       "serialNumber": "4",
@@ -1662,7 +1836,8 @@
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0166": {
       "serialNumber": "5",
@@ -1671,7 +1846,8 @@
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
-      "13up": "rb004"
+      "13up": "rb004",
+      "studyUrl": ""
     },
     "sk0167": {
       "serialNumber": "6",
@@ -1679,7 +1855,8 @@
       "skillCatagoryId": "c013",
       "description": "Fundamental Technique",
       "9to12": "rb007",
-      "13up": "rb005"
+      "13up": "rb005",
+      "studyUrl": ""
     },
     "sk0168": {
       "serialNumber": "19",
@@ -1688,7 +1865,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0169": {
       "serialNumber": "20",
@@ -1697,7 +1875,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0170": {
       "serialNumber": "21",
@@ -1706,7 +1885,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0171": {
       "serialNumber": "22",
@@ -1715,7 +1895,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0172": {
       "serialNumber": "23",
@@ -1724,7 +1905,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0173": {
       "serialNumber": "24",
@@ -1733,7 +1915,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0174": {
       "serialNumber": "25",
@@ -1742,7 +1925,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0175": {
       "serialNumber": "26",
@@ -1751,7 +1935,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0176": {
       "serialNumber": "27",
@@ -1760,7 +1945,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0177": {
       "serialNumber": "28",
@@ -1769,7 +1955,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0178": {
       "serialNumber": "29",
@@ -1778,7 +1965,8 @@
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0179": {
       "serialNumber": "9",
@@ -1787,7 +1975,8 @@
       "description": "Axe Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0180": {
       "serialNumber": "30",
@@ -1796,7 +1985,8 @@
       "description": "One two Spin Chop",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0181": {
       "serialNumber": "31",
@@ -1805,7 +1995,8 @@
       "description": "Tiger's Mouth",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0182": {
       "serialNumber": "32",
@@ -1814,7 +2005,8 @@
       "description": "Tiger's Claw",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0183": {
       "serialNumber": "1",
@@ -1823,7 +2015,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0184": {
       "serialNumber": "2",
@@ -1832,7 +2025,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0185": {
       "serialNumber": "3",
@@ -1841,7 +2035,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0186": {
       "serialNumber": "4",
@@ -1850,7 +2045,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0187": {
       "serialNumber": "5",
@@ -1859,7 +2055,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0188": {
       "serialNumber": "6",
@@ -1868,7 +2065,8 @@
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
-      "13up": "rb006"
+      "13up": "rb006",
+      "studyUrl": ""
     },
     "sk0189": {
       "serialNumber": "10",
@@ -1877,7 +2075,8 @@
       "description": "High Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0190": {
       "serialNumber": "11",
@@ -1886,7 +2085,8 @@
       "description": "Jump Front Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0191": {
       "serialNumber": "33",
@@ -1895,7 +2095,8 @@
       "description": "Praying Mantis Block",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0192": {
       "serialNumber": "34",
@@ -1904,7 +2105,8 @@
       "description": "Triple Punch",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0193": {
       "serialNumber": "35",
@@ -1913,7 +2115,8 @@
       "description": "Little Finger hammer Fist",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0194": {
       "serialNumber": "36",
@@ -1922,7 +2125,8 @@
       "description": "One Finger Fist",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0195": {
       "serialNumber": "7",
@@ -1931,7 +2135,8 @@
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0196": {
       "serialNumber": "8",
@@ -1940,7 +2145,8 @@
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0197": {
       "serialNumber": "9",
@@ -1949,7 +2155,8 @@
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0198": {
       "serialNumber": "10",
@@ -1958,7 +2165,8 @@
       "description": "Over-Belt Burn",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0199": {
       "serialNumber": "11",
@@ -1967,7 +2175,8 @@
       "description": "Over-Belt Chop",
       "8under": "rb009",
       "9to12": "rb008",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0200": {
       "serialNumber": "12",
@@ -1976,7 +2185,8 @@
       "description": "Yuhl-Gyuhl Takedown",
       "8under": "rb009",
       "9to12": "rb009",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0201": {
       "serialNumber": "13",
@@ -1985,7 +2195,8 @@
       "description": "Choon BooTakedown",
       "8under": "rb009",
       "9to12": "rb009",
-      "13up": "rb007"
+      "13up": "rb007",
+      "studyUrl": ""
     },
     "sk0202": {
       "serialNumber": "12",
@@ -1994,7 +2205,8 @@
       "description": "Jump Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0203": {
       "serialNumber": "13",
@@ -2003,7 +2215,8 @@
       "description": "Jump Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0204": {
       "serialNumber": "37",
@@ -2012,7 +2225,8 @@
       "description": "Thumb Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0205": {
       "serialNumber": "38",
@@ -2021,7 +2235,8 @@
       "description": "One Finger Poke",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0206": {
       "serialNumber": "39",
@@ -2030,7 +2245,8 @@
       "description": "Two Finger Poke",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0207": {
       "serialNumber": "40",
@@ -2039,7 +2255,8 @@
       "description": "Five Finger Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0208": {
       "serialNumber": "1",
@@ -2047,7 +2264,8 @@
       "skillCatagoryId": "c013",
       "description": "Fingers",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0209": {
       "serialNumber": "2",
@@ -2055,7 +2273,8 @@
       "skillCatagoryId": "c013",
       "description": "Elbow Drop",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0210": {
       "serialNumber": "3",
@@ -2063,7 +2282,8 @@
       "skillCatagoryId": "c013",
       "description": "Backstreet",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0211": {
       "serialNumber": "4",
@@ -2071,7 +2291,8 @@
       "skillCatagoryId": "c013",
       "description": "Elbow Chop",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0212": {
       "serialNumber": "5",
@@ -2079,7 +2300,8 @@
       "skillCatagoryId": "c013",
       "description": "Hyperfoot",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0213": {
       "serialNumber": "6",
@@ -2087,7 +2309,8 @@
       "skillCatagoryId": "c013",
       "description": "Indian Burm",
       "9to12": "rb001",
-      "13up": "rb008"
+      "13up": "rb008",
+      "studyUrl": ""
     },
     "sk0214": {
       "serialNumber": "14",
@@ -2096,7 +2319,8 @@
       "description": "Back Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0215": {
       "serialNumber": "15",
@@ -2105,7 +2329,8 @@
       "description": "Hook Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0216": {
       "serialNumber": "1",
@@ -2114,7 +2339,8 @@
       "description": "Yuhl Gyuhl",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0217": {
       "serialNumber": "2",
@@ -2123,7 +2349,8 @@
       "description": "Soo Sahm",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0218": {
       "serialNumber": "3",
@@ -2132,7 +2359,8 @@
       "description": "Chuhn Boo",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0219": {
       "serialNumber": "4",
@@ -2141,7 +2369,8 @@
       "description": "Geuk Chuhn",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0220": {
       "serialNumber": "5",
@@ -2150,7 +2379,8 @@
       "description": "Hohn Soo",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0221": {
       "serialNumber": "6",
@@ -2159,7 +2389,8 @@
       "description": "Gaek Joo In",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0222": {
       "serialNumber": "7",
@@ -2168,7 +2399,8 @@
       "description": "Hahn Soo",
       "8under": "rb010",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0223": {
       "serialNumber": "8",
@@ -2177,7 +2409,8 @@
       "description": "Dae Po",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0224": {
       "serialNumber": "9",
@@ -2186,7 +2419,8 @@
       "description": "UmKyo",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0225": {
       "serialNumber": "10",
@@ -2195,7 +2429,8 @@
       "description": "Goo Mi",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0226": {
       "serialNumber": "11",
@@ -2204,7 +2439,8 @@
       "description": "Yuhm Chuhn",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0227": {
       "serialNumber": "12",
@@ -2213,7 +2449,8 @@
       "description": "Jahng Moon",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0228": {
       "serialNumber": "13",
@@ -2222,7 +2459,8 @@
       "description": "Ah Moon",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0229": {
       "serialNumber": "14",
@@ -2231,7 +2469,8 @@
       "description": "Shin Juhng",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0230": {
       "serialNumber": "15",
@@ -2240,7 +2479,8 @@
       "description": "Yoo Geun",
       "8under": "rb011",
       "9to12": "rb010",
-      "13up": "rb009"
+      "13up": "rb009",
+      "studyUrl": ""
     },
     "sk0231": {
       "serialNumber": "16",
@@ -2249,7 +2489,8 @@
       "description": "Inverted Stomp Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0232": {
       "serialNumber": "17",
@@ -2258,7 +2499,8 @@
       "description": "Inverted Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0233": {
       "serialNumber": "18",
@@ -2267,7 +2509,8 @@
       "description": "Inverted Side kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0234": {
       "serialNumber": "41",
@@ -2276,7 +2519,8 @@
       "description": "V-Double Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0235": {
       "serialNumber": "1",
@@ -2285,7 +2529,8 @@
       "description": "Sam Um Kyo",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0236": {
       "serialNumber": "2",
@@ -2294,7 +2539,8 @@
       "description": "Dohk Bi",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0237": {
       "serialNumber": "3",
@@ -2303,7 +2549,8 @@
       "description": "Wee Joong",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0238": {
       "serialNumber": "4",
@@ -2312,7 +2559,8 @@
       "description": "Hyul Hae",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0239": {
       "serialNumber": "5",
@@ -2321,7 +2569,8 @@
       "description": "Jahng Moon",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0240": {
       "serialNumber": "6",
@@ -2330,7 +2579,8 @@
       "description": "Geuk Chuhn",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0241": {
       "serialNumber": "7",
@@ -2339,7 +2589,8 @@
       "description": "Ki Hae",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0242": {
       "serialNumber": "8",
@@ -2348,7 +2599,8 @@
       "description": "Goo Mi",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0243": {
       "serialNumber": "9",
@@ -2357,7 +2609,8 @@
       "description": "Yuhm Chuhn",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0244": {
       "serialNumber": "10",
@@ -2366,7 +2619,8 @@
       "description": "Hohn Soo",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0245": {
       "serialNumber": "11",
@@ -2375,7 +2629,8 @@
       "description": "You Geun",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0246": {
       "serialNumber": "12",
@@ -2384,7 +2639,8 @@
       "description": "Ah Moon",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0247": {
       "serialNumber": "13",
@@ -2393,7 +2649,8 @@
       "description": "Gaek Joo",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0248": {
       "serialNumber": "14",
@@ -2402,7 +2659,8 @@
       "description": "Dae Choo",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0249": {
       "serialNumber": "15",
@@ -2411,7 +2669,8 @@
       "description": "Yahng Neung Chung",
       "8under": "rb010",
       "9to12": "rb011",
-      "13up": "rb010"
+      "13up": "rb010",
+      "studyUrl": ""
     },
     "sk0250": {
       "serialNumber": "1",
@@ -2420,7 +2679,8 @@
       "description": "Throw Right",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0251": {
       "serialNumber": "2",
@@ -2429,7 +2689,8 @@
       "description": "Throw Left",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0252": {
       "serialNumber": "3",
@@ -2438,7 +2699,8 @@
       "description": "Elbow Throw",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0253": {
       "serialNumber": "4",
@@ -2447,7 +2709,8 @@
       "description": "Cross Block Up",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0254": {
       "serialNumber": "5",
@@ -2456,7 +2719,8 @@
       "description": "Cross Block down",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0255": {
       "serialNumber": "6",
@@ -2465,7 +2729,8 @@
       "description": "Circle Block Chop",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0256": {
       "serialNumber": "7",
@@ -2474,7 +2739,8 @@
       "description": "Cover down Left",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0257": {
       "serialNumber": "8",
@@ -2483,7 +2749,8 @@
       "description": "Knife Attack",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0258": {
       "serialNumber": "9",
@@ -2492,7 +2759,8 @@
       "description": "Hook Knee",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0259": {
       "serialNumber": "10",
@@ -2501,7 +2769,8 @@
       "description": "Temple Thro",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0260": {
       "serialNumber": "11",
@@ -2510,7 +2779,8 @@
       "description": "Chin Throw",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0261": {
       "serialNumber": "12",
@@ -2519,7 +2789,8 @@
       "description": "Throat",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0262": {
       "serialNumber": "13",
@@ -2528,7 +2799,8 @@
       "description": "Kneel",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0263": {
       "serialNumber": "14",
@@ -2537,7 +2809,8 @@
       "description": "Low High",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0264": {
       "serialNumber": "15",
@@ -2546,7 +2819,8 @@
       "description": "High Low",
       "8under": "rb016",
       "9to12": "rb011",
-      "13up": "rb011"
+      "13up": "rb011",
+      "studyUrl": ""
     },
     "sk0265": {
       "serialNumber": "19",
@@ -2555,7 +2829,8 @@
       "description": "Jump Spin Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0266": {
       "serialNumber": "20",
@@ -2564,7 +2839,8 @@
       "description": "Jump Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0267": {
       "serialNumber": "21",
@@ -2573,7 +2849,8 @@
       "description": "R-Jump Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0268": {
       "serialNumber": "22",
@@ -2582,7 +2859,8 @@
       "description": "Low Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0269": {
       "serialNumber": "1",
@@ -2590,7 +2868,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0270": {
       "serialNumber": "2",
@@ -2598,7 +2877,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0271": {
       "serialNumber": "3",
@@ -2606,7 +2886,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0272": {
       "serialNumber": "4",
@@ -2614,7 +2895,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0273": {
       "serialNumber": "5",
@@ -2622,7 +2904,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0274": {
       "serialNumber": "6",
@@ -2630,7 +2913,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0275": {
       "serialNumber": "7",
@@ -2638,7 +2922,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0276": {
       "serialNumber": "8",
@@ -2646,7 +2931,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0277": {
       "serialNumber": "9",
@@ -2654,7 +2940,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0278": {
       "serialNumber": "10",
@@ -2662,7 +2949,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0279": {
       "serialNumber": "11",
@@ -2670,7 +2958,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0280": {
       "serialNumber": "12",
@@ -2678,7 +2967,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0281": {
       "serialNumber": "13",
@@ -2686,7 +2976,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0282": {
       "serialNumber": "14",
@@ -2694,7 +2985,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0283": {
       "serialNumber": "15",
@@ -2702,7 +2994,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0284": {
       "serialNumber": "16",
@@ -2710,7 +3003,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0285": {
       "serialNumber": "17",
@@ -2718,7 +3012,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0286": {
       "serialNumber": "18",
@@ -2726,7 +3021,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0287": {
       "serialNumber": "19",
@@ -2734,7 +3030,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0288": {
       "serialNumber": "20",
@@ -2742,7 +3039,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0289": {
       "serialNumber": "1",
@@ -2750,7 +3048,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0290": {
       "serialNumber": "2",
@@ -2758,7 +3057,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0291": {
       "serialNumber": "3",
@@ -2766,7 +3066,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0292": {
       "serialNumber": "4",
@@ -2774,7 +3075,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0293": {
       "serialNumber": "5",
@@ -2782,7 +3084,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0294": {
       "serialNumber": "6",
@@ -2790,7 +3093,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0295": {
       "serialNumber": "7",
@@ -2798,7 +3102,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0296": {
       "serialNumber": "8",
@@ -2806,7 +3111,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0297": {
       "serialNumber": "9",
@@ -2814,7 +3120,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0298": {
       "serialNumber": "10",
@@ -2822,7 +3129,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0299": {
       "serialNumber": "11",
@@ -2830,7 +3138,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0300": {
       "serialNumber": "12",
@@ -2838,7 +3147,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0301": {
       "serialNumber": "13",
@@ -2846,7 +3156,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0302": {
       "serialNumber": "14",
@@ -2854,7 +3165,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0303": {
       "serialNumber": "15",
@@ -2862,7 +3174,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0304": {
       "serialNumber": "16",
@@ -2870,7 +3183,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0305": {
       "serialNumber": "17",
@@ -2878,7 +3192,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0306": {
       "serialNumber": "18",
@@ -2886,7 +3201,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0307": {
       "serialNumber": "19",
@@ -2894,7 +3210,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0308": {
       "serialNumber": "20",
@@ -2902,7 +3219,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0309": {
       "serialNumber": "21",
@@ -2910,7 +3228,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0310": {
       "serialNumber": "22",
@@ -2918,7 +3237,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0311": {
       "serialNumber": "23",
@@ -2926,7 +3246,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0312": {
       "serialNumber": "1",
@@ -2934,7 +3255,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0313": {
       "serialNumber": "2",
@@ -2942,7 +3264,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0314": {
       "serialNumber": "3",
@@ -2950,7 +3273,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0315": {
       "serialNumber": "4",
@@ -2958,7 +3282,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0316": {
       "serialNumber": "5",
@@ -2966,7 +3291,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0317": {
       "serialNumber": "6",
@@ -2974,7 +3300,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0318": {
       "serialNumber": "7",
@@ -2982,7 +3309,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0319": {
       "serialNumber": "8",
@@ -2990,7 +3318,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0320": {
       "serialNumber": "9",
@@ -2998,7 +3327,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0321": {
       "serialNumber": "10",
@@ -3006,7 +3336,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0322": {
       "serialNumber": "11",
@@ -3014,7 +3345,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0323": {
       "serialNumber": "12",
@@ -3022,7 +3354,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0324": {
       "serialNumber": "13",
@@ -3030,7 +3363,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0325": {
       "serialNumber": "1",
@@ -3038,7 +3372,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0326": {
       "serialNumber": "2",
@@ -3046,7 +3381,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0327": {
       "serialNumber": "3",
@@ -3054,7 +3390,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0328": {
       "serialNumber": "4",
@@ -3062,7 +3399,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0329": {
       "serialNumber": "5",
@@ -3070,7 +3408,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0330": {
       "serialNumber": "1",
@@ -3078,7 +3417,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0331": {
       "serialNumber": "2",
@@ -3086,7 +3426,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0332": {
       "serialNumber": "3",
@@ -3094,7 +3435,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0333": {
       "serialNumber": "4",
@@ -3102,7 +3444,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0334": {
       "serialNumber": "5",
@@ -3110,7 +3453,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb001",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0335": {
       "serialNumber": "1",
@@ -3118,7 +3462,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0336": {
       "serialNumber": "2",
@@ -3126,7 +3471,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0337": {
       "serialNumber": "3",
@@ -3134,7 +3480,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0338": {
       "serialNumber": "4",
@@ -3142,7 +3489,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0339": {
       "serialNumber": "5",
@@ -3150,7 +3498,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0340": {
       "serialNumber": "6",
@@ -3158,7 +3507,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0341": {
       "serialNumber": "7",
@@ -3166,7 +3516,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0342": {
       "serialNumber": "8",
@@ -3174,7 +3525,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0343": {
       "serialNumber": "1",
@@ -3182,7 +3534,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0344": {
       "serialNumber": "2",
@@ -3190,7 +3543,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0345": {
       "serialNumber": "3",
@@ -3198,7 +3552,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0346": {
       "serialNumber": "4",
@@ -3206,7 +3561,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0347": {
       "serialNumber": "5",
@@ -3214,7 +3570,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0348": {
       "serialNumber": "6",
@@ -3222,7 +3579,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0349": {
       "serialNumber": "7",
@@ -3230,7 +3588,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0350": {
       "serialNumber": "8",
@@ -3238,7 +3597,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0351": {
       "serialNumber": "1",
@@ -3246,7 +3606,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0352": {
       "serialNumber": "2",
@@ -3254,7 +3615,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0353": {
       "serialNumber": "3",
@@ -3262,7 +3624,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0354": {
       "serialNumber": "4",
@@ -3270,7 +3633,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0355": {
       "serialNumber": "5",
@@ -3278,7 +3642,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0356": {
       "serialNumber": "1",
@@ -3286,7 +3651,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0357": {
       "serialNumber": "2",
@@ -3294,7 +3660,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0358": {
       "serialNumber": "3",
@@ -3302,7 +3669,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0359": {
       "serialNumber": "4",
@@ -3310,7 +3678,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0360": {
       "serialNumber": "5",
@@ -3318,7 +3687,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0361": {
       "serialNumber": "6",
@@ -3326,7 +3696,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0362": {
       "serialNumber": "7",
@@ -3334,7 +3705,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0363": {
       "serialNumber": "8",
@@ -3342,7 +3714,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0364": {
       "serialNumber": "9",
@@ -3350,7 +3723,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0365": {
       "serialNumber": "10",
@@ -3358,7 +3732,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0366": {
       "serialNumber": "11",
@@ -3366,7 +3741,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0367": {
       "serialNumber": "12",
@@ -3374,7 +3750,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0368": {
       "serialNumber": "13",
@@ -3382,7 +3759,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0369": {
       "serialNumber": "14",
@@ -3390,7 +3768,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0370": {
       "serialNumber": "15",
@@ -3398,7 +3777,8 @@
       "skillCatagoryId": "c013",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0371": {
       "serialNumber": "1",
@@ -3407,7 +3787,8 @@
       "description": "Counting in Korean",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0372": {
       "serialNumber": "2",
@@ -3416,7 +3797,8 @@
       "description": "Names and Titles",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0373": {
       "serialNumber": "3",
@@ -3425,7 +3807,8 @@
       "description": "Names of Foots Attacks",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0374": {
       "serialNumber": "4",
@@ -3434,7 +3817,8 @@
       "description": "Commands and Terminology",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0375": {
       "serialNumber": "5",
@@ -3443,7 +3827,8 @@
       "description": "Parts of the Body",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0376": {
       "serialNumber": "6",
@@ -3452,7 +3837,8 @@
       "description": "Directions, Relationships, and Movements",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0377": {
       "serialNumber": "7",
@@ -3461,7 +3847,8 @@
       "description": "Moral Character",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0378": {
       "serialNumber": "8",
@@ -3470,7 +3857,8 @@
       "description": "Purpose/Execution of forms",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0379": {
       "serialNumber": "9",
@@ -3479,7 +3867,8 @@
       "description": "What is a \"Technique\"?",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0380": {
       "serialNumber": "10",
@@ -3488,7 +3877,8 @@
       "description": "Water",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0381": {
       "serialNumber": "11",
@@ -3497,7 +3887,8 @@
       "description": "History of Kuk Sool Weapons",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0382": {
       "serialNumber": "12",
@@ -3506,7 +3897,8 @@
       "description": "What is Ki",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0383": {
       "serialNumber": "13",
@@ -3515,7 +3907,8 @@
       "description": "Breathing",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0384": {
       "serialNumber": "14",
@@ -3524,7 +3917,8 @@
       "description": "Modern History of Kuk Sool Won",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0385": {
       "serialNumber": "15",
@@ -3533,7 +3927,8 @@
       "description": "Basic Pressure Points",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0386": {
       "serialNumber": "16",
@@ -3542,7 +3937,8 @@
       "description": "Blocking",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0387": {
       "serialNumber": "17",
@@ -3551,7 +3947,8 @@
       "description": "Locating the Target",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0388": {
       "serialNumber": "18",
@@ -3560,7 +3957,8 @@
       "description": "History of Tribal/Family Martial Arts In Korea",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0389": {
       "serialNumber": "19",
@@ -3569,7 +3967,8 @@
       "description": "History of Buddhist Temple",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0390": {
       "serialNumber": "20",
@@ -3578,7 +3977,8 @@
       "description": "History of the Korean Royal Palace",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0391": {
       "serialNumber": "1",
@@ -3587,7 +3987,8 @@
       "description": "Jointed Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0392": {
       "serialNumber": "2",
@@ -3596,7 +3997,8 @@
       "description": "Jointed Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0393": {
       "serialNumber": "1",
@@ -3605,7 +4007,8 @@
       "description": "Long Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0394": {
       "serialNumber": "2",
@@ -3614,7 +4017,8 @@
       "description": "Long Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0395": {
       "serialNumber": "1",
@@ -3623,7 +4027,8 @@
       "description": "Jointed Staff-Spinnig 1",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0396": {
       "serialNumber": "2",
@@ -3632,7 +4037,8 @@
       "description": "Jointed Staff-Spinnig 2",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0397": {
       "serialNumber": "3",
@@ -3641,7 +4047,8 @@
       "description": "Jointed Staff-Spinnig 3",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0398": {
       "serialNumber": "4",
@@ -3650,7 +4057,8 @@
       "description": "Jointed Staff-Spinnig 4",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0399": {
       "serialNumber": "5",
@@ -3659,7 +4067,8 @@
       "description": "Jointed Staff-Spinnig 5",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0400": {
       "serialNumber": "6",
@@ -3668,7 +4077,8 @@
       "description": "Jointed Staff-Spinnig 6",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0401": {
       "serialNumber": "7",
@@ -3677,7 +4087,8 @@
       "description": "Jointed Staff-Striking 1",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0402": {
       "serialNumber": "8",
@@ -3686,7 +4097,8 @@
       "description": "Jointed Staff-Striking 2",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0403": {
       "serialNumber": "9",
@@ -3695,7 +4107,8 @@
       "description": "Jointed Staff-Striking 3",
       "8under": "rb001",
       "9to12": "rb001",
-      "13up": "rb001"
+      "13up": "rb001",
+      "studyUrl": ""
     },
     "sk0404": {
       "serialNumber": "1",
@@ -3704,7 +4117,8 @@
       "description": "Long Staff-Spinnig 1",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0405": {
       "serialNumber": "2",
@@ -3713,7 +4127,8 @@
       "description": "Long Staff-Spinnig 2",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0406": {
       "serialNumber": "3",
@@ -3722,7 +4137,8 @@
       "description": "Long Staff-Spinnig 3",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0407": {
       "serialNumber": "4",
@@ -3731,7 +4147,8 @@
       "description": "Long Staff-Spinnig 4",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0408": {
       "serialNumber": "5",
@@ -3740,7 +4157,8 @@
       "description": "Long Staff-Spinnig 5",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0409": {
       "serialNumber": "6",
@@ -3749,7 +4167,8 @@
       "description": "Long Staff-Spinnig 6",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0410": {
       "serialNumber": "7",
@@ -3758,7 +4177,8 @@
       "description": "Long Staff-Spinnig 7",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0411": {
       "serialNumber": "8",
@@ -3767,7 +4187,8 @@
       "description": "Long Staff-Spinnig 8",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0412": {
       "serialNumber": "9",
@@ -3776,7 +4197,8 @@
       "description": "Long Staff-Spinnig 9",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0413": {
       "serialNumber": "10",
@@ -3785,7 +4207,8 @@
       "description": "Long Staff-Spinnig 10",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0414": {
       "serialNumber": "11",
@@ -3794,7 +4217,8 @@
       "description": "Long Staff-Spinnig 11",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0415": {
       "serialNumber": "12",
@@ -3803,7 +4227,8 @@
       "description": "Long Staff-Spinnig 12",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0416": {
       "serialNumber": "13",
@@ -3812,7 +4237,8 @@
       "description": "Long Staff-Spinnig 13",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0417": {
       "serialNumber": "14",
@@ -3821,7 +4247,8 @@
       "description": "Long Staff-Spinnig 14",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0418": {
       "serialNumber": "1",
@@ -3830,7 +4257,8 @@
       "description": "Sword Cutting Technique 1",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0419": {
       "serialNumber": "2",
@@ -3839,7 +4267,8 @@
       "description": "Sword Cutting Technique 2",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0420": {
       "serialNumber": "3",
@@ -3848,7 +4277,8 @@
       "description": "Sword Cutting Technique 3",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0421": {
       "serialNumber": "4",
@@ -3857,7 +4287,8 @@
       "description": "Sword Cutting Technique 4",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0422": {
       "serialNumber": "5",
@@ -3866,7 +4297,8 @@
       "description": "Sword Cutting Technique 5",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     },
     "sk0423": {
       "serialNumber": "6",
@@ -3875,7 +4307,8 @@
       "description": "Sword Cutting Technique 6",
       "8under": "rb016",
       "9to12": "rb016",
-      "13up": "rb016"
+      "13up": "rb016",
+      "studyUrl": ""
     }
   },
   "skillStatus": {
