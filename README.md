@@ -88,9 +88,8 @@ Commit updated `assets/data/json/app-syllabus.db.json` when you want production 
 - `dashboard.html` — dashboard UI and client-side logic  
 - `assets/css/` — layout and theme styles  
 - `assets/data/json/app-syllabus.db.json` — curriculum database (loaded by the dashboard; may be top-level maps or legacy envelope)  
-- `app-syllabus.db.json` (repo root) — optional mirror of the same file for convenience  
 - `assets/data/csv/ksw-syllabus.csv` — authoring source for the CSV → JSON generator  
-- `scripts/csv-to-app-syllabus-db.mjs` — `ksw-syllabus.csv` → legacy-envelope `app-syllabus.db.json` (do not run this if you are maintaining the map-shaped JSON by hand)  
+- `scripts/csv-to-app-syllabus-db.mjs` — `ksw-syllabus.csv` → legacy-envelope JSON at `assets/data/json/app-syllabus.db.json` (do not run this if you are maintaining the map-shaped JSON by hand)  
 - `scripts/export-ksw-syllabus-csv.js` — legacy envelope only; exits with an error if the JSON is map-shaped  
 
 ### Feature summary by page

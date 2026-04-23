@@ -99,7 +99,8 @@
             <div class="dashboard-field">
               <p><label for="student-age">WKSA Testing Band</label></p>
               <select id="student-age" name="student-age">
-                <option value="junior">Age 12 &amp; under (Junior)</option>
+                <option value="junior-9-12">Age 9–12 (Junior)</option>
+                <option value="junior-8">Age 8 &amp; under (Junior)</option>
                 <option value="adult-youth">Age 13 &amp; over (Adult &amp; Youth)</option>
               </select>
             </div>
@@ -175,9 +176,9 @@
         </section>
 
         <section class="card dashboard-testable" aria-labelledby="testable-heading">
-          <h3 id="testable-heading">Testable</h3>
-          <p class="testable-intro">Every skill required at your selected belt and age band is grouped here by technique set; each line shows the set name and serial range (for example, An Sohn Mok Soo 1-6).</p>
-          <div id="testable-rollups" class="testable-rollups" role="region" aria-live="polite" aria-label="Testable technique sets at current rank"></div>
+          <h3 id="testable-heading">Testing For: <span id="testable-heading-rank"></span></h3>
+          <p class="testable-intro">Every skill required at the next rank after your current belt (for your age band) is grouped here by technique set; each line shows the set name and serial range (for example, An Sohn Mok Soo 1-6).</p>
+          <div id="testable-rollups" class="testable-rollups" role="region" aria-live="polite" aria-label="Testable technique sets at promotion rank"></div>
         </section>
         <section class="card dashboard-progress-summary" aria-labelledby="progress-summary-heading">
           <h3 id="progress-summary-heading">Progress Summary</h3>
@@ -415,6 +416,8 @@
               rank: 1,
               thirteenPlus: null,
               twelveDown: null,
+              eightUnder: null,
+              nineToTwelve: null,
               learningObjective: '',
               name: '',
               type: 'SKILL',
@@ -422,17 +425,29 @@
               description: ''
             };
           }
+          function stepFromRankField(val) {
+            if (val == null) return null;
+            if (typeof val === 'string' && /^rb\d+/i.test(String(val))) return rbToStep(val);
+            var n = parseInt(String(val), 10);
+            return Number.isNaN(n) ? null : n;
+          }
           var upId = s['13up'] != null ? s['13up'] : s.thirteenPlus;
+          var nineId = s['9to12'] != null ? s['9to12'] : s.nineToTwelve;
+          var eightId = s['8under'] != null ? s['8under'] : s.eightUnder;
           var downId = s['12under'] != null ? s['12under'] : s.twelveDown;
-          var tp = typeof upId === 'string' && /^rb\d+/i.test(String(upId)) ? rbToStep(upId) : parseInt(String(upId), 10);
-          var td =
-            typeof downId === 'string' && /^rb\d+/i.test(String(downId))
-              ? rbToStep(downId)
-              : parseInt(String(downId), 10);
+          var tp = stepFromRankField(upId);
+          var tdLegacy = stepFromRankField(downId);
+          var nineStep = stepFromRankField(nineId);
+          var eightStep = stepFromRankField(eightId);
+          if (nineStep == null && tdLegacy != null) nineStep = tdLegacy;
+          var td = nineStep;
           if (Number.isNaN(tp)) tp = null;
           if (Number.isNaN(td)) td = null;
           var sn = parseInt(String(s.serialNumber || ''), 10);
-          var fallbackRank = tp != null && td != null ? Math.max(tp, td) : tp != null ? tp : td != null ? td : 1;
+          var ranks = [tp, td, eightStep, nineStep].filter(function (x) {
+            return x != null && !Number.isNaN(x);
+          });
+          var fallbackRank = ranks.length ? Math.max.apply(null, ranks) : 1;
           return {
             count: Number.isNaN(sn) ? idx + 1 : sn,
             key: keyId,
@@ -440,6 +455,8 @@
             rank: fallbackRank,
             thirteenPlus: tp,
             twelveDown: td,
+            eightUnder: eightStep,
+            nineToTwelve: nineStep,
             learningObjective: String(s.skillCatagoryId || '').trim(),
             name: String(s.name || '').trim(),
             type: 'SKILL',
@@ -646,19 +663,23 @@
 
       function getStudentAgeBandKey() {
         var el = document.getElementById('student-age');
-        var v = el ? el.value : '';
+        var v = el ? String(el.value || '').trim() : '';
         if (v === 'adult-youth' || v === 'over-18') return 'adult-youth';
-        if (v === 'junior' || v === 'under-18') return 'junior';
-        return 'junior';
+        if (v === 'junior-8') return 'junior-8';
+        if (v === 'junior-9-12') return 'junior-9-12';
+        if (v === 'junior' || v === 'under-18') return 'junior-9-12';
+        return 'junior-9-12';
       }
 
       function requirementsAgeBandKeyForPayload(payload, ageBandUi) {
         if (!payload || !payload.requirementsByAgeBand) return ageBandUi;
         var rb = payload.requirementsByAgeBand;
-        if (rb[ageBandUi]) return ageBandUi;
-        if (ageBandUi === 'junior' && rb['under-18']) return 'under-18';
+        var mapped =
+          ageBandUi === 'junior-8' || ageBandUi === 'junior-9-12' ? 'junior' : ageBandUi;
+        if (rb[mapped]) return mapped;
+        if (mapped === 'junior' && rb['under-18']) return 'under-18';
         if (ageBandUi === 'adult-youth' && rb['over-18']) return 'over-18';
-        return ageBandUi;
+        return mapped;
       }
 
       var itemLookupByKey = {};
@@ -720,12 +741,17 @@
         return [];
       }
 
-      /** Belt step (1–16) at which this skill applies for the given WKSA age band; falls back to `rank`. */
+      /** Belt step (1–16) at which this skill applies for the current WKSA testing band; falls back to `rank`. */
       function itemRequirementRankForBand(it, band) {
         if (!it) return null;
         if (band === 'adult-youth') {
           if (it.thirteenPlus != null && !Number.isNaN(it.thirteenPlus)) return it.thirteenPlus;
-        } else {
+        } else if (band === 'junior-8') {
+          if (it.eightUnder != null && !Number.isNaN(it.eightUnder)) return it.eightUnder;
+          if (it.nineToTwelve != null && !Number.isNaN(it.nineToTwelve)) return it.nineToTwelve;
+          if (it.twelveDown != null && !Number.isNaN(it.twelveDown)) return it.twelveDown;
+        } else if (band === 'junior-9-12' || band === 'junior' || band === 'under-18') {
+          if (it.nineToTwelve != null && !Number.isNaN(it.nineToTwelve)) return it.nineToTwelve;
           if (it.twelveDown != null && !Number.isNaN(it.twelveDown)) return it.twelveDown;
         }
         var r = it.rank;
@@ -955,23 +981,49 @@
         return out;
       }
 
+      /** Visible belt label from the Current Rank dropdown (e.g. "Yellow Stripe" for step 2). */
+      function getRankSelectBeltLabel(rankStep) {
+        var rankSel = document.getElementById('rank');
+        if (!rankSel || rankStep == null || Number.isNaN(rankStep)) return '';
+        var opts = rankSel.options;
+        for (var i = 0; i < opts.length; i++) {
+          if (parseInt(opts[i].value, 10) === rankStep) {
+            return String(opts[i].textContent || opts[i].innerText || '').trim();
+          }
+        }
+        return '';
+      }
+
       function renderTestableCard() {
         var container = document.getElementById('testable-rollups');
+        var headingRank = document.getElementById('testable-heading-rank');
         if (!container) return;
         var rankSel = document.getElementById('rank');
         var R = rankSel ? parseInt(rankSel.value, 10) : NaN;
+        if (headingRank) headingRank.textContent = '';
         if (!syllabusPayload || Number.isNaN(R) || R < 1) {
           container.innerHTML = '';
           return;
         }
+        if (R >= 16) {
+          if (headingRank) headingRank.textContent = '—';
+          container.innerHTML = '';
+          var pMax = document.createElement('p');
+          pMax.className = 'testable-empty';
+          pMax.textContent = 'No higher promotion rank; you are already at the top step in this list.';
+          container.appendChild(pMax);
+          return;
+        }
+        var promotionR = R + 1;
+        if (headingRank) headingRank.textContent = getRankSelectBeltLabel(promotionR) || 'Rank ' + promotionR;
         rebuildItemLookup();
-        var testableItems = getItemsAtCurrentBeltRank(R);
+        var testableItems = getItemsAtCurrentBeltRank(promotionR);
         var lines = buildTestableRollupLines(testableItems);
         container.innerHTML = '';
         if (!lines.length) {
           var p = document.createElement('p');
           p.className = 'testable-empty';
-          p.textContent = 'No testable skills for this rank.';
+          p.textContent = 'No testable skills for this promotion rank.';
           container.appendChild(p);
           return;
         }
@@ -1098,7 +1150,11 @@
 
       function ageCsvToAgeBand(ageStr) {
         var n = parseInt(String(ageStr || '').trim(), 10);
-        if (!Number.isNaN(n)) return n >= 13 ? 'adult-youth' : 'junior';
+        if (!Number.isNaN(n)) {
+          if (n >= 13) return 'adult-youth';
+          if (n <= 8) return 'junior-8';
+          return 'junior-9-12';
+        }
         return 'adult-youth';
       }
 
@@ -1294,7 +1350,9 @@
           if (!id) continue;
           var display = studentRowDisplayName(r);
           if (!display) display = id;
-          out.push({ id: id, display: display });
+          var sortLast = String(r.LastName || r.lastName || '').trim();
+          var sortFirst = String(r.firstName || '').trim();
+          out.push({ id: id, display: display, sortLast: sortLast, sortFirst: sortFirst });
         }
         var byDisplay = {};
         for (var j = 0; j < out.length; j++) {
@@ -1459,6 +1517,16 @@
 
         var entries = buildStudentRosterForUi(payload);
         var namesSorted = entries.slice().sort(function (a, b) {
+          var cmpLast = String(a.sortLast || '').localeCompare(String(b.sortLast || ''), undefined, {
+            sensitivity: 'base',
+            numeric: true
+          });
+          if (cmpLast !== 0) return cmpLast;
+          var cmpFirst = String(a.sortFirst || '').localeCompare(String(b.sortFirst || ''), undefined, {
+            sensitivity: 'base',
+            numeric: true
+          });
+          if (cmpFirst !== 0) return cmpFirst;
           return a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
         });
 
@@ -1609,7 +1677,7 @@
         set('student-name', '');
         var nameRosterClear = document.getElementById('student-name-roster');
         if (nameRosterClear) nameRosterClear.selectedIndex = 0;
-        set('student-age', 'junior');
+        set('student-age', 'junior-9-12');
         set('rank', '1');
         syncRankTitle();
         set('eligible-for-testing', 'no');
@@ -1678,14 +1746,18 @@
         var ageEl = document.getElementById('student-age');
         if (ageEl && user.studentAge != null && user.studentAge !== '') {
           var sa = String(user.studentAge).trim();
-          if (sa === 'adult-youth' || sa === 'junior') {
+          if (sa === 'adult-youth' || sa === 'junior-8' || sa === 'junior-9-12') {
             ageEl.value = sa;
-          } else if (sa === 'over-18' || sa === 'under-18') {
-            ageEl.value = sa === 'over-18' ? 'adult-youth' : 'junior';
+          } else if (sa === 'junior' || sa === 'under-18') {
+            ageEl.value = 'junior-9-12';
+          } else if (sa === 'over-18') {
+            ageEl.value = 'adult-youth';
           } else {
             var num = parseInt(sa, 10);
             if (!Number.isNaN(num)) {
-              ageEl.value = num >= 13 ? 'adult-youth' : 'junior';
+              if (num >= 13) ageEl.value = 'adult-youth';
+              else if (num <= 8) ageEl.value = 'junior-8';
+              else ageEl.value = 'junior-9-12';
             } else {
               ageEl.value = sa;
             }
@@ -1997,6 +2069,7 @@
         if (Number.isNaN(R) || R < 1) {
           container.innerHTML = '';
           updateProgressSummary();
+          renderTestableCard();
           return;
         }
 
