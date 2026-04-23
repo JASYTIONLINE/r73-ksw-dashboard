@@ -219,7 +219,7 @@
     "sk0001": {
       "serialNumber": "1",
       "name": "Forward/Back Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Forward/Back Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -229,7 +229,7 @@
     "sk0002": {
       "serialNumber": "2",
       "name": "Look Up/Down",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Look Up/Down",
       "8under": "rb001",
       "9to12": "rb001",
@@ -239,7 +239,7 @@
     "sk0003": {
       "serialNumber": "3",
       "name": "Look Side/Side",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Look Side/Side",
       "8under": "rb001",
       "9to12": "rb001",
@@ -249,7 +249,7 @@
     "sk0004": {
       "serialNumber": "4",
       "name": "Rotate Head",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Rotate Head",
       "8under": "rb001",
       "9to12": "rb001",
@@ -259,7 +259,7 @@
     "sk0005": {
       "serialNumber": "5",
       "name": "Rotate Arms",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Rotate Arms",
       "8under": "rb001",
       "9to12": "rb001",
@@ -269,7 +269,7 @@
     "sk0006": {
       "serialNumber": "6",
       "name": "Rotate Hips",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Rotate Hips",
       "8under": "rb001",
       "9to12": "rb001",
@@ -279,7 +279,7 @@
     "sk0007": {
       "serialNumber": "7",
       "name": "Knee Bends",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Knee Bends",
       "8under": "rb001",
       "9to12": "rb001",
@@ -289,7 +289,7 @@
     "sk0008": {
       "serialNumber": "8",
       "name": "Rotate Knees",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Rotate Knees",
       "8under": "rb001",
       "9to12": "rb001",
@@ -299,7 +299,7 @@
     "sk0009": {
       "serialNumber": "9",
       "name": "Stretch Over knees",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Stretch Over knees",
       "8under": "rb001",
       "9to12": "rb001",
@@ -309,7 +309,7 @@
     "sk0010": {
       "serialNumber": "10",
       "name": "1Long Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "1Long Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -319,7 +319,7 @@
     "sk0011": {
       "serialNumber": "11",
       "name": "Grab Toes",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Grab Toes",
       "8under": "rb001",
       "9to12": "rb001",
@@ -329,7 +329,7 @@
     "sk0012": {
       "serialNumber": "12",
       "name": "Ankle Circles",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Ankle Circles",
       "8under": "rb001",
       "9to12": "rb001",
@@ -339,7 +339,7 @@
     "sk0013": {
       "serialNumber": "13",
       "name": "Knee Extensions",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Knee Extensions",
       "8under": "rb001",
       "9to12": "rb001",
@@ -349,7 +349,7 @@
     "sk0014": {
       "serialNumber": "14",
       "name": "Bent Leg Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Bent Leg Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -359,7 +359,7 @@
     "sk0015": {
       "serialNumber": "15",
       "name": "Bent Leg Long Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Bent Leg Long Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -369,7 +369,7 @@
     "sk0016": {
       "serialNumber": "16",
       "name": "Straddle Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Straddle Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -379,7 +379,7 @@
     "sk0017": {
       "serialNumber": "17",
       "name": "Rowing Motion",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Rowing Motion",
       "8under": "rb001",
       "9to12": "rb001",
@@ -389,7 +389,7 @@
     "sk0018": {
       "serialNumber": "18",
       "name": "Forward Straddle Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Forward Straddle Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -399,7 +399,7 @@
     "sk0019": {
       "serialNumber": "19",
       "name": "Butterfly Bounce",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Butterfly Bounce",
       "8under": "rb001",
       "9to12": "rb001",
@@ -409,7 +409,7 @@
     "sk0020": {
       "serialNumber": "20",
       "name": "Butterfly Knees",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Butterfly Knees",
       "8under": "rb001",
       "9to12": "rb001",
@@ -419,7 +419,7 @@
     "sk0021": {
       "serialNumber": "21",
       "name": "Finger Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Finger Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -429,7 +429,7 @@
     "sk0022": {
       "serialNumber": "22",
       "name": "Wrist Twist",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Wrist Twist",
       "8under": "rb001",
       "9to12": "rb001",
@@ -439,7 +439,7 @@
     "sk0023": {
       "serialNumber": "23",
       "name": "Roll Back",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Roll Back",
       "8under": "rb001",
       "9to12": "rb001",
@@ -449,7 +449,7 @@
     "sk0024": {
       "serialNumber": "24",
       "name": "Shoulder Stand",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Shoulder Stand",
       "8under": "rb001",
       "9to12": "rb001",
@@ -459,7 +459,7 @@
     "sk0025": {
       "serialNumber": "25",
       "name": "Bicycle Kick",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Bicycle Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -469,7 +469,7 @@
     "sk0026": {
       "serialNumber": "26",
       "name": "Back Arch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Back Arch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -479,7 +479,7 @@
     "sk0027": {
       "serialNumber": "27",
       "name": "Hip Raise",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Hip Raise",
       "8under": "rb001",
       "9to12": "rb001",
@@ -489,7 +489,7 @@
     "sk0028": {
       "serialNumber": "28",
       "name": "2Hip Raise with Support",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "2Hip Raise with Support",
       "8under": "rb001",
       "9to12": "rb001",
@@ -499,7 +499,7 @@
     "sk0029": {
       "serialNumber": "29",
       "name": "Full Bridge",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Full Bridge",
       "8under": "rb001",
       "9to12": "rb001",
@@ -509,7 +509,7 @@
     "sk0030": {
       "serialNumber": "30",
       "name": "Raise Head/Shoulders",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Raise Head/Shoulders",
       "8under": "rb001",
       "9to12": "rb001",
@@ -519,7 +519,7 @@
     "sk0031": {
       "serialNumber": "31",
       "name": "Raise Leg/Feet",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Raise Leg/Feet",
       "8under": "rb001",
       "9to12": "rb001",
@@ -529,7 +529,7 @@
     "sk0032": {
       "serialNumber": "32",
       "name": "Raise head and Feet",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Raise head and Feet",
       "8under": "rb001",
       "9to12": "rb001",
@@ -539,7 +539,7 @@
     "sk0033": {
       "serialNumber": "33",
       "name": "Grab Ankles",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Grab Ankles",
       "8under": "rb001",
       "9to12": "rb001",
@@ -549,7 +549,7 @@
     "sk0034": {
       "serialNumber": "34",
       "name": "Back Stretch",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Back Stretch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -559,7 +559,7 @@
     "sk0035": {
       "serialNumber": "1",
       "name": "Ahp Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "1 Front Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -569,7 +569,7 @@
     "sk0036": {
       "serialNumber": "2",
       "name": "Dee Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "2 Back Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -579,7 +579,7 @@
     "sk0037": {
       "serialNumber": "3",
       "name": "Yuhp Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "3 Side Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -589,7 +589,7 @@
     "sk0038": {
       "serialNumber": "4",
       "name": "Ahp Yuhp Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "4 Front Side Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -599,7 +599,7 @@
     "sk0039": {
       "serialNumber": "5",
       "name": "Hweh Juhn",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "5 Rolling Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -609,7 +609,7 @@
     "sk0040": {
       "serialNumber": "6",
       "name": "Goh Yahng Ee Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "6 Cat Roll",
       "8under": "rb001",
       "9to12": "rb001",
@@ -619,7 +619,7 @@
     "sk0041": {
       "serialNumber": "7",
       "name": "Doo Sohn Poong Cha",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "7 Cart Wheel",
       "8under": "rb001",
       "9to12": "rb001",
@@ -629,7 +629,7 @@
     "sk0042": {
       "serialNumber": "8",
       "name": "Hahn Sohn Poong Cha",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "8 One Hand Cart-wheel",
       "8under": "rb001",
       "9to12": "rb001",
@@ -639,7 +639,7 @@
     "sk0043": {
       "serialNumber": "9",
       "name": "Gong Joong Hweh Juhn Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "9 High Roll Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -649,7 +649,7 @@
     "sk0044": {
       "serialNumber": "10",
       "name": "Gong Joong Ahp Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "10 High Front Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -659,7 +659,7 @@
     "sk0045": {
       "serialNumber": "11",
       "name": "Pahl Kum Chi Poong Cha",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "11 Elbow Cart-wheel",
       "8under": "rb001",
       "9to12": "rb001",
@@ -669,7 +669,7 @@
     "sk0046": {
       "serialNumber": "12",
       "name": "Gong Joong Dee Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "12 High Back Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -679,7 +679,7 @@
     "sk0047": {
       "serialNumber": "13",
       "name": "Gon Joong Poong Cha",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "13 Aerial (No Hand)",
       "8under": "rb001",
       "9to12": "rb001",
@@ -689,7 +689,7 @@
     "sk0048": {
       "serialNumber": "14",
       "name": "Gong Joong Hweh Juhn Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "14 High Roll Fall",
       "8under": "rb001",
       "9to12": "rb001",
@@ -699,7 +699,7 @@
     "sk0049": {
       "serialNumber": "15",
       "name": "Doo Sohn Aho Poong Cha",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "15 Hand Spring",
       "8under": "rb001",
       "9to12": "rb001",
@@ -709,7 +709,7 @@
     "sk0050": {
       "serialNumber": "16",
       "name": "Ahp Gong Joong Hweh Juhn Nak Bub",
-      "skillCatagoryId": "c006",
+      "skillCatagoryId": "sc006",
       "description": "16 Front Flip",
       "8under": "rb001",
       "9to12": "rb001",
@@ -719,7 +719,7 @@
     "sk0051": {
       "serialNumber": "1",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 1",
       "8under": "rb002",
       "9to12": "rb002",
@@ -729,7 +729,7 @@
     "sk0052": {
       "serialNumber": "2",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 2",
       "8under": "rb002",
       "9to12": "rb002",
@@ -739,7 +739,7 @@
     "sk0053": {
       "serialNumber": "3",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 3",
       "8under": "rb004",
       "9to12": "rb002",
@@ -749,7 +749,7 @@
     "sk0054": {
       "serialNumber": "4",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 4",
       "8under": "rb004",
       "9to12": "rb004",
@@ -759,7 +759,7 @@
     "sk0055": {
       "serialNumber": "5",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 5",
       "9to12": "rb004",
       "13up": "rb003",
@@ -768,7 +768,7 @@
     "sk0056": {
       "serialNumber": "6",
       "name": "Ki Cho Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Fundamental Form Part 6",
       "9to12": "rb004",
       "13up": "rb003",
@@ -777,7 +777,7 @@
     "sk0057": {
       "serialNumber": "1",
       "name": "Cho Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Elementary Level Form Part 1",
       "8under": "rb006",
       "9to12": "rb006",
@@ -787,7 +787,7 @@
     "sk0058": {
       "serialNumber": "2",
       "name": "Cho Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Elementary Level Form Part 2",
       "8under": "rb007",
       "9to12": "rb007",
@@ -797,7 +797,7 @@
     "sk0059": {
       "serialNumber": "1",
       "name": "Joong Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Level form part 1",
       "8under": "rb008",
       "9to12": "rb008",
@@ -807,7 +807,7 @@
     "sk0060": {
       "serialNumber": "2",
       "name": "Joong Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Level form part 2",
       "8under": "rb008",
       "9to12": "rb009",
@@ -817,7 +817,7 @@
     "sk0061": {
       "serialNumber": "1",
       "name": "Goh Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Advanced Level form part 1",
       "8under": "rb009",
       "9to12": "rb008",
@@ -827,7 +827,7 @@
     "sk0062": {
       "serialNumber": "2",
       "name": "Goh Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Advanced Level form part 2",
       "8under": "rb009",
       "9to12": "rb009",
@@ -837,7 +837,7 @@
     "sk0063": {
       "serialNumber": "1",
       "name": "Dae Geup Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Advanced Level form part 1",
       "8under": "rb010",
       "9to12": "rb010",
@@ -847,7 +847,7 @@
     "sk0064": {
       "serialNumber": "1",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -856,7 +856,7 @@
     "sk0065": {
       "serialNumber": "2",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -865,7 +865,7 @@
     "sk0066": {
       "serialNumber": "3",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -874,7 +874,7 @@
     "sk0067": {
       "serialNumber": "4",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -883,7 +883,7 @@
     "sk0068": {
       "serialNumber": "5",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -892,7 +892,7 @@
     "sk0069": {
       "serialNumber": "6",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -901,7 +901,7 @@
     "sk0070": {
       "serialNumber": "7",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -910,7 +910,7 @@
     "sk0071": {
       "serialNumber": "8",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -919,7 +919,7 @@
     "sk0072": {
       "serialNumber": "9",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -928,7 +928,7 @@
     "sk0073": {
       "serialNumber": "10",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -937,7 +937,7 @@
     "sk0074": {
       "serialNumber": "11",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -946,7 +946,7 @@
     "sk0075": {
       "serialNumber": "12",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -955,7 +955,7 @@
     "sk0076": {
       "serialNumber": "13",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -964,7 +964,7 @@
     "sk0077": {
       "serialNumber": "14",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -973,7 +973,7 @@
     "sk0078": {
       "serialNumber": "15",
       "name": "Joong Geup Sohn Mok Soo",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Intermediate Defense Against Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -982,7 +982,7 @@
     "sk0079": {
       "serialNumber": "1",
       "name": "Guhm Moo Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Sword Form Part 1",
       "8under": "rb016",
       "9to12": "rb016",
@@ -992,7 +992,7 @@
     "sk0080": {
       "serialNumber": "2",
       "name": "Guhm Moo Hyung",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Sword Form Part 2",
       "8under": "rb016",
       "9to12": "rb016",
@@ -1002,7 +1002,7 @@
     "sk0081": {
       "serialNumber": "1",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: Technique : Horse Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1012,7 +1012,7 @@
     "sk0082": {
       "serialNumber": "2",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: Crossed Arms",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1022,7 +1022,7 @@
     "sk0083": {
       "serialNumber": "3",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: iron Cross",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1032,7 +1032,7 @@
     "sk0084": {
       "serialNumber": "4",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: Squat",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1042,7 +1042,7 @@
     "sk0085": {
       "serialNumber": "5",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: Arm thrust",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1052,7 +1052,7 @@
     "sk0086": {
       "serialNumber": "6",
       "name": "Ki Cho Jah Ki",
-      "skillCatagoryId": "c003",
+      "skillCatagoryId": "sc003",
       "description": "Winging out: Side",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1062,7 +1062,7 @@
     "sk0087": {
       "serialNumber": "1",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1072,7 +1072,7 @@
     "sk0088": {
       "serialNumber": "2",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1082,7 +1082,7 @@
     "sk0089": {
       "serialNumber": "3",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1092,7 +1092,7 @@
     "sk0090": {
       "serialNumber": "4",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1102,7 +1102,7 @@
     "sk0091": {
       "serialNumber": "5",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1112,7 +1112,7 @@
     "sk0092": {
       "serialNumber": "6",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1122,7 +1122,7 @@
     "sk0093": {
       "serialNumber": "7",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1132,7 +1132,7 @@
     "sk0094": {
       "serialNumber": "8",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1142,7 +1142,7 @@
     "sk0095": {
       "serialNumber": "9",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1152,7 +1152,7 @@
     "sk0096": {
       "serialNumber": "10",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1162,7 +1162,7 @@
     "sk0097": {
       "serialNumber": "11",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1172,7 +1172,7 @@
     "sk0098": {
       "serialNumber": "12",
       "name": "Dahn Juhn Ki Bub",
-      "skillCatagoryId": "c002",
+      "skillCatagoryId": "sc002",
       "description": "Breating Excercises",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1182,7 +1182,7 @@
     "sk0099": {
       "serialNumber": "1",
       "name": "Cha Ryuht",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Attention",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1192,7 +1192,7 @@
     "sk0100": {
       "serialNumber": "2",
       "name": "Kong Kyuk Jah Se",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Left Fighting Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1202,7 +1202,7 @@
     "sk0101": {
       "serialNumber": "3",
       "name": "Bahng Uh Jah Se",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Right Fighting Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1212,7 +1212,7 @@
     "sk0102": {
       "serialNumber": "4",
       "name": "Ki Mah Jah Se",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Horse Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1222,7 +1222,7 @@
     "sk0103": {
       "serialNumber": "5",
       "name": "Juhn Guhl Jah se",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Front Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1232,7 +1232,7 @@
     "sk0104": {
       "serialNumber": "6",
       "name": "Crane  Stance",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Front Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1242,7 +1242,7 @@
     "sk0105": {
       "serialNumber": "7",
       "name": "Dragon Stance",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Dragon Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1252,7 +1252,7 @@
     "sk0106": {
       "serialNumber": "8",
       "name": "Cat Stance",
-      "skillCatagoryId": "c005",
+      "skillCatagoryId": "sc005",
       "description": "Cat Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1262,7 +1262,7 @@
     "sk0107": {
       "serialNumber": "1",
       "name": "Do Jahng Etiquette",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Customs/Courtesies",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1272,7 +1272,7 @@
     "sk0108": {
       "serialNumber": "2",
       "name": "Bowing",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Types/occasions involving bowing",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1282,7 +1282,7 @@
     "sk0109": {
       "serialNumber": "3",
       "name": "Uniforms",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Proper way to wear the uniform",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1292,7 +1292,7 @@
     "sk0110": {
       "serialNumber": "4",
       "name": "Hwarang Do Sesok O-Gye",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Code Of Ethics",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1302,7 +1302,7 @@
     "sk0111": {
       "serialNumber": "5",
       "name": "Kuk Sool Won Creed",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Student Oath",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1312,7 +1312,7 @@
     "sk0112": {
       "serialNumber": "6",
       "name": "Handling Weapons",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Handling Weapons",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1322,7 +1322,7 @@
     "sk0113": {
       "serialNumber": "7",
       "name": "Sparring",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Sparring",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1332,7 +1332,7 @@
     "sk0114": {
       "serialNumber": "8",
       "name": "Stances",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Foundations of  a Mmatial Arts Stance",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1342,7 +1342,7 @@
     "sk0115": {
       "serialNumber": "9",
       "name": "Teaching Others",
-      "skillCatagoryId": "c001",
+      "skillCatagoryId": "sc001",
       "description": "Teaching Others",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1352,7 +1352,7 @@
     "sk0116": {
       "serialNumber": "1",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
@@ -1362,7 +1362,7 @@
     "sk0117": {
       "serialNumber": "2",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
@@ -1372,7 +1372,7 @@
     "sk0118": {
       "serialNumber": "3",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
@@ -1382,7 +1382,7 @@
     "sk0119": {
       "serialNumber": "4",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
@@ -1392,7 +1392,7 @@
     "sk0120": {
       "serialNumber": "5",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb004",
       "9to12": "rb002",
@@ -1402,7 +1402,7 @@
     "sk0121": {
       "serialNumber": "1",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Straight Leg Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1412,7 +1412,7 @@
     "sk0122": {
       "serialNumber": "2",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Front Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1422,7 +1422,7 @@
     "sk0123": {
       "serialNumber": "3",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Inside Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1432,7 +1432,7 @@
     "sk0124": {
       "serialNumber": "4",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1442,7 +1442,7 @@
     "sk0125": {
       "serialNumber": "1",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Inside Block",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1452,7 +1452,7 @@
     "sk0126": {
       "serialNumber": "2",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "High Low Cover",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1462,7 +1462,7 @@
     "sk0127": {
       "serialNumber": "3",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "High Low Middle Block",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1472,7 +1472,7 @@
     "sk0128": {
       "serialNumber": "4",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Up Cover",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1482,7 +1482,7 @@
     "sk0129": {
       "serialNumber": "5",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Cross Block (X-Cover)",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1492,7 +1492,7 @@
     "sk0130": {
       "serialNumber": "6",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Straight Punch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1502,7 +1502,7 @@
     "sk0131": {
       "serialNumber": "7",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1512,7 +1512,7 @@
     "sk0132": {
       "serialNumber": "8",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Ridge Hand Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1522,7 +1522,7 @@
     "sk0133": {
       "serialNumber": "9",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Spear Hand Chop",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1532,7 +1532,7 @@
     "sk0134": {
       "serialNumber": "10",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Elbow Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1542,7 +1542,7 @@
     "sk0135": {
       "serialNumber": "11",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Circle Knife Hand",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1552,7 +1552,7 @@
     "sk0136": {
       "serialNumber": "1",
       "name": "Sohnh Ppae Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Thumb Up: Rotate up and out.",
       "8under": "rb002",
       "9to12": "rb002",
@@ -1562,7 +1562,7 @@
     "sk0137": {
       "serialNumber": "2",
       "name": "Sohnh Ppae Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Thumb Left; Rotate Left Horizontally and out",
       "8under": "rb002",
       "9to12": "rb002",
@@ -1572,7 +1572,7 @@
     "sk0138": {
       "serialNumber": "3",
       "name": "Sohnh Ppae Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Thumb Down; Rotate forward, down, and out",
       "8under": "rb002",
       "9to12": "rb002",
@@ -1582,7 +1582,7 @@
     "sk0139": {
       "serialNumber": "4",
       "name": "Sohnh Ppae Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Thumb Right, Palm Up Shoot Out 45 degree",
       "8under": "rb002",
       "9to12": "rb002",
@@ -1592,7 +1592,7 @@
     "sk0140": {
       "serialNumber": "5",
       "name": "Sohnh Ppae Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Rotate Clockwise, Knife Edge Left",
       "8under": "rb002",
       "9to12": "rb002",
@@ -1602,7 +1602,7 @@
     "sk0141": {
       "serialNumber": "6",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb004",
       "13up": "rb003",
@@ -1611,7 +1611,7 @@
     "sk0142": {
       "serialNumber": "7",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb004",
       "13up": "rb003",
@@ -1620,7 +1620,7 @@
     "sk0143": {
       "serialNumber": "8",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb004",
       "13up": "rb003",
@@ -1629,7 +1629,7 @@
     "sk0144": {
       "serialNumber": "9",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb004",
       "13up": "rb003",
@@ -1638,7 +1638,7 @@
     "sk0145": {
       "serialNumber": "10",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb004",
       "13up": "rb003",
@@ -1647,7 +1647,7 @@
     "sk0146": {
       "serialNumber": "11",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb005",
       "13up": "rb003",
@@ -1656,7 +1656,7 @@
     "sk0147": {
       "serialNumber": "12",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb005",
       "13up": "rb003",
@@ -1665,7 +1665,7 @@
     "sk0148": {
       "serialNumber": "13",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb005",
       "13up": "rb003",
@@ -1674,7 +1674,7 @@
     "sk0149": {
       "serialNumber": "14",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb005",
       "13up": "rb003",
@@ -1683,7 +1683,7 @@
     "sk0150": {
       "serialNumber": "15",
       "name": "Ki Bohn Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb005",
       "13up": "rb003",
@@ -1692,7 +1692,7 @@
     "sk0151": {
       "serialNumber": "5",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1702,7 +1702,7 @@
     "sk0152": {
       "serialNumber": "6",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Knee Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1712,7 +1712,7 @@
     "sk0153": {
       "serialNumber": "7",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1722,7 +1722,7 @@
     "sk0154": {
       "serialNumber": "8",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Outside Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1732,7 +1732,7 @@
     "sk0155": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Four Winds Block",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1742,7 +1742,7 @@
     "sk0156": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Double High Knife Block",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1752,7 +1752,7 @@
     "sk0157": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "One Two Punch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1762,7 +1762,7 @@
     "sk0158": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Circle Back Fist",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1772,7 +1772,7 @@
     "sk0159": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Vertical Spear Hand Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1782,7 +1782,7 @@
     "sk0160": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Double Knife Chop",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1792,7 +1792,7 @@
     "sk0161": {
       "serialNumber": "12",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Parallel-Double Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1802,7 +1802,7 @@
     "sk0162": {
       "serialNumber": "1",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
@@ -1812,7 +1812,7 @@
     "sk0163": {
       "serialNumber": "2",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
@@ -1822,7 +1822,7 @@
     "sk0164": {
       "serialNumber": "3",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
@@ -1832,7 +1832,7 @@
     "sk0165": {
       "serialNumber": "4",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
@@ -1842,7 +1842,7 @@
     "sk0166": {
       "serialNumber": "5",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb006",
       "9to12": "rb006",
@@ -1852,7 +1852,7 @@
     "sk0167": {
       "serialNumber": "6",
       "name": "Sohn Mohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "9to12": "rb007",
       "13up": "rb005",
@@ -1861,7 +1861,7 @@
     "sk0168": {
       "serialNumber": "19",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1871,7 +1871,7 @@
     "sk0169": {
       "serialNumber": "20",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1881,7 +1881,7 @@
     "sk0170": {
       "serialNumber": "21",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1891,7 +1891,7 @@
     "sk0171": {
       "serialNumber": "22",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1901,7 +1901,7 @@
     "sk0172": {
       "serialNumber": "23",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1911,7 +1911,7 @@
     "sk0173": {
       "serialNumber": "24",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1921,7 +1921,7 @@
     "sk0174": {
       "serialNumber": "25",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1931,7 +1931,7 @@
     "sk0175": {
       "serialNumber": "26",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1941,7 +1941,7 @@
     "sk0176": {
       "serialNumber": "27",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1951,7 +1951,7 @@
     "sk0177": {
       "serialNumber": "28",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1961,7 +1961,7 @@
     "sk0178": {
       "serialNumber": "29",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hand Techniques",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1971,7 +1971,7 @@
     "sk0179": {
       "serialNumber": "9",
       "name": "Johk Sool",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Axe Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1981,7 +1981,7 @@
     "sk0180": {
       "serialNumber": "30",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "One two Spin Chop",
       "8under": "rb001",
       "9to12": "rb001",
@@ -1991,7 +1991,7 @@
     "sk0181": {
       "serialNumber": "31",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Tiger's Mouth",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2001,7 +2001,7 @@
     "sk0182": {
       "serialNumber": "32",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Tiger's Claw",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2011,7 +2011,7 @@
     "sk0183": {
       "serialNumber": "1",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2021,7 +2021,7 @@
     "sk0184": {
       "serialNumber": "2",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2031,7 +2031,7 @@
     "sk0185": {
       "serialNumber": "3",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2041,7 +2041,7 @@
     "sk0186": {
       "serialNumber": "4",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2051,7 +2051,7 @@
     "sk0187": {
       "serialNumber": "5",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2061,7 +2061,7 @@
     "sk0188": {
       "serialNumber": "6",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb008",
       "9to12": "rb008",
@@ -2071,7 +2071,7 @@
     "sk0189": {
       "serialNumber": "10",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "High Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2081,7 +2081,7 @@
     "sk0190": {
       "serialNumber": "11",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Jump Front Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2091,7 +2091,7 @@
     "sk0191": {
       "serialNumber": "33",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Praying Mantis Block",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2101,7 +2101,7 @@
     "sk0192": {
       "serialNumber": "34",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Triple Punch",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2111,7 +2111,7 @@
     "sk0193": {
       "serialNumber": "35",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Little Finger hammer Fist",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2121,7 +2121,7 @@
     "sk0194": {
       "serialNumber": "36",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "One Finger Fist",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2131,7 +2131,7 @@
     "sk0195": {
       "serialNumber": "7",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
@@ -2141,7 +2141,7 @@
     "sk0196": {
       "serialNumber": "8",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
@@ -2151,7 +2151,7 @@
     "sk0197": {
       "serialNumber": "9",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fundamental Technique",
       "8under": "rb009",
       "9to12": "rb008",
@@ -2161,7 +2161,7 @@
     "sk0198": {
       "serialNumber": "10",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Over-Belt Burn",
       "8under": "rb009",
       "9to12": "rb008",
@@ -2171,7 +2171,7 @@
     "sk0199": {
       "serialNumber": "11",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Over-Belt Chop",
       "8under": "rb009",
       "9to12": "rb008",
@@ -2181,7 +2181,7 @@
     "sk0200": {
       "serialNumber": "12",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yuhl-Gyuhl Takedown",
       "8under": "rb009",
       "9to12": "rb009",
@@ -2191,7 +2191,7 @@
     "sk0201": {
       "serialNumber": "13",
       "name": "Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Choon BooTakedown",
       "8under": "rb009",
       "9to12": "rb009",
@@ -2201,7 +2201,7 @@
     "sk0202": {
       "serialNumber": "12",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Jump Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2211,7 +2211,7 @@
     "sk0203": {
       "serialNumber": "13",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Jump Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2221,7 +2221,7 @@
     "sk0204": {
       "serialNumber": "37",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Thumb Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2231,7 +2231,7 @@
     "sk0205": {
       "serialNumber": "38",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "One Finger Poke",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2241,7 +2241,7 @@
     "sk0206": {
       "serialNumber": "39",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Two Finger Poke",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2251,7 +2251,7 @@
     "sk0207": {
       "serialNumber": "40",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Five Finger Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2261,7 +2261,7 @@
     "sk0208": {
       "serialNumber": "1",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Fingers",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2270,7 +2270,7 @@
     "sk0209": {
       "serialNumber": "2",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Elbow Drop",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2279,7 +2279,7 @@
     "sk0210": {
       "serialNumber": "3",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Backstreet",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2288,7 +2288,7 @@
     "sk0211": {
       "serialNumber": "4",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Elbow Chop",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2297,7 +2297,7 @@
     "sk0212": {
       "serialNumber": "5",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hyperfoot",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2306,7 +2306,7 @@
     "sk0213": {
       "serialNumber": "6",
       "name": "An Sohn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Indian Burm",
       "9to12": "rb001",
       "13up": "rb008",
@@ -2315,7 +2315,7 @@
     "sk0214": {
       "serialNumber": "14",
       "name": "Johk Sool 14",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Back Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2325,7 +2325,7 @@
     "sk0215": {
       "serialNumber": "15",
       "name": "Johk Sool 15",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hook Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2335,7 +2335,7 @@
     "sk0216": {
       "serialNumber": "1",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yuhl Gyuhl",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2345,7 +2345,7 @@
     "sk0217": {
       "serialNumber": "2",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Soo Sahm",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2355,7 +2355,7 @@
     "sk0218": {
       "serialNumber": "3",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Chuhn Boo",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2365,7 +2365,7 @@
     "sk0219": {
       "serialNumber": "4",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Geuk Chuhn",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2375,7 +2375,7 @@
     "sk0220": {
       "serialNumber": "5",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hohn Soo",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2385,7 +2385,7 @@
     "sk0221": {
       "serialNumber": "6",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Gaek Joo In",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2395,7 +2395,7 @@
     "sk0222": {
       "serialNumber": "7",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hahn Soo",
       "8under": "rb010",
       "9to12": "rb010",
@@ -2405,7 +2405,7 @@
     "sk0223": {
       "serialNumber": "8",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Dae Po",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2415,7 +2415,7 @@
     "sk0224": {
       "serialNumber": "9",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "UmKyo",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2425,7 +2425,7 @@
     "sk0225": {
       "serialNumber": "10",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Goo Mi",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2435,7 +2435,7 @@
     "sk0226": {
       "serialNumber": "11",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yuhm Chuhn",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2445,7 +2445,7 @@
     "sk0227": {
       "serialNumber": "12",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jahng Moon",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2455,7 +2455,7 @@
     "sk0228": {
       "serialNumber": "13",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Ah Moon",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2465,7 +2465,7 @@
     "sk0229": {
       "serialNumber": "14",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Shin Juhng",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2475,7 +2475,7 @@
     "sk0230": {
       "serialNumber": "15",
       "name": "Maek Chi Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yoo Geun",
       "8under": "rb011",
       "9to12": "rb010",
@@ -2485,7 +2485,7 @@
     "sk0231": {
       "serialNumber": "16",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Inverted Stomp Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2495,7 +2495,7 @@
     "sk0232": {
       "serialNumber": "17",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Inverted Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2505,7 +2505,7 @@
     "sk0233": {
       "serialNumber": "18",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Inverted Side kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2515,7 +2515,7 @@
     "sk0234": {
       "serialNumber": "41",
       "name": "Soo Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "V-Double Palm Strike",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2525,7 +2525,7 @@
     "sk0235": {
       "serialNumber": "1",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sam Um Kyo",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2535,7 +2535,7 @@
     "sk0236": {
       "serialNumber": "2",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Dohk Bi",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2545,7 +2545,7 @@
     "sk0237": {
       "serialNumber": "3",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Wee Joong",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2555,7 +2555,7 @@
     "sk0238": {
       "serialNumber": "4",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hyul Hae",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2565,7 +2565,7 @@
     "sk0239": {
       "serialNumber": "5",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jahng Moon",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2575,7 +2575,7 @@
     "sk0240": {
       "serialNumber": "6",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Geuk Chuhn",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2585,7 +2585,7 @@
     "sk0241": {
       "serialNumber": "7",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Ki Hae",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2595,7 +2595,7 @@
     "sk0242": {
       "serialNumber": "8",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Goo Mi",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2605,7 +2605,7 @@
     "sk0243": {
       "serialNumber": "9",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yuhm Chuhn",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2615,7 +2615,7 @@
     "sk0244": {
       "serialNumber": "10",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hohn Soo",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2625,7 +2625,7 @@
     "sk0245": {
       "serialNumber": "11",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "You Geun",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2635,7 +2635,7 @@
     "sk0246": {
       "serialNumber": "12",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Ah Moon",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2645,7 +2645,7 @@
     "sk0247": {
       "serialNumber": "13",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Gaek Joo",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2655,7 +2655,7 @@
     "sk0248": {
       "serialNumber": "14",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Dae Choo",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2665,7 +2665,7 @@
     "sk0249": {
       "serialNumber": "15",
       "name": "Maek Cha Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Yahng Neung Chung",
       "8under": "rb010",
       "9to12": "rb011",
@@ -2675,7 +2675,7 @@
     "sk0250": {
       "serialNumber": "1",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Throw Right",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2685,7 +2685,7 @@
     "sk0251": {
       "serialNumber": "2",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Throw Left",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2695,7 +2695,7 @@
     "sk0252": {
       "serialNumber": "3",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Elbow Throw",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2705,7 +2705,7 @@
     "sk0253": {
       "serialNumber": "4",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Cross Block Up",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2715,7 +2715,7 @@
     "sk0254": {
       "serialNumber": "5",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Cross Block down",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2725,7 +2725,7 @@
     "sk0255": {
       "serialNumber": "6",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Circle Block Chop",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2735,7 +2735,7 @@
     "sk0256": {
       "serialNumber": "7",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Cover down Left",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2745,7 +2745,7 @@
     "sk0257": {
       "serialNumber": "8",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Knife Attack",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2755,7 +2755,7 @@
     "sk0258": {
       "serialNumber": "9",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Hook Knee",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2765,7 +2765,7 @@
     "sk0259": {
       "serialNumber": "10",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Temple Thro",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2775,7 +2775,7 @@
     "sk0260": {
       "serialNumber": "11",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Chin Throw",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2785,7 +2785,7 @@
     "sk0261": {
       "serialNumber": "12",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Throat",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2795,7 +2795,7 @@
     "sk0262": {
       "serialNumber": "13",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Kneel",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2805,7 +2805,7 @@
     "sk0263": {
       "serialNumber": "14",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Low High",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2815,7 +2815,7 @@
     "sk0264": {
       "serialNumber": "15",
       "name": "Joo Muhk Maga Ki Bon Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "High Low",
       "8under": "rb016",
       "9to12": "rb011",
@@ -2825,7 +2825,7 @@
     "sk0265": {
       "serialNumber": "19",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Jump Spin Side Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2835,7 +2835,7 @@
     "sk0266": {
       "serialNumber": "20",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Jump Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2845,7 +2845,7 @@
     "sk0267": {
       "serialNumber": "21",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "R-Jump Round Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2855,7 +2855,7 @@
     "sk0268": {
       "serialNumber": "22",
       "name": "Johk Sool",
-      "skillCatagoryId": "c007",
+      "skillCatagoryId": "sc007",
       "description": "Low Spin Kick",
       "8under": "rb001",
       "9to12": "rb001",
@@ -2865,7 +2865,7 @@
     "sk0269": {
       "serialNumber": "1",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2874,7 +2874,7 @@
     "sk0270": {
       "serialNumber": "2",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2883,7 +2883,7 @@
     "sk0271": {
       "serialNumber": "3",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2892,7 +2892,7 @@
     "sk0272": {
       "serialNumber": "4",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2901,7 +2901,7 @@
     "sk0273": {
       "serialNumber": "5",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2910,7 +2910,7 @@
     "sk0274": {
       "serialNumber": "6",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2919,7 +2919,7 @@
     "sk0275": {
       "serialNumber": "7",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2928,7 +2928,7 @@
     "sk0276": {
       "serialNumber": "8",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2937,7 +2937,7 @@
     "sk0277": {
       "serialNumber": "9",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2946,7 +2946,7 @@
     "sk0278": {
       "serialNumber": "10",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2955,7 +2955,7 @@
     "sk0279": {
       "serialNumber": "11",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2964,7 +2964,7 @@
     "sk0280": {
       "serialNumber": "12",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2973,7 +2973,7 @@
     "sk0281": {
       "serialNumber": "13",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2982,7 +2982,7 @@
     "sk0282": {
       "serialNumber": "14",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -2991,7 +2991,7 @@
     "sk0283": {
       "serialNumber": "15",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3000,7 +3000,7 @@
     "sk0284": {
       "serialNumber": "16",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3009,7 +3009,7 @@
     "sk0285": {
       "serialNumber": "17",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3018,7 +3018,7 @@
     "sk0286": {
       "serialNumber": "18",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3027,7 +3027,7 @@
     "sk0287": {
       "serialNumber": "19",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3036,7 +3036,7 @@
     "sk0288": {
       "serialNumber": "20",
       "name": "Ap Eue Bohk Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Front Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3045,7 +3045,7 @@
     "sk0289": {
       "serialNumber": "1",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3054,7 +3054,7 @@
     "sk0290": {
       "serialNumber": "2",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3063,7 +3063,7 @@
     "sk0291": {
       "serialNumber": "3",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3072,7 +3072,7 @@
     "sk0292": {
       "serialNumber": "4",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3081,7 +3081,7 @@
     "sk0293": {
       "serialNumber": "5",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3090,7 +3090,7 @@
     "sk0294": {
       "serialNumber": "6",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3099,7 +3099,7 @@
     "sk0295": {
       "serialNumber": "7",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3108,7 +3108,7 @@
     "sk0296": {
       "serialNumber": "8",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3117,7 +3117,7 @@
     "sk0297": {
       "serialNumber": "9",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3126,7 +3126,7 @@
     "sk0298": {
       "serialNumber": "10",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3135,7 +3135,7 @@
     "sk0299": {
       "serialNumber": "11",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3144,7 +3144,7 @@
     "sk0300": {
       "serialNumber": "12",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3153,7 +3153,7 @@
     "sk0301": {
       "serialNumber": "13",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3162,7 +3162,7 @@
     "sk0302": {
       "serialNumber": "14",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3171,7 +3171,7 @@
     "sk0303": {
       "serialNumber": "15",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3180,7 +3180,7 @@
     "sk0304": {
       "serialNumber": "16",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3189,7 +3189,7 @@
     "sk0305": {
       "serialNumber": "17",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3198,7 +3198,7 @@
     "sk0306": {
       "serialNumber": "18",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3207,7 +3207,7 @@
     "sk0307": {
       "serialNumber": "19",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3216,7 +3216,7 @@
     "sk0308": {
       "serialNumber": "20",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3225,7 +3225,7 @@
     "sk0309": {
       "serialNumber": "21",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3234,7 +3234,7 @@
     "sk0310": {
       "serialNumber": "22",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3243,7 +3243,7 @@
     "sk0311": {
       "serialNumber": "23",
       "name": "Dae Eue Bok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Rear Clothing Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3252,7 +3252,7 @@
     "sk0312": {
       "serialNumber": "1",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3261,7 +3261,7 @@
     "sk0313": {
       "serialNumber": "2",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3270,7 +3270,7 @@
     "sk0314": {
       "serialNumber": "3",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3279,7 +3279,7 @@
     "sk0315": {
       "serialNumber": "4",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3288,7 +3288,7 @@
     "sk0316": {
       "serialNumber": "5",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3297,7 +3297,7 @@
     "sk0317": {
       "serialNumber": "6",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3306,7 +3306,7 @@
     "sk0318": {
       "serialNumber": "7",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3315,7 +3315,7 @@
     "sk0319": {
       "serialNumber": "8",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3324,7 +3324,7 @@
     "sk0320": {
       "serialNumber": "9",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3333,7 +3333,7 @@
     "sk0321": {
       "serialNumber": "10",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3342,7 +3342,7 @@
     "sk0322": {
       "serialNumber": "11",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3351,7 +3351,7 @@
     "sk0323": {
       "serialNumber": "12",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3360,7 +3360,7 @@
     "sk0324": {
       "serialNumber": "13",
       "name": "Kwahn Juhl Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3369,7 +3369,7 @@
     "sk0325": {
       "serialNumber": "1",
       "name": "Bahng Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3378,7 +3378,7 @@
     "sk0326": {
       "serialNumber": "2",
       "name": "Bahng Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3387,7 +3387,7 @@
     "sk0327": {
       "serialNumber": "3",
       "name": "Bahng Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3396,7 +3396,7 @@
     "sk0328": {
       "serialNumber": "4",
       "name": "Bahng Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3405,7 +3405,7 @@
     "sk0329": {
       "serialNumber": "5",
       "name": "Bahng Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3414,7 +3414,7 @@
     "sk0330": {
       "serialNumber": "1",
       "name": "Mohk Joh Leu Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3423,7 +3423,7 @@
     "sk0331": {
       "serialNumber": "2",
       "name": "Mohk Joh Leu Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3432,7 +3432,7 @@
     "sk0332": {
       "serialNumber": "3",
       "name": "Mohk Joh Leu Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3441,7 +3441,7 @@
     "sk0333": {
       "serialNumber": "4",
       "name": "Mohk Joh Leu Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3450,7 +3450,7 @@
     "sk0334": {
       "serialNumber": "5",
       "name": "Mohk Joh Leu Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb001",
       "13up": "rb016",
@@ -3459,7 +3459,7 @@
     "sk0335": {
       "serialNumber": "1",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3468,7 +3468,7 @@
     "sk0336": {
       "serialNumber": "2",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3477,7 +3477,7 @@
     "sk0337": {
       "serialNumber": "3",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3486,7 +3486,7 @@
     "sk0338": {
       "serialNumber": "4",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3495,7 +3495,7 @@
     "sk0339": {
       "serialNumber": "5",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3504,7 +3504,7 @@
     "sk0340": {
       "serialNumber": "6",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3513,7 +3513,7 @@
     "sk0341": {
       "serialNumber": "7",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3522,7 +3522,7 @@
     "sk0342": {
       "serialNumber": "8",
       "name": "Too Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3531,7 +3531,7 @@
     "sk0343": {
       "serialNumber": "1",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3540,7 +3540,7 @@
     "sk0344": {
       "serialNumber": "2",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3549,7 +3549,7 @@
     "sk0345": {
       "serialNumber": "3",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3558,7 +3558,7 @@
     "sk0346": {
       "serialNumber": "4",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3567,7 +3567,7 @@
     "sk0347": {
       "serialNumber": "5",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3576,7 +3576,7 @@
     "sk0348": {
       "serialNumber": "6",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3585,7 +3585,7 @@
     "sk0349": {
       "serialNumber": "7",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3594,7 +3594,7 @@
     "sk0350": {
       "serialNumber": "8",
       "name": "Yahng Sahn Mok Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Two Handed Wrist Grab",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3603,7 +3603,7 @@
     "sk0351": {
       "serialNumber": "1",
       "name": "Ssahng Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3612,7 +3612,7 @@
     "sk0352": {
       "serialNumber": "2",
       "name": "Ssahng Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3621,7 +3621,7 @@
     "sk0353": {
       "serialNumber": "3",
       "name": "Ssahng Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3630,7 +3630,7 @@
     "sk0354": {
       "serialNumber": "4",
       "name": "Ssahng Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3639,7 +3639,7 @@
     "sk0355": {
       "serialNumber": "5",
       "name": "Ssahng Soo",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Both Wrists Grabbed",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3648,7 +3648,7 @@
     "sk0356": {
       "serialNumber": "1",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3657,7 +3657,7 @@
     "sk0357": {
       "serialNumber": "2",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3666,7 +3666,7 @@
     "sk0358": {
       "serialNumber": "3",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3675,7 +3675,7 @@
     "sk0359": {
       "serialNumber": "4",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3684,7 +3684,7 @@
     "sk0360": {
       "serialNumber": "5",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3693,7 +3693,7 @@
     "sk0361": {
       "serialNumber": "6",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3702,7 +3702,7 @@
     "sk0362": {
       "serialNumber": "7",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3711,7 +3711,7 @@
     "sk0363": {
       "serialNumber": "8",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3720,7 +3720,7 @@
     "sk0364": {
       "serialNumber": "9",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3729,7 +3729,7 @@
     "sk0365": {
       "serialNumber": "10",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3738,7 +3738,7 @@
     "sk0366": {
       "serialNumber": "11",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3747,7 +3747,7 @@
     "sk0367": {
       "serialNumber": "12",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3756,7 +3756,7 @@
     "sk0368": {
       "serialNumber": "13",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3765,7 +3765,7 @@
     "sk0369": {
       "serialNumber": "14",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3774,7 +3774,7 @@
     "sk0370": {
       "serialNumber": "15",
       "name": "Dahn Do Mahk Ki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Defense Against Knife Attacks",
       "9to12": "rb016",
       "13up": "rb016",
@@ -3783,7 +3783,7 @@
     "sk0371": {
       "serialNumber": "1",
       "name": "Count to 10",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Counting in Korean",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3793,7 +3793,7 @@
     "sk0372": {
       "serialNumber": "2",
       "name": "Names of Ranks",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Names and Titles",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3803,7 +3803,7 @@
     "sk0373": {
       "serialNumber": "3",
       "name": "Names of Foots Attacks",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Names of Foots Attacks",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3813,7 +3813,7 @@
     "sk0374": {
       "serialNumber": "4",
       "name": "Commands and Terminology",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Commands and Terminology",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3823,7 +3823,7 @@
     "sk0375": {
       "serialNumber": "5",
       "name": "Parts of the Body",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Parts of the Body",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3833,7 +3833,7 @@
     "sk0376": {
       "serialNumber": "6",
       "name": "Directions, Relationships, and Movements",
-      "skillCatagoryId": "c009",
+      "skillCatagoryId": "sc009",
       "description": "Directions, Relationships, and Movements",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3843,7 +3843,7 @@
     "sk0377": {
       "serialNumber": "7",
       "name": "Five Principles of a Warrior",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Moral Character",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3853,7 +3853,7 @@
     "sk0378": {
       "serialNumber": "8",
       "name": "Forms",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Purpose/Execution of forms",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3863,7 +3863,7 @@
     "sk0379": {
       "serialNumber": "9",
       "name": "Basic Techniques",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "What is a \"Technique\"?",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3873,7 +3873,7 @@
     "sk0380": {
       "serialNumber": "10",
       "name": "You-Won-Hwa",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Water",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3883,7 +3883,7 @@
     "sk0381": {
       "serialNumber": "11",
       "name": "History of Kuk Sool Weapons",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "History of Kuk Sool Weapons",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3893,7 +3893,7 @@
     "sk0382": {
       "serialNumber": "12",
       "name": "What is Ki",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "What is Ki",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3903,7 +3903,7 @@
     "sk0383": {
       "serialNumber": "13",
       "name": "Breathing",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Breathing",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3913,7 +3913,7 @@
     "sk0384": {
       "serialNumber": "14",
       "name": "Modern History of Kuk Sool Won",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Modern History of Kuk Sool Won",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3923,7 +3923,7 @@
     "sk0385": {
       "serialNumber": "15",
       "name": "Basic Pressure Points",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Basic Pressure Points",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3933,7 +3933,7 @@
     "sk0386": {
       "serialNumber": "16",
       "name": "Blocking",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Blocking",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3943,7 +3943,7 @@
     "sk0387": {
       "serialNumber": "17",
       "name": "Locating the Target",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "Locating the Target",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3953,7 +3953,7 @@
     "sk0388": {
       "serialNumber": "18",
       "name": "Sah Doh Mu Sool",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "History of Tribal/Family Martial Arts In Korea",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3963,7 +3963,7 @@
     "sk0389": {
       "serialNumber": "19",
       "name": "Bool Kyo MU Sool",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "History of Buddhist Temple",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3973,7 +3973,7 @@
     "sk0390": {
       "serialNumber": "20",
       "name": "Koong Joong Mu Sool",
-      "skillCatagoryId": "c010",
+      "skillCatagoryId": "sc010",
       "description": "History of the Korean Royal Palace",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3983,7 +3983,7 @@
     "sk0391": {
       "serialNumber": "1",
       "name": "Juhl Bong Hyung",
-      "skillCatagoryId": "c012",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
@@ -3993,7 +3993,7 @@
     "sk0392": {
       "serialNumber": "2",
       "name": "Juhl Bong Hyung",
-      "skillCatagoryId": "c012",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4003,7 +4003,7 @@
     "sk0393": {
       "serialNumber": "1",
       "name": "Joong Bong Il Hyung",
-      "skillCatagoryId": "c012",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4013,7 +4013,7 @@
     "sk0394": {
       "serialNumber": "2",
       "name": "Joong Bong Il Hyung",
-      "skillCatagoryId": "c012",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Form",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4023,7 +4023,7 @@
     "sk0395": {
       "serialNumber": "1",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 1",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4033,7 +4033,7 @@
     "sk0396": {
       "serialNumber": "2",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 2",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4043,7 +4043,7 @@
     "sk0397": {
       "serialNumber": "3",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 3",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4053,7 +4053,7 @@
     "sk0398": {
       "serialNumber": "4",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 4",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4063,7 +4063,7 @@
     "sk0399": {
       "serialNumber": "5",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 5",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4073,7 +4073,7 @@
     "sk0400": {
       "serialNumber": "6",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Spinnig 6",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4083,7 +4083,7 @@
     "sk0401": {
       "serialNumber": "7",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Striking 1",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4093,7 +4093,7 @@
     "sk0402": {
       "serialNumber": "8",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Striking 2",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4103,7 +4103,7 @@
     "sk0403": {
       "serialNumber": "9",
       "name": "Juhl Bong",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Jointed Staff-Striking 3",
       "8under": "rb001",
       "9to12": "rb001",
@@ -4113,7 +4113,7 @@
     "sk0404": {
       "serialNumber": "1",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 1",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4123,7 +4123,7 @@
     "sk0405": {
       "serialNumber": "2",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 2",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4133,7 +4133,7 @@
     "sk0406": {
       "serialNumber": "3",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 3",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4143,7 +4143,7 @@
     "sk0407": {
       "serialNumber": "4",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 4",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4153,7 +4153,7 @@
     "sk0408": {
       "serialNumber": "5",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 5",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4163,7 +4163,7 @@
     "sk0409": {
       "serialNumber": "6",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 6",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4173,7 +4173,7 @@
     "sk0410": {
       "serialNumber": "7",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 7",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4183,7 +4183,7 @@
     "sk0411": {
       "serialNumber": "8",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 8",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4193,7 +4193,7 @@
     "sk0412": {
       "serialNumber": "9",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 9",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4203,7 +4203,7 @@
     "sk0413": {
       "serialNumber": "10",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 10",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4213,7 +4213,7 @@
     "sk0414": {
       "serialNumber": "11",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 11",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4223,7 +4223,7 @@
     "sk0415": {
       "serialNumber": "12",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 12",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4233,7 +4233,7 @@
     "sk0416": {
       "serialNumber": "13",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 13",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4243,7 +4243,7 @@
     "sk0417": {
       "serialNumber": "14",
       "name": "Bong Do Liki",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Long Staff-Spinnig 14",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4253,7 +4253,7 @@
     "sk0418": {
       "serialNumber": "1",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 1",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4263,7 +4263,7 @@
     "sk0419": {
       "serialNumber": "2",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 2",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4273,7 +4273,7 @@
     "sk0420": {
       "serialNumber": "3",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 3",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4283,7 +4283,7 @@
     "sk0421": {
       "serialNumber": "4",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 4",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4293,7 +4293,7 @@
     "sk0422": {
       "serialNumber": "5",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 5",
       "8under": "rb016",
       "9to12": "rb016",
@@ -4303,7 +4303,7 @@
     "sk0423": {
       "serialNumber": "6",
       "name": "Sword Cutting Technique",
-      "skillCatagoryId": "c013",
+      "skillCatagoryId": "sc012",
       "description": "Sword Cutting Technique 6",
       "8under": "rb016",
       "9to12": "rb016",
