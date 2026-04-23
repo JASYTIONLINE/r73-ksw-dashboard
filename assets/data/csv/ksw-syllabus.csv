@@ -1,4 +1,4 @@
-﻿Rank,,,,,,,,,,,,,,,
+Rank,,,,,,,,,,,,,,,
 ,keyId,serialNumber,name,description,,,,,,,,,,,
 ,rb001,1,Huin Tti,White Belt,,,,,,,,,,,
 ,rb002,2,Huin Tti,Yellow Stripe,,,,,,,,,,,
@@ -905,5 +905,5 @@ SCHOOL,,,,,,,,,,,,,,,
 ,dj0001,1,Brownsville ,1600 E Alton Gloor Rd Suite 110 Brownsville Tx. 78526,9563718431,,,,,,,,,,
 ,,,,,,,,,,,,,,,
 student,,,,,,,,,,,,,,,
-,keyId,serialNumber,LastName,firstName,age,rankId,testEligible,testDate,phone,email,address,membershipId,memberSince,renewalDate,schoolId
-,a-26335,1,Barkle,John,55,rb016,no,1/1/2030,5037814275,johnbarkle@msn.com,0,ms0004,22-Aug,1-Apr,dj0001
+,keyId,LastName,firstName,age,rankId,testEligible,testDate,phone,email,address,membershipId,memberSince,renewalDate,schoolId
+,a-26335,Barkle,John,55,rb016,no,1/1/2030,5037814275,johnbarkle@msn.com,0,ms0004,22-Aug,1-Apr,dj0001
