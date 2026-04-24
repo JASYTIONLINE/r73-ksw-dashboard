@@ -72,7 +72,8 @@ Open the live URL in a normal or private browser window to confirm you see the c
 
 1. Clone the repository.
 2. Open `index.html` or serve the repo root with any static file server if you prefer.
-3. After editing `assets/data/csv/ksw-syllabus.csv`, regenerate the app database JSON from the repo root:
+3. Optional flat JSON editor for `app-syllabus.db.json`: open `backend/json-interface.html` in the browser using a URL rooted at the repo (for example `http://localhost:PORT/backend/json-interface.html` so “Reload from URL” resolves `../assets/data/json/app-syllabus.db.json`). The `backend/` directory is gitignored; keep your own copy there or recreate it from a backup if you use this tool.
+4. After editing `assets/data/csv/ksw-syllabus.csv`, regenerate the app database JSON from the repo root:
 
 ```bash
 node scripts/csv-to-app-syllabus-db.mjs
@@ -86,6 +87,7 @@ Commit updated `assets/data/json/app-syllabus.db.json` when you want production 
 - `about.html` — purpose and usage guidance  
 - `contact.html` — legacy file only (not linked in navigation; see note below)  
 - `dashboard.html` — dashboard UI and client-side logic  
+- `backend/` — **gitignored**; optional local-only tooling (for example a flat curriculum JSON editor saved as `json-interface.html` inside that folder)  
 - `assets/css/` — layout and theme styles  
 - `assets/data/json/app-syllabus.db.json` — curriculum database (loaded by the dashboard; may be top-level maps or legacy envelope)  
 - `assets/data/csv/ksw-syllabus.csv` — authoring source for the CSV → JSON generator  
