@@ -2,7 +2,7 @@
   "title": "WKSA Testing Requirement Charts (2014)",
   "versionNote": "Forms marked WKSA Version 2014",
   "juniorCutoffAgeYears": 12,
-  "dashboardRankSerialHint": "Maps chart 'Testing for' rows to dashboard rank serial 1–16 where rb002=Yellow Stripe … rb010=1 Black Stripe; Dahn Bo / black-stripe series on chart align with rb011+ in the app.",
+  "dashboardRankSerialHint": "In app-syllabus.db.json, extras.skillAgeRankIdsAreChartRows=true: SKILL 8under/9to12/13up use chart row ids (paper r001≈rb001). rb000=white-only tier (belt step 1); rb001=first testing row→step 2 (Yellow Stripe); rb(N)=step N+1. Rank.rb### rows are still canonical belt names for the Current Rank control.",
   "adultYouth": {
     "chartTitle": "ADULT & YOUTH Testing Requirement Chart",
     "ageBand": "Age 13 and over (Adult & Youth — same column set as printed 'Adult & Youth' chart)",

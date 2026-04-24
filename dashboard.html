@@ -194,9 +194,18 @@
               <p class="progress-summary-intro">
                 Requirements: <strong id="progress-summary-learn-count">0</strong>
               </p>
-              <div id="progress-summary-learn-by-status" class="progress-summary-by-status" role="group" aria-label="To learn: count by proficiency"></div>
+              <div
+                id="progress-summary-learn-by-status"
+                class="progress-summary-by-status"
+                role="group"
+                aria-label="Requirements through next promotion: count by proficiency"
+              ></div>
             </section>
-            <section class="progress-summary-column" aria-labelledby="progress-summary-maintain-title">
+            <section
+              id="progress-summary-maintain-column"
+              class="progress-summary-column"
+              aria-labelledby="progress-summary-maintain-title"
+            >
               <h4 id="progress-summary-maintain-title" class="progress-summary-subheading">Maintain</h4>
               <p class="progress-summary-intro">
                 Requirements: <strong id="progress-summary-maintain-count">0</strong>
@@ -207,7 +216,7 @@
         </section>
         <section class="card">
           <h3>Skills Requirements (by proficiency)</h3>
-          <p class="requirements-hint">Skills shown follow your <strong>Age</strong> band and <strong>Current Rank</strong> (current step plus lower steps). They are grouped by <strong>proficiency</strong> (Untrained through Proficient), then by <strong>category</strong> and <strong>technique set</strong>—not by belt rank inside each group. Change Age, Rank, or Status above to refresh.</p>
+          <p class="requirements-hint">Skills shown are those you should have covered through your <strong>next promotion</strong> for your <strong>Age</strong> band and <strong>Current Rank</strong> (each skill’s testing tier for that band is at or before that level). They are grouped by <strong>proficiency</strong> (Untrained through Proficient), then by <strong>category</strong> and <strong>technique set</strong>. Change Age, Rank, or Status above to refresh.</p>
           <div class="requirements-actions">
             <button id="export-syllabus-json" class="btn" type="button">Save your progress</button>
             <label id="import-syllabus-json-button" class="btn import-button-label">
@@ -403,11 +412,27 @@
         if (!isTopLevelMapDbShape(raw)) return null;
 
         var rankMap = raw.Rank && typeof raw.Rank === 'object' ? raw.Rank : {};
+        var chartRowSkillRanks =
+          raw.extras &&
+          typeof raw.extras === 'object' &&
+          raw.extras.skillAgeRankIdsAreChartRows === true;
         function rbToStep(rbId) {
           var r = rankMap[rbId];
           if (!r || typeof r !== 'object') return null;
           var n = parseInt(String(r.serialNumber || '').trim(), 10);
           return Number.isNaN(n) ? null : n;
+        }
+        /**
+         * When extras.skillAgeRankIdsAreChartRows is set, SKILL 8under/9to12/13up use WKSA chart row
+         * ids (paper r001… ≈ rb001…): rb000 = white-belt-only tier; rb001 = first testing row → belt step 2.
+         */
+        function skillChartRowRefToBeltStep(rbStr) {
+          var m = /^rb(\d+)$/i.exec(String(rbStr || '').trim());
+          if (!m) return null;
+          var chartN = parseInt(m[1], 10);
+          if (Number.isNaN(chartN)) return null;
+          if (chartN === 0) return 1;
+          return chartN + 1;
         }
 
         var beltStepLabels = {};
@@ -445,7 +470,10 @@
           }
           function stepFromRankField(val) {
             if (val == null) return null;
-            if (typeof val === 'string' && /^rb\d+/i.test(String(val))) return rbToStep(val);
+            if (typeof val === 'string' && /^rb\d+/i.test(String(val))) {
+              if (chartRowSkillRanks) return skillChartRowRefToBeltStep(val);
+              return rbToStep(val);
+            }
             var n = parseInt(String(val), 10);
             return Number.isNaN(n) ? null : n;
           }
@@ -825,6 +853,45 @@
         });
       }
 
+      /**
+       * Skills Requirements pool: every syllabus item whose age-band requirement belt step is at or
+       * before the student’s next promotion (current rank R → include steps ≤ R+1), so e.g. a yellow
+       * belt includes material through blue-stripe testing for that band.
+       */
+      function getSkillsRequirementsCumulativeItems(R) {
+        if (!syllabusPayload) return [];
+        rebuildItemLookup();
+        var band = getStudentAgeBandKey();
+        var maxStep = R >= 16 ? 999 : R + 1;
+
+        if (hasRequirementMappings(syllabusPayload)) {
+          var capRank = R >= 16 ? 16 : R + 1;
+          var seen = new Set();
+          var keys = [];
+          for (var r = 1; r <= capRank; r++) {
+            getRequirementKeysForRank(syllabusPayload, band, r).forEach(function (k) {
+              if (!k || seen.has(k)) return;
+              seen.add(k);
+              keys.push(k);
+            });
+          }
+          return resolveItemsFromKeys(keys).filter(function (it) {
+            if (!it) return false;
+            var step = itemRequirementRankForBand(it, band);
+            if (step == null || Number.isNaN(step)) return true;
+            return step <= maxStep;
+          });
+        }
+
+        if (!Array.isArray(syllabusPayload.items)) return [];
+        return syllabusPayload.items.filter(function (it) {
+          if (!it) return false;
+          var step = itemRequirementRankForBand(it, band);
+          if (step == null || Number.isNaN(step)) return false;
+          return step <= maxStep;
+        });
+      }
+
       function getLearnMaintainBundle(R) {
         if (!syllabusPayload) {
           return { learnItems: [], maintainItems: [] };
@@ -909,6 +976,35 @@
           byLo[lo].push(it);
         });
         return byLo;
+      }
+
+      /** Sort key for skill category ids (sc001 / c001 → 1); unknown keys sort last. */
+      function learningObjectiveKeySortValue(loKey) {
+        var raw = String(loKey || '').trim();
+        if (!raw || raw === 'Other') return 999999;
+        var m = raw.match(/^(sc|c)(\d+)$/i);
+        if (m) return parseInt(m[2], 10);
+        var digits = raw.match(/(\d+)/);
+        if (digits) return parseInt(digits[1], 10);
+        return 999998;
+      }
+
+      function compareLearningObjectiveKeys(a, b, byLo) {
+        var va = learningObjectiveKeySortValue(a);
+        var vb = learningObjectiveKeySortValue(b);
+        if (va !== vb) return va - vb;
+        var ha = resolveLearningObjectiveHeading(a, byLo && byLo[a] ? byLo[a] : []);
+        var hb = resolveLearningObjectiveHeading(b, byLo && byLo[b] ? byLo[b] : []);
+        return ha.localeCompare(hb);
+      }
+
+      /** Fixed WKSA skill category ids (sc001 … sc012) for requirements disclosure order. */
+      function getCanonicalLearningObjectiveKeys() {
+        var out = [];
+        for (var i = 1; i <= 12; i++) {
+          out.push('sc' + String(i).padStart(3, '0'));
+        }
+        return out;
       }
 
       /** "Technique Name 12" -> { base: "Technique Name", index: 12 } */
@@ -1843,22 +1939,40 @@
         });
       }
 
+      /** Per-row label for Learning Objective column: category from `learningObjective` / skillCatagoryId. */
+      function resolveLearningObjectiveCellLabel(it, catLookup) {
+        if (!it) return '';
+        var raw = String(it.learningObjective || '').trim();
+        if (!raw) return '';
+        var disp = syllabusPayload && syllabusPayload.learningObjectiveDisplayNames;
+        if (disp && disp[raw]) return disp[raw];
+        if (catLookup && catLookup[raw]) return catLookup[raw];
+        if (/^c\d+$/i.test(raw)) {
+          var scKey = 'sc' + raw.replace(/^c/i, '');
+          if (catLookup && catLookup[scKey]) return catLookup[scKey];
+        }
+        return raw;
+      }
+
       /** Category → learning objective → tables; no curriculum-rank sub-headings. */
       function appendTypeLoDisclosureTables(parent, items) {
-        if (!items.length) return;
-        var group = sortItemsByRankThenCount(items);
+        var requirementCategoryLookup = buildSkillCategoryLookup(syllabusPayload);
+        var group = sortItemsByRankThenCount(items && items.length ? items : []);
         var byType = groupItemsByType(group);
-        var types = Object.keys(byType).sort(function (a, b) {
-          var pa = getCategoryPriority(a);
-          var pb = getCategoryPriority(b);
-          if (pa != null && pb != null && pa !== pb) return pa - pb;
-          if (pa != null && pb == null) return -1;
-          if (pa == null && pb != null) return 1;
-          return a.localeCompare(b);
-        });
+        var typeKeys = Object.keys(byType);
+        var types = typeKeys.length
+          ? typeKeys.sort(function (a, b) {
+              var pa = getCategoryPriority(a);
+              var pb = getCategoryPriority(b);
+              if (pa != null && pb != null && pa !== pb) return pa - pb;
+              if (pa != null && pb == null) return -1;
+              if (pa == null && pb != null) return 1;
+              return a.localeCompare(b);
+            })
+          : ['SKILL'];
 
         types.forEach(function (typeName) {
-          var typeItems = byType[typeName];
+          var typeItems = byType[typeName] || [];
           var typeDetails = document.createElement('details');
           typeDetails.className = 'requirement-disclosure requirement-disclosure--type';
 
@@ -1868,14 +1982,10 @@
           typeDetails.appendChild(typeSum);
 
           var byLo = groupItemsByLearningObjective(typeItems);
-          var loKeys = Object.keys(byLo).sort(function (a, b) {
-            return resolveLearningObjectiveHeading(a, byLo[a]).localeCompare(
-              resolveLearningObjectiveHeading(b, byLo[b])
-            );
-          });
+          var loKeys = getCanonicalLearningObjectiveKeys();
 
           loKeys.forEach(function (loKey) {
-            var loItems = byLo[loKey].slice();
+            var loItems = (byLo[loKey] ? byLo[loKey].slice() : []);
             loItems.sort(function (a, b) {
               var ac = a.count != null ? a.count : 0;
               var bc = b.count != null ? b.count : 0;
@@ -1916,7 +2026,7 @@
               tr.appendChild(descriptionTd);
 
               var objectiveTd = document.createElement('td');
-              objectiveTd.textContent = String((it && it.name) || '').trim();
+              objectiveTd.textContent = resolveLearningObjectiveCellLabel(it, requirementCategoryLookup);
               tr.appendChild(objectiveTd);
 
               var studyUrl = String((it && it.studyUrl) || '').trim();
@@ -2022,6 +2132,11 @@
           maintainContainer.innerHTML = '';
           if (learnTitle) learnTitle.textContent = 'To learn';
           if (maintainTitle) maintainTitle.textContent = 'Maintain';
+          var maintainCol = document.getElementById('progress-summary-maintain-column');
+          if (maintainCol) {
+            maintainCol.style.display = '';
+            maintainCol.removeAttribute('aria-hidden');
+          }
         }
 
         if (!syllabusPayload) {
@@ -2036,30 +2151,30 @@
           return;
         }
 
-        if (learnTitle) learnTitle.textContent = 'Rank ' + R + ' — to learn';
-        if (maintainTitle) maintainTitle.textContent = 'Rank < ' + R + ' — maintain';
+        if (learnTitle) {
+          learnTitle.textContent =
+            'Through next rank (step ≤ ' + (R >= 16 ? R : R + 1) + ')';
+        }
+        if (maintainTitle) maintainTitle.textContent = '';
+        var maintainCol = document.getElementById('progress-summary-maintain-column');
+        if (maintainCol) {
+          maintainCol.style.display = 'none';
+          maintainCol.setAttribute('aria-hidden', 'true');
+        }
 
         var learnCounts = progressSummaryZeroCounts();
-        var maintainCounts = progressSummaryZeroCounts();
+        var pool = getSkillsRequirementsCumulativeItems(R);
         var learnTotal = 0;
-        var maintainTotal = 0;
-
-        var bundle = getLearnMaintainBundle(R);
-        bundle.learnItems.forEach(function (it) {
+        pool.forEach(function (it) {
           if (!it) return;
           learnTotal++;
           progressSummaryAddStatus(learnCounts, it);
         });
-        bundle.maintainItems.forEach(function (it) {
-          if (!it) return;
-          maintainTotal++;
-          progressSummaryAddStatus(maintainCounts, it);
-        });
 
         learnCountEl.textContent = String(learnTotal);
-        maintainCountEl.textContent = String(maintainTotal);
+        maintainCountEl.textContent = '0';
         progressSummaryFillRows(learnContainer, learnCounts);
-        progressSummaryFillRows(maintainContainer, maintainCounts);
+        maintainContainer.innerHTML = '';
       }
 
       function mergeCurriculumItemsForDisplay(learnItems, maintainItems) {
@@ -2095,7 +2210,7 @@
         return buckets;
       }
 
-      function appendStatusMajorSection(container, statusLabel, items, labels, emptyMessage) {
+      function appendStatusMajorSection(container, statusLabel, items, labels) {
         var section = document.createElement('div');
         section.className = 'requirement-major-section requirement-major-section--by-status';
         var h = document.createElement('h3');
@@ -2106,17 +2221,10 @@
         sub.className = 'requirement-section-subtext';
         sub.textContent = STATUS_SECTION_SUBTEXT[statusLabel] || '';
         section.appendChild(sub);
-        if (!items.length) {
-          var p = document.createElement('p');
-          p.className = 'requirement-section-empty';
-          p.textContent = emptyMessage;
-          section.appendChild(p);
-        } else {
-          var groupsWrap = document.createElement('div');
-          groupsWrap.className = 'requirement-groups';
-          appendTypeLoDisclosureTables(groupsWrap, items);
-          section.appendChild(groupsWrap);
-        }
+        var groupsWrap = document.createElement('div');
+        groupsWrap.className = 'requirement-groups';
+        appendTypeLoDisclosureTables(groupsWrap, items || []);
+        section.appendChild(groupsWrap);
         container.appendChild(section);
       }
 
@@ -2149,21 +2257,13 @@
         }
 
         var labels = syllabusPayload.beltStepLabels || {};
-        var reqBundle = getLearnMaintainBundle(R);
-        var allItems = mergeCurriculumItemsForDisplay(reqBundle.learnItems, reqBundle.maintainItems);
+        var allItems = getSkillsRequirementsCumulativeItems(R);
         var buckets = partitionItemsByStatus(allItems);
 
         container.innerHTML = '';
 
-        var emptyBucketMsg = 'No skills in this category for your current selection.';
         STATUS_OPTIONS.forEach(function (statusLabel) {
-          appendStatusMajorSection(
-            container,
-            statusLabel,
-            buckets[statusLabel],
-            labels,
-            emptyBucketMsg
-          );
+          appendStatusMajorSection(container, statusLabel, buckets[statusLabel], labels);
         });
 
         if (statusEl && allItems.length === 0) {
