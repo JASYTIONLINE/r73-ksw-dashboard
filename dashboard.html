@@ -183,7 +183,7 @@
 
         <section class="card dashboard-testable" aria-labelledby="testable-heading">
           <h3 id="testable-heading">Testing For: <span id="testable-heading-rank"></span></h3>
-          <p class="testable-intro">Every skill required at the next rank after your current belt (for your age band) is grouped here by technique set; each line shows the set name and serial range (for example, An Sohn Mok Soo 1-6).</p>
+          <p class="testable-intro">Every skill required at the next rank after your current belt (for your age band) is grouped here by technique set; each line shows the catalog skill name and serial range (for example, An Sohn Mok Soo 1-6).</p>
           <div id="testable-rollups" class="testable-rollups" role="region" aria-live="polite" aria-label="Testable technique sets at promotion rank"></div>
         </section>
         <section class="card dashboard-progress-summary" aria-labelledby="progress-summary-heading">
@@ -946,8 +946,10 @@
       }
 
       /**
-       * One line per technique set at this rank: set label from skill name / description pattern,
-       * range from CSV serial (items[].count) when present. Category is used only for grouping/sort.
+       * One line per technique set at this rank: set label from skill `name` only (parse trailing
+       * digit only on name). Missing `name` is invalid syllabus data — do not substitute description.
+       * Range from items[].count (syllabus serialNumber) when present, then name index fallbacks.
+       * Category is used only for grouping/sort.
        */
       function buildTestableRollupLines(learnItems) {
         var catLookup = buildSkillCategoryLookup(syllabusPayload);
@@ -957,11 +959,10 @@
         learnItems.forEach(function (it) {
           if (!it) return;
           var catId = String(it.learningObjective || '').trim() || '_other';
-          var p = parseSeriesBaseIndex(it.name) || parseSeriesBaseIndex(it.description);
-          var family = p
-            ? p.base.trim()
-            : String(it.name || '').trim() || String(it.description || '').trim() || 'Other';
-          var key = catId + '\0' + family;
+          var nameParsed = parseSeriesBaseIndex(it.name);
+          var rawName = String(it.name || '').trim();
+          var family = nameParsed ? nameParsed.base.trim() : rawName;
+          var key = catId + '\0' + (family || itemKey(it) || '_missing_name');
           if (!groups[key]) {
             groups[key] = { catId: catId, family: family, items: [] };
           }
@@ -998,7 +999,7 @@
           } else {
             var idxs = [];
             g.items.forEach(function (it) {
-              var q = parseSeriesBaseIndex(it.name) || parseSeriesBaseIndex(it.description);
+              var q = parseSeriesBaseIndex(it.name);
               if (q) idxs.push(q.index);
             });
             if (idxs.length) {
@@ -1023,8 +1024,8 @@
             }
           }
 
-          var fam = String(g.family || '').trim() || 'Other';
-          out.push({ text: fam + ' ' + rangePart });
+          var fam = String(g.family || '').trim();
+          out.push({ text: fam ? fam + ' ' + rangePart : rangePart });
         });
 
         return out;
