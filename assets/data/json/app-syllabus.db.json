@@ -8203,6 +8203,7 @@
     }
   },
   "extras": {
-    "skillAgeRankIdsAreChartRows": true
+    "skillAgeRankIdsAreChartRows": true,
+    "jsonInterfacePassword": "admin"
   }
 }
