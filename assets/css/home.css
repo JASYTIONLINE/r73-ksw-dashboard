@@ -30,8 +30,18 @@
 /* Sidebar column: nav + address panel, then Contact Instructor; 16px gap between */
 .home-page .sidebar.sidebar-stack {
   display: flex;
+  flex: 0 0 220px;
   flex-direction: column;
   gap: 16px;
+  width: 220px;
+  max-width: 220px;
+  min-width: 0;
+}
+
+.home-page .sidebar-primary-panel,
+.home-page .sidebar-nav {
+  min-width: 0;
+  width: 100%;
 }
 
 /* 769px+: sidebar visible — column matches main height; maroon frame around stacked panels */
@@ -90,6 +100,46 @@ a.sidebar-address-card:focus-visible {
 
 a.sidebar-address-card:visited {
   color: #000000;
+}
+
+.home-page .sidebar-nav .sidebar-feature-thumb-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100% !important;
+  max-width: 100%;
+  aspect-ratio: auto;
+  height: auto !important;
+  max-height: none;
+  padding: 0.35rem;
+  overflow: hidden;
+  background: #000000;
+  border-color: #ffcc00;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.home-page .sidebar-nav .sidebar-feature-thumb-btn.is-border-flashing {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 2px #ff0000;
+}
+
+.home-page .sidebar-nav .sidebar-feature-thumb-label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.3rem;
+  color: #ffcc00;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-page .sidebar-nav .sidebar-feature-thumb-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Flex child for shared layout */
