@@ -68,6 +68,7 @@ P01 established the core project: a static, deployed dashboard that could load c
 - **Content completeness:** The per-row Study column was temporarily hidden from the dashboard requirements table. The requirements list still shows all skills, and the Study resources dropdown remains available for curated resources.
 - **Feature scope decision:** Visible Save/Load progress controls were hidden for this delivery because they added interface complexity. The import/export code remains in the project so the feature can be restored in a later iteration.
 - **Asset cleanup:** The landing page logo now uses an existing PNG asset instead of a BMP path with encoded spaces.
+- **CSS cleanup:** Unused legacy selectors and an unused alternate theme stylesheet were removed. Shared sidebar thumbnail structure now lives in `style.css`, while theme colors and visual states stay in `dragon.css`.
 - **Tooling polish:** The optional JSON editor received cleaner file-picker markup and visible focus states.
 - **Documentation:** The README was rewritten for P02 and a separate `REFLECTION.md` was added.
 
@@ -87,9 +88,9 @@ P01 established the core project: a static, deployed dashboard that could load c
 - `about.html` - project purpose, audience, and usage guidance.
 - `contact.html` - legacy direct-access contact page; current contact actions are in the shared sidebar.
 - `contents/Skills/sc010-foundations/` - study-resource pages.
-- `assets/css/style.css` - shared layout and dashboard structure.
-- `assets/css/dragon.css` - visual theme, colors, buttons, and focus states.
-- `assets/css/home.css` - home page layout and responsive behavior.
+- `assets/css/style.css` - shared layout, dashboard structure, and reusable component sizing.
+- `assets/css/dragon.css` - active visual theme, colors, buttons, focus states, and themed component borders.
+- `assets/css/home.css` - home page layout, landing-page spacing, and responsive home-page behavior.
 - `assets/js/sidebar-feature.js` - Weekly Focus sidebar behavior.
 - `assets/data/csv/ksw-syllabus.csv` - curriculum authoring source.
 - `assets/data/json/app-syllabus.db.json` - dashboard runtime data.
@@ -103,6 +104,8 @@ The site is intentionally static. There is no production server, account system,
 The dashboard loads `assets/data/json/app-syllabus.db.json`. It supports the current data shape and older legacy shapes, then normalizes the data in memory before rendering the UI. Profile and progress information use `localStorage`, so data is tied to the browser and device. Clearing site data can remove local progress.
 
 The visible import/export controls are hidden in the current P02 interface, but the underlying code is still present. This was a scope decision: the feature is useful, but the interface needs more polish before it returns as a visible student-facing workflow.
+
+The CSS is split by responsibility: `style.css` handles shared structure, `dragon.css` handles the active visual theme, and `home.css` handles the landing page. During the P02 cleanup, unused selectors and the unused alternate `ace.css` theme were removed to keep the repository easier to maintain.
 
 ## Local Development
 No build step is required for the site itself.
@@ -132,6 +135,7 @@ Before submitting P02, these are the checks used for the project:
 - Buttons stay inside their containers and remain readable.
 - The dashboard requirements section is usable on mobile without unnecessary horizontal scrolling.
 - Keyboard focus is visible on major buttons and controls.
+- Unused legacy CSS selectors and the unused alternate theme stylesheet have been removed.
 - The browser console should be checked before final submission.
 - The repository should be reviewed for unnecessary leftover files before final submission.
 

@@ -18,12 +18,6 @@ h4 { color: #e6e6e6; }
 h5 { color: #cccccc; }
 h6 { color: #999999; }
 
-/* Usage box — themed to match subtitle (h2) */
-.usage-box {
-  color: #ffa500;                   /* Orange like h2 */
-  border: 1px solid #ffa500;        /* Matching border for theme unity */
-}
-
 /* Links and interactivity */
 a {
   color: #cccccc;                   /* Light grey links */
@@ -100,6 +94,20 @@ button:focus-visible {
   border-color: #000f6a;
   outline: 3px solid #ffffff;
   outline-offset: 2px;
+}
+
+.sidebar-nav .sidebar-feature-thumb-btn {
+  background: #000000;
+  border-color: #ffcc00;
+}
+
+.sidebar-nav .sidebar-feature-thumb-btn.is-border-flashing {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 2px #ff0000;
+}
+
+.sidebar-nav .sidebar-feature-thumb-label {
+  color: #ffcc00;
 }
 
 /* Visual separator */
@@ -203,6 +211,14 @@ body.about-page .about-contact-address.card:focus-visible strong {
   text-align: center;
 }
 
+/* Gold mailto address card in sidebar: black text (overrides dashboard paragraph color) */
+.dashboard-page a.sidebar-address-card,
+.dashboard-page a.sidebar-address-card p,
+.dashboard-page a.sidebar-address-card strong,
+.dashboard-page a.sidebar-address-card:visited {
+  color: #000000;
+}
+
 /* Native date picker: keep calendar icon visible & tappable (WebKit/Blink) */
 .dashboard-page input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
@@ -216,8 +232,16 @@ body.about-page .about-contact-address.card:focus-visible strong {
   opacity: 0.95;
 }
 
+.dashboard-page .dashboard-membership {
+  border-color: rgba(255, 204, 0, 0.4);
+}
+
+.dashboard-page .dashboard-membership > legend {
+  color: #ffcc00;
+}
+
 .dashboard-page .requirements-section-divider {
-  border-top-color: rgba(255, 204, 0, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.22);
 }
 
 .dashboard-page .requirement-section-heading {
@@ -254,6 +278,10 @@ body.about-page .about-contact-address.card:focus-visible strong {
   font-weight: 500;
 }
 
+.dashboard-page .dashboard-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .dashboard-page .dashboard-modal {
   background-color: #220000;
   border: 1px solid #ff0000;
@@ -279,4 +307,24 @@ body.about-page .about-contact-address.card:focus-visible strong {
   background-color: #00aa00;
   color: #ffffff;
   border-color: #ffffff;
+}
+
+.dashboard-page .testable-rollup-line {
+  border-bottom-color: rgba(255, 204, 0, 0.18);
+}
+
+.dashboard-page .progress-summary-column {
+  border-color: #ffcc00;
+}
+
+.dashboard-page .progress-summary-subheading {
+  color: #ffcc00;
+}
+
+.dashboard-page .progress-summary-row {
+  border-bottom-color: rgba(255, 204, 0, 0.22);
+}
+
+.dashboard-page .requirement-disclosure--lo {
+  border-left-color: rgba(255, 255, 255, 0.2);
 }
