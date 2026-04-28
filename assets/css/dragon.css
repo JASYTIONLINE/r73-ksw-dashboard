@@ -170,8 +170,18 @@ body.about-page .about-contact-address.card strong {
 
 body.about-page .about-contact-address.card:hover,
 body.about-page .about-contact-address.card:focus-visible {
-  background-color: #ffd54a;
-  border-color: #ff0000;
+  background-color: #001489;
+  border-color: #000f6a;
+  color: #ffffff;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+body.about-page .about-contact-address.card:hover p,
+body.about-page .about-contact-address.card:focus-visible p,
+body.about-page .about-contact-address.card:hover strong,
+body.about-page .about-contact-address.card:focus-visible strong {
+  color: #ffffff;
 }
 
 /* Student dashboard: gold headings, white paragraphs and list items */

@@ -94,8 +94,18 @@ a.sidebar-address-card {
 
 a.sidebar-address-card:hover,
 a.sidebar-address-card:focus-visible {
-  background: #ffd54a;
-  border-color: #9a7209;
+  background: #001489;
+  border-color: #000f6a;
+  color: #ffffff;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+a.sidebar-address-card:hover p,
+a.sidebar-address-card:focus-visible p,
+a.sidebar-address-card:hover strong,
+a.sidebar-address-card:focus-visible strong {
+  color: #ffffff;
 }
 
 a.sidebar-address-card:visited {
