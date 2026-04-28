@@ -142,6 +142,32 @@ a.sidebar-address-card:visited {
   object-fit: contain;
 }
 
+.home-page .home-mobile-weekly-focus {
+  display: none;
+}
+
+.home-page .home-mobile-weekly-focus-link {
+  text-decoration: none;
+}
+
+.home-page .home-mobile-weekly-focus-title {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--home-text-on-dark);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page .home-mobile-weekly-focus img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #2a0a0a;
+  border-radius: 6px;
+}
+
 /* Flex child for shared layout */
 .home-shell {
   min-width: 0;
@@ -579,6 +605,20 @@ a.sidebar-address-card:visited {
 
   .home-page .home-panel.calltoaction {
     min-height: auto;
+  }
+
+  .home-page .home-mobile-weekly-focus {
+    display: block;
+    padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
+      max(0.5rem, env(safe-area-inset-right, 0px));
+    margin: 0 0 1rem;
+  }
+
+  .home-page .home-mobile-weekly-focus-link {
+    display: block;
+    min-height: 0;
+    margin-bottom: 0;
+    padding: 0.875rem;
   }
 
   .home-quote {

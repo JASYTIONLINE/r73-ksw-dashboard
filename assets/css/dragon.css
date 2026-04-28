@@ -74,7 +74,7 @@ input, select, textarea {
 }
 
 .dashboard-page .dashboard-reset-button:hover,
-.dashboard-page .dashboard-reset-button:focus {
+.dashboard-page .dashboard-reset-button:focus-visible {
   background-color: #b30000;
   color: #ffffff;
   border-color: #ffcc00;
@@ -92,10 +92,14 @@ input:focus, select:focus, textarea:focus {
   border-color: #ffa500;            /* Orange border */
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible,
+button:focus-visible {
   background-color: #001489;        /* WKSA flag field blue */
   color: #ffffff;
   border-color: #000f6a;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
 }
 
 /* Visual separator */
@@ -138,7 +142,7 @@ code a:hover {
   }
 }
 
-/* About page: footer Contact US — gold fill; border matches .card / top nav (1px #ff0000, same as header & main) */
+/* About page: footer Contact Us — gold fill; border matches .card / top nav (1px #ff0000, same as header & main) */
 body.about-page .about-contact-address.card,
 body.about-page .about-contact-address.card:visited {
   display: block;
@@ -260,7 +264,7 @@ body.about-page .about-contact-address.card:focus-visible {
 }
 
 .dashboard-page .scroll-controls-btn:hover,
-.dashboard-page .scroll-controls-btn:focus,
+.dashboard-page .scroll-controls-btn:focus-visible,
 .dashboard-page .scroll-controls-btn:active {
   background-color: #00aa00;
   color: #ffffff;

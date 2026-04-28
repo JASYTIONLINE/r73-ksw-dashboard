@@ -41,7 +41,7 @@
           </nav>
           <a class="box sidebar-address-card" href="mailto:johnbarkle@msn.com?subject=General%20Inquiry%20about%20your%20school&amp;body=Feel%20free%20to%20ask%20us%20about%20anything%E2%80%94class%20schedules%2C%20programs%2C%20getting%20started%2C%20or%20whatever%20is%20on%20your%20mind.%20We%20are%20here%20to%20help." aria-label="Contact Brownsville Kuk Sool Won by email">
             <p>
-              <strong>Contact US</strong><br>
+              <strong>Contact Us</strong><br>
               Brownsville Kuk Sool Won<br>
               1601 E Alton Gloor Blvd #110<br>
               Brownsville, TX 78526<br>
@@ -111,7 +111,7 @@
             <div class="dashboard-field">
               <p><label for="school-location">School Location</label></p>
               <select id="school-location" name="school-location">
-                <option value="brownsville">Brownsville: 1601 E Alton Gloor Bvd.</option>
+                <option value="brownsville">Brownsville: 1601 E Alton Gloor Blvd.</option>
               </select>
             </div>
             <div class="dashboard-field">
@@ -221,6 +221,7 @@
         <section class="card">
           <h3>Skills Requirements (by proficiency)</h3>
           <p class="requirements-hint">Skills shown are those you should have covered through your <strong>next promotion</strong> for your <strong>Age</strong> band and <strong>Current Rank</strong> (each skill’s testing tier for that band is at or before that level). They are grouped by <strong>proficiency</strong> (Untrained through Proficient), then by <strong>category</strong> and <strong>technique set</strong>. Change Age, Rank, or Status above to refresh.</p>
+          <!-- Temporarily hidden for P02 polish; export/import code remains below for a later restore.
           <div class="requirements-actions">
             <button id="export-syllabus-json" class="btn" type="button">Save your progress</button>
             <label id="import-syllabus-json-button" class="btn import-button-label">
@@ -228,6 +229,7 @@
               <input id="import-syllabus-json-input" type="file" accept="application/json" style="display:none">
             </label>
           </div>
+          -->
           <div id="requirements-status" class="requirements-status" role="status"></div>
           <div id="requirements-by-rank" class="requirements-by-rank" aria-live="polite"></div>
         </section>
@@ -267,7 +269,7 @@
     (function () {
       /** Canonical curriculum JSON (repo: assets/data/json/). */
       var SYLLABUS_URL = 'assets/data/json/app-syllabus.db.json';
-      /** Placeholder page for skills without a dedicated `studyUrl` (same layout as tie-your-belt). */
+      /** Reserved for restoring per-row fallback Study links after P02 scope is complete. */
       var COMING_SOON_FOUNDATIONS_URL = 'contents/Skills/sc010-foundations/coming-soon.html';
       var syllabusPayload = null;
       var STATUS_OPTIONS = ['Untrained', 'In Progress', 'Trained', 'Proficient'];
@@ -2011,10 +2013,9 @@
 
             var thead = document.createElement('thead');
             var headRow = document.createElement('tr');
-            ['Description', 'Learning Objective', 'Study', 'Status'].forEach(function (label, idx) {
+            ['Description', 'Learning Objective', 'Status'].forEach(function (label, idx) {
               var th = document.createElement('th');
               if (idx === 0) th.className = 'description-col';
-              if (idx === 2) th.className = 'requirement-study-col';
               th.textContent = label;
               headRow.appendChild(th);
             });
@@ -2033,27 +2034,8 @@
               objectiveTd.textContent = resolveLearningObjectiveCellLabel(it, requirementCategoryLookup);
               tr.appendChild(objectiveTd);
 
-              var studyUrl = String((it && it.studyUrl) || '').trim();
-              var studyTd = document.createElement('td');
-              studyTd.className = 'requirement-study-col';
-              if (studyUrl && isSafeStudyUrl(studyUrl)) {
-                var studyBtn = document.createElement('a');
-                studyBtn.href = studyUrl;
-                studyBtn.className = 'btn requirement-study-btn';
-                studyBtn.textContent = 'Study';
-                studyBtn.rel = 'noopener';
-                if (/^https?:\/\//i.test(studyUrl)) studyBtn.target = '_blank';
-                studyTd.appendChild(studyBtn);
-              } else {
-                var comingSoonBtn = document.createElement('a');
-                comingSoonBtn.href = COMING_SOON_FOUNDATIONS_URL;
-                comingSoonBtn.className = 'btn requirement-study-btn requirement-coming-soon-btn';
-                comingSoonBtn.textContent = 'Coming soon';
-                comingSoonBtn.rel = 'noopener';
-                comingSoonBtn.setAttribute('aria-label', 'Study materials coming soon; open foundations placeholder page');
-                studyTd.appendChild(comingSoonBtn);
-              }
-              tr.appendChild(studyTd);
+              // P02 scope: hide the per-row Study column while keeping studyUrl data
+              // and the Study resources dropdown available for later resource work.
 
               var statusTd = document.createElement('td');
               var statusSel = document.createElement('select');
