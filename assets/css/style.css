@@ -471,31 +471,6 @@ pre {
   display: inline;
 }
 
-.about-secret-squirrel-link {
-  position: fixed;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  z-index: 30;
-  display: inline-flex;
-  width: 28px;
-  height: 28px;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.72;
-}
-
-.about-secret-squirrel-link:hover,
-.about-secret-squirrel-link:focus-visible {
-  opacity: 1;
-}
-
-.about-secret-squirrel-link img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 /* Mobile: stacked “mailing block” address; desktop stays one line (min-width matches sidebar breakpoint) */
 @media (max-width: 768px) {
   .dashboard-page .dashboard-footer-tagline {
@@ -546,6 +521,14 @@ pre {
   .sidebar.sidebar-stack > .card {
     width: 100%;
     margin-bottom: 0;
+  }
+
+  .page-layout > .sidebar.sidebar-stack > .sidebar-contact-instructor {
+    order: 0;
+  }
+
+  .page-layout > .sidebar.sidebar-stack > .sidebar-primary-panel {
+    order: 1;
   }
 
   .sidebar-primary-panel,
