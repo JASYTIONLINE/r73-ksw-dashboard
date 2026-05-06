@@ -187,5 +187,8 @@ assets/video/**/*.mp4
 # Local backend / tooling (not published with the static site).
 backend/
 
+# Local planning notes, future assets, drafts, and source material.
+private/
+
 # Sensitive / local-only image (keep on disk; do not commit).
 assets/images/ssnexample.png
