@@ -46,7 +46,7 @@ For final submission testing, open the live URL in a normal browser and in a pri
 - **Cursor and Visual Studio Code:** Development, editing, debugging, planning, and documentation workflow.
 
 ## Final Feature Contract
-This section is the feature checklist for the final MVP. Features listed here must be available on desktop and mobile before submission.
+This section is the feature checklist for the final MVP. Features listed here must be available in the delivered site, with mobile layouts prioritized for efficient browsing and page-specific tasks.
 
 ### Sitewide Features
 - Public landing page for Brownsville Kuk Sool Won.
@@ -72,12 +72,12 @@ This section is the feature checklist for the final MVP. Features listed here mu
 - Reset/Clear Data action for locally saved dashboard information.
 - Desktop scroll controls for moving through dashboard sections.
 
-### Mobile Feature Parity
-Mobile mode must keep the same functional access as desktop mode. The layout may change, but features must not disappear.
+### Mobile Access And Prioritization
+Mobile mode keeps site-level access to the important project features, but it does not repeat every desktop sidebar utility on every secondary page. The layout changes to improve user experience by removing redundant mobile content from pages where it distracts from the main task.
 
-On phones and narrow screens, desktop sidebar content should become prioritized vertical content in the scroll flow. High-priority controls and information should appear first: main navigation, Student Dashboard access, Contact Instructor actions, Weekly Focus or study-resource access, and school contact details. Supporting content can appear lower on the page as long as it remains reachable and usable.
+On phones and narrow screens, the homepage carries the full public utility flow: school identity, Student Dashboard access, Weekly Focus, Contact Instructor actions, Mind / Body / Soul branding, and school contact details. The Student Dashboard mobile view prioritizes the Kuk Sool Won hero, Weekly Focus, and the dashboard controls/content. The About mobile view prioritizes the dashboard explanation, purpose, proficiency levels, important notes, and contact information.
 
-The final QA/QC pass must compare the desktop feature list above against mobile view. If a feature is listed for desktop, it must also be present and usable on mobile.
+Duplicate sidebar navigation, contact blocks, and repeated utility panels may be hidden on secondary mobile pages when the same actions remain available elsewhere in the mobile site flow. This keeps mobile browsing focused and efficient without removing the feature from the final project.
 
 ## What Changed From P01 To P02
 P01 established the core project: a static, deployed dashboard that could load curriculum data and show student rank requirements. P02 focuses on making the project more complete, consistent, and usable. The main direction is to protect the original dashboard scope while improving the parts a student or parent would notice first: navigation, button behavior, mobile layout, contact actions, documentation, and clarity of final scope.
@@ -86,7 +86,7 @@ P01 established the core project: a static, deployed dashboard that could load c
 - **Grouped dashboard requirements:** Requirements are organized by proficiency, category, and technique set so students do not have to scan one long list.
 - **Progress summaries:** The dashboard gives students a clearer summary of what they need to learn and what they need to maintain.
 - **Contact workflow improvements:** Instructor contact actions are split into clearer categories for private sessions, assessments, and general questions.
-- **Mobile feature parity:** P02 requires mobile users to have access to the same functional features as desktop users through a vertical, prioritized layout.
+- **Mobile UX prioritization:** P02 keeps important features available in the mobile site flow while hiding redundant sidebar utilities on secondary pages so users can browse more efficiently.
 - **Study-resource scope control:** The dashboard keeps a Study resources dropdown for completed curated resources, but the per-row Study column is not part of the final MVP.
 - **Save/Load scope control:** Visible import/export progress controls are not part of the final MVP because the student-facing workflow needs more polish before release.
 - **Removed admin/editor scope:** The backend JSON editor is not part of the final project promise.
@@ -101,7 +101,7 @@ P01 established the core project: a static, deployed dashboard that could load c
 5. Open requirement sections by proficiency, category, and technique set.
 6. Use the status dropdowns to track practice progress.
 7. Use the Study resources dropdown when a completed curated resource is available.
-8. Use Contact Instructor actions when a student needs a private session, assessment, or general help.
+8. Use Contact Instructor actions from the homepage or contact paths when a student needs a private session, assessment, or general help.
 
 ## Project Structure
 - `index.html` - landing page and primary public entry point.
@@ -146,9 +146,9 @@ Before submitting P02, use this checklist to confirm the deployed project and re
 - Main navigation works on the landing page, dashboard, about page, contact page, and study-resource page.
 - Every internal link, external link, `mailto:`, and `tel:` action works.
 - The desktop feature list in this README is fully available in desktop/PC view.
-- Every feature in the desktop feature list is also available and usable in mobile view.
-- Mobile mode uses a prioritized vertical layout instead of hiding desktop-only features.
-- Contact Instructor actions are accessible on desktop and mobile.
+- Mobile mode preserves site-level access to key features while prioritizing page-specific content on secondary pages.
+- Secondary mobile pages hide redundant sidebar utilities only when those actions remain available elsewhere in the mobile site flow.
+- Contact Instructor actions are accessible through the mobile homepage and contact paths.
 - The Student Dashboard is easy to find and understand.
 - The homepage clearly explains Brownsville Kuk Sool Won and the Student Dashboard purpose within the first few seconds.
 - Dashboard controls work for WKSA testing band, current rank, student profile fields, Study resources, progress status controls, and Clear Data.
