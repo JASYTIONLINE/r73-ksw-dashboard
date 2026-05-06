@@ -581,6 +581,20 @@ pre {
     display: none !important;
   }
 
+  .about-page .page-layout > .sidebar.sidebar-stack {
+    display: none !important;
+  }
+
+  .about-page .page-layout > .page-content {
+    display: block !important;
+    width: 100%;
+  }
+
+  .about-page main.card > .box:nth-of-type(2),
+  .about-page main.card > .box:nth-of-type(3) {
+    display: none;
+  }
+
   .page-content {
     width: 100%;
   }
