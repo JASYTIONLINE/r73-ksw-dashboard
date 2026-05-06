@@ -487,7 +487,7 @@ a.sidebar-address-card:visited {
   margin-bottom: 16px;
 }
 
-/* Duplicate of sidebar address: shown only ≤768px (sidebar is hidden on phones) */
+/* Mobile-only address block used after Contact Instructor in the homepage priority flow. */
 .home-page .home-mobile-contact-address {
   display: none;
 }
@@ -497,6 +497,56 @@ a.sidebar-address-card:visited {
   .home-page .wrapper {
     padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
     padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+
+  .home-page .page-layout {
+    align-items: stretch;
+  }
+
+  /* Homepage mobile priority: hero content first, then Weekly Focus, contact actions, and motto. */
+  .home-page .page-content.home-shell,
+  .home-page .page-layout > .sidebar.sidebar-stack {
+    display: contents !important;
+  }
+
+  .home-page .sidebar-primary-panel {
+    display: none !important;
+  }
+
+  .home-page .home-header {
+    order: 1;
+  }
+
+  .home-page .home-main {
+    order: 2;
+  }
+
+  .home-page .home-mobile-weekly-focus {
+    order: 3;
+  }
+
+  .home-page .page-layout > .sidebar.sidebar-stack > .sidebar-contact-instructor {
+    order: 4;
+  }
+
+  .home-page .home-philosophy {
+    order: 5;
+  }
+
+  .home-page .home-mobile-contact-address {
+    order: 6;
+  }
+
+  .home-page .home-header,
+  .home-page .home-main,
+  .home-page .home-mobile-weekly-focus,
+  .home-page .home-philosophy,
+  .home-page .sidebar-contact-instructor,
+  .home-page .home-mobile-contact-address {
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
   }
 
   .home-page .site-nav--mobile-top.card {
@@ -571,7 +621,7 @@ a.sidebar-address-card:visited {
   }
 
   .home-page .home-mobile-weekly-focus {
-    display: none;
+    display: block;
     padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
       max(0.5rem, env(safe-area-inset-right, 0px));
     margin: 0 0 1rem;
@@ -603,8 +653,12 @@ a.sidebar-address-card:visited {
     font-size: 0.9375rem;
   }
 
+  .home-page .sidebar-contact-instructor {
+    margin: 0 0 1rem;
+  }
+
   .home-page .home-mobile-contact-address {
-    display: none;
+    display: block;
     margin-top: 0;
     margin-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
