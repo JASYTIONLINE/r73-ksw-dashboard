@@ -549,6 +549,38 @@ pre {
     margin-top: 0.75rem;
   }
 
+  /* Dashboard mobile priority: hero/flags first, then Weekly Focus, then existing dashboard content. */
+  .dashboard-page .page-layout > .page-content,
+  .dashboard-page .page-layout > .sidebar.sidebar-stack {
+    display: contents !important;
+  }
+
+  .dashboard-page .page-content > * {
+    order: 2;
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .dashboard-page .dashboard-hero {
+    order: 0;
+  }
+
+  .dashboard-page .page-layout > .sidebar.sidebar-stack > .sidebar-primary-panel {
+    order: 1;
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .dashboard-page .sidebar-nav > .btn:not(.sidebar-feature-thumb-btn),
+  .dashboard-page .sidebar-address-card,
+  .dashboard-page .sidebar-contact-instructor {
+    display: none !important;
+  }
+
   .page-content {
     width: 100%;
   }
