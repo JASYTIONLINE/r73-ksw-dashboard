@@ -1,0 +1,341 @@
+Week 06: Overview
+Week 06: Overview
+So, now Project 01 is behind you. Having shipped a working milestone, you now need to keep moving forward, continue working on your project, and focus on improving it. This week is about iteration: analyzing what you built, identifying what to improve, implementing enhancements, and planning the path to your final MVP (Minimum Viable Product; the simplest "complete" version of your project that works and delivers value).
+
+Good projects, and products, for that matter, are built through persistent effort and iteration, and evolve through cycles of building, evaluating, and refining.
+
+Learning Objectives
+Upon successful completion of this week, you will be able to:
+
+Analyze Project 01 to identify areas for improvement. (SLO-2)
+Implement enhancements that deepen project functionality. (SLO-2)
+Justify decisions about what to change, add, or cut. (SLO-3)
+To Do List
+The list of scheduled coursework for the week:
+
+Review: Week 06 Overview and Content
+Read: Week 06: Iterating on Your Work
+Read: Week 06: Adding Depth to Your Project
+Exercise 05 Due: Implement One Enhancement (due Sunday, April 26)
+Assignment 02 Due: Iteration Plan (due Sunday, April 26)
+
+Week 06: Iterating on Your Work
+Iterating on Your Work
+You shipped P01. Nice. Now you need to step back and look at it critically. Avoid the impulse to tear down your work, and focus your time and attention on understanding what's working, what isn't working, and what could and should be improved.
+
+Evaluating Your Own Work
+Start by reviewing your deployed project as if you've never seen it before (which can be difficult, but try doing this nonetheless):
+
+Visit your live URL. Don't open it in your editor. Simply visit the deployed site in a browser. Experience it the way your audience would.
+
+Interact with it. Navigate through every page. Click every link. Try every feature. Fill out any forms. Interactive features? Yep: interact with those features. Use it on your phone. Use it on your tablet. Take notes on everything that feels smooth or rough, functions or doesn't, and everything else in between.
+
+Compare it to your proposal. Pull up your A01 project proposal and review it. How does your deployed project compare to what you planned? What did you deliver? What's missing? What's changed? Were the changes intentional or accidental?
+
+Ask yourself some specific questions:
+
+Does the project clearly communicate its purpose within the first few seconds? (Would a random person without context understand this project?)
+Is the navigation intuitive? Can a visitor find what they're looking for? (Would a random person be capable of navigating through and finding things?)
+Does the interactive feature from Week 04 add genuine value? (Would a random person interact with the interactive feature and find it helpful/fun/worthwhile?)
+Is the design consistent across pages? (Would a random person visiting the pages recognize they are related and consistent?)
+Does anything feel unfinished, broken, or confusing? (Would a random person encounter pitfalls, confusing areas, broken sections, or partial content?)
+Write your answers down. aYou'll use them in your iteration plan (Assignment 02).
+
+Turning Your Evaluation into Action
+Start with your own evaluation: the self-assessment you did in the previous section. Peer feedback will arrive in Week 07 through the peer review discussion, and you'll use it for potential final refinements before P02. For now, your own critical eye is your best resource.
+
+Separate observations from opinions. "The navigation doesn't work on a tablet" is an observation describing a specific problem. "I don't like the colors because they are ugly" is an opinion. Both can be useful! However, observations describing specific problems should be addressed first. Opinions are just that: opinions. You might or might not choose to address opinions.
+
+Prioritize by impact. Not all potential improvements are equal. Full stop: prioritizing potential improvements is absolutely critical for anyone building, developing, and designing projects and products. Broken features typically affect usability more than a font choice. Missing pages are a bigger issue than missing animations. This is not necessarily the most exciting work, but it is incredibly impactful. Address what matters most to your project's functionality and purpose first. 
+
+Distinguish between fixing and adding. Some improvements fix problems (broken links, missing content, layout issues. Some improvements add new capabilities (new features, new pages, new interactivity). Fixes should almost always come before additions. Establish a solid foundation for your project with fewer features before adding more scope, features, and complexity. Often, you never actually need or want to add more project scope or features!
+
+Deciding What to Change
+You have several weeks left to build before P02 is due. However, that's still not much time. You need to decide which changes will have the most impact on your project's success.
+
+What's broken? Fix it. Broken functionality is the top priority.
+
+What's missing? If your project is missing something essential to its purpose, add it. If it's a nice-to-have, evaluate whether you have time for it.
+
+What could be better? Improvements to existing features (better design, smoother interactions, clearer content) often have more impact than entirely new features.
+
+What should you cut? If you planned a feature in your proposal but now realize it doesn't serve the project, or you don't have time, cut it. Cutting scope is often the legitimately best decision you can make. Document why you cut it in your iteration plan. (Important to note: you cannot say, "I cut my entire project! Winning!")
+
+Key Takeaways
+Evaluate your deployed project critically; visit it as your audience would
+Compare the deployed project to your original proposal
+Prioritize fixes over additions; impact over quantity
+Be willing to cut scope if it serves the project
+Document your evaluation and decisions in your iteration plan
+
+Week 06: Adding Depth to Your Project
+Adding Depth to Your Project
+P01 established the foundation for your overall project. Now you must add depth to make your project more functional, more polished, and more complete. A strong foundation was needed to build on, and you did that, so you can now move forward with the project by adding depth to meet your stated goals.
+
+Types of Enhancements
+These improvements can fall into a few categories. Most projects benefit from a mix:
+
+Functional Enhancements
+Adding capabilities that make your project do more:
+
+A new interactive feature (search, filtering, sorting, dynamic content)
+New pages and sections that serve your audience
+A form that collects user input and does something useful with it
+Integration with an external service or API
+Improved navigation or user flow
+Visual and Design Enhancements
+Making your project look and feel more polished and usable:
+
+Consistent typography, spacing, and color usage across all pages and components
+Better responsive behavior on different screen sizes
+Smooth transitions and animations that serve a purpose
+Improved visual hierarchy to clearly communicate what's most important on each page
+Accessibility improvements (sufficient color contrast, keyboard navigation, alt text)
+Content Enhancements
+Making your content more complete and effective:
+
+Replacing any/all remaining placeholder content
+Adding more detail to thin sections
+Improving writing clarity and accuracy
+Adding images, media, or other visual content
+Better organizing content for your audience's needs (note: review your evaluation questions and answers)
+Technical Enhancements
+Improving how your project works under the hood:
+
+Faster loading times (optimized images, efficient code)
+Better deployment configuration
+Cleaner file organization
+More reliable version control practices
+Choosing What to Build
+You probably can't do everything in only three weeks. Choose enhancements that:
+
+Serve your project's purpose. Does this addition help your project do what it's supposed to do? Does it serve your audience? What about the other additions and enhancements you listed?
+
+You also need to be realistic about scope. Be realistic! This might be difficult for you, especially since it's your project and you know how great it will be with just a few more enhancements. Can you implement this in the time remaining? If it's a stretch, is there a simpler version that still adds value? Perhaps a simpler version would actually resonate more? Perhaps a simpler version would be more usable?
+
+Make the improvement visible. Internal-only changes (such as cleaner code, better file organization, etc.) matter, but they should be paired with changes others can actually engage with and consider.
+
+And, of course, build on what works. Why tear down something that's working well only to rebuild it differently (or the same)? Refine what you have. 
+
+The Enhancement Process
+Adding a new feature or improvement follows the same cycle you used in Week 04:
+
+Describe it. Write a clear description of what you're adding and how it integrates with your existing project.
+Implement it. Use your tools to build it. Work incrementally. Avoid trying to change everything at once.
+Test it. Verify it works, doesn't break existing features, and functions on mobile, tablet, etc.
+Deploy it. Push to GitHub and confirm it works on your live site.
+Commit frequently. Each fix and enhancement should be a separate commit with a clear message. Aim for small and meaningful commits. This protects your progress and makes it easier to revert if something breaks.
+Key Takeaways
+Adding depth means functional, visual, content, and technical improvements to your project
+Choose enhancements that serve your project's purpose and are achievable in the remaining time
+Build on what works
+Work incrementally: describe, implement, test, deploy, commit
+
+Exercise 05: Implement One Enhancement
+Due: Sun Apr 26, 2026 11:59pmDue: Sun Apr 26, 2026 11:59pm
+Ungraded, 20 Possible Points
+20 Points Possible
+Attempt
+Attempt 1
+
+In Progress
+NEXT UP: Submit Assignment
+
+Unlimited Attempts Allowed
+Exercise 05: Implement One Enhancement
+Overview
+This exercise asks you to implement one meaningful enhancement to your project based on your evaluation of P01. The enhancement should improve your project's functionality, design, content, or user experience.
+
+Points: 20 (Pass/Fail)
+Due: Sunday, April 26 by 11:59 PM CT
+
+Instructions
+Step 1: Choose an Enhancement
+Based on your evaluation of P01 (and your work on the iteration plan this week), select one enhancement to implement. The enhancement should be:
+
+Meaningful: It noticeably improves your project, and is not just a cosmetic tweak
+Achievable: You can complete it this week
+Visible: Someone visiting your site can see or experience the improvement
+Step 2: Implement and Deploy
+Build the enhancement using your tools. When it's working:
+
+Test it locally and on mobile/tablet/etc. (note: using your browser DevTools to test different viewport sizes is a great approach)
+Commit your changes with a clear commit message (or messages)
+Push to GitHub and verify the enhancement appears on your deployed site
+Step 3: Document What You Did
+Write a brief summary of the enhancement.
+
+Submission
+Submit the following as a text entry in the Exercise 05 assignment in Canvas:
+
+Your deployed site URL (now with the enhancement visible)
+A brief description (3-5 sentences) covering:
+What enhancement you implemented
+Why you chose it (what problem it solves or what value it adds)
+What tools you used to build it
+How it improves upon the project compared to P01
+Grading
+This exercise is graded Pass/Fail. To pass:
+
+Submit a deployed URL where the enhancement is visible and functional
+The enhancement is meaningful and serves the project. Examples of meaningful enhancements: adding a new page or section, implementing a new interactive feature, redesigning the navigation, improving usability, etc. Examples that would not meet this bar: changing a font, adjusting padding, swapping a color
+Provide a description covering the required points
+Exercises Grading Rubric
+Exercises Grading Rubric
+Criteria	Ratings	Points
+Exercise
+
+Pass
+You demonstrated an understanding of the topics covered. Typically, this is characterized by engaging with the week's material, working with the technical jargon, and successfully implementing at least 70% of the output as instructed by the exercise.
+20 pts
+
+Fail
+You did not demonstrate an understanding of the topics covered. This is characterized by either not attempting the exercise or showing a low level of effort and a partial attempt at implementing less than 70% of the output as instructed by the exercise.
+0 pts
+/20 pts
+
+Assignment 02: Iteration Plan
+Due: Sun Apr 26, 2026 11:59pmDue: Sun Apr 26, 2026 11:59pm
+Ungraded, 40 Possible Points
+40 Points Possible
+Attempt
+Attempt 1
+
+In Progress
+NEXT UP: Submit Assignment
+
+Unlimited Attempts Allowed
+Assignment 02: Iteration Plan
+Overview
+Step back and evaluate what you built after shipping P01. This assignment asks you to honestly assess your P01 prototype, identify what needs to change, and plan your path from P01 to your final MVP in Project 02.
+
+Your iteration plan is the bridge between your first project milestone and your finished project: what to fix, what to add, what to cut, and in what order.
+
+Points: 40
+
+Due: Sunday, April 26 by 11:59 PM CT
+
+Instructions
+Submit your iteration plan as a PDF or Markdown file. Your plan should address each of the following four sections.
+
+1. P01 Evaluation (10 points)
+Look at your Project 01 with fresh eyes and evaluate it honestly. Address the following:
+
+What works well? Identify the parts of your P01 that are solid: features that function as intended, design choices that landed, and content that communicates clearly, and anything else relevant.
+What doesn't work? Identify what fell short: broken features, rough edges, missing content, confusing navigation, or anything that does not meet the standard you want.
+How does it compare to your proposal? Look back at Assignment 01: Did you build what you planned? What changed along the way, and why?
+Be specific. Be honest. "The navigation is confusing because the menu labels don't match the page content" is useful. "My project needs work, but doesn't work" is not useful. So, again, be specific, be honest, and evaluate with useful, descriptive language.
+
+2. Changes for P02 (15 points)
+Based on your evaluation, list the changes you plan to make for Project 02. Organize them into four categories:
+
+Fixes: Things that are broken or not working correctly that must be fixed.
+Improvements: Things that work but could be better (e.g., cleaner design, clearer content, smoother interactions, improved layouts).
+Additions: New features or content that were not in P01 but belong in your final project.
+Cuts: Features or content you originally planned but now realize should be removed. Cutting scope is a legitimate decision, so explain the what and why of any planned cuts.
+For each change, write one to two sentences describing what it is and why it matters. 
+
+3. Priority and Timeline (10 points)
+Organize your planned changes into three (3) priority tiers:
+
+Must complete: Changes that are required for your project to function as a finished project. These are the non-negotiables.
+Should complete: Changes that would meaningfully improve your project but are not strictly required. You plan to do these, but could ship without them if absolutely necessary.
+If time allows: Your project's stretch goals. Nice to have, but you will not lose sleep if they do not make it in.
+For each tier, include a rough estimate of the potential effort involved. These estimates do not need to be precise: "a few hours" or "most of a weekend" is perfectly fine. The goal is to demonstrate that you have thought about whether your plan is realistic and have spent at least some meaningful time planning what is ahead of you.
+
+4. Updated Tools and Approach (5 points)
+Reflect on the tools and approach you used for P01. Address the following:
+
+Are you changing any tools or technologies for P02? If so, what and why? Be specific here, but avoid statements like, "I used some HTML and CSS, but I need to use more HTML and CSS." That type of statement effectively says nothing. Instead, you could say, "My initial work involved plain HTML and CSS files, but I plan to switch to using Astro for site generation. Therefore, I will primarily use scoped CSS for components, with some global, unscoped CSS." 
+What tools or workflows were most effective during P01? What will you continue using? Again, be specific here. No statements like, "VS Code is good, and I like typing into it." While it's great that you enjoy a tool, provide more information and context; e.g., "VS Code worked well initially, but after installing a few extensions, getting started with GitHub Copilot for iterative work, and using the built-in Git source control panel, I settled into a workflow that really fit how I enjoy working."
+Is there anything you would do differently from the start if you were starting over? Obviously, you do not need to start over, but this reflection matters for the personal and professional projects you undertake in the future.
+Submission
+Submit your iteration plan as a PDF or Markdown file. Plans evolve. This iteration plan document captures your thinking at this point in time. You are not locked into every single detail, but you should have a clear direction.
+
+Grading
+This assignment uses a rubric and is worth 40 points total.
+
+Assignment 02: Iteration Plan — Grading Rubric
+Assignment 02: Iteration Plan — Grading Rubric
+Criteria	Ratings	Points
+P01 Evaluation (10 points)
+
+Exemplary (Exceeds Expectations)
+Evaluation is specific, honest, and thorough. Identifies concrete examples of what works, what does not, and how the prototype compares to the original proposal. Demonstrates genuine self-assessment.
+10 pts
+
+Proficient (Meets Expectations)
+Evaluation addresses strengths and weaknesses with some specificity. Comparison to the proposal is present but may lack detail or concrete examples.
+8 pts
+
+Developing (Approaching Expectations)
+Evaluation is vague or superficial. Lacks specific examples, avoids honest assessment, or omits comparison to the original proposal.
+5 pts
+
+Incomplete or Not Submitted
+0 pts
+/10 pts
+Changes for P02 (15 points)
+
+Exemplary (Exceeds Expectations)
+Changes are organized into clear categories (fixes, improvements, additions, cuts) with specific rationale for each. Demonstrates thoughtful analysis of what the project needs to become a finished MVP.
+15 pts
+
+Proficient (Meets Expectations)
+Changes are organized and reasonable. Categories are used but some items may lack clear rationale or specificity.
+12 pts
+
+Developing (Approaching Expectations)
+Changes are poorly organized or read as a wishlist without structure. Categories are missing or items lack rationale.
+8 pts
+
+Incomplete or Not Submitted
+0 pts
+/15 pts
+Priority and Timeline (10 points)
+
+Exemplary (Exceeds Expectations)
+Changes are clearly tiered into must/should/stretch priorities with realistic effort estimates. Demonstrates genuine understanding of what is achievable within the remaining timeline.
+10 pts
+
+Proficient (Meets Expectations)
+Some tiering of priorities is present. Effort estimates may be included but could be overly optimistic or lack detail.
+8 pts
+
+Developing (Approaching Expectations)
+No meaningful tiering of priorities. Everything is treated as equally important, or effort estimates are absent.
+5 pts
+
+Incomplete or Not Submitted
+0 pts
+/10 pts
+Updated Tools and Approach (5 points)
+
+Exemplary (Exceeds Expectations)
+Thoughtful reflection on tool choices and workflow. Identifies specific lessons learned from P01 and explains how they inform the approach for P02.
+5 pts
+
+Proficient (Meets Expectations)
+Some reflection on tools and approach. May identify what worked but lacks specificity about what will change or why.
+4 pts
+
+Developing (Approaching Expectations)
+Minimal or generic reflection. Does not demonstrate genuine consideration of what worked, what did not, or what will change.
+2 pts
+
+Incomplete or Not Submitted
+0 pts
+/5 pts
+
+Week 06: Wrap Up
+Week 06: Wrap-Up
+This week, you shifted from building to evaluating and improving. You looked critically at your P01 submission, identified what to fix and what to add, implemented a meaningful enhancement, and wrote an iteration plan that maps your path from P01 to P02.
+
+Iteration is the key to projects getting good (and eventually great). The first version gets something working. The second version makes it work well.
+
+Looking Ahead to Week 07
+Next week, Week 07 focuses on refinement and peer review:
+
+Refine your project. Continue implementing the changes from your iteration plan. Focus on polish, consistency, and completeness.
+Review a classmate's work. Discussion 03 is a peer-review assignment in which you visit classmates' P01 deployments and provide specific, constructive feedback.
+Prepare for P02. Everything this week should aim at your final project submission. By the end of Week 07, your project should be in and nearing its final form.

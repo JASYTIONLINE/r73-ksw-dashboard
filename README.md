@@ -19,7 +19,7 @@ This is a static website built with HTML, CSS, and vanilla JavaScript. It serves
 
 Students choose a WKSA testing band, select their current rank, and review the skills connected to their rank path. The dashboard groups requirements by proficiency, category, and technique set so the material is easier to scan than a single long checklist. Students can update each requirement with a status such as Untrained, In Progress, Trained, or Proficient, and the progress summary updates from the same filtered requirement data.
 
-The site also includes a landing page, an about page, contact actions, a weekly focus link, and study-resource pages. For P02, the dashboard keeps the Study resources dropdown but hides the per-row Study column so the requirements table stays focused on the original skill-tracking scope.
+The site also includes a landing page, an about page, contact actions, a weekly focus link, and study-resource pages. For P02, the dashboard keeps the Study resources dropdown but hides the per-row Study column so the requirements table stays focused on the original skill-tracking scope. The existing Coming Soon study resource page is treated as an intentional destination for scheduled materials, not as a broken or empty link target.
 
 ## Why It Exists
 Students preparing for rank promotion often track requirements through memory, paper notes, screenshots, or verbal reminders. That can make it hard to know what to practice next, especially between classes.
@@ -59,16 +59,17 @@ For final submission testing, open the live URL in a normal browser and in a pri
 - Optional local JSON editor for maintaining the curriculum data.
 
 ## What Changed From P01 To P02
-P01 established the core project: a static, deployed dashboard that could load curriculum data and show student rank requirements. P02 focused on making the project more complete, consistent, and usable.
+P01 established the core project: a static, deployed dashboard that could load curriculum data and show student rank requirements. P02 focused on making the project more complete, consistent, and usable. The main direction was to protect the original dashboard scope while improving the parts a student or parent would notice first: navigation, button behavior, mobile layout, contact actions, documentation, and the clarity of unfinished future work.
 
-- **Updated project description:** The project is now documented as a fuller student dashboard with rank filtering, progress summaries, study-resource links, responsive layout, and P02 delivery documents.
-- **Visual consistency:** Navigation, page titles, contact labels, address text, button states, and theme styling were tightened across the landing page, dashboard, about page, legacy contact page, and study-resource pages.
-- **Interaction consistency:** Buttons now have stronger shared sizing and focus behavior. Long labels are allowed to wrap instead of running outside their boxes.
+- **Project description and purpose:** The project is now documented as a fuller student dashboard with rank filtering, progress summaries, study-resource access, responsive layout, and P02 delivery documents. This makes the README match the deployed project instead of describing only the earlier P01 version.
+- **Visual and content consistency:** Navigation, page titles, contact labels, address text, button states, and theme styling were tightened across the landing page, dashboard, about page, legacy contact page, and study-resource pages so the pages feel like one project.
+- **Interaction consistency:** Buttons now have stronger shared sizing and focus behavior. Long labels are allowed to wrap instead of running outside their boxes, and contact cards use hover/focus states that match the rest of the interface.
 - **Mobile usability:** The Weekly Focus feature now appears in the mobile home page flow. The dashboard requirements area was adjusted to reduce unwanted left-right scrolling and keep the visible Learning Objective and Status columns readable.
-- **Content completeness:** The per-row Study column was temporarily hidden from the dashboard requirements table. The requirements list still shows all skills, and the Study resources dropdown remains available for curated resources.
-- **Feature scope decision:** Visible Save/Load progress controls were hidden for this delivery because they added interface complexity. The import/export code remains in the project so the feature can be restored in a later iteration.
-- **Asset cleanup:** The landing page logo now uses an existing PNG asset instead of a BMP path with encoded spaces.
-- **CSS cleanup:** Unused legacy selectors and an unused alternate theme stylesheet were removed. Shared sidebar thumbnail structure now lives in `style.css`, while theme colors and visual states stay in `dragon.css`.
+- **Study-resource scope decision:** The per-row Study column was temporarily hidden from the dashboard requirements table because many full study pages are still future work. The requirements list still shows all skills, and the Study resources dropdown remains available for curated resources.
+- **Save/Load scope decision:** Visible Save/Load progress controls were hidden for this delivery because they added interface complexity. The import/export code remains in the project so the feature can be restored in a later iteration after the student-facing workflow is clearer.
+- **Coming Soon handling:** The Coming Soon study page remains as an intentional destination for scheduled study materials. The page is not presented as a finished media library; it explains that dedicated skill notes and media are still being prepared.
+- **Asset and repository cleanup:** The landing page logo now uses an existing PNG asset instead of a BMP path with encoded spaces. Unused legacy CSS selectors and an unused alternate theme stylesheet were removed as part of final cleanup.
+- **CSS organization:** Shared layout and reusable component sizing live in `style.css`, active theme colors and visual states live in `dragon.css`, and landing-page layout remains in `home.css`.
 - **Tooling polish:** The optional JSON editor received cleaner file-picker markup and visible focus states.
 - **Documentation:** The README was rewritten for P02 and a separate `REFLECTION.md` was added.
 
@@ -105,6 +106,8 @@ The dashboard loads `assets/data/json/app-syllabus.db.json`. It supports the cur
 
 The visible import/export controls are hidden in the current P02 interface, but the underlying code is still present. This was a scope decision: the feature is useful, but the interface needs more polish before it returns as a visible student-facing workflow.
 
+The Coming Soon study resource page is intentionally kept as a destination for scheduled materials. It gives students a place to land from curated study links while making clear that fuller skill-specific notes and media are future work.
+
 The CSS is split by responsibility: `style.css` handles shared structure, `dragon.css` handles the active visual theme, and `home.css` handles the landing page. During the P02 cleanup, unused selectors and the unused alternate `ace.css` theme were removed to keep the repository easier to maintain.
 
 ## Local Development
@@ -122,7 +125,7 @@ node scripts/csv-to-app-syllabus-db.mjs
 5. If using the optional JSON editor, open `backend/json-interface.html` from a local server rooted at the repository so relative paths resolve correctly.
 
 ## Final Delivery Checklist
-Before submitting P02, these are the checks used for the project:
+Before submitting P02, use this checklist to confirm the deployed project and repository are ready:
 
 - The live GitHub Pages URL loads.
 - The README reflects the current project, not the older P01 version.

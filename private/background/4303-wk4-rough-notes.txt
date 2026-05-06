@@ -1,0 +1,194 @@
+Week 04: Overview
+Week 04: Overview
+Your project has structure and a live URL. This week, you make it do things. You'll explore what interactivity enables on the web and use your tools to add behavior and functionality to your project.
+
+It's about understanding what interactivity makes possible and using the tools available to you, such as AI assistants and editors, web frameworks and libraries,  and templates and examples, to make your project respond, react, and engage.
+
+Learning Objectives
+Upon successful completion of this week, you will be able to:
+
+Describe what interactivity enables on the web. (SLO-1, SLO-2)
+Implement interactive features using chosen tools. (SLO-2)
+Assess whether implemented functionality meets project goals. (SLO-2)
+To Do List
+The list of scheduled coursework for the week:
+
+Review: Week 04 Overview and Content
+Read: Week 04: What Interactivity Enables
+Read: Week 04: Using Your Tools to Add Behavior
+Complete: Exercise 04: Add One Interactive Feature
+Complete: Discussion 02: Mid-Build Check-In
+Week 04: Using Your Tools to Add Behavior
+Using Your Tools to Add Behavior
+So you know what interactivity can do for your project. You have some ideas forming. Now the question is: how do you actually add it? The answer is that it depends. Largely, it depends on your tools, but the process is similar regardless of what you're using.
+
+The Process: Describe, Generate, Test, Refine
+Adding interactivity with modern tools (in 2026) often follows a common pattern:
+
+1. Describe What You Want
+Start by writing a clear description of the feature. Be specific about:
+
+What triggers it? A click? A tap? Scrolling to a certain point? Loading the page? Typing in a field?
+What happens? Content appears or disappears? An element moves? Data is filtered? A message is sent? Music automatically plays (please don't do this!)?
+Where should it happen? Which page(s)? Which section(s)? Which element(s)?
+Example: "When a user clicks/taps one of the category buttons above the image grid, only the image items matching that category should be visible. All others should be hidden. The 'All' button shows everything. When a category is active, the color scheme for that specific category is active; otherwise, the default 'All Categories' color scheme is active."
+
+The more specific your description, the better results you'll get from your tools. The more detailed your description, the more accurately you can build your project to your desired specifications, meeting your goals and expectations.
+
+2. Generate the Implementation
+Use your tools to create the code:
+
+AI agents (Copilot, ChatGPT, Gemini, Cursor, Claude): Describe the feature in conversation. Provide deep context about your project, any existing project structure, and any concepts/sketches/code that you have. Ask for assistance with the code and instructions for using it.
+Framework features: Many frameworks have built-in solutions for common interactive features. Always check a framework's documentation for components such as modals, tabs, carousels, animations, form handling, and more.
+Code examples and templates: Search for working examples of the feature you want. Sites like GitHub and CodePen have hundreds of thousands of interactive examples you can study and adapt. Many of the examples and templates are open source, too, and intended for broader use by anyone.
+Component libraries: Libraries like Tailwind, Shadcn, Material Design, Bootstrap, and many others, as well as framework-specific component packages, typically include interactive elements ready to use. Many provide robust examples of components, layouts, and customizations offered out of the box.
+3. Test the Result
+After adding the code to your project:
+
+Does it work? Try the feature. Click the button. Submit the form. Scroll the page. Tap the image. Does it do what you described?
+Does it break anything? Check the rest of your project. Often, adding new code affects existing functionality or layout.
+Does it work on tablet? On mobile? Test on a different screen size. Then, test on many different screen sizes. Interactive features that work on desktop but fail on mobile are a common problem. Clicking with a mouse cursor versus tapping with a finger can produce different results.
+Does it work in different browsers? You have access to multiple browsers. Test in at least two. (Note: if you still do not have multiple web browsers installed on your laptop/desktop, you will need to address this. Brave, Firefox, Chrome, Safari, Orion, Vivaldi, Zen, and other browsers exist for you to try and use. You might even find your new favorite web browser.)
+4. Refine and Adjust
+If the result isn't right, iterate. Iterate, iterate, iterate, iterate, and then iterate more. Common adjustments:
+
+The feature works, but doesn't appear correctly. This might be an issue with the CSS, HTML, or content.
+The feature works on desktop but not on mobile or tablet. This could be a responsive design issue, or a touch/tap vs. click issue.
+The feature works but is too fast, too slow, or too abrupt. This might be due to incorrect timing for your transitions or animations.
+The feature conflicts with existing code. This might require revising the new code, adjusting the existing code, or changing both.
+Refining, adjusting, and iterating isn't a one-shot process. Expect to go through the describe-generate-test cycle multiple times for each feature.
+
+Working with AI tools effectively
+In 2026, AI coding tools will be a legitimate way to add behavior to your project. Here are some no-nonsense methods to get the most out of them:
+
+Provide context. Context is critical. Share your HTML structure, your CSS, and any existing JavaScript. The more important context an AI coding tool has about your task, project, etc., the better its suggestions will be. If you try to "one-shot" coding work, or provide unimportant context, or insert information unrelated to the current work, or attempt scope creep, etc., your results will fall short. Stay focused on the context.
+
+Start small. Work on and discuss one small feature at a time. "Add a mobile navigation toggle" is better than "Make my whole site interactive." "Mobile navigation toggle" is understandable and somewhat scoped, but what does "whole site interactive" mean? Start small. Work small. Iterate is small, focused work sessions. Small, focused work, consistently executed and iterated upon, produces better results.
+
+When an AI coding agent provides you with code, ask it to explain what the code does in plain language that helps you understand. You don't need to memorize the code, but understanding the code's overall structure and logic will help you troubleshoot.
+
+Be specific about constraints, too. If your project uses a particular framework, say so. That is important context. If you need or prefer a feature to work without any additional libraries, say so. This is important context, too. Constraints help you work, and they especially help AI coding agents work with you.
+
+If the first result isn't right, iterate. Keep your goals in mind, remember the important context, determine what's wrong, and work with the agent(s) to refine.
+
+When Things Don't Work
+You will encounter problems. Many problems. Features won't work as expected or at all. Code will conflict. Your initial assumptions might prove to be incorrect. That cool animation actually looks nauseating. Things will break on mobile. Things will break on tablet. Things will break on desktop. Things will break. This is normal. This is what working with online computing looks like. Professional developers, designers, and builders acknowledge and embrace that problems will be encountered time and time again. The fun part (and, yes, frustrating, too) is encountering those problems and figuring out solutions.
+
+When something doesn't work:
+
+Check the browser console. Right-click on your page, select "Inspect" or "Developer Tools," and look at the Console tab. Error messages there often point directly to the problem. Look at the Network tab. Maybe images are being blocked, or code that should be there isn't loading.
+
+Share the problem with your AI agent. Copy the error message along with the relevant parts of your project files, and start to diagnose the issue. Describe what you expected to happen and exactly what happened instead. Remember that context is critical. AI agents are effective at tracing such problems, but these technologies are tools rather than magic wands. Your ability to be detailed and provide context will go a long way toward diagnosing and resolving code problems.
+
+Roll back and try again. If a feature breaks your project and you can't fix it, use version control to revert to a working state and try a different approach. This is why you commit frequently.
+
+Key Takeaways
+The process is: describe what you want, generate with tools, test the result, and refine 
+Be specific when describing features
+Both you and AI tools and agents work best with context, constraints, and iteration
+Testing is essential: check functionality, check mobile, check tablet, check interactivity, check for conflicts, check for regressions
+When things break, and they will, check for error messages, review your work, get assistance from AI agents, and, if needed, use version control to recover to a previous working state of your codebase
+
+Exercise 04: Add One Interactive Feature
+Due: Sun Apr 12, 2026 11:59pmDue: Sun Apr 12, 2026 11:59pm
+Ungraded, 20 Possible Points
+20 Points Possible
+Attempt
+Attempt 1
+
+In Progress
+NEXT UP: Submit Assignment
+
+Unlimited Attempts Allowed
+Exercise 04: Add One Interactive Feature
+Overview
+This exercise asks you to add one interactive feature to your project. Your goal is to identify a feature, implement it using your tools, and verify that it works.
+
+Points: 20 (Pass/Fail)
+Due: Sunday, April 12 by 11:59 PM CT
+
+Instructions
+Step 1: Choose a Feature
+Pick one interactive feature to add to your project. It should be something that serves your project's purpose; not something solely decorative, but useful to your audience. Examples:
+
+A responsive, animated navigation menu
+A filterable photo gallery, content list, table, etc.
+A form with robust input validation and interactivity
+A color scheme/theme toggle (dark/light/auto/other)
+A carousel or lightbox component for displaying photos/images
+An interactive page featuring animations, transitions, or dynamic scenes based on the time of day
+Choose something both achievable this week and meaningful for your project. Check: Does the interactive feature serve your project's purpose?
+
+Step 2: Implement It
+Use your tools to add the feature. This might involve:
+
+Using a component library that includes the feature
+Adapting a code example or template to fit your project
+Describing the feature to an AI assistant and integrating the generated code
+Using a framework's built-in component or plugin
+Step 3: Test and Deploy
+Verify the feature works as intended
+Test it on different screen sizes (e.g., mobile, tablet, laptop, desktop); you can use your browser's built-in dev tools to check screen sizes
+Commit your changes, push to GitHub, and confirm the feature works on your deployed site
+Submission
+Submit the following as a text entry in the Exercise 04 assignment in Canvas:
+
+Your deployed site URL (should be the same URL from E03, now with the new feature)
+A brief description (3-6 sentences) covering:
+The feature you added and why you chose it
+The tools you used to implement it
+Your thought process was during implementation
+Whether it worked on the first try or required iteration
+Anything you learned from the process
+Grading
+This exercise is graded Pass/Fail. To pass:
+
+Submit a deployed URL where the interactive feature is visible and functional
+The feature serves a clear purpose for your project
+Provide a brief description covering the required points. Your description does not need to be an essay.
+The interactive feature you add in this exercise should be part of your Project 01 submission. Note that you may adjust the interactive feature you add in this exercise to suit your P01 goals better, and add additional features for P01 if you choose.
+
+Discussion 02: Mid-Build Check-In
+Discussion 02: Mid-Build Check-In
+Overview
+You're halfway through the build phase. This discussion is a chance to share where you are, what you've learned, what challenges you're facing, and what you're excited about continuing to build. It's also an opportunity to see what your classmates are building and how they're approaching their projects.
+
+Points: 20 (10 for initial post, 5 for each of 2 replies)
+Initial Post Due: Thursday, April 9 by 11:59 PM CT
+Replies Due: Sunday, April 12 by 11:59 PM CT
+
+Prompt
+Share a progress update on your project. In your post, address the following:
+
+What does your project look like right now? Include your deployed URL(s) so classmates can visit them. Describe what's working and what's still in progress.
+What tools are you using, and how are they working out? Are the tools you chose in your proposal working well? Have you added any new tools, switched anything, or run into limitations?
+What's been the hardest part so far? Be specific. Was it a technical challenge, a design decision, a scope issue, or something else? How did you work through it (or are you still working through it)?
+What are you excited about continuing to build? Which ongoing or upcoming project work are you excited about? A page aesthetic you're continuing to refine? New interactivity? Some buttery-smooth animations?
+Replies
+Reply to at least two (2) of your classmates' posts. In your replies:
+
+Visit their deployed project and share specific observations about something that works well, something you noticed, and any constructive suggestions
+If they described a challenge, share your experience with something similar, or suggest an approach that you might take to potentially overcome that challenge
+Ask a genuine question (or questions) about their project, process, and what they shared that excites them about their project
+Replies should show that you visited the project and engaged with what they wrote.
+
+Grading
+Discussion 02 Grading
+Component	Points
+Initial post (progress update with deployed URL(s), tools, challenges faced, excitement to build)	10
+Reply 1 (substantive engagement with classmate's post and project)	5
+Reply 2 (substantive engagement with classmate's post and project)	5
+Total	20
+
+Week 04: Wrap Up
+Week 04: Wrap-Up
+This week, you explored what interactivity enables on the web and added some behavior to your project. You went through the process of describing a feature, using your tools to implement it, and testing the result.
+
+You also checked in with your classmates and saw what others are building: Different projects, different tools, different approaches, but the same fundamental processes.
+
+Looking Ahead to Week 05
+Next week is Project 01, your first major milestone:
+
+Your project should be deployed and functional. Not perfect, not feature-complete, but working, deployed, and functional. A real site at a real URL.
+Your README should exist and be written. Project 01 requires a README.md that explains what your project is, why it exists, what tools you used, and where to find it.
+This is a checkpoint for your semester-long project. P01 captures your project's status at the midpoint. You'll continue building toward the final version as Project 02.

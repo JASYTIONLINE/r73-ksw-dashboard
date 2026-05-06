@@ -1,0 +1,106 @@
+# Iteration Plan
+## Brownsville Kuk Sool Won Student Progress Dashboard
+
+Live URL: https://jasytionline.github.io/r73-ksw-dashboard/  
+Repository URL: https://github.com/JASYTIONLINE/r73-ksw-dashboard
+
+---
+
+## 1. P01 Evaluation
+
+Project 01 established a working foundation for the Brownsville Kuk Sool Won Student Progress Dashboard. The site is deployed and accessible, navigation works across pages, and all links and contact actions function. The dashboard loads and displays requirements based on rank selection, and the overall structure supports the original goal of helping students track what they need for testing.
+
+What works well is the core requirement display system. Selecting a rank correctly loads the associated skill requirements from the JSON data, and the dashboard presents them in a usable format. Contact buttons open correctly and allow the user to initiate communication, and the general inquiry workflow is already functioning as intended.
+
+What does not work is the age selection system. The dropdown exists but does not affect the displayed requirements. This caused a real usability failure when a tester with a child attempted to use the application. The system currently assumes that rank alone defines requirements, which is incorrect. Additionally, contact workflows are incomplete. While they function technically, actions such as scheduling a private session or requesting an assessment do not guide the user to provide the correct information.
+
+Compared to the original proposal, the core functionality was delivered as planned, including rank selection, requirement display, and basic interaction. However, the proposal assumed rank-based requirements were sufficient. Testing showed that age must also be included as part of the requirement logic. This is not a change in direction, but a correction based on real use of the system.
+
+---
+
+## 2. Changes for P02
+
+### Fixes
+
+- **Implement age-based requirement filtering with corrected data model**  
+  The current system only maps requirements by rank. I will restructure the JSON by separating skills into a master list and introducing requirement mapping objects that connect age group, rank, and skill ID. This matters because the system failed in real use and does not reflect how the curriculum actually works.
+
+- **Connect UI to updated data model**  
+  The age and rank selections must correctly load and display requirements from the new structure. This matters because the system must function correctly after the data model change.
+
+- **Ensure system stability after restructuring**  
+  I will verify rendering, filtering, and localStorage behavior after implementing the new model. This matters because the change affects the entire application.
+
+- **Ensure contact actions collect correct information**  
+  Contact buttons currently open email prompts but do not guide the user to provide required information. I will modify these so actions such as private session requests and assessment requests prompt the user appropriately. This matters because the workflow is incomplete.
+
+---
+
+### Improvements
+
+- **Reduce visual overload in the skills dashboard**  
+  The current dashboard displays too many individual techniques at once. I will group techniques into higher-level technique sets (e.g., McCheegi) and require the user to click into a category to see individual techniques. This improves usability and reduces cognitive overload.
+
+---
+
+### Additions
+
+- **Introduce requirement mapping objects (join structure)**  
+  I will add new JSON objects that map age group, rank, and skill ID. This separates skills from when they are required and enables proper filtering.
+
+- **(Conditional) Student ID lookup feature**  
+  If access to student ID data is granted, I will implement a lookup feature so users can retrieve their ID. This depends on external data availability.
+
+---
+
+### Cuts
+
+- **Reduce amount of data displayed at once in the dashboard**  
+  I will remove the full list of individual techniques from the main dashboard view and replace it with grouped technique sets that require an additional click to expand. This matters because the current display overwhelms the user.
+
+- **No expansion beyond core dashboard functionality**  
+  I will not add new major features outside of fixing the requirement system and improving usability. This keeps the project focused and achievable.
+
+---
+
+## 3. Priority and Timeline
+
+### Must Complete
+
+- Restructure JSON data model and implement age-based filtering  
+- Implement requirement mapping objects (age group + rank + skill ID)  
+- Connect UI to correctly load filtered requirements  
+- Verify system stability and localStorage behavior  
+
+**Estimated effort:** most or all of the week
+
+---
+
+### Should Complete
+
+- Improve contact workflows with structured inputs  
+
+**Estimated effort:** a few hours, if time remains after core work
+
+---
+
+### If Time Allows
+
+- Improve backup and restore workflow for saved progress  
+- Reduce visual overload by regrouping skills into technique sets  
+- Adjust navigation priority (Dashboard above About)  
+- Student ID lookup feature (if data becomes available)  
+
+**Estimated effort:** up to one full day depending on scope and data availability
+
+---
+
+## 4. Updated Tools and Approach
+
+I am not changing the core toolset for P02. I will continue using HTML, CSS, JavaScript, JSON, and localStorage because they match the project scope and keep the system simple and maintainable.
+
+The most effective part of my workflow during P01 was separating planning from implementation. I used ChatGPT to work through logic, structure, and design decisions, and then used Cursor to implement and modify the code. This allowed me to move quickly while still understanding what I was building.
+
+For testing, I used Live Server to preview changes in real time, which helped catch issues before deployment. For deployment, I used GitHub Pages, which provided a simple pipeline to push changes and verify them live.
+
+If I were starting over, I would have conducted a more thourough investigation, define the data model more completely from the beginning. I initially assumed rank-based requirements were sufficient, but real use showed that age must also be included. Addressing that earlier would have prevented rework in this phase.   
