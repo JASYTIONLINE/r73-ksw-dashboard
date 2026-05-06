@@ -524,15 +524,46 @@ pre {
    RESPONSIVE: Mobile + Large Screens
    ================================================ */
 
-/* Phones / small tablets: fixed top nav only, hide sidebar */
+/* Phones / small tablets: fixed top nav, then sidebar actions in the vertical flow */
 @media (max-width: 768px) {
   .page-layout {
     flex-direction: column;
   }
 
-  /* Sidebar is desktop-only */
-  .sidebar {
-    display: none !important;
+  /* Keep desktop sidebar features available on mobile by turning the sidebar into a full-width section. */
+  .page-layout > .sidebar.sidebar-stack {
+    display: flex !important;
+    position: static;
+    top: auto;
+    align-self: stretch;
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    order: 0;
+  }
+
+  .sidebar.sidebar-stack > .card {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .sidebar-primary-panel,
+  .sidebar-nav {
+    width: 100%;
+  }
+
+  .sidebar-nav {
+    gap: 0.5rem;
+  }
+
+  .sidebar-nav .btn,
+  .sidebar-contact-instructor .dashboard-contact-actions .btn {
+    width: 100% !important;
+  }
+
+  .sidebar-address-card {
+    margin-top: 0.75rem;
   }
 
   .page-content {

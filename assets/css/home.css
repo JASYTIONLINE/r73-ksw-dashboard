@@ -571,7 +571,7 @@ a.sidebar-address-card:visited {
   }
 
   .home-page .home-mobile-weekly-focus {
-    display: block;
+    display: none;
     padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
       max(0.5rem, env(safe-area-inset-right, 0px));
     margin: 0 0 1rem;
@@ -604,7 +604,7 @@ a.sidebar-address-card:visited {
   }
 
   .home-page .home-mobile-contact-address {
-    display: block;
+    display: none;
     margin-top: 0;
     margin-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
     padding: 0 max(0.5rem, env(safe-area-inset-left, 0px)) 0
