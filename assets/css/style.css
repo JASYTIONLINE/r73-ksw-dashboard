@@ -225,6 +225,38 @@ pre {
   margin-top: 0;
 }
 
+/* DigiPortAI portal — bottom of sidebar column (desktop: margin-top: auto) */
+.sidebar-dai-portal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.sidebar-dai-portal dai-home-button {
+  --dai-btn-max-height: 44px;
+}
+
+.sidebar-dai-portal-caption {
+  margin: 0.35rem 0 0;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 769px) {
+  .sidebar.sidebar-stack {
+    align-self: stretch;
+  }
+}
+
 /* Tighter chrome than generic .card (1.5rem) — legacy single-card sidebar */
 .sidebar.card {
   padding: 0.75rem;
